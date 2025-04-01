@@ -32,7 +32,16 @@ class AddOrEven {
         // In this case, we check if the number is even (number % 2 == 0).
         // If it is, we print "The number is even." Otherwise, we print "The number is odd."
         System.out.println(number % 2 == 0 ? "The number is even." : "The number is odd.");
-        ;
+
+        // * The above code can be further simplified using bitwise operations.
+        // The bitwise AND operator (&) can be used to check if a number is even or odd.
+        // In binary representation, even numbers have a last bit of 0, while odd numbers have a last bit of 1.
+        // By performing a bitwise AND operation with 1 (number & 1), we can determine if the number is even or odd.
+        if ((number & 1) == 0) {
+            System.out.println("Even");
+        } else {
+            System.out.println("Odd");
+        }
     }
 }
 
