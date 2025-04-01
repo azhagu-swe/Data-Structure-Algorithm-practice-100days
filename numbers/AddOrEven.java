@@ -30,8 +30,7 @@ class AddOrEven {
         // It takes three operands: a condition, a value if true, and a value if false.
         // The syntax is: condition ? value_if_true : value_if_false
         // In this case, we check if the number is even (number % 2 == 0).
-        // If it is, we print "The number is even." Otherwise, we print "The number is
-        // odd."
+        // If it is, we print "The number is even." Otherwise, we print "The number is odd."
         System.out.println(number % 2 == 0 ? "The number is even." : "The number is odd.");
         ;
     }
