@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class FindGold {
     public static void main(String[] args) {
@@ -8,6 +10,9 @@ public class FindGold {
             String sentence = s.nextLine();
             System.out.println(
                     isGoldInSentence(sentence, "gold") ? "This sentence contain gold!"
+                            : "This sentence doesn't contain gold!");
+            System.out.println(
+                    containsGold(sentence) ? "This sentence contain gold!"
                             : "This sentence doesn't contain gold!");
         }
     }
@@ -28,6 +33,21 @@ public class FindGold {
         }
         return false;
 
+    }
+
+    // Using regex to match the word "gold" as a complete word, case-insensitively
+    private static boolean containsGold(String sentence) {
+        // "\\bgold\\b" ensures we match the whole word "gold" only.
+        return sentence.toLowerCase().matches(".*\\bgold\\b.*");
+    }
+     // This method uses regex to check if the sentence contains "gold"
+    // regardless of whether it's a complete word or part of another word.
+    private static boolean containsGold1(String sentence) {
+        if (sentence == null) return false;
+        // Compile a pattern that matches "gold" anywhere in the sentence, case-insensitively.
+        Pattern pattern = Pattern.compile("gold", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(sentence);
+        return matcher.find();
     }
 
 }
