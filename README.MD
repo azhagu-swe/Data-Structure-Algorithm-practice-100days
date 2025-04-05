@@ -233,6 +233,4 @@ Explored more **advanced string manipulation problems** and practiced optimizati
 
 ---
 
-*Let's conquer DSA, one day at a time!* 🚀 🚀
-
 _Let's master DSA, one day at a time!_ 🚀💪
