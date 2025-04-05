@@ -200,14 +200,39 @@ Explored more **advanced string manipulation problems** and practiced optimizati
 * Input: "aaabbccaaa"
 * Output: `<span>a6b2c2</span>`
 
-## 📌 Follow My Journey
+## 📅 Day 4: String Utilities Mastered 🛠️
 
-📂 **Daily Logs:** Every day’s progress is documented in this repository.
-📝 **Code & Explanations:** I provide detailed breakdowns and step-by-step logic for each problem solved.
-📢 **Sharing Insights:** I share key learnings and optimization tips regularly.
+**📆 Date:***[I05/04/2025]*
 
-Stay tuned for **Day 3**! 💻🔥
+### ✅ What I Solved Today
+
+1️⃣ **Toggle Each Character Case** 🔄
+
+* **Logic:** For each character, check if it’s lowercase (`<span>'a'</span>`–`<span>'z'</span>`) or uppercase (`<span>'A'</span>`–`<span>'Z'</span>`) and flip by arithmetic:
+  * Lower → Upper: `<span>c - 'a' + 'A'</span>`
+  * Upper → Lower: `<span>c - 'A' + 'a'</span>`
+* **Example:** Input: `<span>"Java123"</span>` → Output: `<span>"jAVA123"</span>`
+
+2️⃣ **Check Anagram** 🧩
+
+* **Logic:** Remove spaces, normalize case, then use a **frequency count** (`<span>int[26]</span>`) to increment for one string and decrement for the other. If all counts return to zero, they are anagrams.
+* **Example:**`<span>"listen"</span>`, `<span>"silent"</span>` → Perfectly matched!
+
+3️⃣ **Count Vowels & Consonants** 🔡
+
+* **Logic:** Use a **boolean[26]** lookup for vowels (`<span>a, e, i, o, u</span>`). For each character, if `<span>a</span>`–`<span>z</span>`, check lookup; increment vowel or consonant counter.
+* **Example:** Input: `<span>"Hello World"</span>` → Vowels: 3, Consonants: 7
 
 ---
+
+## 🚀 Plan for Day 5 🔭
+
+🔹 Dive into **substring search** algorithms (e.g., KMP).
+🔹 Solve **Run-Length Encoding** and **pattern matching** challenges.
+🔹 Start exploring **basic graph traversal** (BFS/DFS) for strings as trees.
+
+---
+
+*Let's conquer DSA, one day at a time!* 🚀 🚀
 
 _Let's master DSA, one day at a time!_ 🚀💪
