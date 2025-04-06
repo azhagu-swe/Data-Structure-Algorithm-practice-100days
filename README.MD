@@ -202,7 +202,7 @@ Explored more **advanced string manipulation problems** and practiced optimizati
 
 ## 📅 Day 4: String Utilities Mastered 🛠️
 
-**📆 Date:***[I05/04/2025]*
+**📆 Date:***[05/04/2025]*
 
 ### ✅ What I Solved Today
 
@@ -225,12 +225,33 @@ Explored more **advanced string manipulation problems** and practiced optimizati
 
 ---
 
-## 🚀 Plan for Day 5 🔭
+_Let's master DSA, one day at a time!_ 🚀💪
 
-🔹 Dive into **substring search** algorithms (e.g., KMP).
-🔹 Solve **Run-Length Encoding** and **pattern matching** challenges.
-🔹 Start exploring **basic graph traversal** (BFS/DFS) for strings as trees.
+## 📅 Day -5: More String Logic 🔠
+
+**📆 Date:***[06/04/2025]*
+
+### ✅ What I Solved Today
+
+1️⃣ **Check Pangram:**
+
+* Verified if a sentence contains every letter of the alphabet (a-z).
+* Used a `<span>boolean[26]</span>` array to track occurrences.
+* Simple logic: if all positions are `<span>true</span>`, it's a pangram.
+
+2️⃣ **Remove Consecutive Duplicates:**
+
+* Input: "aaabbcccdee"
+* Output: "abcde"
+* Tracked the previous character using primitive `<span>char</span>`.
+* Used `<span>StringBuilder</span>` to build the final result efficiently.
 
 ---
 
-_Let's master DSA, one day at a time!_ 🚀💪
+## 🏆 Learnings & Observations
+
+✔ **Regex vs Manual Checks:** Regex is clean but understanding manual loops gives more control.
+✔ **Frequency Arrays Rock:** For a-z, `<span>int[26]</span>` is perfect. Fast and easy to use.
+✔ **Always Optimize Memory:** Use primitives and `<span>StringBuilder</span>` over string concatenation.
+
+---
