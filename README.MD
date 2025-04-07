@@ -248,7 +248,31 @@ _Let's master DSA, one day at a time!_ 🚀💪
 
 ---
 
-## 🏆 Learnings & Observations
+## 📅 Day-6: String Challenges
+
+**Date:***[07/04/2025]*
+
+### ✅ What I Solved Today
+
+1️⃣ **Valid Parentheses Matcher**
+
+* Input: A string of characters.
+* Task: Check if all `<span>(</span>` have a matching `<span>)</span>` and vice versa.
+* Output: Print `<span>0</span>` if valid, `<span>1</span>` if invalid.
+* 🔍 Focus: Balance of opening/closing brackets.
+
+2️⃣ **Character-Number Expansion**
+
+* Input: A compressed string like `<span>a1b10</span>`.
+* Task: Expand it to full form like `<span>abbbbbbbbbb</span>`.
+* ✅ Approach: Parse characters and use count to repeat.
+* 💡 Optimized using `<span>StringBuilder</span>` and primitive data types.
+
+### 🌟 Learnings
+
+✔ Practiced real-world string validation scenarios.
+✔ Used ASCII index mapping and parsing techniques.
+✔ Solidified character handling logic.
 
 ✔ **Regex vs Manual Checks:** Regex is clean but understanding manual loops gives more control.
 ✔ **Frequency Arrays Rock:** For a-z, `<span>int[26]</span>` is perfect. Fast and easy to use.
