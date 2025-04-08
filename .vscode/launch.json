@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "GroupAnagrams",
+            "request": "launch",
+            "mainClass": "GroupAnagrams",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "LongestPalindromicSubstring",
+            "request": "launch",
+            "mainClass": "LongestPalindromicSubstring",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
             "name": "BalancedParentheses",
             "request": "launch",
             "mainClass": "BalancedParentheses",

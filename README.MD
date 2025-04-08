@@ -278,4 +278,45 @@ _Let's master DSA, one day at a time!_ 🚀💪
 ✔ **Frequency Arrays Rock:** For a-z, `<span>int[26]</span>` is perfect. Fast and easy to use.
 ✔ **Always Optimize Memory:** Use primitives and `<span>StringBuilder</span>` over string concatenation.
 
+
+## 📅 Day -7: Solving Advanced String Problems
+
+**Date:***[08/04/2025]*
+
+### ✅ What I Accomplished Today
+
+#### 1. **Longest Palindromic Substring**
+
+* **Problem**: Find the longest palindromic substring in a given string.
+* **Approach**:
+  * Used the **expand around center** technique to identify palindromes by expanding outwards from each character or pair of characters.
+  * Compared the lengths of discovered palindromes to find the longest one.
+* **Key Learning**:
+  * The center expansion approach is efficient with a time complexity of .
+  * Debugging palindrome boundaries helped strengthen my understanding of two-pointer algorithms.
+
+#### 2. **Group Anagrams**
+
+* **Problem**: Group a list of strings into groups of anagrams.
+* **Approach**:
+  * Sorted each string to derive its canonical form (a common key for anagrams).
+  * Used a `<span>HashMap</span>` to group words sharing the same canonical form.
+  * Collected all groups into a list of lists for the final output.
+* **Key Learning**:
+  * Sorting and hashing are powerful tools for solving problems involving string patterns.
+  * Leveraging `<span>HashMap</span>` for grouping is both efficient and intuitive.
+
+---
+
+### 🏆 Learnings & Observations
+
+1. **Optimized Techniques**:
+   * Expand around center for palindromes reduces complexity compared to brute force methods.
+   * Sorting strings to identify patterns is a versatile strategy in string problems.
+2. **Data Structures**:
+   * Used `<span>HashMap</span>` effectively for grouping similar items.
+   * Practiced handling edge cases in string-based problems.
+3. **Debugging**:
+   * Careful consideration of boundaries and indices was crucial, especially in palindromic substring detection.
+
 ---
