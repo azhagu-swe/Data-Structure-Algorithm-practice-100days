@@ -278,7 +278,6 @@ _Let's master DSA, one day at a time!_ 🚀💪
 ✔ **Frequency Arrays Rock:** For a-z, `<span>int[26]</span>` is perfect. Fast and easy to use.
 ✔ **Always Optimize Memory:** Use primitives and `<span>StringBuilder</span>` over string concatenation.
 
-
 ## 📅 Day -7: Solving Advanced String Problems
 
 **Date:***[08/04/2025]*
@@ -318,5 +317,28 @@ _Let's master DSA, one day at a time!_ 🚀💪
    * Practiced handling edge cases in string-based problems.
 3. **Debugging**:
    * Careful consideration of boundaries and indices was crucial, especially in palindromic substring detection.
+
+
+# Day-8: String Manipulation Challenges
+
+**Date:***[09/04/2025]*
+
+## Problems Solved
+
+### 1️⃣ Reverse Words in a String
+
+* **Problem** : Reverse the order of words in a given string while preserving the word order.
+* **Key Learning** : Practiced splitting strings and reversing arrays for efficient word reordering.
+
+### 2️⃣ First Non-Repeating Character
+
+* **Problem** : Identify the first non-repeating character in a string. If all characters repeat, return `-1`.
+* **Key Learning** : Reinforced understanding of character frequency counts and order tracking in strings.
+
+---
+
+ **Summary** : Focused on core string operations such as splitting, reversing, and tracking character occurrences. These problems enhanced logical thinking and problem-solving efficiency for string manipulation tasks.
+
+ **Status** : ✅ Completed and Ready for Day-9 Challenges!
 
 ---
