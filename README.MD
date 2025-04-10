@@ -318,7 +318,6 @@ _Let's master DSA, one day at a time!_ 🚀💪
 3. **Debugging**:
    * Careful consideration of boundaries and indices was crucial, especially in palindromic substring detection.
 
-
 # Day-8: String Manipulation Challenges
 
 **Date:***[09/04/2025]*
@@ -340,5 +339,30 @@ _Let's master DSA, one day at a time!_ 🚀💪
  **Summary** : Focused on core string operations such as splitting, reversing, and tracking character occurrences. These problems enhanced logical thinking and problem-solving efficiency for string manipulation tasks.
 
  **Status** : ✅ Completed and Ready for Day-9 Challenges!
+
+
+# Day 9: Solved Problems
+
+**Date:***[10/04/2025]*
+
+## Problems Solved:
+
+### Problem 1: First Non-Repeating Character
+
+* **Description** : Given a string, find the first non-repeating character. If all characters repeat, return `null`.
+* **Example** :
+* Input: "zoho"
+* Output: `z`
+
+### Problem 2: Convert String to Title Case
+
+* **Description** : Convert a sentence to title case where the first letter of each word is capitalized, and the rest are in lowercase.
+* **Example** :
+* Input: "hello world"
+* Output: "Hello World"
+
+---
+
+Two problems successfully solved focusing on string manipulation and practical text formatting. Ready for more challenges!
 
 ---
