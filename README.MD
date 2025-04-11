@@ -1,3 +1,7 @@
+```
+
+```
+
 # 100 Days of DSA Challenges
 
 Welcome! I'm embarking on a 100-day journey to sharpen my Data Structures and Algorithms skills. The goal is simple: solve problems daily, find smarter solutions, and become a more efficient coder.
@@ -318,7 +322,7 @@ _Let's master DSA, one day at a time!_ 🚀💪
 3. **Debugging**:
    * Careful consideration of boundaries and indices was crucial, especially in palindromic substring detection.
 
-# Day-8: String Manipulation Challenges
+# 📅Day-8: String Manipulation Challenges
 
 **Date:***[09/04/2025]*
 
@@ -340,8 +344,7 @@ _Let's master DSA, one day at a time!_ 🚀💪
 
  **Status** : ✅ Completed and Ready for Day-9 Challenges!
 
-
-# Day 9: Solved Problems
+# 📅Day 9: Solved Problems
 
 **Date:***[10/04/2025]*
 
@@ -366,3 +369,48 @@ _Let's master DSA, one day at a time!_ 🚀💪
 Two problems successfully solved focusing on string manipulation and practical text formatting. Ready for more challenges!
 
 ---
+
+# 📅Day-10: Frequency & Water Trapping Challenges
+
+**Date:** *[11/04/2025]*
+
+---
+
+## Problems Solved Today
+
+### 1. Character Frequency Counter
+
+- **Description:**Count the frequency of each character in a given string and output the result as a mapping from characters to their counts.
+- **Key Concepts:**
+  - Use of primitive loops and a `HashMap` for frequency counting.
+  - Iterating over a string with `toCharArray()`.
+  - Efficient use of `getOrDefault()` to simplify counting.
+- **Example:**
+  - Input: `"hello world"`
+  - Output: A map showing counts (e.g., `{h=1, e=1, l=3, o=2, ' '=1, w=1, r=1, d=1}`)
+
+---
+
+### 2. Trapping Rain Water
+
+- **Description:**Given an array representing bar heights in a histogram, determine the total amount of water that can be trapped after raining.
+- **Key Concepts:**
+  - Two-pointer technique: one pointer starting at the beginning, the other at the end.
+  - Maintaining `leftMax` and `rightMax` to determine water level at each bar.
+  - Calculating water trapped at each position by comparing the current bar with the maximum seen so far.
+- **Example:**
+  - Input: `[0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]`
+  - Output: `6`
+
+---
+
+## Learnings & Observations
+
+- **Efficiency with HashMaps:**Counting characters using a `HashMap` is straightforward and effective for frequency analysis.
+- **Two-Pointer Optimization:**The trapping rain water solution showcases how the two-pointer method can lead to a time complexity of O(n) with O(1) extra space.
+- **Practical Application:**
+  These problems reinforce key concepts such as efficient data traversal, dynamic updates (e.g., updating max values on the fly), and careful handling of edge cases.
+
+---
+
+*Day-10 complete! Ready to tackle more challenges tomorrow!*
