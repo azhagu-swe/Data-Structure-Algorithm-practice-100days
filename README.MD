@@ -1,7 +1,3 @@
-```
-
-```
-
 # 100 Days of DSA Challenges
 
 Welcome! I'm embarking on a 100-day journey to sharpen my Data Structures and Algorithms skills. The goal is simple: solve problems daily, find smarter solutions, and become a more efficient coder.
@@ -414,3 +410,29 @@ Two problems successfully solved focusing on string manipulation and practical t
 ---
 
 *Day-10 complete! Ready to tackle more challenges tomorrow!*
+
+# 📅Day 11: Progress and Learning 🚀
+
+**Date:** *[12/04/2025]*
+
+## Problems Solved
+
+### 1. String Permutations
+
+- **Task**: Generate all permutations of a given string.
+- **Key Points**:
+  - Use recursion and backtracking.
+  - Swap characters to form new arrangements.
+- **Motivational Note**: Every permutation is a new possibility. Just like in life, rearranging our perspectives can reveal unexpected solutions.
+
+### 2. Unique Characters Check
+
+- **Task**: Check if a string contains all unique characters.
+- **Key Points**:
+  - Use a HashSet to track characters.
+  - Return false if any character repeats; otherwise, return true.
+- **Motivational Note**: Uniqueness is your strength! Embrace your individuality and let each unique character represent a part of your brilliance.
+
+---
+
+Keep pushing forward! Every challenge you conquer brings you one step closer to mastering DSA. Your dedication and perseverance are your greatest assets—small consistent steps lead to great success. Let's crush Day 11 and move on to even greater challenges!
