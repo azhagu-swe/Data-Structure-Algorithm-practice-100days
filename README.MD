@@ -436,3 +436,37 @@ Two problems successfully solved focusing on string manipulation and practical t
 ---
 
 Keep pushing forward! Every challenge you conquer brings you one step closer to mastering DSA. Your dedication and perseverance are your greatest assets—small consistent steps lead to great success. Let's crush Day 11 and move on to even greater challenges!
+
+#  📅Day-13: Advanced Jump Game Challenges
+**Date:** *[14/04/2025]*
+
+
+
+## Problems Solved Today:
+
+### Problem 1: Jump Game II
+- **Description**:  
+  Given an array of non-negative integers where each element represents the maximum jump length from that index, determine the minimum number of jumps needed to reach the last index.
+- **Key Concepts**:  
+  - Greedy approach with two pointers  
+  - Tracking the farthest reachable index  
+  - Incrementing jump count when the current reachable range is exhausted
+- **Example**:  
+  For the array `[2,3,1,1,4]`, the minimum number of jumps is `2`.
+
+---
+
+### Problem 2: Jump Game I
+- **Description**:  
+  Given an array of non-negative integers where each element represents the maximum jump length from that index, determine if you can reach the last index. Return `true` if possible; otherwise, return `false`.
+- **Key Concepts**:  
+  - Greedy strategy to track the maximum reachable index  
+  - Early termination if the current index exceeds the farthest reachable index
+- **Example**:  
+  For the array `[2,3,1,1,4]`, you can reach the end (output: `true`).  
+  For the array `[3,2,1,0,4]`, you cannot reach the end (output: `false`).
+
+---
+
+Focused on advanced jump game variations today, applying greedy techniques to optimize array traversal and decision-making. Ready for the next challenge!
+
