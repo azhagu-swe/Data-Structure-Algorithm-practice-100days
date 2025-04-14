@@ -1,0 +1,196 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "GroupAnagrams",
+            "request": "launch",
+            "mainClass": "GroupAnagrams",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "LongestPalindromicSubstring",
+            "request": "launch",
+            "mainClass": "LongestPalindromicSubstring",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "BalancedParentheses",
+            "request": "launch",
+            "mainClass": "BalancedParentheses",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "RemoveConsecutiveDuplicates",
+            "request": "launch",
+            "mainClass": "RemoveConsecutiveDuplicates",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "Pangram",
+            "request": "launch",
+            "mainClass": "Pangram",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "AddOrEven",
+            "request": "launch",
+            "mainClass": "AddOrEven",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "CheckAnagram",
+            "request": "launch",
+            "mainClass": "CheckAnagram",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "CheckEndWithString",
+            "request": "launch",
+            "mainClass": "CheckEndWithString",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "Compress",
+            "request": "launch",
+            "mainClass": "Compress",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "CountVowelsConstant",
+            "request": "launch",
+            "mainClass": "CountVowelsConstant",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "CountWords",
+            "request": "launch",
+            "mainClass": "CountWords",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "DigitExtractor",
+            "request": "launch",
+            "mainClass": "DigitExtractor",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "DuckNumber",
+            "request": "launch",
+            "mainClass": "DuckNumber",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "Fibonacci",
+            "request": "launch",
+            "mainClass": "Fibonacci",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "FibonacciRecursion",
+            "request": "launch",
+            "mainClass": "FibonacciRecursion",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "FindGold",
+            "request": "launch",
+            "mainClass": "FindGold",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "FindMaxOccurrenceInLetter",
+            "request": "launch",
+            "mainClass": "FindMaxOccurrenceInLetter",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "IntegerToBinary",
+            "request": "launch",
+            "mainClass": "IntegerToBinary",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "LeapYear",
+            "request": "launch",
+            "mainClass": "LeapYear",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "NivenNumber",
+            "request": "launch",
+            "mainClass": "NivenNumber",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "Palindrome",
+            "request": "launch",
+            "mainClass": "Palindrome",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "PerfectNumber",
+            "request": "launch",
+            "mainClass": "PerfectNumber",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "PrimeNumberPrinter",
+            "request": "launch",
+            "mainClass": "PrimeNumberPrinter",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "ReverseString",
+            "request": "launch",
+            "mainClass": "ReverseString",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "SpecialNumber",
+            "request": "launch",
+            "mainClass": "SpecialNumber",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        },
+        {
+            "type": "java",
+            "name": "ToggleEachCharacter",
+            "request": "launch",
+            "mainClass": "ToggleEachCharacter",
+            "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+        }
+    ]
+}
