@@ -486,3 +486,28 @@ Solved two pattern-printing problems using nested loops. Ready for the next set 
 
 Focused on advanced jump game variations today, applying greedy techniques to optimize array traversal and decision-making. Ready for the next challenge!
 
+# 🌟 Day 14: Solved Problems (April 15, 2025)
+
+## 🚀 Problems Solved:
+
+### 1️⃣ Power Calculation Using Recursion  
+- **Description**: Compute the power of a base using recursion.  
+- **Example**:  
+  - **Input**: base = 2, power = 3  
+  - **Output**: `8`  
+
+---
+
+### 2️⃣ Find Middle of the String  
+- **Description**: Find and return the middle character(s) of a string.  
+  - If the string length is odd, return the single middle character.  
+  - If the string length is even, return the two middle characters.  
+- **Example**:  
+  - **Input**: "hello"  
+  - **Output**: `l`  
+  - **Input**: "worlds"  
+  - **Output**: `rl`  
+
+---
+
+✨ **Highlights**: Two problems solved today! We explored recursion to solve a mathematical challenge and practiced string manipulation to extract middle characters efficiently. Onwards to more adventures! 🚀
