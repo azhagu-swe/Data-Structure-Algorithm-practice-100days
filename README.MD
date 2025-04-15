@@ -437,6 +437,22 @@ Two problems successfully solved focusing on string manipulation and practical t
 
 Keep pushing forward! Every challenge you conquer brings you one step closer to mastering DSA. Your dedication and perseverance are your greatest assets—small consistent steps lead to great success. Let's crush Day 11 and move on to even greater challenges!
 
+
+# 📅 Day 12: Solved Problems
+**Date:** *[13/04/2025]*
+
+## Problems Solved:
+
+### Problem 1: Inverted Right-Angled Triangle
+- **Description**: Print an inverted triangle of stars, decreasing the number of stars in each row.
+
+### Problem 2: Right-Angled Triangle
+- **Description**: Print a triangle of stars, increasing the number of stars in each row.
+
+---
+
+Solved two pattern-printing problems using nested loops. Ready for the next set of challenges!
+=======
 #  📅Day-13: Advanced Jump Game Challenges
 **Date:** *[14/04/2025]*
 
