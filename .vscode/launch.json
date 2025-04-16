@@ -6,6 +6,41 @@
   "configurations": [
     {
       "type": "java",
+      "name": "MatrixSwap",
+      "request": "launch",
+      "mainClass": "MatrixSwap",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "MinMaxInArray",
+      "request": "launch",
+      "mainClass": "MinMaxInArray",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "MiniPeaks",
+      "request": "launch",
+      "mainClass": "MiniPeaks",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "ReverseArray",
+      "request": "launch",
+      "mainClass": "ReverseArray",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "SumOfPositiveAndNegativeNumber",
+      "request": "launch",
+      "mainClass": "SumOfPositiveAndNegativeNumber",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
       "name": "Power",
       "request": "launch",
       "mainClass": "Power",

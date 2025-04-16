@@ -19,44 +19,53 @@ I kicked things off by tackling 10 problems centered around numbers. This helped
    - **Task:** Determine if a number is odd or even.
    - **Concept:** Basic modulo (`%`) operation.
    - **Optimization:** Used the bitwise AND trick (`num & 1 == 1` for odd) which is often faster.
+
 2. **Leap Year Checker:**
 
    - **Task:** Validate if a year is a leap year.
    - **Concept:** Applying multiple conditional logic rules (divisible by 4, not by 100 unless also by 400).
    - **Optimization:** Structured the `if-else` conditions efficiently.
+
 3. **Reverse and Digit Extractor:**
 
    - **Task:** Reverse a number, extract its digits, and sum digits/prime digits.
    - **Concept:** Integer arithmetic (`% 10` to get the last digit, `/ 10` to remove it), looping, and using arrays/lists to store digits.
+
 4. **Duck Number:**
 
    - **Task:** Check if a number contains a '0' but doesn't start with '0'.
    - **Concept:** Number/string traversal, conditional checks within a loop.
    - **Optimization:** Stopped the check as soon as a '0' was found (after ensuring it's not the leading digit).
+
 5. **Palindrome Number:**
 
    - **Task:** Check if a number reads the same forwards and backward.
    - **Concept:** Reversing a number using arithmetic and comparing it with the original.
    - **Optimization:** Built the reversed number efficiently within a `while` loop.
+
 6. **Fibonacci Series:**
 
    - **Task:** Generate the Fibonacci sequence up to `n` terms.
    - **Concept:** Understanding recursive patterns and iterative approaches.
    - **Key Insight:** Compared iterative (using loops, generally more efficient space/time-wise for simple cases) vs. recursive solutions.
+
 7. **Niven Number (Harshad Number):**
 
    - **Task:** Check if a number is divisible by the sum of its digits.
    - **Concept:** Digit extraction and summation, followed by a divisibility check.
+
 8. **Special Number:**
 
    - **Task:** Check if (sum of digits) + (product of digits) equals the original number.
    - **Concept:** Digit manipulation involving both sum and product calculations.
    - **Improvement:** Corrected logical flaws in the initial implementation.
+
 9. **Prime Number Printer:**
 
    - **Task:** Print all prime numbers within a given range.
    - **Concept:** Primality testing.
    - **Optimization:** Implemented the **Sieve of Eratosthenes**, a highly efficient algorithm for finding primes up to a certain limit.
+
 10. **Perfect Number:**
 
     - **Task:** Check if a number equals the sum of its proper divisors.
@@ -181,47 +190,47 @@ Explored more **advanced string manipulation problems** and practiced optimizati
 
 1️⃣ **Check Word 'Gold' in Sentence (Multiple Ways):**
 
-* ✅ Manual loop comparison method to check if "gold" exists as a substring.
-* ✅ Regex using `<span>\bgold\b</span>` to detect "gold" as a whole word.
-* ✅ Regex using `<span>Pattern.compile("gold")</span>` for case-insensitive match anywhere.
+- ✅ Manual loop comparison method to check if "gold" exists as a substring.
+- ✅ Regex using `<span>\bgold\b</span>` to detect "gold" as a whole word.
+- ✅ Regex using `<span>Pattern.compile("gold")</span>` for case-insensitive match anywhere.
 
 **Example:**
 
-* Input: "The golden goose is priceless"
-* Output: ✔ Contains "gold"
+- Input: "The golden goose is priceless"
+- Output: ✔ Contains "gold"
 
 2️⃣ **Frequency-Based String Compression:**
 
-* Counted all character frequencies (a-z) and printed them in `<span>char + count</span>` format.
-* Used a simple `<span>int[26]</span>` array for optimized performance.
+- Counted all character frequencies (a-z) and printed them in `<span>char + count</span>` format.
+- Used a simple `<span>int[26]</span>` array for optimized performance.
 
 **Example:**
 
-* Input: "aaabbccaaa"
-* Output: `<span>a6b2c2</span>`
+- Input: "aaabbccaaa"
+- Output: `<span>a6b2c2</span>`
 
 ## 📅 Day 4: String Utilities Mastered 🛠️
 
-**📆 Date:***[05/04/2025]*
+**📆 Date:\***[05/04/2025]\*
 
 ### ✅ What I Solved Today
 
 1️⃣ **Toggle Each Character Case** 🔄
 
-* **Logic:** For each character, check if it’s lowercase (`<span>'a'</span>`–`<span>'z'</span>`) or uppercase (`<span>'A'</span>`–`<span>'Z'</span>`) and flip by arithmetic:
-  * Lower → Upper: `<span>c - 'a' + 'A'</span>`
-  * Upper → Lower: `<span>c - 'A' + 'a'</span>`
-* **Example:** Input: `<span>"Java123"</span>` → Output: `<span>"jAVA123"</span>`
+- **Logic:** For each character, check if it’s lowercase (`<span>'a'</span>`–`<span>'z'</span>`) or uppercase (`<span>'A'</span>`–`<span>'Z'</span>`) and flip by arithmetic:
+  - Lower → Upper: `<span>c - 'a' + 'A'</span>`
+  - Upper → Lower: `<span>c - 'A' + 'a'</span>`
+- **Example:** Input: `<span>"Java123"</span>` → Output: `<span>"jAVA123"</span>`
 
 2️⃣ **Check Anagram** 🧩
 
-* **Logic:** Remove spaces, normalize case, then use a **frequency count** (`<span>int[26]</span>`) to increment for one string and decrement for the other. If all counts return to zero, they are anagrams.
-* **Example:**`<span>"listen"</span>`, `<span>"silent"</span>` → Perfectly matched!
+- **Logic:** Remove spaces, normalize case, then use a **frequency count** (`<span>int[26]</span>`) to increment for one string and decrement for the other. If all counts return to zero, they are anagrams.
+- **Example:**`<span>"listen"</span>`, `<span>"silent"</span>` → Perfectly matched!
 
 3️⃣ **Count Vowels & Consonants** 🔡
 
-* **Logic:** Use a **boolean[26]** lookup for vowels (`<span>a, e, i, o, u</span>`). For each character, if `<span>a</span>`–`<span>z</span>`, check lookup; increment vowel or consonant counter.
-* **Example:** Input: `<span>"Hello World"</span>` → Vowels: 3, Consonants: 7
+- **Logic:** Use a **boolean[26]** lookup for vowels (`<span>a, e, i, o, u</span>`). For each character, if `<span>a</span>`–`<span>z</span>`, check lookup; increment vowel or consonant counter.
+- **Example:** Input: `<span>"Hello World"</span>` → Vowels: 3, Consonants: 7
 
 ---
 
@@ -229,44 +238,44 @@ _Let's master DSA, one day at a time!_ 🚀💪
 
 ## 📅 Day -5: More String Logic 🔠
 
-**📆 Date:***[06/04/2025]*
+**📆 Date:\***[06/04/2025]\*
 
 ### ✅ What I Solved Today
 
 1️⃣ **Check Pangram:**
 
-* Verified if a sentence contains every letter of the alphabet (a-z).
-* Used a `<span>boolean[26]</span>` array to track occurrences.
-* Simple logic: if all positions are `<span>true</span>`, it's a pangram.
+- Verified if a sentence contains every letter of the alphabet (a-z).
+- Used a `<span>boolean[26]</span>` array to track occurrences.
+- Simple logic: if all positions are `<span>true</span>`, it's a pangram.
 
 2️⃣ **Remove Consecutive Duplicates:**
 
-* Input: "aaabbcccdee"
-* Output: "abcde"
-* Tracked the previous character using primitive `<span>char</span>`.
-* Used `<span>StringBuilder</span>` to build the final result efficiently.
+- Input: "aaabbcccdee"
+- Output: "abcde"
+- Tracked the previous character using primitive `<span>char</span>`.
+- Used `<span>StringBuilder</span>` to build the final result efficiently.
 
 ---
 
 ## 📅 Day-6: String Challenges
 
-**Date:***[07/04/2025]*
+**Date:\***[07/04/2025]\*
 
 ### ✅ What I Solved Today
 
 1️⃣ **Valid Parentheses Matcher**
 
-* Input: A string of characters.
-* Task: Check if all `<span>(</span>` have a matching `<span>)</span>` and vice versa.
-* Output: Print `<span>0</span>` if valid, `<span>1</span>` if invalid.
-* 🔍 Focus: Balance of opening/closing brackets.
+- Input: A string of characters.
+- Task: Check if all `<span>(</span>` have a matching `<span>)</span>` and vice versa.
+- Output: Print `<span>0</span>` if valid, `<span>1</span>` if invalid.
+- 🔍 Focus: Balance of opening/closing brackets.
 
 2️⃣ **Character-Number Expansion**
 
-* Input: A compressed string like `<span>a1b10</span>`.
-* Task: Expand it to full form like `<span>abbbbbbbbbb</span>`.
-* ✅ Approach: Parse characters and use count to repeat.
-* 💡 Optimized using `<span>StringBuilder</span>` and primitive data types.
+- Input: A compressed string like `<span>a1b10</span>`.
+- Task: Expand it to full form like `<span>abbbbbbbbbb</span>`.
+- ✅ Approach: Parse characters and use count to repeat.
+- 💡 Optimized using `<span>StringBuilder</span>` and primitive data types.
 
 ### 🌟 Learnings
 
@@ -280,85 +289,85 @@ _Let's master DSA, one day at a time!_ 🚀💪
 
 ## 📅 Day -7: Solving Advanced String Problems
 
-**Date:***[08/04/2025]*
+**Date:\***[08/04/2025]\*
 
 ### ✅ What I Accomplished Today
 
 #### 1. **Longest Palindromic Substring**
 
-* **Problem**: Find the longest palindromic substring in a given string.
-* **Approach**:
-  * Used the **expand around center** technique to identify palindromes by expanding outwards from each character or pair of characters.
-  * Compared the lengths of discovered palindromes to find the longest one.
-* **Key Learning**:
-  * The center expansion approach is efficient with a time complexity of .
-  * Debugging palindrome boundaries helped strengthen my understanding of two-pointer algorithms.
+- **Problem**: Find the longest palindromic substring in a given string.
+- **Approach**:
+  - Used the **expand around center** technique to identify palindromes by expanding outwards from each character or pair of characters.
+  - Compared the lengths of discovered palindromes to find the longest one.
+- **Key Learning**:
+  - The center expansion approach is efficient with a time complexity of .
+  - Debugging palindrome boundaries helped strengthen my understanding of two-pointer algorithms.
 
 #### 2. **Group Anagrams**
 
-* **Problem**: Group a list of strings into groups of anagrams.
-* **Approach**:
-  * Sorted each string to derive its canonical form (a common key for anagrams).
-  * Used a `<span>HashMap</span>` to group words sharing the same canonical form.
-  * Collected all groups into a list of lists for the final output.
-* **Key Learning**:
-  * Sorting and hashing are powerful tools for solving problems involving string patterns.
-  * Leveraging `<span>HashMap</span>` for grouping is both efficient and intuitive.
+- **Problem**: Group a list of strings into groups of anagrams.
+- **Approach**:
+  - Sorted each string to derive its canonical form (a common key for anagrams).
+  - Used a `<span>HashMap</span>` to group words sharing the same canonical form.
+  - Collected all groups into a list of lists for the final output.
+- **Key Learning**:
+  - Sorting and hashing are powerful tools for solving problems involving string patterns.
+  - Leveraging `<span>HashMap</span>` for grouping is both efficient and intuitive.
 
 ---
 
 ### 🏆 Learnings & Observations
 
 1. **Optimized Techniques**:
-   * Expand around center for palindromes reduces complexity compared to brute force methods.
-   * Sorting strings to identify patterns is a versatile strategy in string problems.
+   - Expand around center for palindromes reduces complexity compared to brute force methods.
+   - Sorting strings to identify patterns is a versatile strategy in string problems.
 2. **Data Structures**:
-   * Used `<span>HashMap</span>` effectively for grouping similar items.
-   * Practiced handling edge cases in string-based problems.
+   - Used `<span>HashMap</span>` effectively for grouping similar items.
+   - Practiced handling edge cases in string-based problems.
 3. **Debugging**:
-   * Careful consideration of boundaries and indices was crucial, especially in palindromic substring detection.
+   - Careful consideration of boundaries and indices was crucial, especially in palindromic substring detection.
 
 # 📅Day-8: String Manipulation Challenges
 
-**Date:***[09/04/2025]*
+**Date:\***[09/04/2025]\*
 
 ## Problems Solved
 
 ### 1️⃣ Reverse Words in a String
 
-* **Problem** : Reverse the order of words in a given string while preserving the word order.
-* **Key Learning** : Practiced splitting strings and reversing arrays for efficient word reordering.
+- **Problem** : Reverse the order of words in a given string while preserving the word order.
+- **Key Learning** : Practiced splitting strings and reversing arrays for efficient word reordering.
 
 ### 2️⃣ First Non-Repeating Character
 
-* **Problem** : Identify the first non-repeating character in a string. If all characters repeat, return `-1`.
-* **Key Learning** : Reinforced understanding of character frequency counts and order tracking in strings.
+- **Problem** : Identify the first non-repeating character in a string. If all characters repeat, return `-1`.
+- **Key Learning** : Reinforced understanding of character frequency counts and order tracking in strings.
 
 ---
 
- **Summary** : Focused on core string operations such as splitting, reversing, and tracking character occurrences. These problems enhanced logical thinking and problem-solving efficiency for string manipulation tasks.
+**Summary** : Focused on core string operations such as splitting, reversing, and tracking character occurrences. These problems enhanced logical thinking and problem-solving efficiency for string manipulation tasks.
 
- **Status** : ✅ Completed and Ready for Day-9 Challenges!
+**Status** : ✅ Completed and Ready for Day-9 Challenges!
 
 # 📅Day 9: Solved Problems
 
-**Date:***[10/04/2025]*
+**Date:\***[10/04/2025]\*
 
 ## Problems Solved:
 
 ### Problem 1: First Non-Repeating Character
 
-* **Description** : Given a string, find the first non-repeating character. If all characters repeat, return `null`.
-* **Example** :
-* Input: "zoho"
-* Output: `z`
+- **Description** : Given a string, find the first non-repeating character. If all characters repeat, return `null`.
+- **Example** :
+- Input: "zoho"
+- Output: `z`
 
 ### Problem 2: Convert String to Title Case
 
-* **Description** : Convert a sentence to title case where the first letter of each word is capitalized, and the rest are in lowercase.
-* **Example** :
-* Input: "hello world"
-* Output: "Hello World"
+- **Description** : Convert a sentence to title case where the first letter of each word is capitalized, and the rest are in lowercase.
+- **Example** :
+- Input: "hello world"
+- Output: "Hello World"
 
 ---
 
@@ -368,7 +377,7 @@ Two problems successfully solved focusing on string manipulation and practical t
 
 # 📅Day-10: Frequency & Water Trapping Challenges
 
-**Date:** *[11/04/2025]*
+**Date:** _[11/04/2025]_
 
 ---
 
@@ -409,11 +418,11 @@ Two problems successfully solved focusing on string manipulation and practical t
 
 ---
 
-*Day-10 complete! Ready to tackle more challenges tomorrow!*
+_Day-10 complete! Ready to tackle more challenges tomorrow!_
 
 # 📅Day 11: Progress and Learning 🚀
 
-**Date:** *[12/04/2025]*
+**Date:** _[12/04/2025]_
 
 ## Problems Solved
 
@@ -437,35 +446,37 @@ Two problems successfully solved focusing on string manipulation and practical t
 
 Keep pushing forward! Every challenge you conquer brings you one step closer to mastering DSA. Your dedication and perseverance are your greatest assets—small consistent steps lead to great success. Let's crush Day 11 and move on to even greater challenges!
 
-
 # 📅 Day 12: Solved Problems
-**Date:** *[13/04/2025]*
+
+**Date:** _[13/04/2025]_
 
 ## Problems Solved:
 
 ### Problem 1: Inverted Right-Angled Triangle
+
 - **Description**: Print an inverted triangle of stars, decreasing the number of stars in each row.
 
 ### Problem 2: Right-Angled Triangle
+
 - **Description**: Print a triangle of stars, increasing the number of stars in each row.
 
 ---
 
-Solved two pattern-printing problems using nested loops. Ready for the next set of challenges!
-=======
-#  📅Day-13: Advanced Jump Game Challenges
-**Date:** *[14/04/2025]*
+# Solved two pattern-printing problems using nested loops. Ready for the next set of challenges!
 
+# 📅Day-13: Advanced Jump Game Challenges
 
+**Date:** _[14/04/2025]_
 
 ## Problems Solved Today:
 
 ### Problem 1: Jump Game II
+
 - **Description**:  
   Given an array of non-negative integers where each element represents the maximum jump length from that index, determine the minimum number of jumps needed to reach the last index.
-- **Key Concepts**:  
-  - Greedy approach with two pointers  
-  - Tracking the farthest reachable index  
+- **Key Concepts**:
+  - Greedy approach with two pointers
+  - Tracking the farthest reachable index
   - Incrementing jump count when the current reachable range is exhausted
 - **Example**:  
   For the array `[2,3,1,1,4]`, the minimum number of jumps is `2`.
@@ -473,10 +484,11 @@ Solved two pattern-printing problems using nested loops. Ready for the next set 
 ---
 
 ### Problem 2: Jump Game I
+
 - **Description**:  
   Given an array of non-negative integers where each element represents the maximum jump length from that index, determine if you can reach the last index. Return `true` if possible; otherwise, return `false`.
-- **Key Concepts**:  
-  - Greedy strategy to track the maximum reachable index  
+- **Key Concepts**:
+  - Greedy strategy to track the maximum reachable index
   - Early termination if the current index exceeds the farthest reachable index
 - **Example**:  
   For the array `[2,3,1,1,4]`, you can reach the end (output: `true`).  
@@ -490,24 +502,64 @@ Focused on advanced jump game variations today, applying greedy techniques to op
 
 ## 🚀 Problems Solved:
 
-### 1️⃣ Power Calculation Using Recursion  
-- **Description**: Compute the power of a base using recursion.  
-- **Example**:  
-  - **Input**: base = 2, power = 3  
-  - **Output**: `8`  
+### 1️⃣ Power Calculation Using Recursion
+
+- **Description**: Compute the power of a base using recursion.
+- **Example**:
+  - **Input**: base = 2, power = 3
+  - **Output**: `8`
 
 ---
 
-### 2️⃣ Find Middle of the String  
-- **Description**: Find and return the middle character(s) of a string.  
-  - If the string length is odd, return the single middle character.  
-  - If the string length is even, return the two middle characters.  
-- **Example**:  
-  - **Input**: "hello"  
-  - **Output**: `l`  
-  - **Input**: "worlds"  
-  - **Output**: `rl`  
+### 2️⃣ Find Middle of the String
+
+- **Description**: Find and return the middle character(s) of a string.
+  - If the string length is odd, return the single middle character.
+  - If the string length is even, return the two middle characters.
+- **Example**:
+  - **Input**: "hello"
+  - **Output**: `l`
+  - **Input**: "worlds"
+  - **Output**: `rl`
 
 ---
 
 ✨ **Highlights**: Two problems solved today! We explored recursion to solve a mathematical challenge and practiced string manipulation to extract middle characters efficiently. Onwards to more adventures! 🚀
+
+# 🌟 Day 15: Solved Problems (April 16, 2025)
+
+## 🚀 Problems Solved:
+
+### 1️⃣ Matrix Row Swap
+
+- **Task:** Swap two rows of a matrix as per user input.
+- **Note:** Validate that the chosen rows exist.
+
+---
+
+### 2️⃣ Mini Peaks
+
+- **Task:** Find elements in an array that are greater than their immediate neighbors.
+
+---
+
+### 3️⃣ Min and Max in Array
+
+- **Task:** Determine the smallest and largest numbers in an array.
+
+---
+
+### 4️⃣ Reverse an Array
+
+- **Task:** Reverse the order of elements in an array.
+
+---
+
+### 5️⃣ Sum of Positive and Negative Numbers
+
+- **Task:** Calculate separate sums for positive and negative numbers in an array.
+
+---
+
+✨ **Summary:**  
+Solved five problems today covering matrix operations and various array manipulations. Ready for the next challenge!
