@@ -6,6 +6,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "SwapColumnArray",
+      "request": "launch",
+      "mainClass": "SwapColumnArray",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "SymmetricMatrix",
+      "request": "launch",
+      "mainClass": "SymmetricMatrix",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "TransposedMatrix",
+      "request": "launch",
+      "mainClass": "TransposedMatrix",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
       "name": "MatrixSwap",
       "request": "launch",
       "mainClass": "MatrixSwap",

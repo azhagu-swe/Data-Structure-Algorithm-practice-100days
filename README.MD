@@ -563,3 +563,66 @@ Focused on advanced jump game variations today, applying greedy techniques to op
 
 ✨ **Summary:**  
 Solved five problems today covering matrix operations and various array manipulations. Ready for the next challenge!
+# 🌟 Day 16: Solved Problems (April 17, 2025)
+
+## 🚀 Problems Solved:
+
+### 1️⃣ Swap Columns in a Matrix
+- **Task:** Swap two specified columns of a matrix based on user input.
+- **Highlights:** 
+  - Validates column indices.
+  - Efficiently swaps columns by iterating through rows.
+- **Example:**
+  - **Input:**
+    ```
+    1 2 3
+    4 5 6
+    7 8 9
+    ```
+    Swap columns 1 and 3.
+  - **Output:**
+    ```
+    3 2 1
+    6 5 4
+    9 8 7
+    ```
+
+---
+
+### 2️⃣ Symmetric Matrix Check
+- **Task:** Determine if a matrix is symmetric. A matrix is symmetric if it equals its transpose.
+- **Highlights:**
+  - Validates the square shape of the matrix.
+  - Compares elements above the main diagonal for symmetry.
+- **Example:**
+  - **Input:**
+    ```
+    1 2 3
+    2 5 6
+    3 6 9
+    ```
+  - **Output:** `Symmetric`
+
+---
+
+### 3️⃣ Transpose a Matrix
+- **Task:** Compute the transpose of a square matrix in-place.
+- **Highlights:**
+  - Efficiently swaps elements to achieve transposition.
+- **Example:**
+  - **Input:**
+    ```
+    1 2 3
+    4 5 6
+    7 8 9
+    ```
+  - **Output:**
+    ```
+    1 4 7
+    2 5 8
+    3 6 9
+    ```
+
+---
+
+✨ **Summary:** Three matrix-focused problems were tackled today, covering column manipulation, symmetry validation, and in-place transposition. Great progress in understanding matrix operations! 🚀
