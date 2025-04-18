@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "PascalsTriangle",
+      "request": "launch",
+      "mainClass": "PascalsTriangle",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "RightTriangle",
+      "request": "launch",
+      "mainClass": "RightTriangle",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
       "name": "SwapColumnArray",
       "request": "launch",
       "mainClass": "SwapColumnArray",

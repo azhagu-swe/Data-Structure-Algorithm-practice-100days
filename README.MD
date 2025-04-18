@@ -626,3 +626,64 @@ Solved five problems today covering matrix operations and various array manipula
 ---
 
 ✨ **Summary:** Three matrix-focused problems were tackled today, covering column manipulation, symmetry validation, and in-place transposition. Great progress in understanding matrix operations! 🚀
+# **🌟 Day 17: Solved Problems (April 18, 2025\)**
+
+## **🚀 Highlights of the Day**
+
+### **1️⃣ Right Triangle Patterns**
+
+* **Task:** Print various right triangle arrangements using numbers and spaces.
+
+* **Patterns Learned:**
+
+  * Increasing numbers (1 to `n`)
+
+  * Decreasing numbers (`n` to 1\)
+
+  * Repeated rows with identical numbers
+
+  * Right-aligned triangles using leading spaces
+
+* **Example Output:** For `n = 4`, you’ll generate multiple triangular shapes showcasing these variations.
+
+---
+
+### **2️⃣ Pascal’s Triangle**
+
+* **Task:** Build and print Pascal’s triangle with stars (`*`), spanning `2n-1` rows for a diamond effect.
+
+* **Key Learning:**
+
+  * Dynamically adjust the count of symbols to mirror the triangle’s expansion and contraction.
+
+* **Example Output:** For `n = 4`, the star-based Pascal’s triangle flows up then down seamlessly.
+
+---
+
+### **📚 Learning Focus: Time Complexity**
+
+* **O(1):** Constant time — instant operations (e.g., direct element access) 📖
+
+* **O(log n):** Logarithmic — halving search space like Binary Search 🎯
+
+* **O(n):** Linear — full traversal, like scanning an array 🔍
+
+* **O(n²):** Quadratic — nested loops, as in pairwise comparisons 🧩
+
+* **O(2ⁿ):** Exponential — branching recursion, like Tower of Hanoi 🏰
+
+| Complexity | Real-Life Example | Algorithm Example |
+| ----- | ----- | ----- |
+| **O(1)** | Grab the first book 📖 | Array index access |
+| **O(log n)** | Number-guessing game 🎯 | Binary Search |
+| **O(n)** | Checking every locker 🔒 | Linear Search |
+| **O(n²)** | Student pair comparisons 👩‍🎓👨‍🎓 | Bubble Sort |
+| **O(2ⁿ)** | Puzzle permutations 🧩 | Tower of Hanoi |
+
+---
+
+### **✨ Takeaway**
+
+Today’s pattern work honed loop control and output formatting, while revisiting time complexity concepts solidified algorithmic insights. Onward to Day 18\! 🚀
+
+
