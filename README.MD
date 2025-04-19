@@ -685,5 +685,66 @@ Solved five problems today covering matrix operations and various array manipula
 ### **✨ Takeaway**
 
 Today’s pattern work honed loop control and output formatting, while revisiting time complexity concepts solidified algorithmic insights. Onward to Day 18\! 🚀
+# 🌟 Day 18: Solved Problems (April 19, 2025)
+
+## 🚀 Highlights of the Day  
+
+### 1️⃣ **Binary Search**
+- **Task:** Efficiently locate a target in a sorted array using iterative and recursive binary search methods.
+- **Approach:**  
+  - **Iterative Binary Search:** Adjust the search range iteratively.  
+  - **Recursive Binary Search:** Use recursion to divide and conquer.  
+- **Example Output:**  
+  - Target found at index: `7`.  
+
+---
+
+### 2️⃣ **Linear Search**
+- **Task:** Sequentially traverse an array to find a target element.  
+- **Approach:**  
+  - Traverse from the first to the last element.  
+  - Return the index if the element matches the target.  
+- **Example Output:**  
+  - Target not found!  
+
+---
+
+### 3️⃣ **Bubble Sort**
+- **Task:** Sort an array using two versions of Bubble Sort.  
+- **Approach:**  
+  - **Basic Bubble Sort:** Compare and swap adjacent elements if out of order.  
+  - **Enhanced Bubble Sort:** Stop early if no swaps are made in a pass.  
+- **Example Output:**  
+  - Normal Bubble Sort: `[2, 25, 34, 44, 54]`  
+  - Enhanced Bubble Sort: `[1, 2, 3, 4, 5, 6]`  
+
+---
+
+### 4️⃣ **Insertion Sort**
+- **Task:** Sort an array by inserting elements into their correct position in a growing sorted list.  
+- **Approach:**  
+  - Iterate through the array and compare the current element with preceding elements.  
+  - Shift larger elements and insert the current element in its correct position.  
+- **Example Output:**  
+  - `[2, 25, 34, 44, 54]`  
+
+---
+
+### 5️⃣ **Selection Sort**
+- **Task:** Sort an array by repeatedly selecting the smallest element and swapping it with the current element.  
+- **Approach:**  
+  - Iterate through the array to find the minimum element in the unsorted part.  
+  - Swap the minimum element with the current element.  
+- **Example Output:**  
+  - `[2, 25, 34, 44, 54]`  
+
+---
+
+## ✨ Learning Focus:
+- **Efficiency:** Improved understanding of how sorting and searching algorithms reduce time complexity.  
+- **Practice:** Reinforced concepts of iterative, recursive, and optimized approaches.  
+
+📖 **Key Takeaway:** Progress through understanding fundamental sorting and searching algorithms, laying the groundwork for advanced problem-solving 🚀!
+
 
 
