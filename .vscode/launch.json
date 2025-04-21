@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "RomanInteger",
+      "request": "launch",
+      "mainClass": "RomanInteger",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "RainWater",
+      "request": "launch",
+      "mainClass": "RainWater",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
       "name": "CandyMain",
       "request": "launch",
       "mainClass": "CandyMain",

@@ -745,6 +745,25 @@ Today’s pattern work honed loop control and output formatting, while revisitin
 - **Practice:** Reinforced concepts of iterative, recursive, and optimized approaches.  
 
 📖 **Key Takeaway:** Progress through understanding fundamental sorting and searching algorithms, laying the groundwork for advanced problem-solving 🚀!
+# 🌟 Day 20: Solved Problems (April 21, 2025)
+
+## 🚀 Today’s Challenges
+
+### 1️⃣ Trapping Rain Water
+- **Goal:** Compute total water trapped between elevation bars.  
+- **Key Idea:** Two-pointer scan from ends, track `leftMax`/`rightMax`, add trapped water when `bar < max`.
+
+### 2️⃣ Roman to Integer
+- **Goal:** Convert a Roman numeral (e.g., “MCMXCIV”) to an integer.  
+- **Key Idea:** Traverse right-to-left, use a map of numeral values, subtract when a smaller value precedes a larger one.
+
+---
+
+## 🧠 Core Takeaways
+- **Two-Pointer Technique:** Efficient O(n) array traversal with constant space.  
+- **Reverse Traversal Logic:** Simplifies subtraction rules in string parsing.
+
+✨ Finished two practical problems—array and string algorithms in one go! Ready for Day 21! 🚀
 
 
 
