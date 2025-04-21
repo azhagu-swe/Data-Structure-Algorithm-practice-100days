@@ -6,6 +6,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CandyMain",
+      "request": "launch",
+      "mainClass": "CandyMain",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "GasStation",
+      "request": "launch",
+      "mainClass": "GasStation",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "ProductExceptSelf",
+      "request": "launch",
+      "mainClass": "ProductExceptSelf",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
       "name": "BinarySearch",
       "request": "launch",
       "mainClass": "BinarySearch",
