@@ -6,6 +6,34 @@
   "configurations": [
     {
       "type": "java",
+      "name": "MiddleOfLinkedList",
+      "request": "launch",
+      "mainClass": "MiddleOfLinkedList",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "LinkedListLoopCycle",
+      "request": "launch",
+      "mainClass": "LinkedListLoopCycle",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "SubString",
+      "request": "launch",
+      "mainClass": "SubString",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "AddSum",
+      "request": "launch",
+      "mainClass": "AddSum",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
       "name": "RomanInteger",
       "request": "launch",
       "mainClass": "RomanInteger",

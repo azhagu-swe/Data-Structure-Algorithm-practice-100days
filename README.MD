@@ -764,7 +764,7 @@ Today’s pattern work honed loop control and output formatting, while revisitin
 - **Reverse Traversal Logic:** Simplifies subtraction rules in string parsing.
 
 ✨ Finished two practical problems—array and string algorithms in one go! Ready for Day 21! 🚀
-# 🌟 Day 21: Solved Problems (April 21, 2025)
+# 🌟 Day 21: Solved Problems (April 22, 2025)
 
 ## 🚀 Today’s Challenges
 
@@ -786,6 +786,27 @@ Today’s pattern work honed loop control and output formatting, while revisitin
 
 ✨ Wrapped up two fundamental interview problems today—strings and linked lists—bolstering both window and list‑based techniques! Ready for Day 22! 🚀
 
+# 🌟 Day 22: Solved Problems (April 23, 2025)
+
+## 🚀 Problems Solved:
+
+### 1️⃣ Linked List Cycle Detection  
+- **Description:** Determine if a singly linked list has a cycle using Floyd’s Tortoise and Hare algorithm.  
+- **Approach:** Use two pointers—**slow** moves one step, **fast** moves two steps. If they ever meet, a cycle exists; if **fast** reaches the end (`null`), the list is acyclic. :contentReference[oaicite:0]{index=0}
+
+---
+
+### 2️⃣ Middle of a Linked List  
+- **Description:** Find the middle node of a singly linked list. If there are two middles, return the second.  
+- **Approach:** Again employ two pointers—**slow** advances one node per step, **fast** advances two. When **fast** reaches the end, **slow** will be at the middle. :contentReference[oaicite:1]{index=1}
+
+---
+
+## 🧠 Core Takeaways
+- **Fast & Slow Pointer Pattern:** One pointer at double speed naturally reveals both cycles and midpoints in O(n) time with O(1) space.
+- **Floyd’s Algorithm Versatility:** The same two‑pointer template applies to cycle detection and list‑splitting tasks.
+
+✨ Solidified linked‑list mastery today! On to Day 23! 🚀  
 
 
 
