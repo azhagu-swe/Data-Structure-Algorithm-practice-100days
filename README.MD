@@ -764,6 +764,28 @@ Today’s pattern work honed loop control and output formatting, while revisitin
 - **Reverse Traversal Logic:** Simplifies subtraction rules in string parsing.
 
 ✨ Finished two practical problems—array and string algorithms in one go! Ready for Day 21! 🚀
+# 🌟 Day 21: Solved Problems (April 21, 2025)
+
+## 🚀 Today’s Challenges
+
+### 1️⃣ Longest Substring Without Repeating Characters  
+- **Goal:** Find the length of the longest substring that contains no duplicate characters.  
+- **Key Idea:** Use a sliding‑window with two pointers (`left`, `right`) and a set to track current characters. Expand `right`, and when a duplicate is found, shrink from `left` until the duplicate is removed. :contentReference[oaicite:0]{index=0}
+
+---
+
+### 2️⃣ Add Two Numbers in Linked Lists  
+- **Goal:** Given two non‑empty linked lists representing two non‑negative integers (digits stored in reverse order), return their sum as a linked list in the same reversed format.  
+- **Key Idea:** Traverse both lists concurrently, sum corresponding digits plus carry, create new nodes for each digit of the result, and propagate the carry. Use a dummy head to simplify list construction. :contentReference[oaicite:1]{index=1}
+
+---
+
+## 🧠 Core Takeaways
+- **Sliding Window:** Optimal O(n) solution for substring problems with constant extra space (aside from the set).  
+- **Linked‑List Arithmetic:** Elementary addition logic applied node‑by‑node with carry, resulting in O(max(m, n)) time and O(max(m, n)) output space.
+
+✨ Wrapped up two fundamental interview problems today—strings and linked lists—bolstering both window and list‑based techniques! Ready for Day 22! 🚀
+
 
 
 
