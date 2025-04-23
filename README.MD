@@ -806,7 +806,39 @@ Today’s pattern work honed loop control and output formatting, while revisitin
 - **Fast & Slow Pointer Pattern:** One pointer at double speed naturally reveals both cycles and midpoints in O(n) time with O(1) space.
 - **Floyd’s Algorithm Versatility:** The same two‑pointer template applies to cycle detection and list‑splitting tasks.
 
-✨ Solidified linked‑list mastery today! On to Day 23! 🚀  
+✨ Solidified linked‑list mastery today! On to Day 23! 🚀 
+
+# 🌟 Day 23: Solved Problems (May 24, 2025)
+
+Today I implemented two distinct algorithms: one for expanding a compact string with multi-digit repeat counts, and another for sorting array elements at odd and even positions with different sort orders.  
+
+---
+
+## 1️⃣ String Expansion  
+- **Task:** Given an input like `a1b10`, produce `abbbbbbbbbb` by repeating each letter by its following integer count (which may be one or two digits). :contentReference[oaicite:0]{index=0}  
+- **Approach:**  
+  1. Iterate through the string, reading a letter then parsing all subsequent digits into an integer count. :contentReference[oaicite:1]{index=1}  
+  2. Append the letter to a `StringBuilder` count times.  
+  3. Validate format (letter must precede digits; counts 0–99).  
+
+---
+
+## 2️⃣ Odd-Even Distance-2 Sort  
+- **Task:** Sort elements at 1-based odd positions in descending order and at 1-based even positions in ascending order (i.e. 0-based even indices descending, odd indices ascending). :contentReference[oaicite:2]{index=2}  
+- **Approach:**  
+  1. Repeatedly perform two phases until no swaps occur:  
+     - **Phase A:** For 0-based odd indices, compare `a[i]` with `a[i+2]` and swap if out of ascending order.  
+     - **Phase B:** For 0-based even indices, compare `a[i]` with `a[i+2]` and swap if out of descending order. :contentReference[oaicite:3]{index=3}  
+  2. This “distance-2” bubble-sort ensures local ordering that converges to the global pattern.  
+
+---
+
+## 🧠 Key Takeaways  
+- **Robust Parsing:** Handling multi-digit counts in string expansion requires careful digit accumulation.  
+- **Custom Sort Passes:** Splitting sorting into two interleaved phases can achieve complex index-based orderings in O(n·k) time (k = number of passes).  
+
+✨ Two more challenges mastered—ready for Day 24! 🚀  
+
 
 
 
