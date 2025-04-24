@@ -808,7 +808,7 @@ Today’s pattern work honed loop control and output formatting, while revisitin
 
 ✨ Solidified linked‑list mastery today! On to Day 23! 🚀 
 
-# 🌟 Day 23: Solved Problems (May 24, 2025)
+# 🌟 Day 23: Solved Problems (April 24, 2025)
 
 Today I implemented two distinct algorithms: one for expanding a compact string with multi-digit repeat counts, and another for sorting array elements at odd and even positions with different sort orders.  
 
@@ -838,6 +838,38 @@ Today I implemented two distinct algorithms: one for expanding a compact string 
 - **Custom Sort Passes:** Splitting sorting into two interleaved phases can achieve complex index-based orderings in O(n·k) time (k = number of passes).  
 
 ✨ Two more challenges mastered—ready for Day 24! 🚀  
+# 🌟 Day 24: Solved Problems (April 25, 2025)
+
+## 🚀 Today’s Challenges
+
+### 1️⃣ Reverse Words in a String (Recursion)
+- **Task:** Given a sentence, recursively reverse the word order (e.g. “one two three” → “three two one”).  
+- **Key Idea:** Repeatedly extract the last word and recurse on the prefix until no characters remain.  
+- **Complexity:** O(n²) in worst case due to substring concatenation; can be optimized with StringBuilder. :contentReference[oaicite:0]{index=0}
+
+---
+
+### 2️⃣ First Occurrence of Substring
+- **Task:** Find the index of the first occurrence of `word2` in `word1` without using built-in search (e.g. “test123string”, “123” → 4).  
+- **Key Idea:** Slide a window of length `|word2|` over `word1`, compare character by character.  
+- **Complexity:** O(n·m), where n=|word1|, m=|word2|. :contentReference[oaicite:1]{index=1}
+
+---
+
+### 3️⃣ Diagonal “X” Pattern Print
+- **Task:** Given an odd-length string of digits, print its characters on both diagonals in an “X” shape.  
+- **Key Idea:** For each row i, print character at i for column i and again at column (n−1−i).  
+- **Complexity:** O(n²) for n×n grid. :contentReference[oaicite:2]{index=2}
+
+---
+
+## 🧠 Core Takeaways
+- **Recursive string processing** can be intuitive but watch out for repeated concatenation costs.  
+- **Manual substring search** reinforces sliding-window fundamentals before using built-ins.  
+- **Pattern printing** solidifies control over nested loops and index arithmetic.
+
+✨ Three more fundamental string and pattern problems down—onward to Day 25! 🚀  
+
 
 
 

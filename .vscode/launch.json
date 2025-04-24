@@ -6,6 +6,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ReverseStringRecursion",
+      "request": "launch",
+      "mainClass": "ReverseStringRecursion",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "StringFirstOccurrence",
+      "request": "launch",
+      "mainClass": "StringFirstOccurrence",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "Pattern",
+      "request": "launch",
+      "mainClass": "Pattern",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
       "name": "OddPositionDescArray",
       "request": "launch",
       "mainClass": "OddPositionDescArray",
