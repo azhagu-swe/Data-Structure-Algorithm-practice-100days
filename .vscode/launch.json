@@ -6,6 +6,34 @@
   "configurations": [
     {
       "type": "java",
+      "name": "AnagramGroupingNoBuiltins",
+      "request": "launch",
+      "mainClass": "AnagramGroupingNoBuiltins",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "GroupAnagram",
+      "request": "launch",
+      "mainClass": "GroupAnagram",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "MultiplicationWithoutUsingStrar",
+      "request": "launch",
+      "mainClass": "MultiplicationWithoutUsingStrar",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "StringRecursion",
+      "request": "launch",
+      "mainClass": "StringRecursion",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
       "name": "ReverseStringRecursion",
       "request": "launch",
       "mainClass": "ReverseStringRecursion",

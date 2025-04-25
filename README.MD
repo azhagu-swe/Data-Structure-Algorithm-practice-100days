@@ -870,6 +870,32 @@ Today I implemented two distinct algorithms: one for expanding a compact string 
 
 ✨ Three more fundamental string and pattern problems down—onward to Day 25! 🚀  
 
+# 🌟 Day 25: Solved Problems (April 26, 2025)
+
+## 🚀 Today’s Challenges
+
+### 1️⃣ Group Anagrams Without Built-ins  
+- **Task:** Given a list of words, group them into lists of anagrams (e.g. `["act","god","cat","dog","tac"]` → `[["act","cat","tac"],["god","dog"]]`).  
+- **Key Idea:** For each word, compare character frequencies against every other word using a fixed-size 26-element array. Mark words as used to avoid repeats.  
+- **Complexity:** O(n² · k), where n = number of words, k = average word length.
+
+### 2️⃣ Multiply Decimal Strings Without “*”  
+- **Task:** Multiply two non-negative integers given as decimal strings (e.g. `"123"` × `"45"`) without using the `*` operator.  
+- **Key Idea:**  
+  1. **Parse** each string into an integer using only bit-shifts and addition (`x*10 = (x<<3)+(x<<1)`).  
+  2. **Multiply** via the Russian-peasant (Egyptian) algorithm: repeatedly double and add based on the multiplier’s binary bits.  
+- **Complexity:** O(n + m + log M), where n, m = input lengths, M = parsed numeric value.
+
+---
+
+## 🧠 Core Takeaways
+
+- **Brute-Force Grouping:** Even without sorting or maps, fixed-size frequency arrays let you detect anagrams in constant extra space per comparison.  
+- **Bit-Shift Parsing & Multiplication:** You can reconstruct decimal parsing and multiplication from first principles using only shifts, additions, and bit-tests.
+
+✨ Two more algorithmic patterns mastered—array grouping and low-level arithmetic! Ready for Day 26! 🚀  
+
+
 
 
 

@@ -16,12 +16,12 @@ public class StringFirstOccurrence {
             String word1 = scanner.nextLine();
             System.out.print("Enter a word1 : ");
             String word2 = scanner.nextLine();
-            System.out.println("Output : " + firstOccurence(word1, word2));
+            System.out.println("Output : " + firstOccurrence(word1, word2));
 
         }
     }
 
-    private static int firstOccurence(String word1, String word2) {
+    private static int firstOccurrence(String word1, String word2) {
         int w1Length = word1.length(), w2Length = word2.length();
         if (w1Length < w2Length)
             return -1;
