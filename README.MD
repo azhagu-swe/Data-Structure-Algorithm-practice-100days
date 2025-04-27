@@ -895,6 +895,39 @@ Today I implemented two distinct algorithms: one for expanding a compact string 
 
 ✨ Two more algorithmic patterns mastered—array grouping and low-level arithmetic! Ready for Day 26! 🚀  
 
+# 🌟 Day 26: Solved Problems (April 27, 2025)
+
+Today I tackled three array- and string-manipulation tasks, practicing brute-force grouping, in-place reordering, and various swap techniques. These exercises reinforced frequency-count methods, two-pointer scans, and bitwise operations for in-place data transformations.
+
+---
+
+## 1️⃣ Group Anagrams (Array-Only)  
+**Task:** Given `["act","god","cat","dog","tac"]`, group into `[['act','cat','tac'],['god','dog']]`.  
+**Key Idea:** For each word, build a 26-element frequency array and compare with every other word; mark used words to avoid repeats. :contentReference[oaicite:0]{index=0} :contentReference[oaicite:1]{index=1}  
+**Complexity:** O(n²·k) time, O(n·k) total space for output (k=word length).  
+
+---
+
+## 2️⃣ Move Zeros to End  
+**Task:** In `[1,2,0,4,3,0,5,0]`, shift all `0`s to the right while preserving non-zero order.  
+**Key Idea:** Use a write-index `j` to compact non-zeros to front, then fill trailing positions with `0`. :contentReference[oaicite:2]{index=2} :contentReference[oaicite:3]{index=3}  
+**Complexity:** O(n) time, O(1) extra space.  
+
+---
+
+## 3️⃣ Reverse Array In-Place  
+**Task:** Reverse `[1,4,3,2,6,5]` without extra array.  
+**Key Idea:** Swap symmetric pairs using a temporary variable—or alternately via XOR swap—to achieve O(1) space. :contentReference[oaicite:4]{index=4} :contentReference[oaicite:5]{index=5}  
+**Complexity:** O(n) time, O(1) space.  
+
+---
+
+## 🧠 Core Takeaways  
+- **Frequency Arrays** enable brute-force anagram grouping without sorting or hashmaps.  
+- **Two-Pointer & Write-Index** patterns solve in-place reordering (zeros, reversal) in linear time.  
+- **XOR Swap Trick** shows how bitwise ops can eliminate temporaries—useful in low-level optimizations. :contentReference[oaicite:6]{index=6}  
+
+✨ Three more foundational algorithms mastered—onward to Day 27! 🚀  
 
 
 

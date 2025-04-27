@@ -32,7 +32,7 @@ public class AnagramGroupingNoBuiltins {
 
         String[] words = temp.toArray(new String[0]);
         List<List<String>> result = groupAnagramsBruteForce(words);
-
+ 
         System.out.println(result);
     }
 

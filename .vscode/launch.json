@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "MoveZerosEnd",
+      "request": "launch",
+      "mainClass": "MoveZerosEnd",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "GroupAnagramArrayOnly",
+      "request": "launch",
+      "mainClass": "GroupAnagramArrayOnly",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
       "name": "AnagramGroupingNoBuiltins",
       "request": "launch",
       "mainClass": "AnagramGroupingNoBuiltins",
