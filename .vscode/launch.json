@@ -6,6 +6,34 @@
   "configurations": [
     {
       "type": "java",
+      "name": "UnionOfArraySimple",
+      "request": "launch",
+      "mainClass": "UnionOfArraySimple",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "UnionOfArray",
+      "request": "launch",
+      "mainClass": "UnionOfArray",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "GfG",
+      "request": "launch",
+      "mainClass": "GfG",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "RotateArray",
+      "request": "launch",
+      "mainClass": "RotateArray",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
       "name": "MoveZerosEnd",
       "request": "launch",
       "mainClass": "MoveZerosEnd",

@@ -930,6 +930,36 @@ Today I tackled three array- and string-manipulation tasks, practicing brute-for
 ✨ Three more foundational algorithms mastered—onward to Day 27! 🚀  
 
 
+# 🌟 Day 27: Solved Problems (May 6, 2025)
 
+## 🚀 Today’s Challenges
 
+### 1️⃣ Union of Two Arrays  
+- **Task:** Combine two integer arrays into one array of distinct elements (the union).  
+- **Example:**  
+  - Input: `a = [1,2,3,4,5,2,3]`, `b = [3,6,2,7,1]`  
+  - Output: `[1,2,3,4,5,6,7]` (count = 7)  
+- **Approach:**  
+  1. Sort both arrays.  
+  2. Merge with two pointers, skipping duplicates.  
+  3. Collect unique values into result.  
 
+---
+
+### 2️⃣ Left-Rotate Array by d Positions  
+- **Task:** Rotate an array to the left by `d` positions in-place.  
+- **Example:**  
+  - Input: `[1,2,3,4,5,6,7]`, `d=2` → `[3,4,5,6,7,1,2]`  
+- **Approach (Reversal Algorithm):**  
+  1. Reverse first `d` elements.  
+  2. Reverse remaining `n–d` elements.  
+  3. Reverse entire array.  
+
+---
+
+## 🧠 Key Takeaways
+
+- **Two-Pointer Merge:** Efficiently produce a sorted union in O(n log n + m log m) time.  
+- **In-Place Rotation:** Reversal algorithm achieves left rotation in O(n) time with O(1) extra space.  
+
+✨ Two more core array-manipulation patterns mastered—ready for Day 28! 🚀  
