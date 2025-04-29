@@ -962,4 +962,41 @@ Today I tackled three array- and string-manipulation tasks, practicing brute-for
 - **Two-Pointer Merge:** Efficiently produce a sorted union in O(n log n + m log m) time.  
 - **In-Place Rotation:** Reversal algorithm achieves left rotation in O(n) time with O(1) extra space.  
 
-✨ Two more core array-manipulation patterns mastered—ready for Day 28! 🚀  
+✨ Two more core array-manipulation patterns mastered—ready for Day 28! 🚀
+
+# 🌟 Day 28: Solved Problems (April 29, 2025)
+
+## 🚀 Today’s Challenges
+
+### 1️⃣ Next Permutation
+- **Task:** Rearrange an array of integers to the lexicographically next greater permutation. If no such permutation exists, sort the array in ascending order.
+- **Examples:**
+  - Input: `[2, 4, 1, 7, 5, 0]` → Output: `[2, 4, 5, 0, 1, 7]`
+  - Input: `[3, 2, 1]` → Output: `[1, 2, 3]`
+- **Approach:**
+  1. Identify the pivot: Traverse from the end until the first decreasing element is found.
+  2. Find the successor: The smallest number larger than the pivot to the right.
+  3. Swap pivot and successor.
+  4. Reverse the suffix starting after the pivot.
+
+---
+
+### 2️⃣ Alternative Sorting
+- **Task:** Sort an array alternately with the largest element followed by the smallest element.
+- **Examples:**
+  - Input: `[7, 1, 2, 3, 4, 5, 6]` → Output: `[7, 1, 6, 2, 5, 3, 4]`
+- **Approach:**
+  1. Sort the array in ascending order.
+  2. Place the largest elements at odd positions and smallest elements at even positions.
+  3. If the array length is odd, place the middle element last.
+
+---
+
+## 🧠 Key Takeaways
+
+- **Pivot Identification:** Key to generating permutations.
+- **Two-Pointer Swaps:** Efficient for both permutation and alternate sorting tasks.
+- **Versatile Sorting Techniques:** Reinforced mastery of custom sorting logic.
+
+✨ Solidified concepts in permutations and custom array manipulation. Onward to Day 29! 🚀
+

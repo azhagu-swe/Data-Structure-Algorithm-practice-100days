@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "NextPermutation",
+      "request": "launch",
+      "mainClass": "NextPermutation",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "AlternativeSorting",
+      "request": "launch",
+      "mainClass": "AlternativeSorting",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
       "name": "UnionOfArraySimple",
       "request": "launch",
       "mainClass": "UnionOfArraySimple",
