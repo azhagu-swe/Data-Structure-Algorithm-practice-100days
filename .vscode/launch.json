@@ -6,6 +6,34 @@
   "configurations": [
     {
       "type": "java",
+      "name": "StockBuyAndSaleAlternative",
+      "request": "launch",
+      "mainClass": "StockBuyAndSaleAlternative",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "Number34Printer",
+      "request": "launch",
+      "mainClass": "Number34Printer",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "NumberSystem34",
+      "request": "launch",
+      "mainClass": "NumberSystem34",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "StockBuyAndSale",
+      "request": "launch",
+      "mainClass": "StockBuyAndSale",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
       "name": "MajorityElement",
       "request": "launch",
       "mainClass": "MajorityElement",

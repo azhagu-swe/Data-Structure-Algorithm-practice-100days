@@ -353,7 +353,7 @@ _Let's master DSA, one day at a time!_ 🚀💪
 
 **Date:\***[10/04/2025]\*
 
-## Problems Solved:
+## Problems Solved
 
 ### Problem 1: First Non-Repeating Character
 
@@ -450,7 +450,7 @@ Keep pushing forward! Every challenge you conquer brings you one step closer to 
 
 **Date:** _[13/04/2025]_
 
-## Problems Solved:
+## Problems Solved
 
 ### Problem 1: Inverted Right-Angled Triangle
 
@@ -462,13 +462,13 @@ Keep pushing forward! Every challenge you conquer brings you one step closer to 
 
 ---
 
-# Solved two pattern-printing problems using nested loops. Ready for the next set of challenges!
+# Solved two pattern-printing problems using nested loops. Ready for the next set of challenges
 
 # 📅Day-13: Advanced Jump Game Challenges
 
 **Date:** _[14/04/2025]_
 
-## Problems Solved Today:
+## Problems Solved Today
 
 ### Problem 1: Jump Game II
 
@@ -500,7 +500,7 @@ Focused on advanced jump game variations today, applying greedy techniques to op
 
 # 🌟 Day 14: Solved Problems (April 15, 2025)
 
-## 🚀 Problems Solved:
+## 🚀 Problems Solved
 
 ### 1️⃣ Power Calculation Using Recursion
 
@@ -528,7 +528,7 @@ Focused on advanced jump game variations today, applying greedy techniques to op
 
 # 🌟 Day 15: Solved Problems (April 16, 2025)
 
-## 🚀 Problems Solved:
+## 🚀 Problems Solved
 
 ### 1️⃣ Matrix Row Swap
 
@@ -563,24 +563,29 @@ Focused on advanced jump game variations today, applying greedy techniques to op
 
 ✨ **Summary:**  
 Solved five problems today covering matrix operations and various array manipulations. Ready for the next challenge!
+
 # 🌟 Day 16: Solved Problems (April 17, 2025)
 
-## 🚀 Problems Solved:
+## 🚀 Problems Solved
 
 ### 1️⃣ Swap Columns in a Matrix
+
 - **Task:** Swap two specified columns of a matrix based on user input.
-- **Highlights:** 
+- **Highlights:**
   - Validates column indices.
   - Efficiently swaps columns by iterating through rows.
 - **Example:**
   - **Input:**
+
     ```
     1 2 3
     4 5 6
     7 8 9
     ```
+
     Swap columns 1 and 3.
   - **Output:**
+
     ```
     3 2 1
     6 5 4
@@ -590,33 +595,40 @@ Solved five problems today covering matrix operations and various array manipula
 ---
 
 ### 2️⃣ Symmetric Matrix Check
+
 - **Task:** Determine if a matrix is symmetric. A matrix is symmetric if it equals its transpose.
 - **Highlights:**
   - Validates the square shape of the matrix.
   - Compares elements above the main diagonal for symmetry.
 - **Example:**
   - **Input:**
+
     ```
     1 2 3
     2 5 6
     3 6 9
     ```
+
   - **Output:** `Symmetric`
 
 ---
 
 ### 3️⃣ Transpose a Matrix
+
 - **Task:** Compute the transpose of a square matrix in-place.
 - **Highlights:**
   - Efficiently swaps elements to achieve transposition.
 - **Example:**
   - **Input:**
+
     ```
     1 2 3
     4 5 6
     7 8 9
     ```
+
   - **Output:**
+
     ```
     1 4 7
     2 5 8
@@ -626,51 +638,52 @@ Solved five problems today covering matrix operations and various array manipula
 ---
 
 ✨ **Summary:** Three matrix-focused problems were tackled today, covering column manipulation, symmetry validation, and in-place transposition. Great progress in understanding matrix operations! 🚀
+
 # **🌟 Day 17: Solved Problems (April 18, 2025\)**
 
 ## **🚀 Highlights of the Day**
 
 ### **1️⃣ Right Triangle Patterns**
 
-* **Task:** Print various right triangle arrangements using numbers and spaces.
+- **Task:** Print various right triangle arrangements using numbers and spaces.
 
-* **Patterns Learned:**
+- **Patterns Learned:**
 
-  * Increasing numbers (1 to `n`)
+  - Increasing numbers (1 to `n`)
 
-  * Decreasing numbers (`n` to 1\)
+  - Decreasing numbers (`n` to 1\)
 
-  * Repeated rows with identical numbers
+  - Repeated rows with identical numbers
 
-  * Right-aligned triangles using leading spaces
+  - Right-aligned triangles using leading spaces
 
-* **Example Output:** For `n = 4`, you’ll generate multiple triangular shapes showcasing these variations.
+- **Example Output:** For `n = 4`, you’ll generate multiple triangular shapes showcasing these variations.
 
 ---
 
 ### **2️⃣ Pascal’s Triangle**
 
-* **Task:** Build and print Pascal’s triangle with stars (`*`), spanning `2n-1` rows for a diamond effect.
+- **Task:** Build and print Pascal’s triangle with stars (`*`), spanning `2n-1` rows for a diamond effect.
 
-* **Key Learning:**
+- **Key Learning:**
 
-  * Dynamically adjust the count of symbols to mirror the triangle’s expansion and contraction.
+  - Dynamically adjust the count of symbols to mirror the triangle’s expansion and contraction.
 
-* **Example Output:** For `n = 4`, the star-based Pascal’s triangle flows up then down seamlessly.
+- **Example Output:** For `n = 4`, the star-based Pascal’s triangle flows up then down seamlessly.
 
 ---
 
 ### **📚 Learning Focus: Time Complexity**
 
-* **O(1):** Constant time — instant operations (e.g., direct element access) 📖
+- **O(1):** Constant time — instant operations (e.g., direct element access) 📖
 
-* **O(log n):** Logarithmic — halving search space like Binary Search 🎯
+- **O(log n):** Logarithmic — halving search space like Binary Search 🎯
 
-* **O(n):** Linear — full traversal, like scanning an array 🔍
+- **O(n):** Linear — full traversal, like scanning an array 🔍
 
-* **O(n²):** Quadratic — nested loops, as in pairwise comparisons 🧩
+- **O(n²):** Quadratic — nested loops, as in pairwise comparisons 🧩
 
-* **O(2ⁿ):** Exponential — branching recursion, like Tower of Hanoi 🏰
+- **O(2ⁿ):** Exponential — branching recursion, like Tower of Hanoi 🏰
 
 | Complexity | Real-Life Example | Algorithm Example |
 | ----- | ----- | ----- |
@@ -685,11 +698,13 @@ Solved five problems today covering matrix operations and various array manipula
 ### **✨ Takeaway**
 
 Today’s pattern work honed loop control and output formatting, while revisiting time complexity concepts solidified algorithmic insights. Onward to Day 18\! 🚀
+
 # 🌟 Day 18: Solved Problems (April 19, 2025)
 
 ## 🚀 Highlights of the Day  
 
 ### 1️⃣ **Binary Search**
+
 - **Task:** Efficiently locate a target in a sorted array using iterative and recursive binary search methods.
 - **Approach:**  
   - **Iterative Binary Search:** Adjust the search range iteratively.  
@@ -700,6 +715,7 @@ Today’s pattern work honed loop control and output formatting, while revisitin
 ---
 
 ### 2️⃣ **Linear Search**
+
 - **Task:** Sequentially traverse an array to find a target element.  
 - **Approach:**  
   - Traverse from the first to the last element.  
@@ -710,6 +726,7 @@ Today’s pattern work honed loop control and output formatting, while revisitin
 ---
 
 ### 3️⃣ **Bubble Sort**
+
 - **Task:** Sort an array using two versions of Bubble Sort.  
 - **Approach:**  
   - **Basic Bubble Sort:** Compare and swap adjacent elements if out of order.  
@@ -721,6 +738,7 @@ Today’s pattern work honed loop control and output formatting, while revisitin
 ---
 
 ### 4️⃣ **Insertion Sort**
+
 - **Task:** Sort an array by inserting elements into their correct position in a growing sorted list.  
 - **Approach:**  
   - Iterate through the array and compare the current element with preceding elements.  
@@ -731,6 +749,7 @@ Today’s pattern work honed loop control and output formatting, while revisitin
 ---
 
 ### 5️⃣ **Selection Sort**
+
 - **Task:** Sort an array by repeatedly selecting the smallest element and swapping it with the current element.  
 - **Approach:**  
   - Iterate through the array to find the minimum element in the unsorted part.  
@@ -740,47 +759,56 @@ Today’s pattern work honed loop control and output formatting, while revisitin
 
 ---
 
-## ✨ Learning Focus:
+## ✨ Learning Focus
+
 - **Efficiency:** Improved understanding of how sorting and searching algorithms reduce time complexity.  
 - **Practice:** Reinforced concepts of iterative, recursive, and optimized approaches.  
 
 📖 **Key Takeaway:** Progress through understanding fundamental sorting and searching algorithms, laying the groundwork for advanced problem-solving 🚀!
+
 # 🌟 Day 20: Solved Problems (April 21, 2025)
 
 ## 🚀 Today’s Challenges
 
 ### 1️⃣ Trapping Rain Water
+
 - **Goal:** Compute total water trapped between elevation bars.  
 - **Key Idea:** Two-pointer scan from ends, track `leftMax`/`rightMax`, add trapped water when `bar < max`.
 
 ### 2️⃣ Roman to Integer
+
 - **Goal:** Convert a Roman numeral (e.g., “MCMXCIV”) to an integer.  
 - **Key Idea:** Traverse right-to-left, use a map of numeral values, subtract when a smaller value precedes a larger one.
 
 ---
 
 ## 🧠 Core Takeaways
+
 - **Two-Pointer Technique:** Efficient O(n) array traversal with constant space.  
 - **Reverse Traversal Logic:** Simplifies subtraction rules in string parsing.
 
 ✨ Finished two practical problems—array and string algorithms in one go! Ready for Day 21! 🚀
+
 # 🌟 Day 21: Solved Problems (April 22, 2025)
 
 ## 🚀 Today’s Challenges
 
 ### 1️⃣ Longest Substring Without Repeating Characters  
+
 - **Goal:** Find the length of the longest substring that contains no duplicate characters.  
 - **Key Idea:** Use a sliding‑window with two pointers (`left`, `right`) and a set to track current characters. Expand `right`, and when a duplicate is found, shrink from `left` until the duplicate is removed. :contentReference[oaicite:0]{index=0}
 
 ---
 
 ### 2️⃣ Add Two Numbers in Linked Lists  
+
 - **Goal:** Given two non‑empty linked lists representing two non‑negative integers (digits stored in reverse order), return their sum as a linked list in the same reversed format.  
 - **Key Idea:** Traverse both lists concurrently, sum corresponding digits plus carry, create new nodes for each digit of the result, and propagate the carry. Use a dummy head to simplify list construction. :contentReference[oaicite:1]{index=1}
 
 ---
 
 ## 🧠 Core Takeaways
+
 - **Sliding Window:** Optimal O(n) solution for substring problems with constant extra space (aside from the set).  
 - **Linked‑List Arithmetic:** Elementary addition logic applied node‑by‑node with carry, resulting in O(max(m, n)) time and O(max(m, n)) output space.
 
@@ -788,25 +816,28 @@ Today’s pattern work honed loop control and output formatting, while revisitin
 
 # 🌟 Day 22: Solved Problems (April 23, 2025)
 
-## 🚀 Problems Solved:
+## 🚀 Problems Solved
 
 ### 1️⃣ Linked List Cycle Detection  
+
 - **Description:** Determine if a singly linked list has a cycle using Floyd’s Tortoise and Hare algorithm.  
 - **Approach:** Use two pointers—**slow** moves one step, **fast** moves two steps. If they ever meet, a cycle exists; if **fast** reaches the end (`null`), the list is acyclic. :contentReference[oaicite:0]{index=0}
 
 ---
 
 ### 2️⃣ Middle of a Linked List  
+
 - **Description:** Find the middle node of a singly linked list. If there are two middles, return the second.  
 - **Approach:** Again employ two pointers—**slow** advances one node per step, **fast** advances two. When **fast** reaches the end, **slow** will be at the middle. :contentReference[oaicite:1]{index=1}
 
 ---
 
 ## 🧠 Core Takeaways
+
 - **Fast & Slow Pointer Pattern:** One pointer at double speed naturally reveals both cycles and midpoints in O(n) time with O(1) space.
 - **Floyd’s Algorithm Versatility:** The same two‑pointer template applies to cycle detection and list‑splitting tasks.
 
-✨ Solidified linked‑list mastery today! On to Day 23! 🚀 
+✨ Solidified linked‑list mastery today! On to Day 23! 🚀
 
 # 🌟 Day 23: Solved Problems (April 24, 2025)
 
@@ -815,6 +846,7 @@ Today I implemented two distinct algorithms: one for expanding a compact string 
 ---
 
 ## 1️⃣ String Expansion  
+
 - **Task:** Given an input like `a1b10`, produce `abbbbbbbbbb` by repeating each letter by its following integer count (which may be one or two digits). :contentReference[oaicite:0]{index=0}  
 - **Approach:**  
   1. Iterate through the string, reading a letter then parsing all subsequent digits into an integer count. :contentReference[oaicite:1]{index=1}  
@@ -824,6 +856,7 @@ Today I implemented two distinct algorithms: one for expanding a compact string 
 ---
 
 ## 2️⃣ Odd-Even Distance-2 Sort  
+
 - **Task:** Sort elements at 1-based odd positions in descending order and at 1-based even positions in ascending order (i.e. 0-based even indices descending, odd indices ascending). :contentReference[oaicite:2]{index=2}  
 - **Approach:**  
   1. Repeatedly perform two phases until no swaps occur:  
@@ -834,15 +867,18 @@ Today I implemented two distinct algorithms: one for expanding a compact string 
 ---
 
 ## 🧠 Key Takeaways  
+
 - **Robust Parsing:** Handling multi-digit counts in string expansion requires careful digit accumulation.  
 - **Custom Sort Passes:** Splitting sorting into two interleaved phases can achieve complex index-based orderings in O(n·k) time (k = number of passes).  
 
 ✨ Two more challenges mastered—ready for Day 24! 🚀  
+
 # 🌟 Day 24: Solved Problems (April 25, 2025)
 
 ## 🚀 Today’s Challenges
 
 ### 1️⃣ Reverse Words in a String (Recursion)
+
 - **Task:** Given a sentence, recursively reverse the word order (e.g. “one two three” → “three two one”).  
 - **Key Idea:** Repeatedly extract the last word and recurse on the prefix until no characters remain.  
 - **Complexity:** O(n²) in worst case due to substring concatenation; can be optimized with StringBuilder. :contentReference[oaicite:0]{index=0}
@@ -850,6 +886,7 @@ Today I implemented two distinct algorithms: one for expanding a compact string 
 ---
 
 ### 2️⃣ First Occurrence of Substring
+
 - **Task:** Find the index of the first occurrence of `word2` in `word1` without using built-in search (e.g. “test123string”, “123” → 4).  
 - **Key Idea:** Slide a window of length `|word2|` over `word1`, compare character by character.  
 - **Complexity:** O(n·m), where n=|word1|, m=|word2|. :contentReference[oaicite:1]{index=1}
@@ -857,6 +894,7 @@ Today I implemented two distinct algorithms: one for expanding a compact string 
 ---
 
 ### 3️⃣ Diagonal “X” Pattern Print
+
 - **Task:** Given an odd-length string of digits, print its characters on both diagonals in an “X” shape.  
 - **Key Idea:** For each row i, print character at i for column i and again at column (n−1−i).  
 - **Complexity:** O(n²) for n×n grid. :contentReference[oaicite:2]{index=2}
@@ -864,6 +902,7 @@ Today I implemented two distinct algorithms: one for expanding a compact string 
 ---
 
 ## 🧠 Core Takeaways
+
 - **Recursive string processing** can be intuitive but watch out for repeated concatenation costs.  
 - **Manual substring search** reinforces sliding-window fundamentals before using built-ins.  
 - **Pattern printing** solidifies control over nested loops and index arithmetic.
@@ -875,11 +914,13 @@ Today I implemented two distinct algorithms: one for expanding a compact string 
 ## 🚀 Today’s Challenges
 
 ### 1️⃣ Group Anagrams Without Built-ins  
+
 - **Task:** Given a list of words, group them into lists of anagrams (e.g. `["act","god","cat","dog","tac"]` → `[["act","cat","tac"],["god","dog"]]`).  
 - **Key Idea:** For each word, compare character frequencies against every other word using a fixed-size 26-element array. Mark words as used to avoid repeats.  
 - **Complexity:** O(n² · k), where n = number of words, k = average word length.
 
 ### 2️⃣ Multiply Decimal Strings Without “*”  
+
 - **Task:** Multiply two non-negative integers given as decimal strings (e.g. `"123"` × `"45"`) without using the `*` operator.  
 - **Key Idea:**  
   1. **Parse** each string into an integer using only bit-shifts and addition (`x*10 = (x<<3)+(x<<1)`).  
@@ -902,6 +943,7 @@ Today I tackled three array- and string-manipulation tasks, practicing brute-for
 ---
 
 ## 1️⃣ Group Anagrams (Array-Only)  
+
 **Task:** Given `["act","god","cat","dog","tac"]`, group into `[['act','cat','tac'],['god','dog']]`.  
 **Key Idea:** For each word, build a 26-element frequency array and compare with every other word; mark used words to avoid repeats. :contentReference[oaicite:0]{index=0} :contentReference[oaicite:1]{index=1}  
 **Complexity:** O(n²·k) time, O(n·k) total space for output (k=word length).  
@@ -909,6 +951,7 @@ Today I tackled three array- and string-manipulation tasks, practicing brute-for
 ---
 
 ## 2️⃣ Move Zeros to End  
+
 **Task:** In `[1,2,0,4,3,0,5,0]`, shift all `0`s to the right while preserving non-zero order.  
 **Key Idea:** Use a write-index `j` to compact non-zeros to front, then fill trailing positions with `0`. :contentReference[oaicite:2]{index=2} :contentReference[oaicite:3]{index=3}  
 **Complexity:** O(n) time, O(1) extra space.  
@@ -916,6 +959,7 @@ Today I tackled three array- and string-manipulation tasks, practicing brute-for
 ---
 
 ## 3️⃣ Reverse Array In-Place  
+
 **Task:** Reverse `[1,4,3,2,6,5]` without extra array.  
 **Key Idea:** Swap symmetric pairs using a temporary variable—or alternately via XOR swap—to achieve O(1) space. :contentReference[oaicite:4]{index=4} :contentReference[oaicite:5]{index=5}  
 **Complexity:** O(n) time, O(1) space.  
@@ -923,18 +967,19 @@ Today I tackled three array- and string-manipulation tasks, practicing brute-for
 ---
 
 ## 🧠 Core Takeaways  
+
 - **Frequency Arrays** enable brute-force anagram grouping without sorting or hashmaps.  
 - **Two-Pointer & Write-Index** patterns solve in-place reordering (zeros, reversal) in linear time.  
 - **XOR Swap Trick** shows how bitwise ops can eliminate temporaries—useful in low-level optimizations. :contentReference[oaicite:6]{index=6}  
 
 ✨ Three more foundational algorithms mastered—onward to Day 27! 🚀  
 
-
 # 🌟 Day 27: Solved Problems (May 6, 2025)
 
 ## 🚀 Today’s Challenges
 
 ### 1️⃣ Union of Two Arrays  
+
 - **Task:** Combine two integer arrays into one array of distinct elements (the union).  
 - **Example:**  
   - Input: `a = [1,2,3,4,5,2,3]`, `b = [3,6,2,7,1]`  
@@ -947,6 +992,7 @@ Today I tackled three array- and string-manipulation tasks, practicing brute-for
 ---
 
 ### 2️⃣ Left-Rotate Array by d Positions  
+
 - **Task:** Rotate an array to the left by `d` positions in-place.  
 - **Example:**  
   - Input: `[1,2,3,4,5,6,7]`, `d=2` → `[3,4,5,6,7,1,2]`  
@@ -969,6 +1015,7 @@ Today I tackled three array- and string-manipulation tasks, practicing brute-for
 ## 🚀 Today’s Challenges
 
 ### 1️⃣ Next Permutation
+
 - **Task:** Rearrange an array of integers to the lexicographically next greater permutation. If no such permutation exists, sort the array in ascending order.
 - **Examples:**
   - Input: `[2, 4, 1, 7, 5, 0]` → Output: `[2, 4, 5, 0, 1, 7]`
@@ -982,6 +1029,7 @@ Today I tackled three array- and string-manipulation tasks, practicing brute-for
 ---
 
 ### 2️⃣ Alternative Sorting
+
 - **Task:** Sort an array alternately with the largest element followed by the smallest element.
 - **Examples:**
   - Input: `[7, 1, 2, 3, 4, 5, 6]` → Output: `[7, 1, 6, 2, 5, 3, 4]`
@@ -1005,6 +1053,7 @@ Today I tackled three array- and string-manipulation tasks, practicing brute-for
 ## 🚀 Today’s Challenges
 
 ### 1️⃣ Majority Elements (> n/3)
+
 - **Task:** Find all numbers in an array that appear more than ⌊n/3⌋ times.  
 - **Key Idea:** Extended Boyer–Moore Voting  
   1. First pass: identify up to two candidate elements by voting.  
@@ -1018,6 +1067,7 @@ Today I tackled three array- and string-manipulation tasks, practicing brute-for
 ---
 
 ### 2️⃣ Remove Invalid Parentheses
+
 - **Task:** Given a string with parentheses, remove the minimum number of invalid parentheses to generate all valid strings.  
 - **Key Idea:** BFS over string states  
   1. Use a queue to explore all strings reachable by removing one parenthesis.  
@@ -1030,7 +1080,43 @@ Today I tackled three array- and string-manipulation tasks, practicing brute-for
 ---
 
 ## 🧠 Core Takeaways
+
 - **Voting Algorithm:** Efficiently finds heavy hitters in a single pass with constant space.  
 - **BFS Pruning:** Guarantees minimal removals by exploring level by level.  
 
 ✨ Two advanced patterns mastered—ready for Day 30! 🚀  
+
+# 🌟 Day 30: Solved Problems (May 1, 2025)
+
+## 🚀 Today’s Challenges
+
+---
+
+### 1️⃣ Maximum Profit from Stock Prices  
+
+**Task:** Given daily stock prices, compute the maximum profit by summing each upward swing—you may buy and sell multiple times.  
+**Key Idea:**  
+
+1. Scan once, find each local **valley** (buy) and subsequent **peak** (sell).  
+2. Accumulate `(peak – valley)` for total profit.  
+**Complexity:** O(n) time, O(1) space  
+**Example:**  
+Prices: [100, 180, 260, 310, 40, 535, 695] Valleys→Peaks: (100→310), (40→695) Profit = (310−100) + (695−40) = 865
+
+### 2️⃣ Generate “3-4” Number System  
+
+**Task:** Print the first n numbers whose only digits are 3 or 4, in lexicographic order of that custom system (e.g. 3, 4, 33, 34, 43, …).  
+**Key Idea:**  
+
+1. Represent sequence index `i` in binary.  
+2. Map each binary digit: `0 → ‘3’`, `1 → ‘4’`, building from least significant bit upward.  
+**Complexity:** O(n·log n) time (each conversion is O(log i)), O(log n) space per number  
+**Example (n = 5):**  
+i=1 (binary 0) → “3” i=2 (binary 1) → “4” i=3 (binary 00) → “33” i=4 (binary 01) → “43” i=5 (binary 10) → “34”
+
+## 🧠 Core Takeaways
+
+- **Local-Extrema Summation:** Summing each valley→peak rise yields optimal multi-transaction profit in O(n).  
+- **Custom-Base Mapping:** You can generate any fixed-digit numeral system by mapping binary (or another base) representations to chosen symbols.
+
+✨ Two more patterns mastered—array peaks & custom numeral generation! On to Day 31! 🚀  
