@@ -1000,3 +1000,37 @@ Today I tackled three array- and string-manipulation tasks, practicing brute-for
 
 ✨ Solidified concepts in permutations and custom array manipulation. Onward to Day 29! 🚀
 
+# 🌟 Day 29: Solved Problems (April 30, 2025)
+
+## 🚀 Today’s Challenges
+
+### 1️⃣ Majority Elements (> n/3)
+- **Task:** Find all numbers in an array that appear more than ⌊n/3⌋ times.  
+- **Key Idea:** Extended Boyer–Moore Voting  
+  1. First pass: identify up to two candidate elements by voting.  
+  2. Second pass: verify which candidates truly exceed n/3 occurrences.  
+  3. Sort and return the result.  
+- **Complexity:** O(n) time, O(1) extra space.  
+- **Example:**  
+  - Input: `[2,2,3,1,3,2,1,1]`  
+  - Output: `[1,2]`  
+
+---
+
+### 2️⃣ Remove Invalid Parentheses
+- **Task:** Given a string with parentheses, remove the minimum number of invalid parentheses to generate all valid strings.  
+- **Key Idea:** BFS over string states  
+  1. Use a queue to explore all strings reachable by removing one parenthesis.  
+  2. At each level, check validity; once any valid strings are found, stop and return all valid at that level.  
+- **Complexity:** Worst-case exponential, but stops early when solutions are found.  
+- **Example:**  
+  - Input: `"()())()"`  
+  - Output: `["()()()", "(())()"]`  
+
+---
+
+## 🧠 Core Takeaways
+- **Voting Algorithm:** Efficiently finds heavy hitters in a single pass with constant space.  
+- **BFS Pruning:** Guarantees minimal removals by exploring level by level.  
+
+✨ Two advanced patterns mastered—ready for Day 30! 🚀  

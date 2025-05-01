@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "MajorityElement",
+      "request": "launch",
+      "mainClass": "MajorityElement",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
       "name": "NextPermutation",
       "request": "launch",
       "mainClass": "NextPermutation",
