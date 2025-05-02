@@ -1120,3 +1120,43 @@ i=1 (binary 0) → “3” i=2 (binary 1) → “4” i=3 (binary 00) → “33�
 - **Custom-Base Mapping:** You can generate any fixed-digit numeral system by mapping binary (or another base) representations to chosen symbols.
 
 ✨ Two more patterns mastered—array peaks & custom numeral generation! On to Day 31! 🚀  
+
+
+# 🌟 Day 31: Solved Problems (May 2, 2025)
+
+## 🚀 Today’s Challenges
+
+---
+
+### 1️⃣ Single-Transaction Stock Profit  
+- **Task:** Given an array of daily stock prices, compute the maximum profit from exactly one buy-then-sell.  
+- **Key Idea:**  
+  - Track the lowest purchase price seen so far (`minPrice`).  
+  - On each day, compute potential profit = `price – minPrice`.  
+  - Update `maxProfit` if this profit is higher; update `minPrice` if current price is lower.  
+- **Complexity:** O(n) time, O(1) space  
+- **Example:**  
+Prices: [7, 10, 1, 3, 6, 9, 2]
+Buy at 1, sell at 9 → Profit = 8
+
+
+### 2️⃣ Validate Mathematical Expression  
+- **Task:** Check if a string expression of parentheses, operators (`+ - * /`), and alphanumeric tokens is syntactically valid.  
+- **Key Idea:**  
+- Use a stack to ensure parentheses balance.  
+- Maintain flags (`lastWasOperator`, `lastWasOpenParen`) to forbid invalid operator placement (e.g. two operators in a row, operator right after `'('`, operator right before `')'`).  
+- Skip whitespace; treat letters/digits as operands.  
+- **Complexity:** O(n) time, O(n) space (for stack)  
+- **Example Valid/Invalid Cases:**  
+"(a+b)*c" → valid
+"a++b" → invalid (consecutive operators)
+"(*b)" → invalid (operator after '(')
+"()())()" → invalid (unmatched ')')
+
+
+## 🧠 Core Takeaways
+
+- **One-pass Min/Max Tracking:** Capturing minimum buy price and computing profit on the fly yields optimal single-trade profit in O(n).  
+- **Stateful Parsing with Stack & Flags:** Combining stack-based parenthesis matching with simple state flags enforces operator/operand ordering rules in a single pass.
+
+✨ Two more foundational patterns—single-trade optimization and grammar validation—checked off! On to Day 32! 🚀 

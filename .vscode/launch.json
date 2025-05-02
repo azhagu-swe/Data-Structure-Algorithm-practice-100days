@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ValidateExpressionWithSteps",
+      "request": "launch",
+      "mainClass": "ValidateExpressionWithSteps",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
+      "name": "BuyAndSale",
+      "request": "launch",
+      "mainClass": "BuyAndSale",
+      "projectName": "Data-Structure-Algorithm-practice_444f033c"
+    },
+    {
+      "type": "java",
       "name": "StockBuyAndSaleAlternative",
       "request": "launch",
       "mainClass": "StockBuyAndSaleAlternative",
