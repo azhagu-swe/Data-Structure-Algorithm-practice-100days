@@ -1144,50 +1144,117 @@ Today I tackled three array- and string-manipulation tasks, practicing brute-for
 
 ---
 
-### 1️⃣ Minimize Maximum–Minimum Height Difference  
-**Task:** Given tower heights `arr[]` and an integer `k`, adjust each height by either +k or –k (once) to minimize the difference between the tallest and shortest towers. Do this **without** using built‑in sort, min or max.  
-**Approach:**  
-1. **Manual sort** the array via bubble‑sort (O(n²)).  
-2. Compute the initial difference between the largest and smallest.  
-3. For each possible “split” index `i`, treat items `0…i–1` as increased by k and items `i…n–1` as decreased by k (skip if decrease goes negative).  
-4. Track the new min/max at each split using manual comparisons, update the best (smallest) difference.  
-**Complexity:** O(n²) time (bubble‑sort + one O(n) scan per split), O(1) extra space  
-**Example:**  
-Input: arr = [1,5,8,10], k = 2
-After sort: [1,5,8,10]
-Best adjustment → [1+2, 5−2, 8−2,10−2] = [3,3,6,8]
-Min=3, Max=8 → Difference = 5
+### 1️⃣ Minimize Maximum–Minimum Height Difference
 
+**Task:** Given tower heights `arr[]` and an integer `k`, adjust each height by either +k or –k (once) to minimize the difference between the tallest and shortest towers. Do this **without** using built‑in sort, min or max.**Approach:**
 
+1. **Manual sort** the array via bubble‑sort (O(n²)).
+2. Compute the initial difference between the largest and smallest.
+3. For each possible “split” index `i`, treat items `0…i–1` as increased by k and items `i…n–1` as decreased by k (skip if decrease goes negative).
+4. Track the new min/max at each split using manual comparisons, update the best (smallest) difference.
+   **Complexity:** O(n²) time (bubble‑sort + one O(n) scan per split), O(1) extra space
+   **Example:**
+   Input: arr = [1,5,8,10], k = 2
+   After sort: [1,5,8,10]
+   Best adjustment → [1+2, 5−2, 8−2,10−2] = [3,3,6,8]
+   Min=3, Max=8 → Difference = 5
 
-### 2️⃣ Maximum Subarray Sum (Kadane’s Algorithm)  
-**Task:** Find the contiguous subarray within `arr[]` which has the largest sum.  
-**Approach:**  
-- Maintain two variables:  
-  - `currentSum` = maximum subarray sum ending at current index  
-  - `maxSum` = global maximum subarray sum so far  
-- Iterate once:  
-  1. `currentSum = max(arr[i], currentSum + arr[i])`  
-  2. `maxSum = max(maxSum, currentSum)`  
-**Complexity:** O(n) time, O(1) space  
-**Example:**  
-Input: [2,3,-8,7,-1,2,3]
-Kadane’s steps:
-currentSum,maxSum
-2,2
-5,5
--3,5
-7,7
-6,7
-8,8
-11,11 ← answer
-Output: 11
+### 2️⃣ Maximum Subarray Sum (Kadane’s Algorithm)
 
+**Task:** Find the contiguous subarray within `arr[]` which has the largest sum.**Approach:**
 
+- Maintain two variables:
+  - `currentSum` = maximum subarray sum ending at current index
+  - `maxSum` = global maximum subarray sum so far
+- Iterate once:
+  1. `currentSum = max(arr[i], currentSum + arr[i])`
+  2. `maxSum = max(maxSum, currentSum)`
+     **Complexity:** O(n) time, O(1) space
+     **Example:**
+     Input: [2,3,-8,7,-1,2,3]
+     Kadane’s steps:
+     currentSum,maxSum
+     2,2
+     5,5
+     -3,5
+     7,7
+     6,7
+     8,8
+     11,11 ← answer
+     Output: 11
 
 ## 🧠 Core Takeaways
 
-- **Custom Sorting & Scanning:** Even without built‑ins, you can manually sort and then perform a linear scan to solve the “minimize heights” problem.  
+- **Custom Sorting & Scanning:** Even without built‑ins, you can manually sort and then perform a linear scan to solve the “minimize heights” problem.
 - **Kadane’s Insight:** A simple running-sum update captures the best subarray in one pass with constant space.
 
-✨ Two more classic patterns in place—onward to Day 33! 🚀  
+✨ Two more classic patterns in place—onward to Day 33! 🚀
+
+
+# 🌟 Day 33: Solved Problems (May 4, 2025)
+
+## 🚀 Today’s Challenges
+
+---
+
+### 1️⃣ Maximum Product Subarray
+
+**Task:** Find the maximum product of a contiguous subarray within the given array `arr[]`.
+
+---
+
+**Approach:**
+
+* Use **two traversal directions** (left-to-right and right-to-left) to handle cases with zeros and negative numbers effectively.
+* Maintain two running products:
+  * `leftToRight`: Product from left to right.
+  * `rightToLeft`: Product from right to left.
+* Update `maxProd` at each step as the maximum of:
+  * `leftToRight`
+  * `rightToLeft`
+  * Current `maxProd`
+* Reset the running product to `1` if it becomes `0` to account for zero breaks.
+
+---
+
+**Complexity:**
+
+* **Time Complexity:** O(n)
+* **Space Complexity:** O(1)
+
+---
+
+**Edge Cases:**
+
+* Array with zeros: Ensure the product resets correctly.
+* All negatives: Max product will be the largest single element if the number of negatives is odd.
+
+---
+
+**Example:**
+
+Input:
+
+`arr[] = [-2, 6, -3, -10, 0, 2]`
+
+Output:
+
+`180`
+
+Explanation:
+
+The subarray with the maximum product is `{6, -3, -10}`, with the product calculated as:
+
+`6 * (-3) * (-10) = 180`.
+
+---
+
+## 🧠 Key Insights
+
+* **Dual Direction Traversal:** Helps efficiently track the product split by zeros or negative signs in the array.
+* **Reset on Zero:** Necessary to correctly handle zero breaks in the product.
+* **Comparison at Each Step:** Ensure no possible product is missed during traversal.
+
+---
+
+✨ Another classic solved—onward to Day 34! 🚀
