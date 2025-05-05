@@ -6,6 +6,41 @@
   "configurations": [
     {
       "type": "java",
+      "name": "MaximumProductSubArray",
+      "request": "launch",
+      "mainClass": "MaximumProductSubArray",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "KadaneAlgrorithm",
+      "request": "launch",
+      "mainClass": "KadaneAlgrorithm",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MinMax",
+      "request": "launch",
+      "mainClass": "MinMax",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MinimizeHeightsNoInbuilt",
+      "request": "launch",
+      "mainClass": "MinimizeHeightsNoInbuilt",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MinimizeMaximum",
+      "request": "launch",
+      "mainClass": "MinimizeMaximum",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "ValidateExpressionWithSteps",
       "request": "launch",
       "mainClass": "ValidateExpressionWithSteps",
