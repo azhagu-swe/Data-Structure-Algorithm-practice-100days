@@ -1258,3 +1258,52 @@ The subarray with the maximum product is `{6, -3, -10}`, with the product calcul
 ---
 
 ✨ Another classic solved—onward to Day 34! 🚀
+
+# 🌟 Day 35: Solved Problems (May 5, 2025)
+
+## 🚀 Today’s Challenge
+
+### Maximum Circular Subarray Sum  
+**Task:** Given a circular array of integers, find the maximum possible sum of any subarray, where subarrays may wrap from the end back to the start.
+
+---
+
+## 🧠 Approach
+
+1. **Normal Kadane’s**  
+   - Compute the standard maximum subarray sum (non‑circular) using Kadane’s algorithm.  
+2. **Circular Sum via Inversion**  
+   - Compute the total sum of the array.  
+   - Invert all elements (multiply by –1) and run Kadane’s again to find the maximum sum of the inverted array, which corresponds to the minimum subarray sum of the original.  
+   - The maximum wrap‑around sum = total sum + (max sum of inverted)  
+3. **Choose the Best**  
+   - If all numbers are negative, the normal Kadane’s result is the answer.  
+   - Otherwise, the answer is the maximum of the normal and wrap‑around sums.
+
+---
+
+## 🔍 Complexity
+
+- **Time:** O(n) — each pass (Kadane’s + inversion) processes the array once  
+- **Space:** O(1) — only a few variables regardless of input size  
+
+---
+
+## 📋 Examples
+
+| Input                                   | Output | Explanation                                                |
+|-----------------------------------------|:------:|------------------------------------------------------------|
+| `[8, -8, 9, -9, 10, -11, 12]`           |   22   | Wrap subarray `[12,8,-8,9,-9,10]` sums to 22               |
+| `[10, -3, -4, 7, 6, 5, -4, -1]`         |   23   | Wrap subarray `[7,6,5,-4,-1,10]` sums to 23                |
+| `[-1, 40, -14, 7, 6, 5, -4, -1]`        |   52   | Wrap subarray `[7,6,5,-4,-1,-1,40]` sums to 52             |
+
+---
+
+## 🎯 Key Takeaways
+
+- **Kadane’s Algorithm** solves the non‑circular max‑subarray in O(n).  
+- **Array inversion trick** converts the “min‑subarray” problem into another Kadane’s run for the circular case.  
+- Edge‑case: all-negative arrays must use the non‑circular result.
+
+🚀 On to Day 36!  
+
