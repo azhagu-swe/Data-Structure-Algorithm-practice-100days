@@ -2,6 +2,10 @@
 
 ```
 
+```
+
+```
+
 # 100 Days of DSA Challenges
 
 Welcome! I'm embarking on a 100-day journey to sharpen my Data Structures and Algorithms skills. The goal is simple: solve problems daily, find smarter solutions, and become a more efficient coder.
@@ -1190,7 +1194,6 @@ Today I tackled three array- and string-manipulation tasks, practicing brute-for
 
 ✨ Two more classic patterns in place—onward to Day 33! 🚀
 
-
 # 🌟 Day 33: Solved Problems (May 4, 2025)
 
 ## 🚀 Today’s Challenges
@@ -1263,47 +1266,119 @@ The subarray with the maximum product is `{6, -3, -10}`, with the product calcul
 
 ## 🚀 Today’s Challenge
 
-### Maximum Circular Subarray Sum  
+### Maximum Circular Subarray Sum
+
 **Task:** Given a circular array of integers, find the maximum possible sum of any subarray, where subarrays may wrap from the end back to the start.
 
 ---
 
 ## 🧠 Approach
 
-1. **Normal Kadane’s**  
-   - Compute the standard maximum subarray sum (non‑circular) using Kadane’s algorithm.  
-2. **Circular Sum via Inversion**  
-   - Compute the total sum of the array.  
-   - Invert all elements (multiply by –1) and run Kadane’s again to find the maximum sum of the inverted array, which corresponds to the minimum subarray sum of the original.  
-   - The maximum wrap‑around sum = total sum + (max sum of inverted)  
-3. **Choose the Best**  
-   - If all numbers are negative, the normal Kadane’s result is the answer.  
+1. **Normal Kadane’s**
+   - Compute the standard maximum subarray sum (non‑circular) using Kadane’s algorithm.
+2. **Circular Sum via Inversion**
+   - Compute the total sum of the array.
+   - Invert all elements (multiply by –1) and run Kadane’s again to find the maximum sum of the inverted array, which corresponds to the minimum subarray sum of the original.
+   - The maximum wrap‑around sum = total sum + (max sum of inverted)
+3. **Choose the Best**
+   - If all numbers are negative, the normal Kadane’s result is the answer.
    - Otherwise, the answer is the maximum of the normal and wrap‑around sums.
 
 ---
 
 ## 🔍 Complexity
 
-- **Time:** O(n) — each pass (Kadane’s + inversion) processes the array once  
-- **Space:** O(1) — only a few variables regardless of input size  
+- **Time:** O(n) — each pass (Kadane’s + inversion) processes the array once
+- **Space:** O(1) — only a few variables regardless of input size
 
 ---
 
 ## 📋 Examples
 
-| Input                                   | Output | Explanation                                                |
-|-----------------------------------------|:------:|------------------------------------------------------------|
-| `[8, -8, 9, -9, 10, -11, 12]`           |   22   | Wrap subarray `[12,8,-8,9,-9,10]` sums to 22               |
-| `[10, -3, -4, 7, 6, 5, -4, -1]`         |   23   | Wrap subarray `[7,6,5,-4,-1,10]` sums to 23                |
-| `[-1, 40, -14, 7, 6, 5, -4, -1]`        |   52   | Wrap subarray `[7,6,5,-4,-1,-1,40]` sums to 52             |
+| Input                              | Output | Explanation                                      |
+| ---------------------------------- | :----: | ------------------------------------------------ |
+| `[8, -8, 9, -9, 10, -11, 12]`    |   22   | Wrap subarray `[12,8,-8,9,-9,10]` sums to 22   |
+| `[10, -3, -4, 7, 6, 5, -4, -1]`  |   23   | Wrap subarray `[7,6,5,-4,-1,10]` sums to 23    |
+| `[-1, 40, -14, 7, 6, 5, -4, -1]` |   52   | Wrap subarray `[7,6,5,-4,-1,-1,40]` sums to 52 |
 
 ---
 
 ## 🎯 Key Takeaways
 
-- **Kadane’s Algorithm** solves the non‑circular max‑subarray in O(n).  
-- **Array inversion trick** converts the “min‑subarray” problem into another Kadane’s run for the circular case.  
+- **Kadane’s Algorithm** solves the non‑circular max‑subarray in O(n).
+- **Array inversion trick** converts the “min‑subarray” problem into another Kadane’s run for the circular case.
 - Edge‑case: all-negative arrays must use the non‑circular result.
 
-🚀 On to Day 36!  
+🚀 On to Day 36!
+
+# 🌟 Day 36: Solved Problems (May 6, 2025)
+
+---
+
+## 🚀 Today’s Challenges
+
+---
+
+### 1️⃣ Print an X Pattern
+**Task:** Given an odd-length string, print it in an "X" pattern, with characters aligned diagonally.  
+**Approach:**  
+- Use a single loop with two pointers:  
+  - **`i`** iterates from left to right.  
+  - **`j = n - 1 - i`** iterates from right to left.  
+- At each step, fill an empty row with spaces, then place the corresponding characters at indices `i` and `j`.  
+- Print the row for each iteration.  
+**Complexity:**  
+- **Time:** O(n²) — one pass for each row and each fill operation.  
+- **Space:** O(n) — row buffer.  
+**Edge Cases:**  
+- Input string must have an odd length.  
+- Handle invalid inputs with appropriate exceptions.  
+
+**Example:**  
+Input: `PROGRAM`  
+Output:  
+// P         M
+//  R      A
+//    O  R
+//      G
+//   O    R
+//  R       A
+// P          M 
+
+
+---
+
+### 2️⃣ Smallest Missing Positive Number
+**Task:** Find the smallest missing positive integer in an unsorted array.  
+**Approach:**  
+1. **Mark Visited:**  
+   - Use a boolean array to track numbers in the range `[1, n]` that are present.  
+2. **Identify Missing:**  
+   - Iterate from `1` to `n` and return the first unvisited index.  
+3. **Handle All Found Case:**  
+   - If all numbers from `1` to `n` are present, return `n + 1`.  
+**Complexity:**  
+- **Time:** O(n) — single pass to mark visited and single pass to check.  
+- **Space:** O(n) — boolean array for tracking.  
+**Edge Cases:**  
+- Negative numbers or zeros.  
+- Duplicates in the array.  
+
+**Example:**  
+Input: `[2, -3, 4, 1, 1, 7]`  
+Output: `3`  
+
+---
+
+## 🎯 Key Takeaways  
+
+### Print X Pattern
+- Use a row buffer for efficient row-wise construction.  
+- Single loop with dual pointers minimizes complexity.  
+
+### Smallest Missing Positive Number
+- Boolean arrays are a simple and effective way to track elements within a constrained range.  
+- Edge cases like duplicates or negatives must be explicitly handled.
+
+🚀 Ready for Day 37!  
 
