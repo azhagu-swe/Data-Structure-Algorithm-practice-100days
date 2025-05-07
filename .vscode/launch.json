@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CustomAtoi",
+      "request": "launch",
+      "mainClass": "CustomAtoi",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ConfigBuilder",
+      "request": "launch",
+      "mainClass": "ConfigBuilder",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "MaximumProductSubArray",
       "request": "launch",
       "mainClass": "MaximumProductSubArray",

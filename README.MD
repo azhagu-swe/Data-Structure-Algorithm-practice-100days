@@ -1381,4 +1381,56 @@ Output: `3`
 - Edge cases like duplicates or negatives must be explicitly handled.
 
 🚀 Ready for Day 37!  
+# 🌟 Day 37: Solved Problems (May 7, 2025)
+
+## 🚀 Today’s Challenge
+
+### Implement **`myAtoi(String s)`**  
+Convert a string to a 32‑bit signed integer, replicating C/C++’s `atoi` behavior **without** built‑in parsing functions.
+
+---
+
+## 🧠 Approach
+
+1. **Skip leading whitespace**  
+   - Advance index past any spaces. :contentReference[oaicite:0]{index=0}  
+2. **Read optional sign**  
+   - If next char is `+` or `-`, record sign and advance. :contentReference[oaicite:1]{index=1}  
+3. **Parse digits**  
+   - For each digit, compute `result = result * 10 + digit`.  
+   - Use a 64‑bit accumulator (`long`) to detect overflow before casting to `int`. :contentReference[oaicite:2]{index=2}  
+4. **Clamp on overflow**  
+   - If `result` exceeds `Integer.MAX_VALUE` or goes below `Integer.MIN_VALUE`, return the respective boundary. :contentReference[oaicite:3]{index=3}  
+5. **Stop on first non‑digit**  
+   - Break parsing loop when encountering any non‑numeric character. :contentReference[oaicite:4]{index=4}  
+
+---
+
+## 🔍 Complexity
+
+- **Time:** O(n) — single pass through the string.  
+- **Space:** O(1) — fixed number of variables.  
+
+---
+
+## 📋 Examples
+
+| Input                   | Output         | Notes                                                |
+|-------------------------|:--------------:|------------------------------------------------------|
+| `"-123"`                | `-123`         | Simple negative number.                              |
+| `"   -0012gfg4"`        | `-12`          | Leading zeros, stops at non‑digit.                   |
+| `"4193 with words"`     | `4193`         | Parses initial digits only.                          |
+| `"words and 987"`       | `0`            | No leading digits → 0.                               |
+| `"2147483648"`          | `2147483647`   | Clamped to `Integer.MAX_VALUE`.                      |
+| `"-2147483649"`         | `-2147483648`  | Clamped to `Integer.MIN_VALUE`.                      |
+
+---
+
+## 🎯 Key Takeaways
+
+- **Manual parsing** replicates library `atoi` without built‑ins.  
+- **Overflow detection** via wider accumulator prevents incorrect wrap‑around.  
+- **Early exit** on non‑digits handles mixed‑content strings correctly.  
+
+---
 
