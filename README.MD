@@ -1433,4 +1433,40 @@ Convert a string to a 32‑bit signed integer, replicating C/C++’s `atoi` beha
 - **Early exit** on non‑digits handles mixed‑content strings correctly.  
 
 ---
+# Day 38: Add Binary Strings (May 8, 2025)
 
+## 🚀 Problem Statement
+
+Write a Java function `addBinary(String s1, String s2)` that adds two binary strings and returns their sum as a binary string. The output should have no leading zeros unless the result itself is "0".
+
+---
+
+## 🧩 Methodology
+
+### Step-by-Step Approach
+
+1. **Preparation**:
+   - Initialize a `StringBuilder` for the result.
+   - Set a `carry` variable to 0.
+   - Use two pointers to traverse `s1` and `s2` from the rightmost digit.
+
+2. **Iterative Addition**:
+   - Add corresponding bits from both strings and the carry.
+   - Compute the current bit (`sum % 2`) and append it to the result.
+   - Update the carry (`sum / 2`).
+
+3. **Handle Remaining Carry**:
+   - If a carry remains after traversing both strings, append it to the result.
+
+4. **Formatting**:
+   - Reverse the `StringBuilder` to form the final binary result.
+   - Ensure no leading zeros in the result unless the answer is "0".
+
+---
+
+## 🔍 Complexity Analysis
+
+- **Time Complexity**: O(n), where `n` is the maximum length of `s1` and `s2`.
+- **Space Complexity**: O(n), for storing the result in a `StringBuilder`.
+
+---
