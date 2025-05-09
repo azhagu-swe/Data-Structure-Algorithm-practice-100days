@@ -1470,3 +1470,34 @@ Write a Java function `addBinary(String s1, String s2)` that adds two binary str
 - **Space Complexity**: O(n), for storing the result in a `StringBuilder`.
 
 ---
+# 🌟 Day 39: Solved Problems (May 9, 2025)
+
+## 🚀 Today’s Challenge
+
+### Anagram Checker  
+**Task:** Implement `isAnagram(s1, s2)` to determine whether two strings are anagrams (i.e. they contain exactly the same letters in any order), ignoring case.  
+
+---
+
+## 🧠 Approach
+
+1. **Length Check**  
+   - If `s1.length() != s2.length()`, immediately return `false`.
+
+2. **Frequency Counting**  
+   - Allocate an integer array of size 26 (for letters ‘a’–‘z’).  
+   - Traverse `s1`, convert each character to lowercase, and increment its count.  
+   - Traverse `s2`, convert each character to lowercase, and decrement its count—if any count goes negative, return `false` early.
+
+3. **Validation**  
+   - After both passes, verify that every entry in the count array is zero.  
+   - If so, the two strings are anagrams; otherwise, they are not.
+
+---
+
+## 🔍 Complexity
+
+- **Time:** O(n) — each string is scanned once.  
+- **Space:** O(1) — the fixed 26‑element count array.
+
+---

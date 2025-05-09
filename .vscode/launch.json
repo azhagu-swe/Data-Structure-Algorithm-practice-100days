@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "AnagramChecker",
+      "request": "launch",
+      "mainClass": "AnagramChecker",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "AddBinaryStrings",
       "request": "launch",
       "mainClass": "AddBinaryStrings",
