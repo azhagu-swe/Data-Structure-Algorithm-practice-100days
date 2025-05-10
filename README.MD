@@ -1320,119 +1320,123 @@ The subarray with the maximum product is `{6, -3, -10}`, with the product calcul
 ---
 
 ### 1️⃣ Print an X Pattern
-**Task:** Given an odd-length string, print it in an "X" pattern, with characters aligned diagonally.  
-**Approach:**  
-- Use a single loop with two pointers:  
-  - **`i`** iterates from left to right.  
-  - **`j = n - 1 - i`** iterates from right to left.  
-- At each step, fill an empty row with spaces, then place the corresponding characters at indices `i` and `j`.  
-- Print the row for each iteration.  
-**Complexity:**  
-- **Time:** O(n²) — one pass for each row and each fill operation.  
-- **Space:** O(n) — row buffer.  
-**Edge Cases:**  
-- Input string must have an odd length.  
-- Handle invalid inputs with appropriate exceptions.  
 
-**Example:**  
-Input: `PROGRAM`  
-Output:  
+**Task:** Given an odd-length string, print it in an "X" pattern, with characters aligned diagonally.**Approach:**
+
+- Use a single loop with two pointers:
+  - **`i`** iterates from left to right.
+  - **`j = n - 1 - i`** iterates from right to left.
+- At each step, fill an empty row with spaces, then place the corresponding characters at indices `i` and `j`.
+- Print the row for each iteration.**Complexity:**
+- **Time:** O(n²) — one pass for each row and each fill operation.
+- **Space:** O(n) — row buffer.**Edge Cases:**
+- Input string must have an odd length.
+- Handle invalid inputs with appropriate exceptions.
+
+**Example:**
+Input: `PROGRAM`
+Output:
 // P         M
 //  R      A
 //    O  R
 //      G
 //   O    R
 //  R       A
-// P          M 
-
+// P          M
 
 ---
 
 ### 2️⃣ Smallest Missing Positive Number
-**Task:** Find the smallest missing positive integer in an unsorted array.  
-**Approach:**  
-1. **Mark Visited:**  
-   - Use a boolean array to track numbers in the range `[1, n]` that are present.  
-2. **Identify Missing:**  
-   - Iterate from `1` to `n` and return the first unvisited index.  
-3. **Handle All Found Case:**  
-   - If all numbers from `1` to `n` are present, return `n + 1`.  
-**Complexity:**  
-- **Time:** O(n) — single pass to mark visited and single pass to check.  
-- **Space:** O(n) — boolean array for tracking.  
-**Edge Cases:**  
-- Negative numbers or zeros.  
-- Duplicates in the array.  
 
-**Example:**  
-Input: `[2, -3, 4, 1, 1, 7]`  
-Output: `3`  
+**Task:** Find the smallest missing positive integer in an unsorted array.**Approach:**
+
+1. **Mark Visited:**
+   - Use a boolean array to track numbers in the range `[1, n]` that are present.
+2. **Identify Missing:**
+   - Iterate from `1` to `n` and return the first unvisited index.
+3. **Handle All Found Case:**
+   - If all numbers from `1` to `n` are present, return `n + 1`.
+     **Complexity:**
+
+- **Time:** O(n) — single pass to mark visited and single pass to check.
+- **Space:** O(n) — boolean array for tracking.**Edge Cases:**
+- Negative numbers or zeros.
+- Duplicates in the array.
+
+**Example:**
+Input: `[2, -3, 4, 1, 1, 7]`
+Output: `3`
 
 ---
 
-## 🎯 Key Takeaways  
+## 🎯 Key Takeaways
 
 ### Print X Pattern
-- Use a row buffer for efficient row-wise construction.  
-- Single loop with dual pointers minimizes complexity.  
+
+- Use a row buffer for efficient row-wise construction.
+- Single loop with dual pointers minimizes complexity.
 
 ### Smallest Missing Positive Number
-- Boolean arrays are a simple and effective way to track elements within a constrained range.  
+
+- Boolean arrays are a simple and effective way to track elements within a constrained range.
 - Edge cases like duplicates or negatives must be explicitly handled.
 
-🚀 Ready for Day 37!  
+🚀 Ready for Day 37!
+
 # 🌟 Day 37: Solved Problems (May 7, 2025)
 
 ## 🚀 Today’s Challenge
 
-### Implement **`myAtoi(String s)`**  
+### Implement **`myAtoi(String s)`**
+
 Convert a string to a 32‑bit signed integer, replicating C/C++’s `atoi` behavior **without** built‑in parsing functions.
 
 ---
 
 ## 🧠 Approach
 
-1. **Skip leading whitespace**  
-   - Advance index past any spaces. :contentReference[oaicite:0]{index=0}  
-2. **Read optional sign**  
-   - If next char is `+` or `-`, record sign and advance. :contentReference[oaicite:1]{index=1}  
-3. **Parse digits**  
-   - For each digit, compute `result = result * 10 + digit`.  
-   - Use a 64‑bit accumulator (`long`) to detect overflow before casting to `int`. :contentReference[oaicite:2]{index=2}  
-4. **Clamp on overflow**  
-   - If `result` exceeds `Integer.MAX_VALUE` or goes below `Integer.MIN_VALUE`, return the respective boundary. :contentReference[oaicite:3]{index=3}  
-5. **Stop on first non‑digit**  
-   - Break parsing loop when encountering any non‑numeric character. :contentReference[oaicite:4]{index=4}  
+1. **Skip leading whitespace**
+   - Advance index past any spaces. :contentReference[oaicite:0]{index=0}
+2. **Read optional sign**
+   - If next char is `+` or `-`, record sign and advance. :contentReference[oaicite:1]{index=1}
+3. **Parse digits**
+   - For each digit, compute `result = result * 10 + digit`.
+   - Use a 64‑bit accumulator (`long`) to detect overflow before casting to `int`. :contentReference[oaicite:2]{index=2}
+4. **Clamp on overflow**
+   - If `result` exceeds `Integer.MAX_VALUE` or goes below `Integer.MIN_VALUE`, return the respective boundary. :contentReference[oaicite:3]{index=3}
+5. **Stop on first non‑digit**
+   - Break parsing loop when encountering any non‑numeric character. :contentReference[oaicite:4]{index=4}
 
 ---
 
 ## 🔍 Complexity
 
-- **Time:** O(n) — single pass through the string.  
-- **Space:** O(1) — fixed number of variables.  
+- **Time:** O(n) — single pass through the string.
+- **Space:** O(1) — fixed number of variables.
 
 ---
 
 ## 📋 Examples
 
-| Input                   | Output         | Notes                                                |
-|-------------------------|:--------------:|------------------------------------------------------|
-| `"-123"`                | `-123`         | Simple negative number.                              |
-| `"   -0012gfg4"`        | `-12`          | Leading zeros, stops at non‑digit.                   |
-| `"4193 with words"`     | `4193`         | Parses initial digits only.                          |
-| `"words and 987"`       | `0`            | No leading digits → 0.                               |
-| `"2147483648"`          | `2147483647`   | Clamped to `Integer.MAX_VALUE`.                      |
-| `"-2147483649"`         | `-2147483648`  | Clamped to `Integer.MIN_VALUE`.                      |
+| Input                 |     Output     | Notes                               |
+| --------------------- | :-------------: | ----------------------------------- |
+| `"-123"`            |    `-123`    | Simple negative number.             |
+| `"   -0012gfg4"`    |     `-12`     | Leading zeros, stops at non‑digit. |
+| `"4193 with words"` |    `4193`    | Parses initial digits only.         |
+| `"words and 987"`   |      `0`      | No leading digits → 0.             |
+| `"2147483648"`      | `2147483647` | Clamped to `Integer.MAX_VALUE`.   |
+| `"-2147483649"`     | `-2147483648` | Clamped to `Integer.MIN_VALUE`.   |
 
 ---
 
 ## 🎯 Key Takeaways
 
-- **Manual parsing** replicates library `atoi` without built‑ins.  
-- **Overflow detection** via wider accumulator prevents incorrect wrap‑around.  
-- **Early exit** on non‑digits handles mixed‑content strings correctly.  
+- **Manual parsing** replicates library `atoi` without built‑ins.
+- **Overflow detection** via wider accumulator prevents incorrect wrap‑around.
+- **Early exit** on non‑digits handles mixed‑content strings correctly.
 
 ---
+
 # Day 38: Add Binary Strings (May 8, 2025)
 
 ## 🚀 Problem Statement
@@ -1446,19 +1450,20 @@ Write a Java function `addBinary(String s1, String s2)` that adds two binary str
 ### Step-by-Step Approach
 
 1. **Preparation**:
+
    - Initialize a `StringBuilder` for the result.
    - Set a `carry` variable to 0.
    - Use two pointers to traverse `s1` and `s2` from the rightmost digit.
-
 2. **Iterative Addition**:
+
    - Add corresponding bits from both strings and the carry.
    - Compute the current bit (`sum % 2`) and append it to the result.
    - Update the carry (`sum / 2`).
-
 3. **Handle Remaining Carry**:
-   - If a carry remains after traversing both strings, append it to the result.
 
+   - If a carry remains after traversing both strings, append it to the result.
 4. **Formatting**:
+
    - Reverse the `StringBuilder` to form the final binary result.
    - Ensure no leading zeros in the result unless the answer is "0".
 
@@ -1470,34 +1475,96 @@ Write a Java function `addBinary(String s1, String s2)` that adds two binary str
 - **Space Complexity**: O(n), for storing the result in a `StringBuilder`.
 
 ---
+
 # 🌟 Day 39: Solved Problems (May 9, 2025)
 
 ## 🚀 Today’s Challenge
 
-### Anagram Checker  
-**Task:** Implement `isAnagram(s1, s2)` to determine whether two strings are anagrams (i.e. they contain exactly the same letters in any order), ignoring case.  
+### Anagram Checker
+
+**Task:** Implement `isAnagram(s1, s2)` to determine whether two strings are anagrams (i.e. they contain exactly the same letters in any order), ignoring case.
 
 ---
 
 ## 🧠 Approach
 
-1. **Length Check**  
+1. **Length Check**
+
    - If `s1.length() != s2.length()`, immediately return `false`.
+2. **Frequency Counting**
 
-2. **Frequency Counting**  
-   - Allocate an integer array of size 26 (for letters ‘a’–‘z’).  
-   - Traverse `s1`, convert each character to lowercase, and increment its count.  
+   - Allocate an integer array of size 26 (for letters ‘a’–‘z’).
+   - Traverse `s1`, convert each character to lowercase, and increment its count.
    - Traverse `s2`, convert each character to lowercase, and decrement its count—if any count goes negative, return `false` early.
+3. **Validation**
 
-3. **Validation**  
-   - After both passes, verify that every entry in the count array is zero.  
+   - After both passes, verify that every entry in the count array is zero.
    - If so, the two strings are anagrams; otherwise, they are not.
 
 ---
 
 ## 🔍 Complexity
 
-- **Time:** O(n) — each string is scanned once.  
+- **Time:** O(n) — each string is scanned once.
 - **Space:** O(1) — the fixed 26‑element count array.
 
 ---
+# 🌟 Day 40: Solved Problems (May 10, 2025)
+
+## 🚀 Today’s Challenge
+
+### First Non‑Repeating Character in a String  
+Implement two variants of “first non‑repeating character”:
+
+1. **Case‑Insensitive** – treat `A` and `a` as the same letter.  
+2. **Case‑Sensitive** – distinguish uppercase and lowercase.
+
+---
+
+## 🧠 Approach
+
+1. **Count Frequencies**  
+   - Case‑insensitive: map ‘a’–‘z’ → 0–25.  
+   - Case‑sensitive: map ‘a’–‘z’ → 0–25, ‘A’–‘Z’ → 26–51.  
+2. **Scan for First Unique**  
+   - Iterate original string order; return first character whose frequency == 1.  
+3. **Fallback**  
+   - If none found, return a sentinel (e.g. `$`).
+
+---
+
+## 🔍 Complexity
+
+- **Time:** O(n) — two passes over the string (count + scan).  
+- **Space:** O(1) — fixed‑size frequency array (26 or 52 entries).
+
+---
+
+## 💡 Code
+
+```java
+public class Solution {
+    // Case‑insensitive
+    static char nonRepeatingCharCI(String s) {
+        String t = s.toLowerCase();
+        int[] freq = new int[26];
+        for (char c : t.toCharArray()) freq[c - 'a']++;
+        for (char c : t.toCharArray())
+            if (freq[c - 'a'] == 1) return c;
+        return '$';
+    }
+
+    // Case‑sensitive
+    static char nonRepeatingCharCS(String s) {
+        int[] freq = new int[52];
+        for (char c : s.toCharArray()) {
+            if (Character.isLowerCase(c)) freq[c - 'a']++;
+            else if (Character.isUpperCase(c)) freq[26 + (c - 'A')]++;
+        }
+        for (char c : s.toCharArray()) {
+            int idx = Character.isLowerCase(c) ? c - 'a' : 26 + (c - 'A');
+            if (freq[idx] == 1) return c;
+        }
+        return '$';
+    }
+}
