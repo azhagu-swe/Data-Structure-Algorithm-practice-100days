@@ -1568,3 +1568,99 @@ public class Solution {
         return '$';
     }
 }
+
+# 🌟 Day 41: Solved Problems (May 11, 2025)
+
+## 🚀 Today’s Challenge
+
+### Find All Pattern Occurrences in Text Using the KMP Algorithm  
+
+Given a `text` and a `pattern`, find all starting indices where the pattern appears in the text using the **Knuth-Morris-Pratt (KMP)** algorithm.  
+
+---
+
+## 🧠 Approach
+
+1. **Preprocess Pattern**  
+   - Compute the **Longest Prefix Suffix (LPS)** array.  
+   - `LPS[i]` indicates the length of the longest prefix of the pattern that is also a suffix for `pat[0...i]`.  
+
+2. **Search in Text**  
+   - Use the `LPS` array to skip unnecessary character comparisons in the text.
+
+3. **Edge Cases**  
+   - Empty `pattern` or `text`.  
+   - Pattern length greater than text length.
+
+---
+
+## 🔍 Complexity
+
+- **Time Complexity:** O(N + M)  
+   - O(M) for computing the LPS array.  
+   - O(N) for searching through the text.  
+- **Space Complexity:** O(M) for storing the LPS array.
+
+---
+
+## 💡 Code
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class FindPatternOccurrences {
+
+    public static List<Integer> findAllOccurrences(String txt, String pat) {
+        List<Integer> resultIndices = new ArrayList<>();
+
+        if (pat == null || txt == null || pat.isEmpty() || txt.length() < pat.length()) {
+            return resultIndices;
+        }
+
+        int textLength = txt.length();
+        int patternLength = pat.length();
+        int[] lps = new int[patternLength];
+        int lengthLPS = 0;
+        int k = 1;
+
+        lps[0] = 0;
+        while (k < patternLength) {
+            if (pat.charAt(k) == pat.charAt(lengthLPS)) {
+                lps[k++] = ++lengthLPS;
+            } else if (lengthLPS != 0) {
+                lengthLPS = lps[lengthLPS - 1];
+            } else {
+                lps[k++] = 0;
+            }
+        }
+
+        int i = 0, j = 0;
+        while (i < textLength) {
+            if (pat.charAt(j) == txt.charAt(i)) {
+                i++;
+                j++;
+            }
+
+            if (j == patternLength) {
+                resultIndices.add(i - j);
+                j = lps[j - 1];
+            } else if (i < textLength && pat.charAt(j) != txt.charAt(i)) {
+                if (j != 0) {
+                    j = lps[j - 1];
+                } else {
+                    i++;
+                }
+            }
+        }
+
+        return resultIndices;
+    }
+
+    public static void main(String[] args) {
+        String txt = "aabaacaadaabaaba";
+        String pat = "aaba";
+        System.out.println("Occurrences: " + findAllOccurrences(txt, pat)); // Expected: [0, 9, 12]
+    }
+}
+

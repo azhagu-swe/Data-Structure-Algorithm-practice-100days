@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "FindPatternOccurrences",
+      "request": "launch",
+      "mainClass": "FindPatternOccurrences",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "NonRepeatingChar",
       "request": "launch",
       "mainClass": "NonRepeatingChar",
