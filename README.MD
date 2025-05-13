@@ -1763,3 +1763,113 @@ public class MinCharsToMakePalindrome {
     }
 }
 
+
+# 🌟 Day 44: String Rotation Check Using KMP (May 13, 2025)
+
+## 🚀 Problem Statement
+
+Determine if one string is a **rotation** of another.  
+
+**Definition:**  
+String `s2` is a rotation of string `s1` if there exists a way to split `s1` into two substrings `A` and `B` such that `s2 = B + A`.  
+
+Example:  
+`"cdab"` is a rotation of `"abcd"`.  
+
+---
+
+## 🧠 Approach
+
+1. **Concatenate the Original String:**  
+   - Concatenate `s1` with itself to create `s1 + s1`.  
+   - If `s2` is a rotation of `s1`, then `s2` must appear as a substring in the concatenated string.  
+
+2. **Optimized Substring Search with KMP Algorithm:**  
+   - Use the **Knuth-Morris-Pratt (KMP)** algorithm to efficiently search for `s2` in `s1 + s1`.  
+   - Compute the **Longest Prefix Suffix (LPS)** array for the pattern `s2` to reduce unnecessary comparisons.  
+
+3. **Check Length and Validity:**  
+   - Ensure both strings are non-null and of the same length.  
+   - Handle edge cases like empty strings or identical strings.  
+
+---
+
+## 🔍 Complexity Analysis
+
+- **Time Complexity:**  
+  - LPS Array Construction: O(L)  
+  - KMP Search: O(2L)  
+  - Total: **O(L)**  
+
+- **Space Complexity:**  
+  - **O(L)** for the LPS array.  
+
+---
+
+## 💡 Code
+
+```java
+public class StringRotationCheck {
+
+    public static boolean areRotations(String s1, String s2) {
+        if (s1 == null || s2 == null || s1.length() != s2.length()) {
+            return false;
+        }
+        if (s1.isEmpty()) {
+            return true;
+        }
+
+        String concatenatedS1 = s1 + s1;
+        int[] lps = computeLPSArray(s2);
+
+        int i = 0, j = 0;
+        while (i < concatenatedS1.length()) {
+            if (s2.charAt(j) == concatenatedS1.charAt(i)) {
+                i++;
+                j++;
+            }
+
+            if (j == s2.length()) {
+                return true;
+            } else if (i < concatenatedS1.length() && s2.charAt(j) != concatenatedS1.charAt(i)) {
+                if (j != 0) {
+                    j = lps[j - 1];
+                } else {
+                    i++;
+                }
+            }
+        }
+        return false;
+    }
+
+    private static int[] computeLPSArray(String pattern) {
+        int length = 0;
+        int i = 1;
+        int[] lps = new int[pattern.length()];
+        lps[0] = 0;
+
+        while (i < pattern.length()) {
+            if (pattern.charAt(i) == pattern.charAt(length)) {
+                length++;
+                lps[i] = length;
+                i++;
+            } else {
+                if (length != 0) {
+                    length = lps[length - 1];
+                } else {
+                    lps[i] = 0;
+                    i++;
+                }
+            }
+        }
+        return lps;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("abcd and cdab: " + areRotations("abcd", "cdab")); // true
+        System.out.println("aab and aba: " + areRotations("aab", "aba"));     // true
+        System.out.println("abcd and acbd: " + areRotations("abcd", "acbd")); // false
+    }
+}
+
+
