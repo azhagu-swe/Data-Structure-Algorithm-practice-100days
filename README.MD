@@ -1663,4 +1663,103 @@ public class FindPatternOccurrences {
         System.out.println("Occurrences: " + findAllOccurrences(txt, pat)); // Expected: [0, 9, 12]
     }
 }
+  # 🌟 Day 42: Solved Problems (May 12, 2025)
+
+## 🚀 Today’s Challenge
+
+### Minimum Characters to Add to Make a Palindrome
+
+Given a string `s`, find the **minimum number of characters** that need to be added to the front of the string to make it a **palindrome**.  
+
+---
+
+## 🧠 Approach
+
+1. **Palindrome Check:**  
+   - Use a helper function to determine if a string is a palindrome by comparing characters from both ends.  
+
+2. **Iterate to Find Longest Palindromic Prefix:**  
+   - Start with the full string and progressively shorten it to find the **longest prefix** that is a palindrome.
+
+3. **Calculate Minimum Characters:**  
+   - The result is the difference between the string length and the length of the longest palindromic prefix.
+
+4. **Edge Cases:**  
+   - Empty or null strings require `0` additions.  
+   - Strings already palindromic require `0` additions.  
+
+---
+
+## 🔍 Complexity
+
+- **Time Complexity:** O(N²)  
+   - O(N) for palindrome check inside a loop of length N.  
+- **Space Complexity:** O(1)  
+   - No additional space except variables.
+
+---
+
+## 💡 Code
+
+```java
+public class MinCharsToMakePalindrome {
+
+    private static boolean isPalindrome(String str) {
+        int left = 0;
+        int right = str.length() - 1;
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+    public static int minCharsToAdd(String s) {
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+
+        int n = s.length();
+        int longestPalindromicPrefixLength = 0;
+
+        for (int len = n; len >= 1; len--) {
+            String prefix = s.substring(0, len);
+            if (isPalindrome(prefix)) {
+                longestPalindromicPrefixLength = len;
+                break;
+            }
+        }
+
+        return n - longestPalindromicPrefixLength;
+    }
+
+    public static void main(String[] args) {
+        String s1 = "abc";
+        System.out.println("Input: \"" + s1 + "\" -> Output: " + minCharsToAdd(s1));
+
+        String s2 = "aacecaaaa";
+        System.out.println("Input: \"" + s2 + "\" -> Output: " + minCharsToAdd(s2));
+
+        String s3 = "race";
+        System.out.println("Input: \"" + s3 + "\" -> Output: " + minCharsToAdd(s3));
+
+        String s4 = "google";
+        System.out.println("Input: \"" + s4 + "\" -> Output: " + minCharsToAdd(s4));
+
+        String s5 = "abab";
+        System.out.println("Input: \"" + s5 + "\" -> Output: " + minCharsToAdd(s5));
+
+        String s6 = "aba";
+        System.out.println("Input: \"" + s6 + "\" -> Output: " + minCharsToAdd(s6));
+
+        String s7 = "a";
+        System.out.println("Input: \"" + s7 + "\" -> Output: " + minCharsToAdd(s7));
+
+        String s8 = "palindrome";
+        System.out.println("Input: \"" + s8 + "\" -> Output: " + minCharsToAdd(s8));
+    }
+}
 
