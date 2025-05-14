@@ -1509,33 +1509,35 @@ Write a Java function `addBinary(String s1, String s2)` that adds two binary str
 - **Space:** O(1) — the fixed 26‑element count array.
 
 ---
+
 # 🌟 Day 40: Solved Problems (May 10, 2025)
 
 ## 🚀 Today’s Challenge
 
-### First Non‑Repeating Character in a String  
+### First Non‑Repeating Character in a String
+
 Implement two variants of “first non‑repeating character”:
 
-1. **Case‑Insensitive** – treat `A` and `a` as the same letter.  
+1. **Case‑Insensitive** – treat `A` and `a` as the same letter.
 2. **Case‑Sensitive** – distinguish uppercase and lowercase.
 
 ---
 
 ## 🧠 Approach
 
-1. **Count Frequencies**  
-   - Case‑insensitive: map ‘a’–‘z’ → 0–25.  
-   - Case‑sensitive: map ‘a’–‘z’ → 0–25, ‘A’–‘Z’ → 26–51.  
-2. **Scan for First Unique**  
-   - Iterate original string order; return first character whose frequency == 1.  
-3. **Fallback**  
+1. **Count Frequencies**
+   - Case‑insensitive: map ‘a’–‘z’ → 0–25.
+   - Case‑sensitive: map ‘a’–‘z’ → 0–25, ‘A’–‘Z’ → 26–51.
+2. **Scan for First Unique**
+   - Iterate original string order; return first character whose frequency == 1.
+3. **Fallback**
    - If none found, return a sentinel (e.g. `$`).
 
 ---
 
 ## 🔍 Complexity
 
-- **Time:** O(n) — two passes over the string (count + scan).  
+- **Time:** O(n) — two passes over the string (count + scan).
 - **Space:** O(1) — fixed‑size frequency array (26 or 52 entries).
 
 ---
@@ -1543,6 +1545,14 @@ Implement two variants of “first non‑repeating character”:
 ## 💡 Code
 
 ```java
+
+
+
+
+
+
+
+
 public class Solution {
     // Case‑insensitive
     static char nonRepeatingCharCI(String s) {
@@ -1872,4 +1882,94 @@ public class StringRotationCheck {
     }
 }
 
+
+```
+
+
+# 🌟 Day 45: Sort 0s, 1s, and 2s (May14, 2025)
+
+## 🚀 Problem Statement
+
+Given an array `arr[]` containing only the values 0, 1, and 2, sort it **in-place** so that all 0s come first, followed by 1s, then 2s.
+
+**Example:**
+`[0, 1, 2, 0, 1, 2]` → `[0, 0, 1, 1, 2, 2]`
+
+---
+
+## 🧠 Approach
+
+1. **Initialize three pointers:**
+
+   * `low = 0` (next position for 0)
+   * `mid = 0` (current element)
+   * `high = arr.length - 1` (next position for 2)
+
+2. **One-pass partitioning:**
+   Loop while `mid <= high`:
+
+   * If `arr[mid] == 0`: swap `arr[low++]` and `arr[mid++]`.
+   * Else if `arr[mid] == 1`: just `mid++`.
+   * Else (`arr[mid] == 2`): swap `arr[mid]` and `arr[high--]` (do **not** increment `mid`).
+
+3. **Result:**
+   After the loop, 0s, 1s, and 2s are grouped correctly.
+
+---
+
+## 🔍 Complexity Analysis
+
+* **Time Complexity:** O(N) — each element is processed at most once.
+* **Space Complexity:** O(1) — only pointer variables and one temp var.
+
+---
+
+## 💡 Code
+
+```java
+public class Sort012Optimized {
+
+    public void sort012(int[] arr) {
+        if (arr == null || arr.length == 0) return;
+        int low = 0, mid = 0, high = arr.length - 1, temp;
+
+        while (mid <= high) {
+            switch (arr[mid]) {
+                case 0:
+                    temp = arr[low];
+                    arr[low++] = arr[mid];
+                    arr[mid++] = temp;
+                    break;
+                case 1:
+                    mid++;
+                    break;
+                case 2:
+                    temp = arr[mid];
+                    arr[mid] = arr[high];
+                    arr[high--] = temp;
+                    break;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Sort012Optimized sorter = new Sort012Optimized();
+        int[][] tests = {
+            {0,1,2,0,1,2},
+            {0,1,1,0,1,2,1,2,0,0,0,1},
+            {2,1,0},
+            {1,1,1,1},
+            {0,0,0},
+            {2,2,2,0}
+        };
+
+        for (int[] arr : tests) {
+            System.out.println("Before: " + java.util.Arrays.toString(arr));
+            sorter.sort012(arr);
+            System.out.println("After:  " + java.util.Arrays.toString(arr));
+            System.out.println();
+        }
+    }
+}
+```
 
