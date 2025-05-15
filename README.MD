@@ -1973,3 +1973,60 @@ public class Sort012Optimized {
 }
 ```
 
+
+# 🌟 Day 46: Solved Problems (May 15, 2025)
+
+## 🚀 Today’s Challenge
+
+### H‑Index Calculator  
+Given an array of citation counts `citations[]`, compute the researcher’s H‑Index: the largest number `h` such that at least `h` papers have ≥ `h` citations each.
+
+---
+
+## 🧠 Approach
+
+1. **Sort the citations** in ascending order.  
+2. **Iterate** `h` from `n` down to `1` (where `n` is the number of papers):  
+   - Check if `citations[n - h] >= h`.  
+   - If true, return `h`.  
+3. If no valid `h` found, return `0`.
+
+---
+
+## 🔍 Complexity
+
+- **Time:** O(n log n) for sorting + O(n) scan → **O(n log n)**  
+- **Space:** O(log n) recursion stack (Java’s Dual‑Pivot Quicksort)
+
+---
+
+## 💡 Code
+
+```java
+import java.util.Arrays;
+
+public class HIndexCalculator {
+    public static int hIndex(int[] citations) {
+        if (citations == null || citations.length == 0) return 0;
+        int n = citations.length;
+        Arrays.sort(citations);
+        for (int h = n; h >= 1; h--) {
+            if (citations[n - h] >= h) {
+                return h;
+            }
+        }
+        return 0;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(hIndex(new int[]{5, 0, 2, 0, 2})); // 2
+        System.out.println(hIndex(new int[]{6, 0, 3, 5, 3})); // 3
+        System.out.println(hIndex(new int[]{3, 0, 6, 1, 5})); // 3
+        System.out.println(hIndex(new int[]{0, 0, 0}));       // 0
+        System.out.println(hIndex(new int[]{10}));            // 1
+        System.out.println(hIndex(new int[]{1,1,1,1,1}));     // 1
+        System.out.println(hIndex(new int[]{100,200,300}));   // 3
+    }
+}
+
+
