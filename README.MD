@@ -2028,5 +2028,166 @@ public class HIndexCalculator {
         System.out.println(hIndex(new int[]{100,200,300}));   // 3
     }
 }
+```
+# 🌟 Day 47: Solved Problems (May 16, 2025)
+
+## 🚀 Today’s Challenges
+
+### 1️⃣ Diagonal Sum of a Matrix
+
+Compute the sum of the two diagonals (`d1` and `d2`) of a square matrix.
+
+### 2️⃣ Merge Sort Implementation
+
+Implement the **Merge Sort** algorithm to sort an array of integers.
+
+---
+
+## 💡 Problem 1: Diagonal Sum of a Matrix
+
+### Approach
+
+1. Use a 2D array to represent the square matrix.
+2. Iterate through each row `i`:
+
+   * Add the primary diagonal element `arr[i][i]` to `d1`.
+   * Add the secondary diagonal element `arr[i][n-i-1]` to `d2`.
+3. Output the sums.
+
+### Complexity
+
+* **Time:** O(n), single loop through rows of the matrix.
+* **Space:** O(1), no additional memory used.
+
+---
+
+### Code
+
+```java
+public class Diagonal {
+    public static void main(String[] args) {
+        int[][] arr = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+        int d1 = 0, d2 = 0;
+        for (int i = 0; i < arr.length; i++) {
+            d1 += arr[i][i];
+            d2 += arr[i][arr.length - i - 1];
+        }
+        System.out.println("Diagonal 1: " + d1 + "\nDiagonal 2: " + d2);
+    }
+}
+```
+
+#### Example Output
+
+For the input:
+
+```
+1 2 3
+4 5 6
+7 8 9
+```
+
+Output:
+
+```
+Diagonal 1: 15
+Diagonal 2: 15
+```
+
+---
+
+## 💡 Problem 2: Merge Sort
+
+### Approach
+
+1. Recursively split the array into halves.
+2. Sort each half.
+3. Merge the two sorted halves back into the main array.
+4. Use temporary arrays to hold the left and right halves for merging.
+
+### Complexity
+
+* **Time:** O(n log n), splitting and merging involve log n levels and O(n) work per level.
+* **Space:** O(n), due to temporary arrays for merging.
+
+---
+
+### Code
+
+```java
+import java.util.Arrays;
+
+public class MergeSortExample {
+    public static void main(String[] args) {
+        int[] numbers = {12, 11, 13, 5, 6, 7};
+        System.out.println("Unsorted array: " + Arrays.toString(numbers));
+
+        mergeSort(numbers, 0, numbers.length - 1);
+
+        System.out.println("Sorted array:   " + Arrays.toString(numbers));
+    }
+
+    private static void mergeSort(int[] array, int startIndex, int endIndex) {
+        if (startIndex < endIndex) {
+            int midIndex = startIndex + (endIndex - startIndex) / 2;
+            mergeSort(array, startIndex, midIndex);
+            mergeSort(array, midIndex + 1, endIndex);
+            merge(array, startIndex, midIndex, endIndex);
+        }
+    }
+
+    private static void merge(int[] array, int startIndex, int midIndex, int endIndex) {
+        int leftSize = midIndex - startIndex + 1;
+        int rightSize = endIndex - midIndex;
+
+        int[] leftArray = new int[leftSize];
+        int[] rightArray = new int[rightSize];
+
+        for (int i = 0; i < leftSize; i++) {
+            leftArray[i] = array[startIndex + i];
+        }
+        for (int j = 0; j < rightSize; j++) {
+            rightArray[j] = array[midIndex + 1 + j];
+        }
+
+        int leftIndex = 0, rightIndex = 0, mainIndex = startIndex;
+
+        while (leftIndex < leftSize && rightIndex < rightSize) {
+            if (leftArray[leftIndex] <= rightArray[rightIndex]) {
+                array[mainIndex++] = leftArray[leftIndex++];
+            } else {
+                array[mainIndex++] = rightArray[rightIndex++];
+            }
+        }
+
+        while (leftIndex < leftSize) {
+            array[mainIndex++] = leftArray[leftIndex++];
+        }
+        while (rightIndex < rightSize) {
+            array[mainIndex++] = rightArray[rightIndex++];
+        }
+    }
+}
+```
+
+#### Example Output
+
+Input: `[12, 11, 13, 5, 6, 7]`
+Output: `[5, 6, 7, 11, 12, 13]`
+
+---
+
+## 🎯 Takeaways
+
+* Efficient handling of diagonals in square matrices.
+* Solidified understanding of Divide and Conquer using Merge Sort.
+
+---
+
+✨ On to Day 48! 🚀
 
 
