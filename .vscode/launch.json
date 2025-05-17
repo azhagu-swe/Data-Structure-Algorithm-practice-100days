@@ -6,6 +6,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "FindMissingNumber",
+      "request": "launch",
+      "mainClass": "FindMissingNumber",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "BuzzFizz",
+      "request": "launch",
+      "mainClass": "BuzzFizz",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "Learning",
+      "request": "launch",
+      "mainClass": "Learning",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "MergeSort",
       "request": "launch",
       "mainClass": "MergeSort",

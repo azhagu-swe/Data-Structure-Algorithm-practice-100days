@@ -2191,3 +2191,248 @@ Output: `[5, 6, 7, 11, 12, 13]`
 ✨ On to Day 48! 🚀
 
 
+# 🌟 Day 48: Solved Problems (May 17, 2025)
+
+## 🚀 Today’s Challenges
+
+### 1️⃣ Find the Missing Number
+
+Given an array containing n distinct numbers taken from 0, 1, 2, …, n, find the one that is missing from the array.
+
+### 2️⃣ Reverse a String
+
+Write a Java program to reverse a given string without using any built-in functions or libraries.
+
+### 3️⃣ FizzBuzz Problem
+
+Print the numbers from 1 to n (default 100). For multiples of three print “Fizz”, for multiples of five print “Buzz”, and for multiples of both print “FizzBuzz”.
+
+---
+
+## 💡 Problem 1: Find the Missing Number
+
+### Approach
+
+1. Compute the expected sum of numbers from 0 to n: `expectedSum = n*(n+1)/2`.
+2. Sum all elements in the array: `actualSum`.
+3. The difference `expectedSum - actualSum` yields the missing number.
+4. Alternatively, use bitwise XOR:
+
+   * XOR all numbers from 0 to n.
+   * XOR the result with each element of the array.
+   * The final XOR value is the missing number.
+
+### Complexity
+
+* **Time:** O(n), single passes through the array.
+* **Space:** O(1), constant extra space.
+
+---
+
+### Code
+
+```java
+import java.util.Arrays;
+
+public class FindMissingNumber {
+    public static void main(String[] args) {
+        int[] arr = {3, 0, 7, 5, 2, 6, 4};
+
+        // Method 1: Sum
+        long expectedSum = (arr.length * (arr.length + 1L)) / 2;
+        long actualSum = 0;
+        for (int num : arr) {
+            actualSum += num;
+        }
+        System.out.println("Missing Number (Sum): " + (expectedSum - actualSum));
+
+        // Method 2: XOR
+        int missingNumberXor = 0;
+        for (int i = 0; i <= arr.length; i++) {
+            missingNumberXor ^= i;
+        }
+        for (int num : arr) {
+            missingNumberXor ^= num;
+        }
+        System.out.println("Missing Number (XOR): " + missingNumberXor);
+    }
+}
+```
+
+#### Example Output
+
+```
+Missing Number (Sum): 1
+Missing Number (XOR): 1
+```
+
+---
+
+## 💡 Problem 2: Reverse a String
+
+### Approach
+
+1. **Simple concatenation:** Iterate from end to start, build a new string.
+2. **In-place swap:** Convert string to `char[]`, swap characters from ends towards center, then create a new string.
+
+### Complexity
+
+* **Time:** O(n²) for concatenation (due to immutable strings), O(n) for in-place swap.
+* **Space:** O(n) for the reversed string or char array.
+
+---
+
+### Code
+
+```java
+public class ReverseString {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        System.out.println("String: " + str);
+
+        // Method A: Concatenation
+        System.out.println("Reversed (Concat): " + reverseConcat(str));
+
+        // Method B: In-place char swap
+        System.out.println("Reversed (In-place): " + reverseInPlace(str));
+    }
+
+    private static String reverseConcat(String str) {
+        if (str == null) return null;
+        String reverse = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reverse += str.charAt(i);
+        }
+        return reverse;
+    }
+
+    private static String reverseInPlace(String str) {
+        if (str == null) return null;
+        char[] arr = str.toCharArray();
+        int start = 0, end = arr.length - 1;
+        while (start < end) {
+            char temp = arr[start];
+            arr[start++] = arr[end];
+            arr[end--] = temp;
+        }
+        return new String(arr);
+    }
+}
+```
+
+#### Example Output
+
+```
+String: Hello, World!
+Reversed (Concat): !dlroW ,olleH
+Reversed (In-place): !dlroW ,olleH
+```
+
+---
+
+## 💡 Problem 3: FizzBuzz Problem
+
+### Approach
+
+1. Use a loop from 1 to n.
+2. For each `i`:
+
+   * If `i % 15 == 0`, print "FizzBuzz".
+   * Else if `i % 3 == 0`, print "Fizz".
+   * Else if `i % 5 == 0`, print "Buzz".
+   * Otherwise print `i`.
+3. **Bonus:** implement using Java Streams for a more functional style.
+
+### Complexity
+
+* **Time:** O(n), single pass through numbers.
+* **Space:** O(1).
+
+---
+
+### Code
+
+```java
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+public class BuzzFizz {
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        // Stream-based FizzBuzz
+        doStreamFizzBuzz();
+
+        // Classic for-loop FizzBuzz
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        for (int i = 1; i <= number; i++) {
+            if      (i % 15 == 0) System.out.println("FizzBuzz");
+            else if (i % 3  == 0) System.out.println("Fizz");
+            else if (i % 5  == 0) System.out.println("Buzz");
+            else                  System.out.println(i);
+        }
+        scanner.close();
+    }
+
+    private static void doStreamFizzBuzz() {
+        System.out.print("Enter a number for streams: ");
+        int n = scanner.nextInt();
+        IntStream.rangeClosed(1, n)
+                 .mapToObj(i -> (i % 15 == 0) ? "FizzBuzz"
+                                           : (i % 3  == 0) ? "Fizz"
+                                           : (i % 5  == 0) ? "Buzz"
+                                                           : Integer.toString(i))
+                 .forEach(System.out::println);
+    }
+}
+```
+
+#### Example Output
+
+```
+Enter a number for streams: 15
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+Enter a number: 15
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+```
+
+---
+
+## 🎯 Takeaways
+
+* Mathematical and bitwise techniques for missing-number problems.
+* Trade-offs between concatenation versus in-place operations for string reversal.
+* Classic control-flow and functional approaches for FizzBuzz.
+
+---
+
+✨ On to Day 49! 🚀
