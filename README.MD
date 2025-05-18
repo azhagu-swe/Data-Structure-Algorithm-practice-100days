@@ -2436,3 +2436,143 @@ FizzBuzz
 ---
 
 ✨ On to Day 49! 🚀
+## 🌟 Day 49: Solved Problems (May 18, 2025)
+
+Today’s session covers two fundamental Java problems—checking if a string is a palindrome and detecting duplicate elements in an array. We explore both naïve and optimized solutions, leveraging two‑pointer traversal and hash‑based tracking for efficient performance. This reinforces core skills in string manipulation and collection handling, which are essential for interview prep and production code.
+
+---
+
+## 🚀 Today’s Challenges
+
+1️⃣ **String Palindrome**
+Check if a given string reads the same forwards and backwards without using built‑in reversal utilities ([GeeksforGeeks][1]).
+
+2️⃣ **Detect Duplicate Elements in an Array**
+Identify all elements that appear more than once in an integer array ([GeeksforGeeks][2]).
+
+---
+
+## 💡 Problem 1: String Palindrome
+
+### Approach
+
+1. **Two‑Pointer Traversal:**
+   Initialize one pointer at the start and another at the end of the string; compare characters at these indices and move inward ([Stack Overflow][3]).
+2. **Early Exit on Mismatch:**
+   If any character pair doesn’t match, break immediately and conclude the string is not a palindrome ([GeeksforGeeks][1]).
+3. **Completion Check:**
+   If all comparisons succeed until pointers cross or meet, the string is confirmed as a palindrome ([Programiz][4]).
+
+### Complexity
+
+* **Time:** O(n), where n is the string length, because each character is compared at most once ([GeeksforGeeks][1]).
+* **Space:** O(1), only constant extra space for index pointers ([TheServerSide][5]).
+
+### Code
+
+```java
+public class StringPalindrome {
+    public static void main(String[] args) {
+        String str = "aammaa";
+        boolean isPalindrome = true;
+        for (int i = 0; i < str.length() / 2; i++) {
+            if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
+                isPalindrome = false;
+                break;
+            }
+        }
+        System.out.println(isPalindrome 
+            ? "String is Palindrome" 
+            : "String is not Palindrome");
+    }
+}
+```
+
+#### Example Output
+
+```
+String is Palindrome
+```
+
+---
+
+## 💡 Problem 2: Detect Duplicate Elements in an Array
+
+### Approach
+
+1. **Brute‑Force Nested Loops:**
+   For each element, scan subsequent elements to count occurrences; add to a result set if count > 1 ([GeeksforGeeks][2]).
+2. **HashSet Tracking (Optimized):**
+   Maintain a `Set<Integer> seen` to record first encounters and a `List<Integer> duplicates` to collect any element that fails to add (i.e., is already present) ([Baeldung][6]).
+3. **Result Display:**
+   Print the `Set` for unique duplicates and the `List` for all repeated entries, demonstrating both methods ([Java Revisited][7]).
+
+### Complexity
+
+* **Time:**
+
+  * Nested loops: O(n²) in the worst case ([GeeksforGeeks][2]).
+  * HashSet method: O(n) on average due to constant‑time set operations ([Baeldung][6]).
+* **Space:**
+
+  * Nested loops: O(1) extra space.
+  * HashSet/List: O(n) worst‑case to store seen elements and duplicates ([TheServerSide][8]).
+
+### Code
+
+```java
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class FindAllDuplicateElement {
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 4, 5, 2, 6, 7, 8, 3};
+
+        // Method 1: Nested loops + Set for unique duplicates
+        Set<Integer> duplicateSet = new HashSet<>();
+        for (int i = 0; i < nums.length; i++) {
+            int count = 1;
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] == nums[j]) {
+                    count++;
+                }
+            }
+            if (count > 1) {
+                duplicateSet.add(nums[i]);
+            }
+        }
+        System.out.println("Unique duplicates: " + duplicateSet);
+
+        // Method 2: HashSet + List for all duplicates
+        Set<Integer> seen = new HashSet<>();
+        List<Integer> duplicateList = new ArrayList<>();
+        for (int num : nums) {
+            if (!seen.add(num)) {
+                duplicateList.add(num);
+            }
+        }
+        System.out.println("All duplicates: " + duplicateList);
+    }
+}
+```
+
+#### Example Output
+
+```
+Unique duplicates: [2, 3]
+All duplicates: [2, 3]
+```
+
+---
+
+## 🎯 Takeaways
+
+* Two‑pointer traversal provides an in‑place, linear‑time solution for palindrome checking without extra memory allocations ([GeeksforGeeks][1]).
+* Brute‑force nested loops are simple but inefficient at O(n²); hash‑based methods deliver O(n) performance at the cost of O(n) extra space ([Baeldung][6]).
+* Understanding both naïve and optimized patterns equips you for a variety of interview and real‑world scenarios.
+
+---
+
+✨ On to Day 50! 🚀

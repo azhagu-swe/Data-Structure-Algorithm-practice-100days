@@ -6,6 +6,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "FindDuplicatesBrute",
+      "request": "launch",
+      "mainClass": "FindDuplicatesBrute",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FindAllDuplicateElement",
+      "request": "launch",
+      "mainClass": "FindAllDuplicateElement",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "Reverse",
+      "request": "launch",
+      "mainClass": "Reverse",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "FindMissingNumber",
       "request": "launch",
       "mainClass": "FindMissingNumber",
