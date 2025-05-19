@@ -2576,3 +2576,216 @@ All duplicates: [2, 3]
 ---
 
 ✨ On to Day 50! 🚀
+## 🌟 Day 50: Solved Problems (May 19, 2025)
+
+Wrapping up today’s session, we tackled two essential data-structure–and–string challenges in Java: finding the longest common prefix among a set of strings using both horizontal and vertical scanning, and implementing a simple array-backed stack with standard push, pop, and peek operations. These exercises reinforce your understanding of string traversal techniques, substring manipulation, and basic stack mechanics—foundational skills for coding interviews and everyday software development.
+
+---
+
+## 🚀 Today’s Challenges
+
+1️⃣ **Longest Common Prefix**
+Given an array of strings, determine the longest prefix shared by all strings using both horizontal shrink‑and‑chop and vertical character‑by‑character scanning.
+
+2️⃣ **Array‑Backed Stack**
+Implement a stack with `push`, `pop`, and `peek` methods on a fixed‑size array, handling overflow and underflow scenarios gracefully.
+
+---
+
+## 💡 Problem 1: Longest Common Prefix
+
+### Approach
+
+1. **Horizontal Scanning**
+
+   * Initialize the prefix to the first string.
+   * For each subsequent string, repeatedly shorten the prefix (by dropping its last character) until the current string starts with that prefix.
+   * Continue until all strings have been processed, or the prefix becomes empty.
+
+2. **Vertical Scanning**
+
+   * Compare characters column‑by‑column across all strings.
+   * At index `i`, ensure every string has the same character as the first string; if any mismatch or one string ends, return the substring up to `i`.
+
+### Complexity
+
+* **Time:**
+
+  * Horizontal: O(S), where S is the sum of all characters across strings (worst‑case you shrink and compare repeatedly).
+  * Vertical: O(S) too, since you examine each character at most once.
+* **Space:** O(1) extra beyond the input and the prefix.
+
+### Code
+
+```java
+public class LongestCommonPrefix {
+    public static void main(String[] args) {
+        String[] strs = {"flower", "flow", "flight"};
+        String horizontal = longestCommonPrefix(strs);
+        String vertical   = longestCommonPrefixVertical(strs);
+        System.out.println("Horizontal LCP: " + horizontal);
+        System.out.println("Vertical   LCP: " + vertical);
+    }
+
+    // Horizontal shrink-and-check
+    public static String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) return "";
+        String prefix = strs[0];
+        for (int i = 1; i < strs.length; i++) {
+            while (!strs[i].startsWith(prefix)) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (prefix.isEmpty()) return "";
+            }
+        }
+        return prefix;
+    }
+
+    // Vertical character-by-character
+    public static String longestCommonPrefixVertical(String[] strs) {
+        if (strs == null || strs.length == 0) return "";
+        for (int i = 0; i < strs[0].length(); i++) {
+            char c = strs[0].charAt(i);
+            for (int j = 1; j < strs.length; j++) {
+                if (i == strs[j].length() || strs[j].charAt(i) != c) {
+                    return strs[0].substring(0, i);
+                }
+            }
+        }
+        return strs[0];
+    }
+}
+```
+
+#### Example Output
+
+```
+Horizontal LCP: fl
+Vertical   LCP: fl
+```
+
+---
+
+## 💡 Problem 2: Array‑Backed Stack
+
+### Approach
+
+1. **Fixed‑Size Array**
+
+   * Maintain an integer array of capacity `maxSize`.
+   * Use an index `top` starting at –1 to track the stack’s current top.
+
+2. **push(element)**
+
+   * Check for overflow (`top == maxSize – 1`).
+   * Increment `top` and assign the element.
+
+3. **pop()**
+
+   * Check for underflow (`top == -1`).
+   * Return the element at `top` and decrement it.
+
+4. **peek()**
+
+   * Return the element at `top` without modifying the stack; handle empty state.
+
+### Complexity
+
+* **Time:** O(1) for each operation (`push`, `pop`, `peek`).
+* **Space:** O(n) to hold up to `maxSize` elements.
+
+### Code
+
+```java
+public class ArrayStack {
+    private int maxSize;
+    private int[] stackArray;
+    private int top;
+
+    public ArrayStack(int maxSize) {
+        this.maxSize    = maxSize;
+        this.stackArray = new int[maxSize];
+        this.top        = -1;
+    }
+
+    public void push(int element) {
+        if (isFull()) {
+            System.out.println("Stack overflow! cannot push element " + element);
+            return;
+        }
+        stackArray[++top] = element;
+        System.out.println("Pushed element " + element);
+    }
+
+    public int pop() {
+        if (isEmpty()) {
+            System.out.println("Stack underflow! cannot pop");
+            return -1;
+        }
+        int popped = stackArray[top--];
+        System.out.println("Popped element " + popped);
+        return popped;
+    }
+
+    public int peek() {
+        if (isEmpty()) {
+            System.out.println("Stack is empty! cannot peek");
+            return -1;
+        }
+        return stackArray[top];
+    }
+
+    private boolean isEmpty() {
+        return top == -1;
+    }
+
+    private boolean isFull() {
+        return top == maxSize - 1;
+    }
+
+    public static void main(String[] args) {
+        ArrayStack stack = new ArrayStack(5);
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        stack.push(5);
+        stack.push(6);  // overflow
+        System.out.println("Top element: " + stack.peek());
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();    // underflow
+    }
+}
+```
+
+#### Example Output
+
+```
+Pushed element 1
+Pushed element 2
+Pushed element 3
+Pushed element 4
+Pushed element 5
+Stack overflow! cannot push element 6
+Top element: 5
+Popped element 5
+Popped element 4
+Popped element 3
+Popped element 2
+Popped element 1
+Stack underflow! cannot pop
+```
+
+---
+
+## 🎯 Takeaways
+
+* Horizontal vs. vertical strategies both run in linear time for longest‑prefix problems but differ in string‑comparison patterns.
+* Array‑based stacks deliver constant‑time operations; always guard against overflow/underflow in fixed‑capacity designs.
+
+---
+
+✨ On to Day 51! 🚀

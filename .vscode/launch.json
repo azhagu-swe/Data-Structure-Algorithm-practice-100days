@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "LongestCommonPrefix",
+      "request": "launch",
+      "mainClass": "LongestCommonPrefix",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ArrayStack",
+      "request": "launch",
+      "mainClass": "ArrayStack",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "FindDuplicatesBrute",
       "request": "launch",
       "mainClass": "FindDuplicatesBrute",
