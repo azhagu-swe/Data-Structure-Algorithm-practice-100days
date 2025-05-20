@@ -2789,3 +2789,187 @@ Stack underflow! cannot pop
 ---
 
 ✨ On to Day 51! 🚀
+## 🌟 Day 51: Solved Problems (May 20, 2025)
+
+Today’s challenges focused on exploring primality, finding the maximum subarray sum, and counting words in a sentence. These problems help refine fundamental algorithmic techniques like prime checking, Kadane’s algorithm for subarray optimization, and text parsing.
+
+---
+
+## 🚀 Today’s Challenges
+
+1️⃣ **Prime or Not**
+2️⃣ **Maximum Subarray Sum**
+3️⃣ **Word Count**
+
+---
+
+## 💡 Problem 1: Prime or Not
+
+### Description
+
+Write a program to check if a given number is prime.
+
+### Approach
+
+* A prime number is divisible only by 1 and itself.
+* Skip even numbers (after 2) and check divisibility up to the square root of the number.
+
+### Complexity
+
+* **Time:** O(√n)
+* **Space:** O(1)
+
+### Code
+
+```java
+public class PrimeOrNot {
+    public static void main(String[] args) {
+        int num = 29;
+        System.out.println(num + (isPrime(num) ? " is Prime." : " is Not Prime."));
+    }
+
+    private static boolean isPrime(int num) {
+        if (num <= 1)
+            return false;
+        if (num == 2)
+            return true;
+        for (int i = 3; i * i <= num; i += 2) {
+            if (num % i == 0)
+                return false;
+        }
+        return true;
+    }
+}
+```
+
+---
+
+## 💡 Problem 2: Maximum Subarray Sum
+
+### Description
+
+Find the maximum sum of any contiguous subarray within an array of integers.
+
+### Approach
+
+* **Kadane’s Algorithm:**
+
+  * Start with the first element as both the current and maximum sum.
+  * Extend the current subarray or start anew with the current element, based on which yields a greater sum.
+  * Update the maximum sum at each step.
+
+### Complexity
+
+* **Time:** O(n)
+* **Space:** O(1)
+
+### Code
+
+```java
+public class MaximumSubarraySum {
+    public static void main(String[] args) {
+        int[] nums = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+
+        int currentSum = nums[0], maxSum = nums[0];
+
+        for (int i = 1; i < nums.length; i++) {
+            int extendSum = currentSum + nums[i];
+
+            currentSum = extendSum < nums[i] ? nums[i] : extendSum;
+            maxSum = maxSum < currentSum ? currentSum : maxSum;
+        }
+        System.out.println("Maximum Sub Array Sum : " + maxSum);
+    }
+}
+```
+
+#### Example Output
+
+```
+Maximum Sub Array Sum : 6
+```
+
+---
+
+## 💡 Problem 3: Word Count
+
+### Description
+
+Count the number of words in a sentence. A word is defined as any contiguous sequence of alphanumeric characters.
+
+### Approach
+
+1. **Using String Split:**
+
+   * Trim the sentence and split it using whitespace.
+
+2. **Manual Alphanumeric Check:**
+
+   * Iterate over the characters, toggling a flag when entering or exiting a word.
+
+### Complexity
+
+* **Time:** O(n)
+* **Space:** O(1) extra beyond the input.
+
+### Code
+
+```java
+public class WordCount {
+    public static void main(String[] args) {
+        String sentence = "This is a sample sentence to count words";
+        int wordCount = countWords(sentence);
+
+        String words[] = sentence.trim().split("\\s+");
+
+        System.out.println("Number of words in the sentence: " + wordCount);
+        System.out.println("Number of words in the sentence: " + words.length);
+    }
+
+    public static int countWords(String s) {
+        if (s == null || s.isBlank()) {
+            return 0;
+        }
+
+        int count = 0;
+        boolean inWord = false;
+
+        for (int i = 0, n = s.length(); i < n; i++) {
+            char c = s.charAt(i);
+            boolean isAlnum = (c >= 'A' && c <= 'Z')
+                    || (c >= 'a' && c <= 'z')
+                    || (c >= '0' && c <= '9');
+
+            if (isAlnum) {
+                if (!inWord) {
+                    count++;
+                    inWord = true;
+                }
+            } else {
+                inWord = false;
+            }
+        }
+
+        return count;
+    }
+}
+```
+
+#### Example Output
+
+```
+Number of words in the sentence: 8
+Number of words in the sentence: 8
+```
+
+---
+
+## 🎯 Takeaways
+
+* Efficient prime-checking skips even numbers and reduces iterations to O(√n).
+* Kadane’s algorithm is a go-to solution for maximum subarray problems in linear time.
+* Text parsing can be approached flexibly with split functions or manual checks.
+
+---
+
+✨ Keep the momentum alive! See you on Day 52. 🚀

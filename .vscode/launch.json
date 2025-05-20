@@ -6,6 +6,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "PrimeOrNot",
+      "request": "launch",
+      "mainClass": "PrimeOrNot",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MaximumSubarraySum",
+      "request": "launch",
+      "mainClass": "MaximumSubarraySum",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "WordCount",
+      "request": "launch",
+      "mainClass": "WordCount",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "LongestCommonPrefix",
       "request": "launch",
       "mainClass": "LongestCommonPrefix",
