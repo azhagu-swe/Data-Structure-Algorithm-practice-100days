@@ -2973,3 +2973,143 @@ Number of words in the sentence: 8
 ---
 
 ✨ Keep the momentum alive! See you on Day 52. 🚀
+
+## 🌟 Day 52: Solved Problems (May 21, 2025)
+
+Today's challenge focuses on merging two sorted arrays without using extra space. This problem emphasizes in-place modifications and efficient merging techniques, making it highly relevant for memory-constrained applications.
+
+---
+
+## 🚀 Problem: Merge Two Sorted Arrays Without Extra Space
+
+### Description
+
+Given two sorted arrays `a[]` and `b[]` of sizes `n` and `m` respectively, merge them in sorted order **without using extra space**.
+
+* Modify `a[]` to contain the first `n` smallest elements.
+* Modify `b[]` to contain the remaining `m` largest elements.
+
+### Examples
+
+#### Example 1
+
+**Input:**
+`a[] = [2, 4, 7, 10]`
+`b[] = [2, 3]`
+
+**Output:**
+
+```
+Array A: [2, 2, 3, 4]
+Array B: [7, 10]
+```
+
+---
+
+#### Example 2
+
+**Input:**
+`a[] = [1, 5, 9, 10, 15, 20]`
+`b[] = [2, 3, 8, 13]`
+
+**Output:**
+
+```
+Array A: [1, 2, 3, 5, 8, 9]
+Array B: [10, 13, 15, 20]
+```
+
+---
+
+#### Example 3
+
+**Input:**
+`a[] = [0, 1]`
+`b[] = [2, 3]`
+
+**Output:**
+
+```
+Array A: [0, 1]
+Array B: [2, 3]
+```
+
+---
+
+## 💡 Approach
+
+1. **Start from the Last Element of `b[]`:**
+   Compare the last element of `b[]` with the largest element of `a[]`.
+
+2. **Swap and Shift:**
+   If the largest element of `a[]` is greater, shift the elements in `a[]` to make space and insert the element from `b[]`.
+
+3. **In-Place Replacement:**
+   Move the displaced element from `a[]` into `b[]`.
+
+4. **Iterate Backwards:**
+   Repeat this process for all elements of `b[]`.
+
+### Complexity
+
+* **Time:** O((n + m) \* log(n + m)) due to in-place sorting during the iteration.
+* **Space:** O(1) (no extra space used).
+
+---
+
+## 📄 Code
+
+```java
+import java.util.Arrays;
+
+public class MergeSortedArrays {
+    public static void main(String[] args) {
+        // Two sorted arrays
+        int[] arrayA = { 1, 5, 9, 10, 15, 20 }; // Larger array
+        int[] arrayB = { 2, 3, 8, 13 }; // Smaller array
+
+        // Start from the last element of arrayB
+        for (int indexB = arrayB.length - 1; indexB >= 0; indexB--) {
+            // If the last element of arrayA is greater than the current element in arrayB
+            if (arrayA[arrayA.length - 1] > arrayB[indexB]) {
+                int lastElementA = arrayA[arrayA.length - 1]; // Store the last element of arrayA
+                int indexA = arrayA.length - 2; // Pointer to second last element of arrayA
+
+                // Shift elements in arrayA to make room for arrayB[indexB]
+                while (indexA >= 0 && arrayA[indexA] > arrayB[indexB]) {
+                    arrayA[indexA + 1] = arrayA[indexA];
+                    indexA--;
+                }
+
+                // Place the current element of arrayB in the correct position in arrayA
+                arrayA[indexA + 1] = arrayB[indexB];
+
+                // Move the last element of arrayA to arrayB
+                arrayB[indexB] = lastElementA;
+            }
+        }
+
+        // Print the merged arrays
+        System.out.println("Array A: " + Arrays.toString(arrayA));
+        System.out.println("Array B: " + Arrays.toString(arrayB));
+    }
+}
+```
+
+---
+
+## 🎯 Key Takeaways
+
+1. **In-Place Algorithms:**
+   Avoiding extra space is a common constraint in real-world applications, especially for memory-constrained systems.
+
+2. **Sorting in Chunks:**
+   By iterating backwards and making swaps, the arrays can be efficiently merged while preserving the sorted order.
+
+3. **Edge Cases:**
+   Handle edge cases where arrays have overlapping or completely distinct ranges.
+
+---
+
+✨ Keep pushing forward! See you on Day 53. 🚀
+

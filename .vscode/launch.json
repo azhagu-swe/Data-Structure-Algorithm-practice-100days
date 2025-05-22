@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "MergeSortedArrays2",
+      "request": "launch",
+      "mainClass": "MergeSortedArrays2",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MergeArray",
+      "request": "launch",
+      "mainClass": "MergeArray",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "PrimeOrNot",
       "request": "launch",
       "mainClass": "PrimeOrNot",
