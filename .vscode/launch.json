@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "LInkedListHasCycle",
+      "request": "launch",
+      "mainClass": "LInkedListHasCycle",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "LinkedListReverse",
+      "request": "launch",
+      "mainClass": "LinkedListReverse",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "MergeSortedArrays2",
       "request": "launch",
       "mainClass": "MergeSortedArrays2",

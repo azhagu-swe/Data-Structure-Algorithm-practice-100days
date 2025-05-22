@@ -3112,4 +3112,213 @@ public class MergeSortedArrays {
 ---
 
 ✨ Keep pushing forward! See you on Day 53. 🚀
+## 🌟 Day 53: Solved Problems (May 22, 2025)
+
+Today's challenges dive deep into **Linked Lists**, covering cycle detection and reversal. These problems are core topics for mastering data structures and algorithms, especially for interview preparation.
+
+---
+
+## 🚀 Problem 1: Linked List Cycle Detection
+
+### Description
+
+Detect if a linked list contains a cycle using **Floyd's Cycle Detection Algorithm** (also known as the Tortoise and Hare algorithm).
+
+### Approach
+
+1. Use two pointers:
+
+   * **Slow pointer:** Moves 1 step at a time.
+   * **Fast pointer:** Moves 2 steps at a time.
+
+2. If the pointers meet, a cycle exists.
+
+3. If the fast pointer reaches `null`, no cycle exists.
+
+---
+
+### Code
+
+```java
+public class LinkedListCycleCheck {
+    public static void main(String[] args) {
+        // Create linked list nodes
+        Node head = new Node(1);
+        head.next = new Node(2);
+        head.next.next = new Node(3);
+        head.next.next.next = new Node(4);
+        head.next.next.next.next = new Node(5);
+        // Uncomment the line below to introduce a cycle in the linked list
+        // head.next.next.next.next.next = head.next.next;
+
+        boolean hasCycle = detectCycle(head);
+        System.out.println("Does the linked list have a cycle? " + hasCycle);
+    }
+
+    /**
+     * Detects if a linked list has a cycle using Floyd's Cycle Detection Algorithm.
+     *
+     * @param head The head node of the linked list.
+     * @return True if a cycle is detected, otherwise false.
+     */
+    private static boolean detectCycle(Node head) {
+        Node slowPointer = head;
+        Node fastPointer = head;
+
+        while (fastPointer != null && fastPointer.next != null) {
+            slowPointer = slowPointer.next;         // Move slow pointer by 1 step
+            fastPointer = fastPointer.next.next;   // Move fast pointer by 2 steps
+
+            if (slowPointer == fastPointer) {      // Cycle detected
+                return true;
+            }
+        }
+
+        return false; // No cycle found
+    }
+}
+
+/**
+ * Represents a node in a singly linked list.
+ */
+class Node {
+    int value;
+    Node next;
+
+    public Node(int value) {
+        this.value = value;
+        this.next = null;
+    }
+}
+```
+
+---
+
+## 🚀 Problem 2: Linked List Reversal
+
+### Description
+
+Reverse a singly linked list using **iterative** and **recursive** approaches.
+
+### Approach
+
+#### 1. **Iterative Reversal**
+
+* Use three pointers: `previous`, `current`, and `nextNode`.
+* Reverse the `next` pointer of each node as you traverse the list.
+
+#### 2. **Recursive Reversal**
+
+* Recursively reverse from the second node to the end.
+* Reverse the `next` pointer for each node after recursion.
+
+---
+
+### Code
+
+```java
+public class LinkedListReversal {
+    public static void main(String[] args) {
+        Node head = new Node(1);
+        head.next = new Node(2);
+        head.next.next = new Node(3);
+        head.next.next.next = new Node(4);
+
+        System.out.println("Original Linked List:");
+        printLinkedList(head);
+
+        // Iterative Reversal
+        System.out.println("Reversed Linked List (Iterative):");
+        head = reverseLinkedListIteratively(head);
+        printLinkedList(head);
+
+        // Recursive Reversal
+        System.out.println("Reversed Linked List (Recursive):");
+        head = reverseLinkedListRecursively(head);
+        printLinkedList(head);
+    }
+
+    /**
+     * Reverse the linked list using recursion.
+     *
+     * @param head The head node of the linked list.
+     * @return The new head node after reversal.
+     */
+    private static Node reverseLinkedListRecursively(Node head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        Node reversedHead = reverseLinkedListRecursively(head.next);
+        head.next.next = head;
+        head.next = null;
+        return reversedHead;
+    }
+
+    /**
+     * Reverse the linked list using an iterative approach.
+     *
+     * @param head The head node of the linked list.
+     * @return The new head node after reversal.
+     */
+    private static Node reverseLinkedListIteratively(Node head) {
+        Node previous = null;
+        Node current = head;
+
+        while (current != null) {
+            Node nextNode = current.next; // Temporarily store the next node
+            current.next = previous; // Reverse the pointer
+            previous = current; // Move 'previous' one step forward
+            current = nextNode; // Move 'current' one step forward
+        }
+
+        return previous; // New head of the reversed list
+    }
+
+    /**
+     * Print the linked list.
+     *
+     * @param head The head node of the linked list.
+     */
+    private static void printLinkedList(Node head) {
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.value + " -> ");
+            current = current.next;
+        }
+        System.out.println("null");
+    }
+}
+
+/**
+ * Represents a node in a singly linked list.
+ */
+class Node {
+    int value;
+    Node next;
+
+    public Node(int value) {
+        this.value = value;
+        this.next = null;
+    }
+}
+```
+
+---
+
+## 🎯 Key Takeaways
+
+1. **Cycle Detection:**
+   Floyd’s Cycle Detection Algorithm is efficient with **O(n)** time and **O(1)** space complexity.
+
+2. **Reversal Techniques:**
+
+   * Iterative reversal is straightforward and avoids stack overhead.
+   * Recursive reversal is elegant but may cause stack overflow for large lists.
+
+3. **Visualization:**
+   Debugging and visualization tools can help in understanding pointer manipulations.
+
+---
+
+✨ Keep grinding! See you on Day 54. 🚀
 
