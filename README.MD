@@ -3321,4 +3321,200 @@ class Node {
 ---
 
 ✨ Keep grinding! See you on Day 54. 🚀
+## 🌟 Day 54: Solved Problems (May 23, 2025)
+
+Today's challenges cover **Linked Lists** manipulation, finding the middle element, **String Anagrams**, and **Java Streams**. These problems strengthen your grasp of core Java concepts, data structure operations, and algorithmic thinking.
+
+---
+
+### 🚀 Problem 1: Reverse a List Using Streams
+
+#### Description
+
+Reverse the elements of a list using Java Streams and the `Comparator.reverseOrder()`. Explore additional techniques like reversing a `LinkedList`.
+
+#### Key Operations
+
+1. Use Streams to sort and collect in reverse order.
+2. Reverse the list explicitly using `Collections.reverse()`.
+
+---
+
+#### Code
+
+```java
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class ReverseListUsingStream {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+        numbers = numbers.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+        System.out.println("Original List  :" + numbers);
+
+        numbers = numbers.stream().collect(Collectors.toCollection(LinkedList::new));
+        Collections.reverse(numbers);
+        System.out.println(numbers);
+    }
+}
+```
+
+---
+
+### 🚀 Problem 2: Find Middle Element of a Linked List
+
+#### Description
+
+Find the middle element of a `LinkedList` using a two-pointer technique, where one pointer moves twice as fast as the other.
+
+#### Key Operations
+
+1. Use `slow` and `fast` pointers.
+2. Iterate until the `fast` pointer reaches the end.
+
+---
+
+#### Code
+
+```java
+import java.util.LinkedList;
+
+public class LinkedListMidElement {
+    public static void main(String[] args) {
+        LinkedList<Integer> linkedList = new LinkedList<>();
+
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.addFirst(0);
+        linkedList.addLast(4);
+        linkedList.add(3);
+        int mid = midLinkedList(linkedList);
+        System.out.println("Mid of the Element : " + mid);
+    }
+
+    private static int midLinkedList(LinkedList<Integer> linkedList) {
+        int slow = 0, fast = 0;
+
+        while (fast < linkedList.size() - 1) {
+            slow++;
+            fast += 2;
+        }
+        return linkedList.get(slow);
+    }
+}
+```
+
+---
+
+### 🚀 Problem 3: Check Anagrams of Two Strings
+
+#### Description
+
+Determine whether two strings are **anagrams** (contain the same characters in the same frequency).
+
+#### Key Operations
+
+1. Use character frequency counting for manual comparison.
+2. Utilize Java Streams for a concise, modern solution.
+
+---
+
+#### Code 1: Traditional Approach
+
+```java
+import java.util.Scanner;
+
+public class Anagram {
+    public static void main(String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Enter the first string: ");
+            String firstString = scanner.nextLine();
+            System.out.println("Enter the second string: ");
+            String secondString = scanner.nextLine();
+
+            boolean isAnagram = checkAnagram(firstString, secondString);
+            System.out.println("These words are " + (isAnagram ? "Anagrams." : "not Anagrams."));
+        }
+    }
+
+    private static boolean checkAnagram(String s1, String s2) {
+        if (s1 == null || s2 == null || s1.length() != s2.length())
+            return false;
+
+        int[] charCount = new int[26];
+        s1 = s1.toLowerCase();
+        s2 = s2.toLowerCase();
+
+        for (int i = 0; i < s1.length(); i++) {
+            charCount[s1.charAt(i) - 'a']++;
+            charCount[s2.charAt(i) - 'a']--;
+        }
+
+        for (int count : charCount) {
+            if (count != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+```
+
+---
+
+#### Code 2: Stream-Based Approach
+
+```java
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class AnagramStream {
+    public static void main(String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Enter the first string: ");
+            String firstString = scanner.nextLine();
+            System.out.println("Enter the second string: ");
+            String secondString = scanner.nextLine();
+
+            boolean isAnagram = checkAnagramWithStream(firstString, secondString);
+            System.out.println("These words are " + (isAnagram ? "Anagrams." : "not Anagrams."));
+        }
+    }
+
+    private static boolean checkAnagramWithStream(String s1, String s2) {
+        if (s1 == null || s2 == null || s1.length() != s2.length())
+            return false;
+
+        return Arrays.equals(
+            s1.toLowerCase().chars().sorted().toArray(),
+            s2.toLowerCase().chars().sorted().toArray()
+        );
+    }
+}
+```
+
+---
+
+## 🎯 Key Takeaways
+
+1. **Streams and Functional Programming:**
+   Java Streams provide modern, concise solutions for collection manipulations.
+
+2. **Two-Pointer Techniques:**
+   Efficiently traverse data structures for tasks like finding the middle element or detecting cycles.
+
+3. **String Manipulations:**
+   Sorting and character frequency analysis are common techniques for solving string problems.
+
+4. **Coding Style Matters:**
+   Always aim for readable, maintainable code with well-defined functions.
+
+---
+
+✨ Keep up the good work! See you on Day 55. 🚀
 
