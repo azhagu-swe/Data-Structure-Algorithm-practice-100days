@@ -3517,4 +3517,129 @@ public class AnagramStream {
 ---
 
 ✨ Keep up the good work! See you on Day 55. 🚀
+## 🌟 Day 55: Solved Problems (May 24, 2025)
+
+Today's focus was on **Binary Search**, implemented both recursively and iteratively, with optimizations for efficiency and correctness.
+
+---
+
+### 🚀 Problem: Binary Search
+
+#### Description
+
+Implement a binary search algorithm to find the index of a target value in a sorted array.
+
+1. **Recursive Approach**
+2. **Iterative Approach**
+
+---
+
+### 📝 Key Concepts
+
+* **Binary Search Algorithm:**
+  Binary search operates on a sorted array by repeatedly dividing the search interval in half. If the target value is less than the middle element, it searches the left half; otherwise, it searches the right half.
+
+* **Time Complexity:**
+
+  * **Best Case:** $O(1)$
+  * **Average and Worst Case:** $O(\log n)$
+
+---
+
+### 📄 Code
+
+#### Recursive Binary Search
+
+```java
+public static int recursionBinarySearch(int[] arr, int low, int high, int target) {
+    if (low > high) return -1; // Base case: target not found
+
+    int mid = low + (high - low) / 2; // Prevent overflow
+
+    if (arr[mid] == target) {
+        return mid;
+    }
+
+    if (arr[mid] > target) {
+        return recursionBinarySearch(arr, low, mid - 1, target); // Search left
+    } else {
+        return recursionBinarySearch(arr, mid + 1, high, target); // Search right
+    }
+}
+```
+
+---
+
+#### Iterative Binary Search
+
+```java
+public static int getIndexBinarySearch(int[] arr, int target) {
+    int low = 0, high = arr.length - 1;
+
+    while (low <= high) {
+        int mid = low + (high - low) / 2; // Prevent overflow
+
+        if (arr[mid] == target) {
+            return mid; // Target found
+        }
+
+        if (arr[mid] < target) {
+            low = mid + 1; // Move to the right half
+        } else {
+            high = mid - 1; // Move to the left half
+        }
+    }
+
+    return -1; // Target not found
+}
+```
+
+---
+
+### 🧪 Test Example
+
+#### Input
+
+```java
+int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+int target = 7;
+```
+
+#### Output
+
+```plaintext
+Recursion Binary Search Index: 6  
+Iterative Binary Search Index: 6  
+```
+
+---
+
+### 🛠️ Issues in Code and Fixes
+
+1. **Base Case for Recursive Search**
+   In the recursive implementation, ensure you check the base case `if (low > high)` to handle cases where the target is not found.
+
+2. **Iterative Binary Search Bug**
+
+   * The while condition `while (mid <= high)` was incorrect and caused infinite loops or errors. It should be `while (low <= high)`.
+   * Increments and decrements `mid++` and `mid--` are incorrect; update the `low` and `high` bounds instead.
+
+---
+
+### 🎯 Key Takeaways
+
+1. **Binary Search Efficiency:**
+   Binary search is highly efficient for sorted data and significantly faster than linear search for large datasets.
+
+2. **Implementation Details:**
+
+   * Always use `low + (high - low) / 2` to avoid overflow when calculating the middle index.
+   * Recursive implementations are more elegant but may lead to stack overflow for very large arrays.
+
+3. **Debugging Iterative Logic:**
+   Iterative binary search requires careful updates to `low` and `high` pointers to avoid infinite loops.
+
+---
+
+✨ Keep learning and improving! See you on Day 56! 🚀
 

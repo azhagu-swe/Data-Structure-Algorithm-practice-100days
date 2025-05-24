@@ -6,6 +6,48 @@
   "configurations": [
     {
       "type": "java",
+      "name": "BinarySearch",
+      "request": "launch",
+      "mainClass": "BinarySearch",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "BinarySort",
+      "request": "launch",
+      "mainClass": "BinarySort",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ReverseListUsingStream",
+      "request": "launch",
+      "mainClass": "ReverseListUsingStream",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "LinkedListMidElement",
+      "request": "launch",
+      "mainClass": "LinkedListMidElement",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "Anagram",
+      "request": "launch",
+      "mainClass": "Anagram",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "LinkedListCycleDetection",
+      "request": "launch",
+      "mainClass": "LinkedListCycleDetection",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "LInkedListHasCycle",
       "request": "launch",
       "mainClass": "LInkedListHasCycle",
