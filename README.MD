@@ -3643,3 +3643,163 @@ Iterative Binary Search Index: 6
 
 ✨ Keep learning and improving! See you on Day 56! 🚀
 
+# 🌟 Day 56: Sorting Algorithms Exploration (May 25, 2025)
+
+Today's focus was on implementing two fundamental sorting algorithms: **Bubble Sort** and **Selection Sort**, with various optimizations and techniques to improve their performance.
+
+---
+
+## 📚 Table of Contents
+
+1. [Bubble Sort](#bubble-sort)
+2. [Selection Sort](#selection-sort)
+3. [Key Takeaways](#key-takeaways)
+
+---
+
+## 🔍 Bubble Sort
+
+### **Description**
+
+Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The process repeats until the list is sorted.
+
+* **Time Complexity:**
+
+  * Best Case: $O(n)$ (optimized)
+  * Worst Case: $O(n^2)$
+* **Space Complexity:** $O(1)$
+
+---
+
+### **Code Implementation**
+
+#### Using a For Loop
+
+```java
+private static void bubbleSortUsingForLoop(int[] data) {
+    if (data.length <= 0)
+        return;
+    for (int j = 0; j < data.length; j++) {
+        for (int i = 0; i < data.length - 1; i++) {
+            if (data[i] > data[i + 1]) {
+                int temp = data[i];
+                data[i] = data[i + 1];
+                data[i + 1] = temp;
+            }
+        }
+    }
+}
+```
+
+#### Using a While Loop with Optimization
+
+```java
+private static void bubbleSort(int[] data) {
+    if (data.length <= 0)
+        return;
+    boolean isSorted = true;
+    while (isSorted) {
+        isSorted = false;
+        for (int i = 0; i < data.length - 1; i++) {
+            if (data[i] > data[i + 1]) {
+                isSorted = true;
+                // Swapping without a temporary variable
+                data[i] = data[i] + data[i + 1];
+                data[i + 1] = data[i] - data[i + 1];
+                data[i] = data[i] - data[i + 1];
+            }
+        }
+    }
+}
+```
+
+---
+
+### **Output Example**
+
+#### Input:
+
+```plaintext
+int[] data = { -2, 45, 0, 11, -9 };
+```
+
+#### Output:
+
+```plaintext
+[-9, -2, 0, 11, 45]
+```
+
+---
+
+## 🔍 Selection Sort
+
+### **Description**
+
+Selection Sort divides the input list into two parts: a sorted sublist of items that is built up from left to right and a sublist of the remaining unsorted items. The algorithm repeatedly selects the smallest (or largest) element from the unsorted sublist and moves it to the sorted sublist.
+
+* **Time Complexity:**
+
+  * Best and Worst Case: $O(n^2)$
+* **Space Complexity:** $O(1)$
+
+---
+
+### **Code Implementation**
+
+```java
+private static void selectionSort(int[] data) {
+    if (data.length <= 0)
+        return;
+    for (int step = 0; step < data.length; step++) {
+        int minIndex = step;
+        for (int i = step + 1; i < data.length; i++) {
+            if (data[i] < data[minIndex]) {
+                minIndex = i;
+            }
+        }
+        int temp = data[minIndex];
+        data[minIndex] = data[step];
+        data[step] = temp;
+    }
+}
+```
+
+---
+
+### **Output Example**
+
+#### Input:
+
+```plaintext
+int[] data = { -2, 45, 0, 11, -9 };
+```
+
+#### Output:
+
+```plaintext
+[-9, -2, 0, 11, 45]
+```
+
+---
+
+## 🛠️ Key Takeaways
+
+1. **Bubble Sort Characteristics**:
+
+   * Suitable for small datasets.
+   * Inefficient for large datasets due to its quadratic time complexity.
+   * Can be optimized by tracking whether the array is already sorted.
+
+2. **Selection Sort Characteristics**:
+
+   * Simple but inefficient for large datasets.
+   * Performs the minimum number of swaps compared to other simple sorting algorithms.
+
+3. **Comparison**:
+
+   * **Bubble Sort** is adaptive and can terminate early if the array is sorted before completing all iterations.
+   * **Selection Sort** is non-adaptive and always performs $n^2$ comparisons, regardless of the array's state.
+
+---
+
+🎉 Keep up the momentum! See you on **Day 57**! 🚀
