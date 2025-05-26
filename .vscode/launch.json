@@ -6,6 +6,55 @@
   "configurations": [
     {
       "type": "java",
+      "name": "InsertionSortTest",
+      "request": "launch",
+      "mainClass": "InsertionSortTest",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "InsertionSort",
+      "request": "launch",
+      "mainClass": "InsertionSort",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "SelectionSort1",
+      "request": "launch",
+      "mainClass": "SelectionSort1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "TestMergeSort",
+      "request": "launch",
+      "mainClass": "TestMergeSort",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MergeSort2",
+      "request": "launch",
+      "mainClass": "MergeSort2",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MergerSorting1",
+      "request": "launch",
+      "mainClass": "MergerSorting1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MergeSortTrain",
+      "request": "launch",
+      "mainClass": "MergeSortTrain",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "SelectionSortTest",
       "request": "launch",
       "mainClass": "SelectionSortTest",

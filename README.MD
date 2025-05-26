@@ -3803,3 +3803,172 @@ int[] data = { -2, 45, 0, 11, -9 };
 ---
 
 🎉 Keep up the momentum! See you on **Day 57**! 🚀
+# 🌟 Day 57: Exploring Insertion Sort and Merge Sort (May 26, 2025)
+
+Today's focus was on understanding and implementing **Insertion Sort** and **Merge Sort**, two widely used sorting algorithms with different approaches and complexities.
+
+---
+
+## 📚 Table of Contents
+
+1. [Insertion Sort](#insertion-sort)
+2. [Merge Sort](#merge-sort)
+3. [Key Takeaways](#key-takeaways)
+
+---
+
+## 🔍 Insertion Sort
+
+### **Description**
+
+Insertion Sort is a simple sorting algorithm that builds the final sorted array one item at a time. It is much like sorting playing cards in your hand.
+
+* **Time Complexity:**
+
+  * Best Case: $O(n)$ (when the array is already sorted)
+  * Worst Case: $O(n^2)$
+* **Space Complexity:** $O(1)$
+
+---
+
+### **Code Implementation**
+
+```java
+private static void sortArrayUsingInsertion(int[] array) {
+    // Traverse from the second element to the end
+    for (int currentIndex = 1; currentIndex < array.length; currentIndex++) {
+        int currentValue = array[currentIndex]; // The value to be inserted
+        int sortedIndex = currentIndex - 1; // Start checking from the previous index in the sorted part
+
+        // Shift elements of the sorted part to the right to make room for currentValue
+        while (sortedIndex >= 0 && array[sortedIndex] > currentValue) {
+            array[sortedIndex + 1] = array[sortedIndex];
+            sortedIndex--; // Move one step left in the sorted part
+        }
+
+        // Place currentValue at its correct position
+        array[sortedIndex + 1] = currentValue;
+    }
+}
+```
+
+---
+
+### **Output Example**
+
+#### Input:
+
+```plaintext
+int[] numbers = { 6, 5, 12, 10, 9, 1 };
+```
+
+#### Output:
+
+```plaintext
+Sorted Array: [1, 5, 6, 9, 10, 12]
+```
+
+---
+
+## 🔍 Merge Sort
+
+### **Description**
+
+Merge Sort is a divide-and-conquer algorithm that splits the array into halves, sorts each half, and then merges the sorted halves.
+
+* **Time Complexity:**
+
+  * Best, Average, and Worst Case: $O(n \log n)$
+* **Space Complexity:** $O(n)$
+
+---
+
+### **Code Implementation**
+
+#### Merge Sort Algorithm
+
+```java
+public static void mergeSort(int[] data, int leftIndex, int rightIndex) {
+    if (leftIndex < rightIndex) {
+        int middleIndex = (leftIndex + rightIndex) / 2;
+        mergeSort(data, leftIndex, middleIndex); // Sort left half
+        mergeSort(data, middleIndex + 1, rightIndex); // Sort right half
+        merge(data, leftIndex, middleIndex, rightIndex); // Merge sorted halves
+    }
+}
+```
+
+#### Merge Method
+
+```java
+private static void merge(int[] data, int leftIndex, int middleIndex, int rightIndex) {
+    int leftSubArraySize = middleIndex - leftIndex + 1;
+    int rightSubArraySize = rightIndex - middleIndex;
+
+    int[] leftSubArrayBuffer = new int[leftSubArraySize];
+    int[] rightSubArrayBuffer = new int[rightSubArraySize];
+
+    for (int idx = 0; idx < leftSubArraySize; idx++) {
+        leftSubArrayBuffer[idx] = data[leftIndex + idx];
+    }
+    for (int idx = 0; idx < rightSubArraySize; idx++) {
+        rightSubArrayBuffer[idx] = data[middleIndex + 1 + idx];
+    }
+
+    int leftPointer = 0, rightPointer = 0, mergedPointer = leftIndex;
+
+    while (leftPointer < leftSubArraySize && rightPointer < rightSubArraySize) {
+        if (leftSubArrayBuffer[leftPointer] <= rightSubArrayBuffer[rightPointer]) {
+            data[mergedPointer++] = leftSubArrayBuffer[leftPointer++];
+        } else {
+            data[mergedPointer++] = rightSubArrayBuffer[rightPointer++];
+        }
+    }
+
+    while (leftPointer < leftSubArraySize) {
+        data[mergedPointer++] = leftSubArrayBuffer[leftPointer++];
+    }
+    while (rightPointer < rightSubArraySize) {
+        data[mergedPointer++] = rightSubArrayBuffer[rightPointer++];
+    }
+}
+```
+
+---
+
+### **Output Example**
+
+#### Input:
+
+```plaintext
+int arr[] = { 6, 5, 12, 10, 9, 1 };
+```
+
+#### Output:
+
+```plaintext
+[1, 5, 6, 9, 10, 12]
+```
+
+---
+
+## 🛠️ Key Takeaways
+
+1. **Insertion Sort Characteristics**:
+
+   * Best suited for small datasets or nearly sorted datasets.
+   * Simple to implement but inefficient for large datasets.
+
+2. **Merge Sort Characteristics**:
+
+   * Much more efficient than Insertion Sort for large datasets.
+   * Divide-and-conquer approach ensures consistency in performance.
+
+3. **Comparison**:
+
+   * **Insertion Sort** is intuitive and works well in small scenarios.
+   * **Merge Sort** is a robust choice for sorting large datasets efficiently.
+
+---
+
+🎉 Keep pushing forward! On to **Day 58**! 🚀
