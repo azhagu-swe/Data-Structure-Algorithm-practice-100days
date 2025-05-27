@@ -3972,3 +3972,128 @@ int arr[] = { 6, 5, 12, 10, 9, 1 };
 ---
 
 🎉 Keep pushing forward! On to **Day 58**! 🚀
+# 🌟 Day 58: Mastering Heap Sort (May 27, 2025)
+
+Today's focus was on understanding and implementing **Heap Sort**, an efficient and reliable sorting algorithm based on the heap data structure.
+
+---
+
+## 📚 Table of Contents
+
+1. [Heap Sort Overview](#heap-sort-overview)
+2. [Algorithm Steps](#algorithm-steps)
+3. [Code Implementation](#code-implementation)
+4. [Output Example](#output-example)
+5. [Key Takeaways](#key-takeaways)
+
+---
+
+## 🔍 Heap Sort Overview
+
+**Heap Sort** is a comparison-based sorting algorithm that uses a binary heap to organize elements into a max-heap (or min-heap). The largest element is extracted repeatedly to create the sorted array.
+
+* **Time Complexity:**
+
+  * Build Max Heap: $O(n)$
+  * Extract and Heapify: $O(n \log n)$
+  * Total: $O(n \log n)$
+* **Space Complexity:** $O(1)$ (in-place sorting)
+
+---
+
+## 🔄 Algorithm Steps
+
+1. **Build a Max Heap**: Convert the array into a max heap.
+2. **Extract Max Elements**: Swap the root (largest element) with the last element and rebuild the heap for the remaining elements.
+3. **Repeat**: Continue extracting the maximum element until the array is sorted.
+
+---
+
+## 🛠️ Code Implementation
+
+### **Heap Sort Implementation**
+
+```java
+public static void sortArrayUsingHeap(int[] inputArray) {
+    int totalElements = inputArray.length;
+
+    // Step 1: Build a Max Heap
+    for (int currentNodeIndex = totalElements / 2 - 1; currentNodeIndex >= 0; currentNodeIndex--) {
+        buildMaxHeap(inputArray, totalElements, currentNodeIndex);
+    }
+
+    // Step 2: Extract elements one by one from the heap
+    for (int lastElementIndex = totalElements - 1; lastElementIndex >= 0; lastElementIndex--) {
+        // Move the current root (largest element) to the end
+        swapElements(inputArray, 0, lastElementIndex);
+
+        // Rebuild the heap for the remaining elements
+        buildMaxHeap(inputArray, lastElementIndex, 0);
+    }
+}
+```
+
+### **Building a Max Heap**
+
+```java
+private static void buildMaxHeap(int[] heapArray, int heapSize, int rootNodeIndex) {
+    int largestElementIndex = rootNodeIndex;
+    int leftChildIndex = 2 * rootNodeIndex + 1;
+    int rightChildIndex = 2 * rootNodeIndex + 2;
+
+    // Check if the left child is larger than the root
+    if (leftChildIndex < heapSize && heapArray[leftChildIndex] > heapArray[largestElementIndex]) {
+        largestElementIndex = leftChildIndex;
+    }
+
+    // Check if the right child is larger than the largest so far
+    if (rightChildIndex < heapSize && heapArray[rightChildIndex] > heapArray[largestElementIndex]) {
+        largestElementIndex = rightChildIndex;
+    }
+
+    // If the largest is not the root, swap and heapify the affected subtree
+    if (largestElementIndex != rootNodeIndex) {
+        swapElements(heapArray, rootNodeIndex, largestElementIndex);
+        buildMaxHeap(heapArray, heapSize, largestElementIndex);
+    }
+}
+```
+
+### **Swapping Elements**
+
+```java
+private static void swapElements(int[] array, int firstIndex, int secondIndex) {
+    int temporaryValue = array[firstIndex];
+    array[firstIndex] = array[secondIndex];
+    array[secondIndex] = temporaryValue;
+}
+```
+
+---
+
+## 🖥️ Output Example
+
+### **Input:**
+
+```plaintext
+int[] unsortedArray = {4, 10, 3, 5, 1, 2};
+```
+
+### **Output:**
+
+```plaintext
+Sorted Array: [1, 2, 3, 4, 5, 10]
+```
+
+---
+
+## ✨ Key Takeaways
+
+1. **Efficient for Large Data**: Heap Sort is optimal for scenarios where constant space usage is a priority.
+2. **In-Place Sorting**: Unlike Merge Sort, Heap Sort does not require additional storage space.
+3. **Stable vs. Unstable**: Heap Sort is not a stable sorting algorithm, meaning equal elements may not maintain their original order.
+4. **Binary Heap Mastery**: Understanding the heap data structure is crucial for mastering the algorithm.
+
+---
+
+🎉 On to **Day 59** with renewed energy! 🚀

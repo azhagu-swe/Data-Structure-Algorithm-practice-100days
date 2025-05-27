@@ -6,6 +6,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "HeapSortRefactored",
+      "request": "launch",
+      "mainClass": "HeapSortRefactored",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "HeapSortExample",
+      "request": "launch",
+      "mainClass": "HeapSortExample",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "HeapSort",
+      "request": "launch",
+      "mainClass": "HeapSort",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "InsertionSortTest",
       "request": "launch",
       "mainClass": "InsertionSortTest",
