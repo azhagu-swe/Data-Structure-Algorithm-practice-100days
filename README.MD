@@ -4097,3 +4097,164 @@ Sorted Array: [1, 2, 3, 4, 5, 10]
 ---
 
 🎉 On to **Day 59** with renewed energy! 🚀
+
+# 🌟 Day 59: Removing Overlaps from Intervals (May 28, 2025)
+
+Today's focus was on solving a classic **Greedy Algorithm** problem: determining the **minimum number of intervals to remove** to make a set of intervals non-overlapping.
+
+---
+
+## 📚 Table of Contents
+
+1. [Problem Statement](#problem-statement)
+2. [Algorithm Approach](#algorithm-approach)
+3. [Code Implementation](#code-implementation)
+4. [Example Scenarios](#example-scenarios)
+5. [Key Takeaways](#key-takeaways)
+
+---
+
+## 💡 Problem Statement
+
+Given an array of intervals where each interval is represented as `[start, end]`, find the **minimum number of intervals** that need to be removed so that the remaining intervals are **non-overlapping**.
+
+---
+
+## 🧠 Algorithm Approach
+
+### Greedy Algorithm
+
+1. **Sort the intervals by their end times**:
+   Sorting ensures that we process the intervals in a way that minimizes overlaps.
+
+2. **Iterate through the intervals**:
+   Compare the current interval's start time with the previous interval's end time to check for overlaps.
+
+3. **Handle Overlaps**:
+
+   * If there is an overlap, increment the removal count.
+   * Otherwise, update the `previousEnd` to the current interval's end time.
+
+4. **Return the Count**:
+   The count of removals gives the minimum number of intervals to remove.
+
+---
+
+## 🛠️ Code Implementation
+
+```java
+import java.util.Arrays;
+
+public class NonOverlappingIntervals {
+    public static void main(String[] args) {
+        int[][] intervals1 = {{1, 2}, {2, 3}, {3, 4}, {1, 3}};
+        int[][] intervals2 = {{1, 3}, {1, 3}, {1, 3}};
+        int[][] intervals3 = {{1, 2}, {5, 10}, {18, 35}, {40, 45}};
+        
+        System.out.println(minIntervalsToRemove(intervals1)); // Output: 1
+        System.out.println(minIntervalsToRemove(intervals2)); // Output: 2
+        System.out.println(minIntervalsToRemove(intervals3)); // Output: 0
+    }
+
+    /**
+     * Returns the minimum number of intervals to remove to make the intervals non-overlapping.
+     * 
+     * @param intervals A 2D array representing the intervals.
+     * @return Minimum number of intervals to remove.
+     */
+    public static int minIntervalsToRemove(int[][] intervals) {
+        // Step 1: Sort intervals by their end times
+        Arrays.sort(intervals, (a, b) -> a[1] - b[1]);
+
+        int removals = 0;
+        int previousEnd = Integer.MIN_VALUE;
+
+        // Step 2: Iterate through the intervals
+        for (int[] interval : intervals) {
+            int start = interval[0];
+            int end = interval[1];
+
+            // Step 3: Check for overlap
+            if (start < previousEnd) {
+                // Overlap found, increment removals
+                removals++;
+            } else {
+                // No overlap, update the previous end
+                previousEnd = end;
+            }
+        }
+
+        return removals;
+    }
+}
+```
+
+---
+
+## 🖥️ Example Scenarios
+
+### Example 1:
+
+**Input:**
+
+```plaintext
+intervals = {{1, 2}, {2, 3}, {3, 4}, {1, 3}}
+```
+
+**Output:**
+
+```plaintext
+1
+```
+
+**Explanation:** Removing interval `[1, 3]` results in non-overlapping intervals.
+
+---
+
+### Example 2:
+
+**Input:**
+
+```plaintext
+intervals = {{1, 3}, {1, 3}, {1, 3}}
+```
+
+**Output:**
+
+```plaintext
+2
+```
+
+**Explanation:** Removing two intervals, leaving only one, ensures no overlaps.
+
+---
+
+### Example 3:
+
+**Input:**
+
+```plaintext
+intervals = {{1, 2}, {5, 10}, {18, 35}, {40, 45}}
+```
+
+**Output:**
+
+```plaintext
+0
+```
+
+**Explanation:** All intervals are already non-overlapping.
+
+---
+
+## ✨ Key Takeaways
+
+1. **Sorting Matters**: Sorting intervals by their end times is crucial for efficient processing.
+2. **Greedy Strategy**: Choosing the interval that ends the earliest minimizes the chance of overlap.
+3. **Time Complexity**: $O(n \log n)$ for sorting and $O(n)$ for iteration, resulting in $O(n \log n)$ overall.
+4. **Space Complexity**: $O(1)$, as no additional data structures are used.
+
+---
+
+🎉 Another successful day of problem-solving! Ready for **Day 60**! 🚀
+

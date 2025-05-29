@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "NonOverlappingTest",
+      "request": "launch",
+      "mainClass": "NonOverlappingTest",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "NonOverlappingIntervals",
+      "request": "launch",
+      "mainClass": "NonOverlappingIntervals",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "HeapSortRefactored",
       "request": "launch",
       "mainClass": "HeapSortRefactored",
