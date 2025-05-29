@@ -4258,3 +4258,210 @@ intervals = {{1, 2}, {5, 10}, {18, 35}, {40, 45}}
 
 🎉 Another successful day of problem-solving! Ready for **Day 60**! 🚀
 
+# 📘 Day 60: String Rotation Check using KMP Algorithm (May 29, 2025)
+
+Today's task revolved around checking if one string is a **rotation** of another using the **Knuth-Morris-Pratt (KMP)** algorithm for substring search. This approach optimizes the rotation check with efficient pattern matching.
+
+---
+
+## 📚 Table of Contents
+
+1. [Problem Statement](#problem-statement)
+2. [Algorithm Approach](#algorithm-approach)
+3. [Code Implementation](#code-implementation)
+4. [Example Scenarios](#example-scenarios)
+5. [Key Takeaways](#key-takeaways)
+
+---
+
+## 💡 Problem Statement
+
+Given two strings $s1$ and $s2$, determine if $s2$ is a **rotation** of $s1$. For example:
+
+* $s1 = "abcd"$, $s2 = "cdab"$ → **true**
+* $s1 = "abcd"$, $s2 = "acbd"$ → **false**
+
+### Constraints:
+
+* Strings must be of equal length to be rotations.
+* Use the **KMP algorithm** for efficient substring search.
+
+---
+
+## 🧠 Algorithm Approach
+
+### Steps:
+
+1. **Concatenate $s1$ with itself**:
+   If $s2$ is a rotation of $s1$, it will appear as a **substring** in $s1 + s1$.
+
+2. **Use KMP for Substring Search**:
+
+   * Compute the **LPS (Longest Prefix Suffix)** array for the pattern $s2$.
+   * Match $s2$ against $s1 + s1$ using the LPS array for efficient pattern matching.
+
+3. **Return the Result**:
+   If $s2$ is found as a substring in $s1 + s1$, return **true**; otherwise, **false**.
+
+---
+
+## 🛠️ Code Implementation
+
+```java
+public class StringRotationKMP {
+
+    /**
+     * Compute the LPS (longest proper prefix which is also suffix) array for KMP.
+     */
+    private static int[] computeLPS(String pat) {
+        int n = pat.length();
+        int[] lps = new int[n];
+        int len = 0;  // length of previous longest prefix suffix
+        lps[0] = 0;   // lps[0] is always 0
+        
+        int i = 1;
+        while (i < n) {
+            if (pat.charAt(i) == pat.charAt(len)) {
+                len++;
+                lps[i] = len;
+                i++;
+            } else {
+                if (len != 0) {
+                    // fall back in the pattern
+                    len = lps[len - 1];
+                } else {
+                    lps[i] = 0;
+                    i++;
+                }
+            }
+        }
+        return lps;
+    }
+
+    /**
+     * KMP search: returns true if pat is a substring of txt.
+     */
+    private static boolean kmpSearch(String txt, String pat) {
+        int N = txt.length();
+        int M = pat.length();
+        int[] lps = computeLPS(pat);
+
+        int i = 0;  // index for txt
+        int j = 0;  // index for pat
+        while (i < N) {
+            if (txt.charAt(i) == pat.charAt(j)) {
+                i++;
+                j++;
+                if (j == M) {
+                    return true;  // found a match
+                }
+            } else {
+                if (j != 0) {
+                    j = lps[j - 1];
+                } else {
+                    i++;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Returns true if s2 is a rotation of s1 using KMP-based substring search.
+     */
+    public static boolean isRotation(String s1, String s2) {
+        if (s1 == null || s2 == null || s1.length() != s2.length()) {
+            return false;
+        }
+        String doubled = s1 + s1;
+        return kmpSearch(doubled, s2);
+    }
+
+    public static void main(String[] args) {
+        String[][] tests = {
+            {"abcd", "cdab"},
+            {"aab",  "aba"},
+            {"abcd", "acbd"}
+        };
+
+        for (var pair : tests) {
+            String s1 = pair[0], s2 = pair[1];
+            System.out.printf("s1=\"%s\", s2=\"%s\" → %b%n",
+                s1, s2, isRotation(s1, s2));
+        }
+    }
+}
+```
+
+---
+
+## 🖥️ Example Scenarios
+
+### Example 1:
+
+**Input:**
+
+```plaintext
+s1 = "abcd"
+s2 = "cdab"
+```
+
+**Output:**
+
+```plaintext
+true
+```
+
+**Explanation:** $s2$ is a rotation of $s1$.
+
+---
+
+### Example 2:
+
+**Input:**
+
+```plaintext
+s1 = "abcd"
+s2 = "acbd"
+```
+
+**Output:**
+
+```plaintext
+false
+```
+
+**Explanation:** $s2$ is not a rotation of $s1$.
+
+---
+
+### Example 3:
+
+**Input:**
+
+```plaintext
+s1 = "aab"
+s2 = "aba"
+```
+
+**Output:**
+
+```plaintext
+true
+```
+
+**Explanation:** $s2$ is a rotation of $s1$.
+
+---
+
+## ✨ Key Takeaways
+
+1. **String Concatenation Trick**: $s2$ being a rotation of $s1$ implies $s2$ is a substring of $s1 + s1$.
+2. **Efficiency of KMP**: KMP ensures linear time complexity ($O(N + M)$) for substring search.
+3. **Edge Cases**: Always check for null strings and unequal lengths.
+4. **Time Complexity**: $O(N + M)$, where $N$ is the length of $s1 + s1$ and $M$ is the length of $s2$.
+5. **Space Complexity**: $O(M)$ for the LPS array.
+
+---
+
+🎉 Successfully completed **Day 60**! Onto the next challenge! 🚀
