@@ -4465,3 +4465,153 @@ true
 ---
 
 🎉 Successfully completed **Day 60**! Onto the next challenge! 🚀
+# 📘 Day 61: Insert Interval (May 30, 2025)
+
+Today's task involved implementing an algorithm to **insert a new interval** into a list of non-overlapping intervals, merging overlapping intervals as needed.
+
+---
+
+## 💡 Problem Statement
+
+You are given a list of non-overlapping intervals, sorted by their start time. Insert a new interval into the list and merge overlapping intervals.
+
+### Example:
+
+#### Input:
+
+* Intervals: $\text{[[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]]}$
+* New Interval: $[4, 9]$
+
+#### Output:
+
+$\text{[[1, 2], [3, 10], [12, 16]]}$
+
+---
+
+## 🧠 Algorithm Approach
+
+1. **Initialize Result List**: Create an empty list to store the final intervals.
+2. **Add Non-Overlapping Intervals Before the New Interval**:
+   Add all intervals that end **before** the new interval starts.
+3. **Merge Overlapping Intervals**:
+   Merge intervals that overlap with the new interval by updating the start and end of the new interval.
+4. **Add the Merged Interval**:
+   After merging, add the new interval to the result list.
+5. **Add Non-Overlapping Intervals After the New Interval**:
+   Add all intervals that start **after** the new interval ends.
+
+---
+
+## 🛠️ Code Implementation
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class InsertInterval {
+    public static void main(String[] args) {
+        int[][] intervals1 = { { 1, 3 }, { 4, 5 }, { 6, 7 }, { 8, 10 } };
+        int[] newInterval1 = { 5, 6 };
+        System.out.println(formatOutput(insertInterval(intervals1, newInterval1)));
+
+        int[][] intervals2 = { { 1, 2 }, { 3, 5 }, { 6, 7 }, { 8, 10 }, { 12, 16 } };
+        int[] newInterval2 = { 4, 9 };
+        System.out.println(formatOutput(insertInterval(intervals2, newInterval2)));
+    }
+
+    public static List<int[]> insertInterval(int[][] intervals, int[] newInterval) {
+        List<int[]> result = new ArrayList<>();
+        int i = 0;
+        int n = intervals.length;
+
+        // Step 1: Add all intervals that end before the new interval starts
+        while (i < n && intervals[i][1] < newInterval[0]) {
+            result.add(intervals[i]);
+            i++;
+        }
+
+        // Step 2: Merge overlapping intervals with newInterval
+        while (i < n && intervals[i][0] <= newInterval[1]) {
+            newInterval[0] = Math.min(newInterval[0], intervals[i][0]);
+            newInterval[1] = Math.max(newInterval[1], intervals[i][1]);
+            i++;
+        }
+        result.add(newInterval); // Add the merged interval
+
+        // Step 3: Add all intervals that start after the new interval ends
+        while (i < n) {
+            result.add(intervals[i]);
+            i++;
+        }
+
+        return result;
+    }
+
+    // Utility function to format output for better readability
+    public static String formatOutput(List<int[]> intervals) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        for (int[] interval : intervals) {
+            sb.append("[").append(interval[0]).append(", ").append(interval[1]).append("], ");
+        }
+        if (!intervals.isEmpty()) sb.setLength(sb.length() - 2); // Remove trailing comma
+        sb.append("]");
+        return sb.toString();
+    }
+}
+```
+
+---
+
+## 🖥️ Example Scenarios
+
+### Scenario 1:
+
+**Input:**
+
+```plaintext
+Intervals: [[1, 3], [4, 5], [6, 7], [8, 10]]
+New Interval: [5, 6]
+```
+
+**Output:**
+
+```plaintext
+[[1, 3], [4, 7], [8, 10]]
+```
+
+### Scenario 2:
+
+**Input:**
+
+```plaintext
+Intervals: [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]]
+New Interval: [4, 9]
+```
+
+**Output:**
+
+```plaintext
+[[1, 2], [3, 10], [12, 16]]
+```
+
+---
+
+## ✨ Key Takeaways
+
+1. **Three Key Steps**: Separate the logic into:
+
+   * Adding non-overlapping intervals before the new interval.
+   * Merging overlapping intervals.
+   * Adding non-overlapping intervals after the new interval.
+
+2. **Sorting is Predefined**: The input intervals are already sorted, making the algorithm efficient.
+
+3. **Time Complexity**: $O(N)$, where $N$ is the number of intervals.
+
+4. **Space Complexity**: $O(N)$, for storing the result list.
+
+---
+
+🎉 Successfully completed **Day 61**! Onwards to Day 62! 🚀
+
