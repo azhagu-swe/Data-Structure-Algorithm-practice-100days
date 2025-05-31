@@ -6,6 +6,34 @@
   "configurations": [
     {
       "type": "java",
+      "name": "RemoveDuplicates",
+      "request": "launch",
+      "mainClass": "RemoveDuplicates",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "StringFilterBasedOnLength",
+      "request": "launch",
+      "mainClass": "StringFilterBasedOnLength",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FilterEven",
+      "request": "launch",
+      "mainClass": "FilterEven",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ArrayStream",
+      "request": "launch",
+      "mainClass": "ArrayStream",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "InsertInterval",
       "request": "launch",
       "mainClass": "InsertInterval",
