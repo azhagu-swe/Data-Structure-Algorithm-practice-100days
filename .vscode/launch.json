@@ -6,6 +6,48 @@
   "configurations": [
     {
       "type": "java",
+      "name": "VowelConsonantCount",
+      "request": "launch",
+      "mainClass": "VowelConsonantCount",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "StringCount",
+      "request": "launch",
+      "mainClass": "StringCount",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ArrayElementCount",
+      "request": "launch",
+      "mainClass": "ArrayElementCount",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "SortingExample",
+      "request": "launch",
+      "mainClass": "SortingExample",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FindMaxStream",
+      "request": "launch",
+      "mainClass": "FindMaxStream",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ParallelProcessingExample",
+      "request": "launch",
+      "mainClass": "ParallelProcessingExample",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "RemoveDuplicates",
       "request": "launch",
       "mainClass": "RemoveDuplicates",
