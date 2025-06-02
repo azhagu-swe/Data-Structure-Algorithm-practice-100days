@@ -329,3 +329,259 @@ public class ArrayElementCount {
 ---
 
 🎉 Successfully completed **Day 63**! 🚀
+
+Here’s the corrected **Day 64** README with the problem count added in the title:
+
+---
+
+### Day 64 - Java DSA Practice (10 Problems)
+
+#### **1. FizzBuzz Problem**
+
+* **Description**: Write a program that prints the numbers from 1 to 100. For multiples of three, print “Fizz”; for multiples of five, print “Buzz”; and for numbers divisible by both, print “FizzBuzz”.
+* **Code**:
+
+```java
+import java.util.stream.IntStream;
+
+public class FizzBuzz {
+    public static void main(String[] args) {
+        IntStream.rangeClosed(1, 100)
+                 .mapToObj(i -> (i % 3 == 0 && i % 5 == 0) ? "FizzBuzz" :
+                                i % 3 == 0 ? "Fizz" :
+                                i % 5 == 0 ? "Buzz" : i)
+                 .forEach(System.out::println);
+    }
+}
+```
+
+---
+
+#### **2. Reverse a String**
+
+* **Description**: Reverse a given string without using built-in functions.
+* **Code**:
+
+```java
+public class ReverseStringTest {
+    public static void main(String[] args) {
+        String word = "Hello World!";
+        char[] reverse = word.toCharArray();
+        int start = 0, end = word.length() - 1;
+
+        while (start < end) {
+            char temp = reverse[start];
+            reverse[start] = reverse[end];
+            reverse[end] = temp;
+            start++;
+            end--;
+        }
+
+        System.out.println(new String(reverse));
+    }
+}
+```
+
+---
+
+#### **3. Find the Missing Number**
+
+* **Description**: Find the missing number in an array of distinct integers ranging from 0 to n.
+* **Code**:
+
+```java
+import java.util.Arrays;
+
+public class FindMissingNumbers {
+    public static void main(String[] args) {
+        int[] nums = {3, 0, 1, 5, 2, 6, 4};
+        int n = nums.length;
+        int expectedSum = n * (n + 1) / 2;
+        int actualSum = Arrays.stream(nums).sum();
+        System.out.println(expectedSum - actualSum);
+    }
+}
+```
+
+---
+
+#### **4. Check if a String is Palindrome**
+
+* **Description**: Determine if a string reads the same backward as forward.
+* **Code**:
+
+```java
+public class CheckStringPalindrome {
+    public static void main(String[] args) {
+        String word = "radar";
+        boolean isPalindrome = new StringBuilder(word).reverse().toString().equals(word);
+        System.out.println("Palindrome: " + isPalindrome);
+    }
+}
+```
+
+---
+
+#### **5. Detect Duplicate Elements in an Array**
+
+* **Description**: Find all duplicate elements in an array.
+* **Code**:
+
+```java
+import java.util.*;
+
+public class ArrayDuplicateElementsDetector {
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 4, 5, 2, 6, 7, 8, 3};
+        Set<Integer> duplicates = new HashSet<>();
+        List<Integer> dupList = new ArrayList<>();
+
+        for (int num : nums) {
+            if (!duplicates.add(num)) dupList.add(num);
+        }
+
+        System.out.println(dupList);
+    }
+}
+```
+
+---
+
+#### **6. Implement a Stack Using Arrays**
+
+* **Description**: Implement a stack with basic operations: push, pop, and peek.
+* **Code**:
+
+```java
+class Stack {
+    private int[] data;
+    private int top;
+
+    public Stack(int size) {
+        data = new int[size];
+        top = -1;
+    }
+
+    public void push(int value) {
+        data[++top] = value;
+    }
+
+    public int pop() {
+        return data[top--];
+    }
+
+    public int peek() {
+        return data[top];
+    }
+
+    public boolean isEmpty() {
+        return top == -1;
+    }
+}
+
+public class StackUsingArray {
+    public static void main(String[] args) {
+        Stack stack = new Stack(10);
+        stack.push(5);
+        System.out.println(stack.pop());
+    }
+}
+```
+
+---
+
+#### **7. Find the Longest Common Prefix**
+
+* **Description**: Find the longest common prefix string among an array of strings.
+* **Code**:
+
+```java
+public class LongestCommonPrefix {
+    public static void main(String[] args) {
+        String[] strs = {"flower", "flow", "flight"};
+        System.out.println(longestCommonPrefix(strs));
+    }
+
+    private static String longestCommonPrefix(String[] strs) {
+        String prefix = strs[0];
+        for (int i = 1; i < strs.length; i++) {
+            while (!strs[i].startsWith(prefix)) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+            }
+        }
+        return prefix;
+    }
+}
+```
+
+---
+
+#### **8. Count Words in a Sentence**
+
+* **Description**: Count the number of words in a given sentence.
+* **Code**:
+
+```java
+public class CountWordsInSentence {
+    public static void main(String[] args) {
+        String sentence = "This is a sample sentence.";
+        System.out.println(sentence.trim().split("\\s+").length);
+    }
+}
+```
+
+---
+
+#### **9. Find the Maximum Subarray Sum**
+
+* **Description**: Find the contiguous subarray with the largest sum (Kadane's Algorithm).
+* **Code**:
+
+```java
+public class MaximumSubarraySum {
+    public static void main(String[] args) {
+        int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        int maxSum = nums[0], currentSum = nums[0];
+
+        for (int i = 1; i < nums.length; i++) {
+            currentSum = Math.max(nums[i], currentSum + nums[i]);
+            maxSum = Math.max(maxSum, currentSum);
+        }
+
+        System.out.println("Maximum Subarray Sum: " + maxSum);
+    }
+}
+```
+
+---
+
+#### **10. Check for Balanced Parentheses**
+
+* **Description**: Check if a string containing parentheses is balanced.
+* **Code**:
+
+```java
+import java.util.Stack;
+
+public class BalancedParentheses {
+    public static void main(String[] args) {
+        String str = "{[()]}";
+        System.out.println(isBalanced(str));
+    }
+
+    private static boolean isBalanced(String str) {
+        Stack<Character> stack = new Stack<>();
+        for (char c : str.toCharArray()) {
+            if (c == '(' || c == '{' || c == '[') stack.push(c);
+            else if (stack.isEmpty() || (c == ')' && stack.pop() != '(') ||
+                     (c == '}' && stack.pop() != '{') ||
+                     (c == ']' && stack.pop() != '[')) return false;
+        }
+        return stack.isEmpty();
+    }
+}
+```
+
+---
+
+

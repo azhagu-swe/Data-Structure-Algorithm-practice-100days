@@ -6,6 +6,83 @@
   "configurations": [
     {
       "type": "java",
+      "name": "PrimeNumberChecker",
+      "request": "launch",
+      "mainClass": "PrimeNumberChecker",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MaximumSubArraySum",
+      "request": "launch",
+      "mainClass": "MaximumSubArraySum",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "CountWordsInSentenceTest",
+      "request": "launch",
+      "mainClass": "CountWordsInSentenceTest",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "LongestCommonPrefix22",
+      "request": "launch",
+      "mainClass": "LongestCommonPrefix22",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "StackUsingArray",
+      "request": "launch",
+      "mainClass": "StackUsingArray",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "DuplicateElements",
+      "request": "launch",
+      "mainClass": "DuplicateElements",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ArrayDuplicateElementsDetector",
+      "request": "launch",
+      "mainClass": "ArrayDuplicateElementsDetector",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "CheckStringPalindrome",
+      "request": "launch",
+      "mainClass": "CheckStringPalindrome",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FindMissingNumbers",
+      "request": "launch",
+      "mainClass": "FindMissingNumbers",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ReverseStringTest",
+      "request": "launch",
+      "mainClass": "ReverseStringTest",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FizzBuzz",
+      "request": "launch",
+      "mainClass": "FizzBuzz",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "VowelConsonantCount",
       "request": "launch",
       "mainClass": "VowelConsonantCount",
