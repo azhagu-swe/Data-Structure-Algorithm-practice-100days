@@ -582,6 +582,143 @@ public class BalancedParentheses {
 }
 ```
 
+## 🌟 **Day 65: DSA Adventures with Java!** 🌟
+
+### 🏆 **Problems Solved**
+
+1. 🎭 **[Find the First Non-Repeating Character in a Stream](#1-find-the-first-non-repeating-character-in-a-stream)**
+2. 🥈 **[Find the Second Largest Number in an Array](#2-find-the-second-largest-number-in-an-array)**
+3. 🌀 **[Generate Fibonacci Series](#3-generate-fibonacci-series)**
+
 ---
 
+### **1. 🎭 Find the First Non-Repeating Character in a Stream**
 
+#### 📖 **Concept: The Queue Detective!**
+
+* Imagine you're a detective 🕵️ tracking letters in a stream of text.
+* Your goal is to spot the **first non-repeating character** 👀 at every step.
+* If you can't find any, shout `#`!
+
+#### 🛠 **Code**
+
+```java
+import java.util.*;
+
+public class FirstNonRepeatingCharInStream {
+    public static void main(String[] args) {
+        String stream = "aabcbd";
+        printFirstNonRepeating(stream);
+    }
+
+    private static void printFirstNonRepeating(String stream) {
+        Queue<Character> queue = new LinkedList<>();
+        int[] charCount = new int[26]; // Assuming lowercase English letters
+
+        for (char c : stream.toCharArray()) {
+            charCount[c - 'a']++;  // Count occurrences
+            queue.add(c);          // Add to the queue
+
+            // Remove repeating characters from the queue
+            while (!queue.isEmpty() && charCount[queue.peek() - 'a'] > 1) {
+                queue.poll();
+            }
+
+            // Print the result
+            if (queue.isEmpty()) {
+                System.out.print("#");
+            } else {
+                System.out.print(queue.peek() + "");
+            }
+        }
+    }
+}
+```
+
+#### 💡 **Example Input/Output**
+
+* **Input**: `"aabcbd"`
+* **Output**: `"a#bbcc"`
+
+---
+
+### **2. 🥈 Find the Second Largest Number in an Array**
+
+#### 📖 **Concept: The Medal Race 🏅**
+
+* Think of an **array** as a race track 🏃.
+* Every number competes to become **the largest** 🏆 and **second largest** 🥈.
+* Your task is to keep track of both and announce the **runner-up**!
+
+#### 🛠 **Code**
+
+```java
+public class FindSecondLargestNumber {
+    public static void main(String[] args) {
+        int[] arr = {12, 35, 1, 10, 34, 1};
+        int largest = arr[0], secondLargest = arr[0];
+        
+        for (int num : arr) {
+            if (num > largest) {
+                secondLargest = largest;  // Update second largest
+                largest = num;           // Update largest
+            } else if (num > secondLargest && num != largest) {
+                secondLargest = num;    // Update second largest
+            }
+        }
+        System.out.println(secondLargest);
+    }
+}
+```
+
+#### 💡 **Example Input/Output**
+
+* **Input**: `[12, 35, 1, 10, 34, 1]`
+* **Output**: `34`
+
+---
+
+### **3. 🌀 Generate Fibonacci Series**
+
+#### 📖 **Concept: The Magical Spiral 🌈**
+
+* The **Fibonacci sequence** is like building blocks 🧱:
+  Start with `0` and `1`, then add the last two numbers to make the next one!
+* Keep going until you build your series.
+
+#### 🛠 **Code**
+
+```java
+import java.util.Arrays;
+
+public class Fibonacci1 {
+    public static void main(String[] args) {
+        int n = 10;
+        int[] fibo = new int[n];
+        fibo[0] = 0;
+        fibo[1] = 1;
+
+        for (int i = 2; i < n; i++) {
+            fibo[i] = fibo[i - 2] + fibo[i - 1];
+        }
+        System.out.println(Arrays.toString(fibo));
+    }
+}
+```
+
+#### 💡 **Example Input/Output**
+
+* **Input**: `n = 10`
+* **Output**: `[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]`
+
+---
+
+### 🎉 **Reflection**
+
+* 🧩 **Non-Repeating Detective**: Solved a fun **streaming** problem using **queues**.
+* 🥈 **Runner-Up Hunt**: Mastered the **largest and second largest tracker** in arrays.
+* 🌀 **Fibonacci Fun**: Explored the **magic of recursion-free sequences**!
+
+---
+
+Enjoy coding! 🚀 Keep up the streak and make every day count! 🎯

@@ -6,6 +6,34 @@
   "configurations": [
     {
       "type": "java",
+      "name": "FirstNonRepeatingCharInStream",
+      "request": "launch",
+      "mainClass": "FirstNonRepeatingCharInStream",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "Fibonacci1",
+      "request": "launch",
+      "mainClass": "Fibonacci1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FindSecondLargestNumber1",
+      "request": "launch",
+      "mainClass": "FindSecondLargestNumber1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FindSecondLargestNumber",
+      "request": "launch",
+      "mainClass": "FindSecondLargestNumber",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "PrimeNumberChecker",
       "request": "launch",
       "mainClass": "PrimeNumberChecker",
