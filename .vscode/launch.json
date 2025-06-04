@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "SecondLarge",
+      "request": "launch",
+      "mainClass": "SecondLarge",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "FirstNonRepeatingCharInStream",
       "request": "launch",
       "mainClass": "FirstNonRepeatingCharInStream",
