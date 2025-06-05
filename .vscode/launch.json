@@ -6,6 +6,34 @@
   "configurations": [
     {
       "type": "java",
+      "name": "MissNumber1",
+      "request": "launch",
+      "mainClass": "MissNumber1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MIssNumber",
+      "request": "launch",
+      "mainClass": "MIssNumber",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "Rev",
+      "request": "launch",
+      "mainClass": "Rev",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "BSearch",
+      "request": "launch",
+      "mainClass": "BSearch",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "SecondLarge",
       "request": "launch",
       "mainClass": "SecondLarge",

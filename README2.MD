@@ -582,3 +582,153 @@ public class BalancedParentheses {
 }
 ```
 
+Here's the **README.md for Day 67**, complete with fun emojis, simplified concepts, and engaging explanations:
+
+---
+
+## 🌟 **Day 67: Mastering Search, Missing Numbers, and Reverse Magic** 🌟
+
+### 🏆 **Problems Solved**
+
+1. 🔍 **[Binary Search (Recursive)](#1-binary-search-recursive)**
+2. 🔢 **[Find the Missing Number (Sum and XOR)](#2-find-the-missing-number-sum-and-xor)**
+3. 🔄 **[Reverse a String](#3-reverse-a-string)**
+
+---
+
+### **1. 🔍 Binary Search (Recursive)**
+
+#### 📖 **Concept: Divide and Conquer 🪓**
+
+* Divide the sorted array into halves until the target is found.
+* Each step reduces the search space by half – 🚀 fast and efficient!
+
+#### 🛠 **Code**
+
+```java
+public class BSearch {
+    public static void main(String[] args) {
+        int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        int target = 9, start = 0, end = numbers.length - 1;
+        int index = binarySearch(numbers, start, end, target);
+        System.out.println(index);
+    }
+
+    private static int binarySearch(int[] numbers, int start, int end, int target) {
+        if (start > end)
+            return -1;
+
+        int mid = start + (end - start) / 2;
+
+        if (numbers[mid] == target)
+            return mid;
+        else if (numbers[mid] > target)
+            return binarySearch(numbers, start, mid - 1, target);
+        else
+            return binarySearch(numbers, mid + 1, end, target);
+    }
+}
+```
+
+#### 💡 **Example Input/Output**
+
+* **Input**: Array: `[1, 2, 3, 4, 5, 6, 7, 8, 9]`, Target: `9`
+* **Output**: `8` (Index of `9`)
+
+---
+
+### **2. 🔢 Find the Missing Number (Sum and XOR)**
+
+#### 📖 **Concept: The Sherlock Holmes 🕵️**
+
+* **Sum Approach**: Total sum of first `n` numbers - actual sum of array = missing number.
+* **XOR Approach**: XOR all numbers in range `[1...n]` with array elements to find the missing one.
+
+#### 🛠 **Code**
+
+```java
+public class MissNumber1 {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8};
+        int n = numbers.length + 1; // Total numbers including the missing one
+
+        // Using Sum-based Approach
+        int expectedSum = n * (n + 1) / 2;
+        int actualSum = 0;
+        for (int num : numbers) {
+            actualSum += num;
+        }
+        System.out.println("Missing number (Sum approach): " + (expectedSum - actualSum));
+
+        // Using XOR-based Approach
+        int xorFull = 0;
+        for (int i = 1; i <= n; i++) {
+            xorFull ^= i;
+        }
+
+        int xorArray = 0;
+        for (int num : numbers) {
+            xorArray ^= num;
+        }
+
+        System.out.println("Missing number (XOR approach): " + (xorFull ^ xorArray));
+    }
+}
+```
+
+#### 💡 **Example Input/Output**
+
+* **Input**: Array: `[1, 2, 3, 4, 5, 6, 7, 8]`, Range: `1–9`
+* **Output**:
+
+  * `Missing number (Sum approach): 9`
+  * `Missing number (XOR approach): 9`
+
+---
+
+### **3. 🔄 Reverse a String**
+
+#### 📖 **Concept: Mirror, Mirror on the Wall 🪞**
+
+* Use **StringBuilder** for efficient string reversal.
+* Two methods:
+
+  1. Built-in `.reverse()`.
+  2. For-loop to append characters in reverse order.
+
+#### 🛠 **Code**
+
+```java
+public class Rev {
+    public static void main(String[] args) {
+        String str = "Hello World!";
+        String reverseBuild = new StringBuilder(str).reverse().toString();
+        System.out.println(reverseBuild);
+
+        // for loop
+        StringBuilder rev = new StringBuilder();
+        for (int i = str.length() - 1; i >= 0; i--) {
+            rev.append(str.charAt(i));
+        }
+        System.out.println(rev);
+    }
+}
+```
+
+#### 💡 **Example Input/Output**
+
+* **Input**: `"Hello World!"`
+* **Output**:
+
+  * `"!dlroW olleH"` (Using `.reverse()`)
+  * `"!dlroW olleH"` (Using for-loop)
+
+---
+
+### 🎉 **Reflection**
+
+* 🔍 **Binary Search**: Mastered the divide-and-conquer approach.
+* 🔢 **Missing Numbers**: Sherlock-level deduction with sum and XOR techniques.
+* 🔄 **Reverse Magic**: Two cool ways to flip strings like a pro magician.
+
+Day 67 done and dusted! 🚀 Keep coding and innovating! ✨
