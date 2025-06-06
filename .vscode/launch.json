@@ -6,6 +6,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "KthLargestElement",
+      "request": "launch",
+      "mainClass": "KthLargestElement",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "PairWithSum1",
+      "request": "launch",
+      "mainClass": "PairWithSum1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "PairWithSum",
+      "request": "launch",
+      "mainClass": "PairWithSum",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "ArrayIntersection",
       "request": "launch",
       "mainClass": "ArrayIntersection",

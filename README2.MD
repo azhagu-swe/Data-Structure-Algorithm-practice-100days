@@ -873,3 +873,133 @@ Pointers make reversing linked lists intuitive! Think of **prev**, **current**, 
 * 🔄 **Linked List Reversal**: Mastered pointer manipulation for reversing.
 
 Day 68 is conquered! 🥳 Let’s keep leveling up! 🚀
+Here’s the **README.md for Day 69**, with fun explanations, emojis, and engaging insights!
+
+---
+
+## 🌟 **Day 69: Thrilling Challenges with Arrays!** 🌟
+
+### 🏆 **Problems Solved**
+
+1. 🔢 **[Kth Largest Element in an Array](#1-kth-largest-element-in-an-array)**
+2. 🤝 **[Find Pairs with a Given Sum](#2-find-pairs-with-a-given-sum)**
+
+---
+
+### **1. 🔢 Kth Largest Element in an Array**
+
+#### 📖 **Concept: Divide-and-Conquer with Quick Select 🚀**
+
+* The **Quick Select** algorithm, inspired by Quick Sort, is a powerful way to find the Kth largest/smallest element efficiently.
+* It partitions the array around a pivot, reducing the problem size at each step.
+
+#### 🛠 **Code**
+
+```java
+import java.util.Random;
+
+public class KthLargestElement {
+    public static void main(String[] args) {
+        int[] numbers = {3, 2, 1, 5, 6, 4};
+        int k = 2;
+        int result = findKthLargest(numbers, k);
+        System.out.println("The " + k + "th largest element is: " + result);
+    }
+
+    private static int findKthLargest(int[] nums, int k) {
+        return quickSelect(nums, 0, nums.length - 1, nums.length - k);
+    }
+
+    private static int quickSelect(int[] nums, int left, int right, int k) {
+        Random rand = new Random();
+        int pivotIndex = left + rand.nextInt(right - left + 1);
+        int pivot = nums[pivotIndex];
+        swap(nums, pivotIndex, right);
+
+        int partitionIndex = left;
+        for (int i = left; i < right; i++) {
+            if (nums[i] <= pivot) {
+                swap(nums, i, partitionIndex);
+                partitionIndex++;
+            }
+        }
+        swap(nums, partitionIndex, right);
+
+        if (partitionIndex == k) return nums[partitionIndex];
+        else if (partitionIndex < k) return quickSelect(nums, partitionIndex + 1, right, k);
+        else return quickSelect(nums, left, partitionIndex - 1, k);
+    }
+
+    private static void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+}
+```
+
+#### 💡 **Example Input/Output**
+
+* **Input**: `numbers = [3, 2, 1, 5, 6, 4]`, `k = 2`
+* **Output**: `5`
+
+#### 🌟 **Learning Moment:**
+
+Quick Select reduces the array size logarithmically, making it super efficient for finding top K elements!
+
+---
+
+### **2. 🤝 Find Pairs with a Given Sum**
+
+#### 📖 **Concept: Two’s Company 💕 (HashSet Magic)**
+
+* Use a **HashSet** to keep track of visited elements and their complements.
+* This approach ensures an efficient `O(n)` solution.
+
+#### 🛠 **Code**
+
+```java
+import java.util.HashSet;
+
+public class PairWithSum {
+    public static void main(String[] args) {
+        int[] numbers = {1, 4, 6, 7, 3, 9, 2};
+        int targetSum = 10;
+        findPairs(numbers, targetSum);
+    }
+
+    private static void findPairs(int[] numbers, int targetSum) {
+        HashSet<Integer> seen = new HashSet<>();
+        for (int num : numbers) {
+            int complement = targetSum - num;
+            if (seen.contains(complement)) {
+                System.out.println("Pair: (" + num + ", " + complement + ")");
+            }
+            seen.add(num);
+        }
+    }
+}
+```
+
+#### 💡 **Example Input/Output**
+
+* **Input**: `numbers = [1, 4, 6, 7, 3, 9, 2]`, `targetSum = 10`
+* **Output**:
+
+  ```
+  Pair: (7, 3)
+  Pair: (9, 1)
+  ```
+
+#### 🌟 **Learning Moment:**
+
+HashSet provides constant-time lookups, making it perfect for finding complements quickly!
+
+---
+
+### 🎉 **Reflection**
+
+* 🔢 **Kth Largest Element**: Mastered the Quick Select algorithm for efficient Kth element retrieval!
+* 🤝 **Pair with Sum**: Explored HashSet to find pairs with a given sum efficiently!
+
+Day 69 completed with more array magic! 🪄 Let’s keep building! 🚀
