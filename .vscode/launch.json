@@ -6,6 +6,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ArrayIntersection",
+      "request": "launch",
+      "mainClass": "ArrayIntersection",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ReverseLinkedList",
+      "request": "launch",
+      "mainClass": "ReverseLinkedList",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ReLinkedList",
+      "request": "launch",
+      "mainClass": "ReLinkedList",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "MissNumber1",
       "request": "launch",
       "mainClass": "MissNumber1",

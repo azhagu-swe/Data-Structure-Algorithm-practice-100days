@@ -732,3 +732,144 @@ public class Rev {
 * 🔄 **Reverse Magic**: Two cool ways to flip strings like a pro magician.
 
 Day 67 done and dusted! 🚀 Keep coding and innovating! ✨
+Here’s the **README.md for Day 68**, with engaging explanations, emojis, and fun concepts!
+
+---
+
+## 🌟 **Day 68: Unions, Intersections, and Linked List Magic!** 🌟
+
+### 🏆 **Problems Solved**
+
+1. 🔗 **[Find Intersection of Two Arrays](#1-find-intersection-of-two-arrays)**
+2. 🔄 **[Reverse a Linked List](#2-reverse-a-linked-list)**
+
+---
+
+### **1. 🔗 Find Intersection of Two Arrays**
+
+#### 📖 **Concept: Set Magic 🧙‍♂️**
+
+* Use sets to efficiently find common elements between two arrays.
+* **HashSet** ensures unique elements and makes lookup faster.
+
+#### 🛠 **Code**
+
+```java
+import java.util.HashSet;
+import java.util.Set;
+
+public class ArrayIntersection {
+    public static int[] intersection(int[] nums1, int[] nums2) {
+        Set<Integer> set1 = new HashSet<>();
+        Set<Integer> result = new HashSet<>();
+
+        for (int num : nums1) {
+            set1.add(num); // Store nums1 elements in set1
+        }
+
+        for (int num : nums2) {
+            if (set1.contains(num)) {
+                result.add(num); // Add common elements to result
+            }
+        }
+
+        // Convert the result set to an array
+        int[] intersection = new int[result.size()];
+        int i = 0;
+        for (int num : result) {
+            intersection[i++] = num;
+        }
+
+        return intersection;
+    }
+
+    public static void main(String[] args) {
+        int[] nums1 = {1, 2, 2, 1};
+        int[] nums2 = {2, 2};
+        int[] result = intersection(nums1, nums2);
+
+        for (int num : result) {
+            System.out.print(num + " ");
+        }
+    }
+}
+```
+
+#### 💡 **Example Input/Output**
+
+* **Input**: `nums1 = [1, 2, 2, 1]`, `nums2 = [2, 2]`
+* **Output**: `2`
+
+#### 🌟 **Learning Moment:**
+
+Sets simplify operations by removing duplicates and providing constant time complexity for lookups!
+
+---
+
+### **2. 🔄 Reverse a Linked List**
+
+#### 📖 **Concept: Pointers Dance 💃**
+
+* Reversing a linked list means flipping the direction of all `next` pointers.
+* Use a **prev**, **current**, and **nextTemp** pointer to safely reverse without losing connections.
+
+#### 🛠 **Code**
+
+```java
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode(int val) {
+        this.val = val;
+        this.next = null;
+    }
+}
+
+public class ReverseLinkedList {
+    public static ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode current = head;
+        while (current != null) {
+            ListNode nextTemp = current.next; // Store next node
+            current.next = prev;             // Reverse current node's pointer
+            prev = current;                  // Move prev forward
+            current = nextTemp;              // Move current forward
+        }
+        return prev;
+    }
+
+    public static void main(String[] args) {
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
+
+        ListNode reversed = reverseList(head);
+
+        while (reversed != null) {
+            System.out.print(reversed.val + " -> ");
+            reversed = reversed.next;
+        }
+        System.out.print("NULL");
+    }
+}
+```
+
+#### 💡 **Example Input/Output**
+
+* **Input**: `1 -> 2 -> 3 -> 4 -> 5 -> NULL`
+* **Output**: `5 -> 4 -> 3 -> 2 -> 1 -> NULL`
+
+#### 🌟 **Learning Moment:**
+
+Pointers make reversing linked lists intuitive! Think of **prev**, **current**, and **next** as dancers shifting positions. 💃
+
+---
+
+### 🎉 **Reflection**
+
+* 🔗 **Array Intersection**: Sets are your friends when working with unique elements and intersections!
+* 🔄 **Linked List Reversal**: Mastered pointer manipulation for reversing.
+
+Day 68 is conquered! 🥳 Let’s keep leveling up! 🚀
