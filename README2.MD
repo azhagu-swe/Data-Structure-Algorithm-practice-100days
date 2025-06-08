@@ -1003,3 +1003,138 @@ HashSet provides constant-time lookups, making it perfect for finding complement
 * 🤝 **Pair with Sum**: Explored HashSet to find pairs with a given sum efficiently!
 
 Day 69 completed with more array magic! 🪄 Let’s keep building! 🚀
+Here’s the **README.md for Day 70** with fun emojis and simple concepts!
+
+---
+
+## 🌟 **Day 70: Exploring Characters and Sorting!** 🌟
+
+### 🏆 **Problems Solved**
+
+1. 🔤 **[First Non-Repeating Character in a String](#1-first-non-repeating-character-in-a-string)**
+2. 🔀 **[Merge Two Sorted Arrays In-Place](#2-merge-two-sorted-arrays-in-place)**
+
+---
+
+### **1. 🔤 First Non-Repeating Character in a String**
+
+#### 📖 **Concept: Finding the Quiet One 🔎**
+
+* We use a **LinkedHashMap** to keep track of characters and their counts while maintaining their order of appearance.
+* Iterate twice:
+
+  * First to count occurrences.
+  * Second to find the first character with a count of 1.
+
+#### 🛠 **Code**
+
+```java
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class FirstNonRepeatingCharacter {
+    public static void main(String[] args) {
+        String input = "swiss";
+        char result = findFirstNonRepeatingCharacter(input);
+        if (result != 0) {
+            System.out.println("First non-repeating character: " + result);
+        } else {
+            System.out.println("No non-repeating character found.");
+        }
+    }
+
+    private static char findFirstNonRepeatingCharacter(String str) {
+        Map<Character, Integer> charCount = new LinkedHashMap<>();
+        for (char c : str.toCharArray()) {
+            charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+        }
+
+        for (Map.Entry<Character, Integer> entry : charCount.entrySet()) {
+            if (entry.getValue() == 1) {
+                return entry.getKey();
+            }
+        }
+        return 0; // Return 0 if no non-repeating character is found
+    }
+}
+```
+
+#### 💡 **Example Input/Output**
+
+* **Input**: `swiss`
+* **Output**: `First non-repeating character: w`
+
+#### 🌟 **Learning Moment:**
+
+LinkedHashMap preserves insertion order, making it perfect for finding the first unique character!
+
+---
+
+### **2. 🔀 Merge Two Sorted Arrays In-Place**
+
+#### 📖 **Concept: Efficient Merge Without Extra Space 🛠**
+
+* Compare elements of two sorted arrays.
+* If an element in `arr1` is greater than the smallest element in `arr2`, swap and re-sort `arr2`.
+* **No extra space used!**
+
+#### 🛠 **Code**
+
+```java
+import java.util.Arrays;
+
+public class MergeSorter {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 3, 5, 7};
+        int[] arr2 = {2, 4, 6, 8};
+        merge(arr1, arr2);
+        System.out.println("Merged Array 1: " + Arrays.toString(arr1));
+        System.out.println("Merged Array 2: " + Arrays.toString(arr2));
+    }
+
+    private static void merge(int[] arr1, int[] arr2) {
+        int m = arr1.length;
+        int n = arr2.length;
+        for (int i = 0; i < m; i++) {
+            if (arr1[i] > arr2[0]) {
+                // Swap elements
+                int temp = arr1[i];
+                arr1[i] = arr2[0];
+                arr2[0] = temp;
+
+                // Re-sort arr2 to maintain order
+                int first = arr2[0];
+                int k;
+                for (k = 1; k < n && arr2[k] < first; k++) {
+                    arr2[k - 1] = arr2[k];
+                }
+                arr2[k - 1] = first;
+            }
+        }
+    }
+}
+```
+
+#### 💡 **Example Input/Output**
+
+* **Input**:
+
+  * `arr1 = [1, 3, 5, 7]`
+  * `arr2 = [2, 4, 6, 8]`
+* **Output**:
+
+  * `Merged Array 1: [1, 2, 3, 4]`
+  * `Merged Array 2: [5, 6, 7, 8]`
+
+#### 🌟 **Learning Moment:**
+
+In-place merging eliminates the need for extra memory, ideal for space-constrained problems!
+
+---
+
+### 🎉 **Reflection**
+
+* 🔤 **First Non-Repeating Character**: Leveraged LinkedHashMap for efficient lookup and order retention.
+* 🔀 **Merge Arrays In-Place**: Mastered space-efficient techniques for array manipulation.
+
+Day 70: Completed with smarter techniques and efficient coding! 🚀 Keep coding and having fun! 🎯

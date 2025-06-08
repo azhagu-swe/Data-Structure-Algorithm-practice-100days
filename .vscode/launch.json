@@ -6,6 +6,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "FirstNonRepeatingCharacter",
+      "request": "launch",
+      "mainClass": "FirstNonRepeatingCharacter",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MergeSorter",
+      "request": "launch",
+      "mainClass": "MergeSorter",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MergeSortedArrays",
+      "request": "launch",
+      "mainClass": "MergeSortedArrays",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "KthLargestElement",
       "request": "launch",
       "mainClass": "KthLargestElement",
