@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "AddTwoBinaryString",
+      "request": "launch",
+      "mainClass": "AddTwoBinaryString",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "AToIString",
       "request": "launch",
       "mainClass": "AToIString",

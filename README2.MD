@@ -1220,4 +1220,116 @@ public class AToIString {
 * Implemented checks for overflow and character validation.
 * Practiced edge cases like `"  +42"` and `"21474836460"`.
 
-Keep practicing, and remember: **Attention to detail makes you a great coder!** 🚀
+
+## 🌟 **Day 72: Adding Binary Strings with Elegance!** 🌟
+
+### 🏆 **Problem Solved**
+
+1. 🧮 **[Add Two Binary Strings](#add-two-binary-strings)**
+
+---
+
+### 🧮 **Add Two Binary Strings**
+
+#### 📖 **Concept: Binary Math Fun 💡**
+
+The goal is to simulate binary addition, bit by bit:
+
+* **Align the strings by their lengths.**
+* **Add corresponding bits, starting from the rightmost end.**
+* **Handle carry efficiently.**
+* **Trim leading zeros for clean output.**
+
+#### 🛠 **Code**
+
+```java
+public class AddTwoBinaryString {
+
+    public static void main(String[] args) {
+        String s1 = "1101";
+        String s2 = "111";
+
+        System.out.println(addBinary(s1, s2));
+    }
+
+    public static String addBinary(String s1, String s2) {
+        // Trim Leading Zeros
+        s1 = trimLeadingZeros(s1);
+        s2 = trimLeadingZeros(s2);
+
+        int n = s1.length();
+        int m = s2.length();
+
+        // Swap the strings if s1 is smaller
+        if (n < m) {
+            return addBinary(s2, s1);
+        }
+
+        int j = m - 1; // Pointer for s2
+        int carry = 0;
+        StringBuilder result = new StringBuilder();
+
+        // Traverse both strings from the end
+        for (int i = n - 1; i >= 0; i--) {
+            int bit1 = s1.charAt(i) - '0'; // Current bit of s1
+            int sum = bit1 + carry;
+
+            // Add bit from s2 if available
+            if (j >= 0) {
+                int bit2 = s2.charAt(j) - '0';
+                sum += bit2;
+                j--;
+            }
+
+            // Calculate result bit and update carry
+            int bit = sum % 2;
+            carry = sum / 2;
+            result.append((char) (bit + '0')); // Append result bit
+        }
+
+        // If carry remains, append it
+        if (carry > 0) {
+            result.append('1');
+        }
+
+        // Reverse the result for final output
+        return result.reverse().toString();
+    }
+
+    private static String trimLeadingZeros(String s) {
+        // Find the position of the first '1'
+        int firstOne = s.indexOf('1');
+        return (firstOne == -1) ? "0" : s.substring(firstOne);
+    }
+}
+```
+
+#### 💡 **Example Input/Output**
+
+* **Input**:
+
+  ```java
+  s1 = "1101";
+  s2 = "111";
+  ```
+* **Output**:
+
+  ```
+  "10100"
+  ```
+
+#### 🚨 **Key Insights**
+
+1. **Binary Addition**: Works like decimal addition but modulo 2.
+2. **Carry Handling**: Calculate carry and append it to the result.
+3. **Leading Zeros**: Trim them to ensure clean outputs.
+
+---
+
+### 🎉 **Reflection**
+
+* Practiced binary addition and string manipulation.
+* Learned how to dynamically handle varying input lengths.
+* Gained a deeper understanding of carry operations in binary math.
+
+👨‍💻 **Takeaway**: Binary operations are not just zeros and ones—they're opportunities for creative thinking! 🚀
