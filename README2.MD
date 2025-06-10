@@ -1138,3 +1138,86 @@ In-place merging eliminates the need for extra memory, ideal for space-constrain
 * 🔀 **Merge Arrays In-Place**: Mastered space-efficient techniques for array manipulation.
 
 Day 70: Completed with smarter techniques and efficient coding! 🚀 Keep coding and having fun! 🎯
+Here’s the **README.md for Day 71**, with a fun and memorable explanation!
+
+---
+
+## 🌟 **Day 71: Converting Strings to Integers Like a Pro!** 🌟
+
+### 🏆 **Problems Solved**
+
+1. 🔢 **[String to Integer (ATOI) Implementation](#string-to-integer-atoi-implementation)**
+
+---
+
+### 🔢 **String to Integer (ATOI) Implementation**
+
+#### 📖 **Concept: Parsing Strings with Precision 🎯**
+
+The goal is to mimic the `atoi()` function behavior:
+
+1. **Ignore leading whitespace**.
+2. **Handle optional sign (`+/-`)**.
+3. **Convert valid digits to an integer**.
+4. **Handle overflow gracefully**.
+
+#### 🛠 **Code**
+
+```java
+public class AToIString {
+
+    public static void main(String[] args) {
+        String s = "  -0012g4";
+        System.out.println(myAtoi(s));
+    }
+
+    private static int myAtoi(String s) {
+        int sign = 1, res = 0, idx = 0;
+
+        // Ignore leading whitespace
+        while (idx < s.length() && s.charAt(idx) == ' ') {
+            idx++;
+        }
+
+        // Store the sign
+        if (idx < s.length() && (s.charAt(idx) == '-' || s.charAt(idx) == '+')) {
+            if (s.charAt(idx++) == '-') {
+                sign = -1;
+            }
+        }
+
+        // Convert digits to a number
+        while (idx < s.length() && s.charAt(idx) >= '0' && s.charAt(idx) <= '9') {
+            // Check for overflow/underflow
+            if (res > Integer.MAX_VALUE / 10 || (res == Integer.MAX_VALUE / 10 && s.charAt(idx) - '0' > 7)) {
+                return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+            }
+            res = 10 * res + (s.charAt(idx++) - '0'); // Append digit to result
+        }
+
+        return res * sign;
+    }
+}
+```
+
+#### 💡 **Example Input/Output**
+
+* **Input**: `"  -0012g4"`
+* **Output**: `-12`
+
+#### 🚨 **Key Points**
+
+* **Whitespace Handling**: Ignore leading spaces.
+* **Sign Detection**: Detect if the number is negative or positive.
+* **Overflow Handling**: Return `Integer.MAX_VALUE` or `Integer.MIN_VALUE` when values exceed the 32-bit range.
+* **Character Validation**: Stop processing when encountering non-numeric characters.
+
+---
+
+### 🎉 **Reflection**
+
+* Learned about robust string parsing techniques.
+* Implemented checks for overflow and character validation.
+* Practiced edge cases like `"  +42"` and `"21474836460"`.
+
+Keep practicing, and remember: **Attention to detail makes you a great coder!** 🚀

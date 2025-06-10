@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "AToIString",
+      "request": "launch",
+      "mainClass": "AToIString",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "FirstNonRepeatingCharacter",
       "request": "launch",
       "mainClass": "FirstNonRepeatingCharacter",
