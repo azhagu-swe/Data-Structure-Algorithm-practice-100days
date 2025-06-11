@@ -1333,3 +1333,131 @@ public class AddTwoBinaryString {
 * Gained a deeper understanding of carry operations in binary math.
 
 👨‍💻 **Takeaway**: Binary operations are not just zeros and ones—they're opportunities for creative thinking! 🚀
+
+### **Day 73: Advanced Java Stream Operations**
+
+---
+
+### 📚 **Key Topics Explored**
+
+1. **Java Streams**
+
+   * Combining multiple lists into a single list using `flatMap`.
+   * Removing duplicates and filtering specific criteria.
+   * Grouping elements with their frequencies using `Collectors.groupingBy`.
+   * Finding the second highest number in a list.
+2. **String Manipulations**
+
+   * Reversing strings using Streams (`Stream` and `IntStream`).
+
+---
+
+### 🛠 **Code Explanation**
+
+```java
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
+public class MultipleListInSingleListInStream {
+    public static void main(String[] args) {
+        // Input: Nested lists
+        List<List<String>> list = List.of(
+                List.of("hello", "world"), 
+                List.of("mani", "kandan"),
+                List.of("azhagu", "The"), 
+                List.of("alagu", "alagu379", "mani", "alagu379")
+        );
+
+        // Flattening all sublists into a single list
+        System.out.println("Flattened list: " + list.stream().flatMap(l -> l.stream()).toList());
+
+        // Removing duplicates
+        List<String> singleList = list.stream()
+                                      .flatMap(ls -> ls.stream())
+                                      .distinct()
+                                      .collect(Collectors.toList());
+        System.out.println("Distinct elements: " + singleList);
+
+        // Filtering strings ending with 'u'
+        singleList = singleList.stream()
+                               .filter(s -> s.endsWith("u"))
+                               .collect(Collectors.toList());
+        System.out.println("Filtered strings (end with 'u'): " + singleList);
+
+        // Counting occurrences of each string
+        Map<String, Long> map = list.stream()
+                                    .flatMap(ls -> ls.stream())
+                                    .collect(Collectors.groupingBy(s -> s, Collectors.counting()));
+        System.out.println("Occurrences map: " + map);
+
+        // Finding the second highest value in the array
+        List<Integer> n = List.of(1, 3, 45, 56, 78, 8, 8, 8, 9);
+        Optional<Integer> max2 = n.stream()
+                                  .distinct()
+                                  .sorted((x, y) -> y - x)
+                                  .skip(1)  // Skip the highest value
+                                  .findFirst();
+        System.out.println("Second highest value: " + max2.orElse(-1));
+
+        // Reversing a string using Streams
+        String str = "Hello world";
+
+        // Using Stream.of() and Collectors.joining()
+        String reversedStream = Stream.of(str.split(""))
+                                       .sorted((a, b) -> -1) // Sort in reverse order
+                                       .collect(Collectors.joining());
+        System.out.println("Reversed string (Stream): " + reversedStream);
+
+        // Using IntStream for reversing
+        String reversedIntStream = IntStream.range(0, str.length())
+                                            .mapToObj(i -> str.charAt(str.length() - i - 1))
+                                            .map(String::valueOf)
+                                            .collect(Collectors.joining());
+        System.out.println("Reversed string (IntStream): " + reversedIntStream);
+    }
+}
+```
+
+---
+
+### 🔍 **Explanation of Each Section**
+
+#### 1. **Flatten and Distinct Elements**
+
+* **`flatMap`**: Combines multiple lists into one single stream.
+* **`distinct`**: Removes duplicates from the flattened stream.
+
+#### 2. **Filter Strings Ending with 'u'**
+
+* Uses **`filter`** to include only strings that satisfy the condition `endsWith("u")`.
+
+#### 3. **Count Element Frequencies**
+
+* **`groupingBy`**: Groups elements as keys and counts their occurrences as values.
+
+#### 4. **Find Second Highest Value**
+
+* **`distinct`**: Removes duplicates.
+* **`sorted`**: Sorts in descending order using `(x, y) -> y - x`.
+* **`skip(1)`**: Skips the first (highest) element.
+* **`findFirst`**: Retrieves the second-highest element.
+
+#### 5. **Reverse a String**
+
+* **Using `Stream.of`**: Converts the string into a stream of characters.
+* **Using `IntStream`**: Directly manipulates indices to reverse characters.
+
+---
+
+### 🔑 **Key Takeaways**
+
+* **Java Streams** simplify complex list and string operations.
+* The `flatMap` method is highly versatile for processing nested structures.
+* Streams offer elegant solutions for aggregation, filtering, and transformations.
+* String manipulations are more fun with functional programming patterns! 🚀
+

@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "MultipleListInSingleListInStream",
+      "request": "launch",
+      "mainClass": "MultipleListInSingleListInStream",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "AddTwoBinaryString",
       "request": "launch",
       "mainClass": "AddTwoBinaryString",
