@@ -6,6 +6,69 @@
   "configurations": [
     {
       "type": "java",
+      "name": "FindMaximumSubArraysTest",
+      "request": "launch",
+      "mainClass": "FindMaximumSubArraysTest",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "CountWordTest",
+      "request": "launch",
+      "mainClass": "CountWordTest",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FindLongestCommonPrefix",
+      "request": "launch",
+      "mainClass": "FindLongestCommonPrefix",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "DetectDuplicate",
+      "request": "launch",
+      "mainClass": "DetectDuplicate",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "PalindromeUntilCheck",
+      "request": "launch",
+      "mainClass": "PalindromeUntilCheck",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "IsPaliCheck",
+      "request": "launch",
+      "mainClass": "IsPaliCheck",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FindingMissingNumber",
+      "request": "launch",
+      "mainClass": "FindingMissingNumber",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "SRev",
+      "request": "launch",
+      "mainClass": "SRev",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FizzBuzzProblemStream",
+      "request": "launch",
+      "mainClass": "FizzBuzzProblemStream",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "Rev1",
       "request": "launch",
       "mainClass": "Rev1",

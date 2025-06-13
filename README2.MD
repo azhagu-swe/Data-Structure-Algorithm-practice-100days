@@ -1574,4 +1574,177 @@ Filtered duplicates: {l=2}
 
 ---
 
-Happy Coding! 🚀
+### Day-75: Java Programs and Challenges
+
+---
+
+
+### **Included Programs**
+
+1. **Word Count in a Sentence**
+
+   * Counts the number of words in a sentence using both manual iteration and the `split` method.
+
+2. **Detecting Duplicates in an Array**
+
+   * Identifies duplicates using:
+
+     * `HashSet` for quick lookups.
+     * Streams with `distinct()` and `groupingBy()`.
+
+3. **Finding a Missing Number**
+
+   * Finds the missing number in a sequence using the arithmetic sum formula.
+
+4. **Finding Longest Common Prefix**
+
+   * Determines the longest common prefix in an array of strings.
+
+5. **Maximum Subarray Sum**
+
+   * Implements Kadane's algorithm to find the maximum sum of contiguous subarrays.
+
+6. **FizzBuzz**
+
+   * Prints:
+
+     * "Fizz" for multiples of 3.
+     * "Buzz" for multiples of 5.
+     * "FizzBuzz" for multiples of both.
+
+7. **Palindrome Check**
+
+   * Verifies whether a string is a palindrome using both `StringBuilder` and Stream API.
+
+8. **Palindrome Until Found**
+
+   * Repeatedly adds the digits of a number until it becomes a palindrome.
+
+9. **String Reverse Using Streams**
+
+   * Reverses a string using character sorting with Streams.
+
+---
+
+### **Code Highlights**
+
+#### **1. Word Count in a Sentence**
+
+```java
+int count = sentence.trim().split("\\s+").length;
+System.out.println(count);
+```
+
+#### **2. Detecting Duplicates**
+
+```java
+Map<Integer, Long> map = Arrays.stream(arr).boxed()
+    .collect(Collectors.groupingBy(i -> i, Collectors.counting()));
+System.out.println(map);
+```
+
+#### **3. Finding a Missing Number**
+
+```java
+int expectedSum = IntStream.rangeClosed(1, n).sum();
+int actualSum = numbers.stream().mapToInt(Integer::intValue).sum();
+int missingNumber = expectedSum - actualSum;
+```
+
+#### **4. Finding Longest Common Prefix**
+
+```java
+private static String findComonPrefix(String prefix, String string) {
+    int i = 0;
+    while (i < prefix.length() && i < string.length() && prefix.charAt(i) == string.charAt(i)) {
+        i++;
+    }
+    return prefix.substring(0, i);
+}
+```
+
+#### **5. Maximum Subarray Sum**
+
+```java
+for (int i = 1; i < nums.length; i++) {
+    maxEndingHere = Math.max(nums[i], maxEndingHere + nums[i]);
+    maxSoFar = Math.max(maxSoFar, maxEndingHere);
+}
+```
+
+#### **6. FizzBuzz**
+
+```java
+IntStream.rangeClosed(1, 100).mapToObj(i -> {
+    if (i % 3 == 0 && i % 5 == 0) return "FizzBuzz";
+    else if (i % 3 == 0) return "Fizz";
+    else if (i % 5 == 0) return "Buzz";
+    else return String.valueOf(i);
+}).forEach(System.out::println);
+```
+
+#### **7. Palindrome Check**
+
+```java
+boolean isPalindrome = IntStream.range(0, str.length() / 2)
+    .allMatch(i -> str.charAt(i) == str.charAt(str.length() - i - 1));
+System.out.println(isPalindrome ? "Palindrome" : "Not Palindrome");
+```
+
+#### **8. Palindrome Until Found**
+
+```java
+while (!palindrome(num)) {
+    num = addDigits(num);
+}
+System.out.println("Palindrome found: " + num);
+```
+
+#### **9. String Reverse Using Streams**
+
+```java
+String rev = str.chars().mapToObj(c -> (char) c)
+    .sorted((a, b) -> -1)
+    .map(String::valueOf)
+    .collect(Collectors.joining());
+```
+
+---
+
+### **Concepts Explored**
+
+1. **Streams and Lambdas**
+
+   * Used extensively for operations like filtering, mapping, and grouping.
+
+2. **Iterative Methods**
+
+   * For scenarios requiring more control and custom logic.
+
+3. **Algorithm Optimization**
+
+   * Efficient solutions using Kadane's algorithm and arithmetic sum.
+
+---
+
+### **Execution Instructions**
+
+1. Ensure you have **Java 8+** installed on your system.
+2. Compile the Java files:
+
+   ```bash
+   javac FileName.java
+   ```
+3. Run the compiled program:
+
+   ```bash
+   java FileName
+   ```
+
+---
+
+### **Conclusion**
+
+Day 75 focused on solving classic problems while emphasizing clean code, algorithmic efficiency, and Java's powerful Stream API. 🚀
+
+
