@@ -1461,3 +1461,117 @@ public class MultipleListInSingleListInStream {
 * Streams offer elegant solutions for aggregation, filtering, and transformations.
 * String manipulations are more fun with functional programming patterns! 🚀
 
+### **Day 74: Counting Duplicate Characters Using Streams**
+
+---
+
+### 📚 **Key Concepts Covered**
+
+1. **Counting Occurrences in Strings**
+
+   * Uses `Collectors.groupingBy` to count character occurrences.
+   * Converts strings into streams for processing.
+2. **Filtering Duplicates**
+
+   * Filters characters with more than one occurrence using `filter`.
+
+---
+
+### 🛠 **Code Walkthrough**
+
+```java
+import java.util.Arrays;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class Rev1 {
+
+    public static void main(String[] args) {
+
+        // Input string
+        String str = "hello";
+
+        // Count occurrences of each character using Arrays.stream()
+        Map<String, Long> countMap = Arrays.stream(str.split(""))
+                .collect(Collectors.groupingBy(String::toString, Collectors.counting()));
+        System.out.println("Count using String split: " + countMap);
+
+        // Count occurrences using chars() and filter duplicates
+        Map<Character, Long> countMap1 = str.chars()  // Convert string to IntStream
+                .mapToObj(c -> (char) c)  // Convert int to char
+                .collect(Collectors.groupingBy(c -> c, Collectors.counting()))  // Group and count
+                .entrySet()
+                .stream()  // Stream the map entries
+                .filter(entry -> entry.getValue() > 1)  // Filter for duplicates
+                .collect(Collectors.toMap(  // Collect filtered results back to map
+                        Map.Entry::getKey,
+                        Map.Entry::getValue));
+        System.out.println("Filtered duplicates: " + countMap1);
+    }
+}
+```
+
+---
+
+### **Explanation of Key Sections**
+
+#### **1. Counting Characters Using `split`**
+
+* **Logic:** Splits the string into an array of characters (`split("")`).
+* **Stream Processing:**
+
+  * **`groupingBy`**: Groups characters.
+  * **`counting`**: Counts occurrences of each group.
+* **Output:** Produces a map where keys are characters (as `String`) and values are their counts.
+
+**Example Output:**
+
+```plaintext
+Count using String split: {e=1, l=2, h=1, o=1}
+```
+
+---
+
+#### **2. Counting Characters Using `chars()`**
+
+* **Logic:** Converts the string to an `IntStream` of ASCII values.
+* **Key Steps:**
+
+  1. **`mapToObj`**: Converts ASCII values to characters.
+  2. **`groupingBy`**: Groups characters and counts occurrences.
+  3. **`filter`**: Filters out entries with a count of `1`.
+  4. **`collect`**: Collects the filtered entries into a new map.
+
+**Example Output:**
+
+```plaintext
+Filtered duplicates: {l=2}
+```
+
+---
+
+### **Advantages of Each Approach**
+
+| **Approach** | **Pros**                                  | **Cons**                       |
+| ------------ | ----------------------------------------- | ------------------------------ |
+| `split("")`  | Simple and straightforward.               | Slower for large strings.      |
+| `chars()`    | Efficient for character-based operations. | Requires casting (`mapToObj`). |
+
+---
+
+### 🔑 **Takeaways**
+
+1. **Streams** make character counting and filtering concise.
+2. **`chars()`** is a powerful method for character-level manipulations in strings.
+3. Filtering and mapping are effective tools for extracting meaningful data.
+
+---
+
+### **Optimizations and Best Practices**
+
+* Use `chars()` for larger strings as it's more memory-efficient.
+* Minimize intermediate map creation by chaining operations.
+
+---
+
+Happy Coding! 🚀

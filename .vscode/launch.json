@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Rev1",
+      "request": "launch",
+      "mainClass": "Rev1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "MultipleListInSingleListInStream",
       "request": "launch",
       "mainClass": "MultipleListInSingleListInStream",
