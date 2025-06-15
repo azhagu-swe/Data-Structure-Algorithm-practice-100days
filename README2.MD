@@ -1748,3 +1748,107 @@ String rev = str.chars().mapToObj(c -> (char) c)
 Day 75 focused on solving classic problems while emphasizing clean code, algorithmic efficiency, and Java's powerful Stream API. 🚀
 
 
+### Day-76: Efficient Java Solutions with HashSet and HashMap
+
+---
+
+### **What We Did Today**
+
+1. Solved two problems using Java:
+
+   * **Longest Consecutive Sequence**: Find the longest sequence of consecutive numbers in an array.
+   * **Count Pairs with Sum**: Count how many pairs of numbers in an array add up to a given target.
+
+2. Used `HashSet` and `HashMap` to make the solutions faster and simpler.
+
+---
+
+### **Programs**
+
+#### **1. Longest Consecutive Sequence**
+
+* **Idea**: Use a `HashSet` to store numbers for quick lookup. Start counting only when a number is the beginning of a sequence (no smaller number exists).
+
+```java
+private static int longestConsecutive(int[] nums) {
+    HashSet<Integer> set = new HashSet<>();
+    for (int num : nums) {
+        set.add(num);
+    }
+
+    int longestStreak = 0;
+
+    for (int num : nums) {
+        if (!set.contains(num - 1)) { // Start of a sequence
+            int currentNum = num;
+            int currentStreak = 1;
+
+            while (set.contains(currentNum + 1)) {
+                currentNum++;
+                currentStreak++;
+            }
+
+            longestStreak = Math.max(longestStreak, currentStreak);
+        }
+    }
+
+    return longestStreak;
+}
+```
+
+**Example Input:** `{100, 4, 200, 1, 3, 2}`
+**Output:** `4` (Longest sequence: 1, 2, 3, 4)
+
+---
+
+#### **2. Count Pairs with Sum**
+
+* **Idea**: Use a `HashMap` to store how many times each number appears. For every number, check if its complement (target - number) exists in the map.
+
+```java
+private static int countPairs(int[] arr, int target) {
+    HashMap<Integer, Integer> map = new HashMap<>();
+    int count = 0;
+
+    for (int num : arr) {
+        int complement = target - num;
+
+        if (map.containsKey(complement)) {
+            count += map.get(complement);
+        }
+
+        map.put(num, map.getOrDefault(num, 0) + 1);
+    }
+
+    return count;
+}
+```
+
+**Example Input:** `{1, 5, 7, -1, 5}`, Target = `6`
+**Output:** `3` (Pairs: \[1, 5], \[7, -1], \[5, 1])
+
+---
+
+### **Key Concepts**
+
+1. **HashSet**:
+
+   * Perfect for problems where you need to check if a value exists quickly.
+   * Example: Finding consecutive numbers.
+
+2. **HashMap**:
+
+   * Great for counting or finding pairs efficiently.
+   * Example: Counting pairs with a target sum.
+
+---
+
+### **Why These Solutions Are Good**
+
+* They avoid unnecessary loops, making them much faster (O(n) complexity).
+* Simple and easy to understand.
+
+---
+### **What’s Next?**
+
+Tomorrow, we’ll explore recursion and advanced problem-solving techniques. Keep coding! 🚀
