@@ -1852,3 +1852,124 @@ private static int countPairs(int[] arr, int target) {
 ### **What’s Next?**
 
 Tomorrow, we’ll explore recursion and advanced problem-solving techniques. Keep coding! 🚀
+
+### Day-77: Problem-Solving with Arrays and Prefix Sums
+
+---
+
+### **Topics Covered**
+
+1. **Trapping Rain Water**: Calculate the total amount of water that can be trapped between bars of different heights.
+2. **Subarray with Given Sum**: Find the indices of a subarray whose elements sum up to a given target.
+
+---
+
+### **Programs**
+
+#### **1. Trapping Rain Water**
+
+* **Problem**: Given an array representing bar heights, find how much water can be trapped after rainfall.
+* **Approach**: Use two arrays to store the maximum heights to the left and right of each bar. Calculate trapped water using the formula:
+
+  $$
+  \text{Trapped Water} = \text{min}(\text{leftMax}[i], \text{rightMax}[i]) - \text{height}[i]
+  $$
+
+**Code**:
+
+```java
+private static int trapWater(int[] height) {
+    if (height == null || height.length == 0) return 0;
+
+    int n = height.length;
+    int[] leftMax = new int[n];
+    int[] rightMax = new int[n];
+    int water = 0;
+
+    // Fill leftMax array
+    leftMax[0] = height[0];
+    for (int i = 1; i < n; i++) {
+        leftMax[i] = Math.max(leftMax[i - 1], height[i]);
+    }
+
+    // Fill rightMax array
+    rightMax[n - 1] = height[n - 1];
+    for (int i = n - 2; i >= 0; i--) {
+        rightMax[i] = Math.max(rightMax[i + 1], height[i]);
+    }
+
+    // Calculate trapped water
+    for (int i = 0; i < n; i++) {
+        water += Math.min(leftMax[i], rightMax[i]) - height[i];
+    }
+
+    return water;
+}
+```
+
+**Example Input**: `{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}`
+**Output**: `6`
+
+---
+
+#### **2. Subarray with Given Sum**
+
+* **Problem**: Given an array and a target sum, find the start and end indices of a subarray that sums up to the target.
+* **Approach**: Use a `HashMap` to store prefix sums. For each element, calculate the current sum and check if the complement (`currentSum - target`) exists in the map.
+
+**Code**:
+
+```java
+private static int[] findSubarray(int[] arr, int target) {
+    HashMap<Integer, Integer> prefixSumMap = new HashMap<>();
+    int currentSum = 0;
+
+    for (int i = 0; i < arr.length; i++) {
+        currentSum += arr[i];
+
+        if (currentSum == target) {
+            return new int[]{0, i};
+        }
+
+        if (prefixSumMap.containsKey(currentSum - target)) {
+            return new int[]{prefixSumMap.get(currentSum - target) + 1, i};
+        }
+
+        prefixSumMap.put(currentSum, i);
+    }
+
+    return new int[0]; // Return empty array if no subarray is found
+}
+```
+
+**Example Input**:
+Array: `{1, 2, 3, 7, 5}`, Target = `12`
+**Output**: `Subarray indices: [1, 3]` (Subarray: `{2, 3, 7}`)
+
+---
+
+### **Key Concepts**
+
+1. **Left and Right Max Arrays**:
+
+   * Useful for range-based calculations like trapping water.
+   * Help to avoid nested loops, improving efficiency.
+
+2. **Prefix Sums with HashMap**:
+
+   * Tracks cumulative sums for quick lookups.
+   * Handles negative and positive numbers efficiently.
+
+---
+
+### **Complexity Analysis**
+
+| Problem                 | Time Complexity | Space Complexity |
+| ----------------------- | --------------- | ---------------- |
+| Trapping Rain Water     | $O(n)$          | $O(n)$           |
+| Subarray with Given Sum | $O(n)$          | $O(n)$           |
+
+---
+### **What’s Next?**
+
+Tomorrow, we will dive into sorting-based problems and dynamic programming challenges. Stay tuned! 😊
