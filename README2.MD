@@ -1973,3 +1973,74 @@ Array: `{1, 2, 3, 7, 5}`, Target = `12`
 ### **What’s Next?**
 
 Tomorrow, we will dive into sorting-based problems and dynamic programming challenges. Stay tuned! 😊
+
+
+
+### 🌟 Day 78: Swap Strings Without Temp Variable
+
+#### **📝 Problem**
+
+Swap two strings without using a temporary variable.
+
+---
+
+#### **💻 Code**
+
+```java
+public class SwapString {
+
+    public static void main(String[] args) {
+
+        String s1 = "hello";
+        String s2 = "world";
+
+        // Combine both strings
+        s1 = s1 + s2;
+
+        // Extract original s1 and assign it to s2
+        s2 = s1.substring(0, s1.length() - s2.length());
+
+        // Extract original s2 and assign it to s1
+        s1 = s1.substring(s2.length(), s1.length());
+
+        // Print the swapped strings
+        System.out.println(s2 + "  " + s1);
+    }
+}
+```
+
+---
+
+#### **📚 Explanation**
+
+1. **Combine Strings**:
+
+   * `s1 = s1 + s2;` ➡️ Combines `s1` and `s2` into one: `"helloworld"`.
+
+2. **Extract First Part**:
+
+   * `s2 = s1.substring(0, s1.length() - s2.length());` ➡️ Extracts `"hello"` and assigns it to `s2`.
+
+3. **Extract Second Part**:
+
+   * `s1 = s1.substring(s2.length(), s1.length());` ➡️ Extracts `"world"` and assigns it to `s1`.
+
+4. **Result**:
+
+   * Swapped values are printed: `"world  hello"`.
+
+---
+
+#### **🔍 Output**
+
+```
+world  hello
+```
+
+---
+
+#### **✨ Key Points**
+
+* 🚀 No temporary variable used.
+* 🛠️ String operations like concatenation and `substring` make swapping possible.
+
