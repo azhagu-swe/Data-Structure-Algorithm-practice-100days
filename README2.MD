@@ -2118,3 +2118,72 @@ public class ArraySortingDuplicate {
 * 🚀 Works efficiently for sorted arrays.
 * ✅ Keeps at most two duplicates of each unique element.
 
+### 🌟 Day 80: Majority Element 🎉
+
+---
+
+#### **📝 Problem**
+
+Find the **majority element** in an array.
+The majority element is the one that appears more than `n/2` times.
+You can assume it always exists.
+
+---
+
+#### **💻 Solution**
+
+```java
+public class MajorityElement {
+    public static void main(String[] args) {
+        int[] nums1 = {3, 2, 3};
+        int[] nums2 = {2, 2, 1, 1, 1, 2, 2};
+
+        System.out.println("Majority Element in nums1: " + findMajorityElement(nums1)); // Output: 3
+        System.out.println("Majority Element in nums2: " + findMajorityElement(nums2)); // Output: 2
+    }
+
+    private static int findMajorityElement(int[] nums) {
+        int count = 0, candidate = 0;
+
+        for (int num : nums) {
+            if (count == 0) {
+                candidate = num; // Set new candidate
+            }
+            count += (num == candidate) ? 1 : -1; // Count votes
+        }
+
+        return candidate; // Return majority element
+    }
+}
+```
+
+---
+
+#### **🔍 Examples**
+
+1. **Input**: `[3, 2, 3]`
+   **Output**: `3`
+
+2. **Input**: `[2, 2, 1, 1, 1, 2, 2]`
+   **Output**: `2`
+
+---
+
+#### **🌟 Key Points**
+
+* **Algorithm**: Boyer-Moore Voting 🗳️
+* **Time Complexity**: O(n) 🚀
+* **Space Complexity**: O(1) ✨
+
+---
+
+#### **📝 Output**
+
+```
+Majority Element in nums1: 3
+Majority Element in nums2: 2
+```
+
+---
+
+> 🚀 **Lesson:** When there's a guaranteed solution, smart algorithms make problems simple! 🎉

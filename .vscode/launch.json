@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "MajorityElement12",
+      "request": "launch",
+      "mainClass": "MajorityElement12",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MajorityElement",
+      "request": "launch",
+      "mainClass": "MajorityElement",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "ArraySortingDuplicate",
       "request": "launch",
       "mainClass": "ArraySortingDuplicate",
