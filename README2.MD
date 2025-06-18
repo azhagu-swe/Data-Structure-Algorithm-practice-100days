@@ -2044,3 +2044,77 @@ world  hello
 * 🚀 No temporary variable used.
 * 🛠️ String operations like concatenation and `substring` make swapping possible.
 
+### 🌟 Day 79: Remove Duplicates from Sorted Array
+
+---
+
+#### **📝 Problem**
+
+Given a sorted array, remove duplicates such that each element appears at most twice. Modify the array in-place and output the updated array.
+
+---
+
+#### **💻 Code**
+
+```java
+import java.util.Arrays;
+
+public class ArraySortingDuplicate {
+
+    public static void main(String[] args) {
+
+        int[] nums = { 1, 1, 1, 2, 3, 3, 3 }; // Input array with duplicates
+        int k = 2; // Pointer to track the position of the next unique element
+
+        for (int i = 2; i < nums.length; i++) {
+            // Check if the current number is different from the number at position k-2
+            if (nums[i] != nums[k - 2]) {
+                nums[k] = nums[i]; // Update the array in place
+                k++; // Move the pointer forward
+            }
+        }
+
+        // Print the modified array with duplicates removed
+        Arrays.stream(nums, 0, k).forEach(num -> System.out.print(num + " "));
+    }
+}
+```
+
+---
+
+#### **📚 Explanation**
+
+1. **Input Array**:
+
+   * `nums = { 1, 1, 1, 2, 3, 3, 3 }`.
+
+2. **Logic**:
+
+   * Start with `k = 2` because at most two duplicates are allowed.
+   * Loop through the array starting from index `2`.
+   * If the current number is different from the number at `k-2`, include it in the result.
+
+3. **Result**:
+
+   * Modify the array in-place to keep only unique elements up to a maximum of two duplicates.
+
+4. **Print Modified Array**:
+
+   * Use `Arrays.stream(nums, 0, k)` to print the first `k` elements of the array.
+
+---
+
+#### **🔍 Output**
+
+```
+1 1 2 3 3
+```
+
+---
+
+#### **✨ Key Points**
+
+* 🛠️ In-place modification ensures efficient use of memory.
+* 🚀 Works efficiently for sorted arrays.
+* ✅ Keeps at most two duplicates of each unique element.
+

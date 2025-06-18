@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ArraySortingDuplicate",
+      "request": "launch",
+      "mainClass": "ArraySortingDuplicate",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "SwapString",
       "request": "launch",
       "mainClass": "SwapString",
