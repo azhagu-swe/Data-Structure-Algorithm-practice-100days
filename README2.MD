@@ -2187,3 +2187,77 @@ Majority Element in nums2: 2
 ---
 
 > 🚀 **Lesson:** When there's a guaranteed solution, smart algorithms make problems simple! 🎉
+### 🌟 Day 81: Rotate Array by k Steps 🎡
+
+---
+
+#### **📝 Problem**
+
+Given an array `nums`, rotate the array to the right by `k` steps.
+
+---
+
+#### **💡 Example**
+
+**Input**:
+`nums = [1,2,3,4,5,6,7]`, `k = 3`
+**Output**:
+`[5,6,7,1,2,3,4]`
+
+---
+
+#### **💻 Solution**
+
+```java
+import java.util.Arrays;
+
+public class ArrayRotate1 {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5, 6, 7};
+        int k = 3;
+
+        for (int i = 1; i <= k; i++) {
+            int temp = arr[arr.length - 1]; // Store the last element
+            for (int j = arr.length - 1; j >= 1; j--) {
+                arr[j] = arr[j - 1]; // Shift elements to the right
+            }
+            arr[0] = temp; // Place the last element at the start
+        }
+
+        System.out.println("Rotated Array: " + Arrays.toString(arr));
+    }
+}
+```
+
+---
+
+#### **🔍 Example Walkthrough**
+
+1. Rotate Step-by-Step:
+
+   * **Initial Array**: `[1,2,3,4,5,6,7]`
+   * After 1st Rotation: `[7,1,2,3,4,5,6]`
+   * After 2nd Rotation: `[6,7,1,2,3,4,5]`
+   * After 3rd Rotation: `[5,6,7,1,2,3,4]`
+
+**Output**: `[5,6,7,1,2,3,4]`
+
+---
+
+#### **🌟 Key Points**
+
+* **Approach**: Rotate the array by repeatedly moving the last element to the front.
+* **Time Complexity**: O(n × k)
+* **Space Complexity**: O(1)
+
+---
+
+#### **📝 Output**
+
+```
+Rotated Array: [5, 6, 7, 1, 2, 3, 4]
+```
+
+---
+
+> 🔄 **Lesson:** Iterative array rotations are simple but not always the most efficient. Optimization ideas next time! 🚀

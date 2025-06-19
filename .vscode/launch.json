@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ArrayRotate1",
+      "request": "launch",
+      "mainClass": "ArrayRotate1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "MajorityElement12",
       "request": "launch",
       "mainClass": "MajorityElement12",
