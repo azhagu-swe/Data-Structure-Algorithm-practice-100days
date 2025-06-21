@@ -2312,3 +2312,69 @@ Rotated Array: [5, 6, 7, 1, 2, 3, 4]
 - Focus on improving problem-solving skills and algorithmic thinking.
 
 Happy coding! 🚀
+
+# 100 Days of DSA Challenge
+
+This repository tracks my progress in solving DSA problems daily. Below is the update for **Day 83**.
+
+## 🌟 Day 83 - Solved Problem
+
+| Problem                              | File                                  | Core Idea to Remember 🧠                         | Formula / Logic 📐                     |
+|--------------------------------------|--------------------------------------|------------------------------------------------|----------------------------------------|
+| Product of Array Except Self 🔢     | [ProductArray.java](Day-83/ProductArray.java) | Use **prefix and suffix multiplication**.     | `result[i] = prefix * suffix`          |
+
+---
+
+### Problem Details
+
+#### Product of Array Except Self 🔢
+- **Problem:**  
+  Given an integer array `nums`, return an array `result` such that `result[i]` is equal to the product of all the elements of `nums` except `nums[i]`.
+
+  **Examples:**  
+  1. Input: `nums = [1, 2, 3, 4]`  
+     Output: `[24, 12, 8, 6]`  
+  2. Input: `nums = [-1, 1, 0, -3, 3]`  
+     Output: `[0, 0, 9, 0, 0]`
+
+- **Key Idea:**  
+  Use a **prefix product** and a **suffix product** to calculate the result efficiently in **O(n)** time.
+
+- **Logic / Formula:**  
+  1. Compute `prefix[i]` (product of all elements before index `i`).
+  2. Compute `suffix[i]` (product of all elements after index `i`).
+  3. Combine them: `result[i] = prefix[i] * suffix[i]`.
+
+- **Optimized Code:**  
+  ```java
+  import java.util.Arrays;
+
+  public class ProductArray {
+      public static void main(String[] args) {
+          int[] nums = { 1, 2, 3, 4 };
+          int[] output = productExceptSelf(nums);
+          System.out.println(Arrays.toString(output));
+      }
+
+      public static int[] productExceptSelf(int[] nums) {
+          int n = nums.length;
+          int[] result = new int[n];
+
+          // Step 1: Compute prefix products
+          int prefix = 1;
+          for (int i = 0; i < n; i++) {
+              result[i] = prefix; // Store prefix product in result
+              prefix *= nums[i]; // Update prefix product
+          }
+
+          // Step 2: Compute suffix products and multiply with prefix products
+          int suffix = 1;
+          for (int i = n - 1; i >= 0; i--) {
+              result[i] *= suffix; // Multiply with suffix product
+              suffix *= nums[i]; // Update suffix product
+          }
+
+          return result;
+      }
+  }
+
