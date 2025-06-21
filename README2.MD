@@ -2260,4 +2260,55 @@ Rotated Array: [5, 6, 7, 1, 2, 3, 4]
 
 ---
 
-> 🔄 **Lesson:** Iterative array rotations are simple but not always the most efficient. Optimization ideas next time! 🚀
+
+## 🌟 Day 82 - Solved Problems
+
+| Problem                     | File                                | Core Idea to Remember 🧠                             | Logic / Formula 📐                       |
+|-----------------------------|-------------------------------------|----------------------------------------------------|------------------------------------------|
+| Jump Game 🚀                | [JumpGameTest.java](Day-82/JumpGameTest.java) | Use **maxReach** to track the farthest jump possible. | `maxReach = max(maxReach, i + nums[i])` |
+| Majority Element 🎯         | [MElement.java](Day-82/MElement.java)         | **Count trick**: Increment for candidate, decrement otherwise. | `count += (num == candidate) ? 1 : -1`  |
+| Stock Buy and Sell II 💹    | [StockBAndSellii.java](Day-82/StockBAndSellii.java) | Sum up all **positive profits**.                   | `if price > buy: maxProfit += price - buy` |
+| Stock Buy and Sell I 📈     | [StockBuyAndSale1.java](Day-82/StockBuyAndSale1.java) | Track the **minimum price** and **max profit**.    | `maxProfit = max(maxProfit, price - buy)` |
+
+---
+
+### Problem Details
+
+#### Jump Game 🚀
+- **Problem:** Determine if you can jump to the end of the array.
+- **Key Idea:** Use a greedy algorithm to update the farthest reachable index.
+- **Logic / Formula:** `maxReach = max(maxReach, i + nums[i])`
+- **Code:** [JumpGameTest.java](Day-82/JumpGameTest.java)
+
+---
+
+#### Majority Element 🎯
+- **Problem:** Find the majority element that appears more than `n/2` times in an array.
+- **Key Idea:** The Boyer-Moore Voting Algorithm uses a count-based approach.
+- **Logic / Formula:** `count += (num == candidate) ? 1 : -1`
+- **Code:** [MElement.java](Day-82/MElement.java)
+
+---
+
+#### Stock Buy and Sell II 💹
+- **Problem:** Maximize profit with unlimited transactions.
+- **Key Idea:** Add all positive differences in prices (local profits).
+- **Logic / Formula:** `if price > buy: maxProfit += price - buy`
+- **Code:** [StockBAndSellii.java](Day-82/StockBAndSellii.java)
+
+---
+
+#### Stock Buy and Sell I 📈
+- **Problem:** Maximize profit with a single transaction.
+- **Key Idea:** Keep track of the lowest price and calculate the maximum profit dynamically.
+- **Logic / Formula:** `maxProfit = max(maxProfit, price - buy)`
+- **Code:** [StockBuyAndSale1.java](Day-82/StockBuyAndSale1.java)
+
+---
+
+## 🔖 Goals
+- Solve at least one problem daily for 100 days.
+- Document solutions with key ideas and logic/formulas for quick revision.
+- Focus on improving problem-solving skills and algorithmic thinking.
+
+Happy coding! 🚀

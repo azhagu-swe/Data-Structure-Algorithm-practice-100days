@@ -6,6 +6,41 @@
   "configurations": [
     {
       "type": "java",
+      "name": "jumpGameTest",
+      "request": "launch",
+      "mainClass": "jumpGameTest",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "StockBAndSellii",
+      "request": "launch",
+      "mainClass": "StockBAndSellii",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "StockBuyAndSale1",
+      "request": "launch",
+      "mainClass": "StockBuyAndSale1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "StockBuyAndSale",
+      "request": "launch",
+      "mainClass": "StockBuyAndSale",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MElement",
+      "request": "launch",
+      "mainClass": "MElement",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "ArrayRotate1",
       "request": "launch",
       "mainClass": "ArrayRotate1",
