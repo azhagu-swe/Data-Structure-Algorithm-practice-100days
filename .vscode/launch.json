@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "JumpTest",
+      "request": "launch",
+      "mainClass": "JumpTest",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "Jump",
+      "request": "launch",
+      "mainClass": "Jump",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "ProductArray",
       "request": "launch",
       "mainClass": "ProductArray",

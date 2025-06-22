@@ -2378,3 +2378,59 @@ This repository tracks my progress in solving DSA problems daily. Below is the u
       }
   }
 
+
+## 🌟 Day 84 - Solved Problem
+
+| Problem                   | File                              | Core Idea to Remember 🧠                         | Formula / Logic 📐                          |
+|---------------------------|-----------------------------------|------------------------------------------------|--------------------------------------------|
+| Gas Station Problem ⛽    | [JumpTest.java](Day-84/JumpTest.java) | Use greedy approach to find the starting index. | `totalGas >= totalCost` → Valid solution   |
+
+---
+
+### Problem Details
+
+#### Gas Station Problem ⛽
+- **Problem:**  
+  There are `n` gas stations along a circular route. You can start at any station, and each station provides a certain amount of gas (`gas[i]`). It costs `cost[i]` gas to travel to the next station.  
+  Return the **starting station's index** if you can complete the circuit once; otherwise, return `-1`.
+
+- **Key Idea:**  
+  Use a greedy approach:
+  - If at any station your `currentGas` becomes negative, reset the starting station to the next one.
+  - Ensure `totalGas >= totalCost` for a valid solution.
+
+- **Logic / Formula:**  
+  1. Compute `totalGas` and `totalCost`.
+  2. Check: `totalGas >= totalCost` → A solution exists.
+  3. Use a single loop:
+     - Track `currentGas = gas[i] - cost[i]`.
+     - Reset `currentGas` and update the starting index when it becomes negative.
+
+---
+
+### Optimized Code:
+```java
+public class JumpTest {
+    public static void main(String[] args) {
+        int gas[] = { 1, 2, 3, 4, 5 }, cost[] = { 3, 4, 5, 1, 2 };
+        int result = canCompleteCircuit(gas, cost);
+        System.out.println(result);
+    }
+
+    private static int canCompleteCircuit(int[] gas, int[] cost) {
+        int totalCost = 0, totalGas = 0, currentGas = 0, start = 0;
+
+        for (int i = 0; i < gas.length; i++) {
+            totalCost += cost[i];
+            totalGas += gas[i];
+            currentGas += gas[i] - cost[i];
+
+            if (currentGas < 0) {
+                start = i + 1;
+                currentGas = 0;
+            }
+        }
+
+        return (totalGas >= totalCost) ? start : -1;
+    }
+}
