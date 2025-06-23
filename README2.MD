@@ -2434,3 +2434,68 @@ public class JumpTest {
         return (totalGas >= totalCost) ? start : -1;
     }
 }
+# 🚀 Day 85: Candy Distribution 🍬
+
+## 📝 Problem Statement
+There are **n children** standing in a line, each assigned a rating value in an integer array `ratings`. You need to distribute candies to these children following these rules:
+
+1. 🍭 Each child must have **at least one candy**.
+2. 🎖️ Children with a **higher rating** must receive **more candies** than their neighbors.
+
+### 💡 Objective:
+Return the **minimum number of candies** required to satisfy these conditions.
+
+---
+
+## 💻 Implementation
+
+### 🛠️ Approach:
+We use a **two-pass greedy algorithm**:
+1. **Left-to-Right Pass**: Ensure that children with higher ratings than their left neighbors get more candies.
+2. **Right-to-Left Pass**: Ensure that children with higher ratings than their right neighbors get more candies.
+
+### 📜 Java Code:
+```java
+import java.util.*;
+
+public class CandyDistribution {
+    public int candy(int[] ratings) {
+        int n = ratings.length;
+        int[] candies = new int[n];
+        Arrays.fill(candies, 1); // Step 1: Initialize candies array with 1 candy each
+
+        // Step 2: Left-to-Right pass
+        for (int i = 1; i < n; i++) {
+            if (ratings[i] > ratings[i - 1]) {
+                candies[i] = candies[i - 1] + 1;
+            }
+        }
+
+        // Step 3: Right-to-Left pass
+        for (int i = n - 2; i >= 0; i--) {
+            if (ratings[i] > ratings[i + 1]) {
+                candies[i] = Math.max(candies[i], candies[i + 1] + 1);
+            }
+        }
+
+        // Step 4: Sum up all candies
+        int totalCandies = 0;
+        for (int candy : candies) {
+            totalCandies += candy;
+        }
+
+        return totalCandies;
+    }
+
+    public static void main(String[] args) {
+        CandyDistribution solution = new CandyDistribution();
+
+        // Example 1
+        int[] ratings1 = {1, 0, 2};
+        System.out.println("Output: " + solution.candy(ratings1)); // Expected: 5
+
+        // Example 2
+        int[] ratings2 = {1, 2, 2};
+        System.out.println("Output: " + solution.candy(ratings2)); // Expected: 4
+    }
+}
