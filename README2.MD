@@ -2499,3 +2499,87 @@ public class CandyDistribution {
         System.out.println("Output: " + solution.candy(ratings2)); // Expected: 4
     }
 }
+# Day 86: Integer to Roman Conversion
+
+## Problem Description
+
+Roman numerals represent numbers using the following symbols and values:
+
+| Symbol | Value |
+|--------|-------|
+| I      | 1     |
+| V      | 5     |
+| X      | 10    |
+| L      | 50    |
+| C      | 100   |
+| D      | 500   |
+| M      | 1000  |
+
+To convert an integer to a Roman numeral:
+1. Append symbols for decimal place values from largest to smallest.
+2. Use **subtractive notation** for values starting with 4 or 9:
+   - Examples: 4 → `IV` (5 - 1), 9 → `IX` (10 - 1)
+3. Powers of 10 (I, X, C, M) can be repeated up to 3 times, but 5s (V, L, D) cannot. Instead, use subtractive notation.
+
+### Examples
+
+#### Example 1
+**Input**: `num = 3749`  
+**Output**: `"MMMDCCXLIX"`
+
+- `3000 = MMM`
+- `700 = DCC`
+- `40 = XL`
+- `9 = IX`
+
+#### Example 2
+**Input**: `num = 58`  
+**Output**: `"LVIII"`
+
+- `50 = L`
+- `8 = VIII`
+
+#### Example 3
+**Input**: `num = 1994`  
+**Output**: `"MCMXCIV"`
+
+- `1000 = M`
+- `900 = CM`
+- `90 = XC`
+- `4 = IV`
+
+---
+
+## Solution: Java Implementation
+
+The solution uses an iterative approach to build the Roman numeral from the largest to smallest values.
+
+### Code
+
+```java
+public class IntegerToRoman {
+    public String intToRoman(int num) {
+        String[] romanSymbols = {
+            "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"
+        };
+        int[] values = {
+            1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1
+        };
+        
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < values.length; i++) {
+            while (num >= values[i]) {
+                result.append(romanSymbols[i]);
+                num -= values[i];
+            }
+        }
+        return result.toString();
+    }
+
+    public static void main(String[] args) {
+        IntegerToRoman converter = new IntegerToRoman();
+        System.out.println(converter.intToRoman(3749)); // Output: MMMDCCXLIX
+        System.out.println(converter.intToRoman(58));   // Output: LVIII
+        System.out.println(converter.intToRoman(1994)); // Output: MCMXCIV
+    }
+}
