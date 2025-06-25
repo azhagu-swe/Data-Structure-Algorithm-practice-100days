@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "REverseStringWord",
+      "request": "launch",
+      "mainClass": "REverseStringWord",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "CandyDistribution",
       "request": "launch",
       "mainClass": "CandyDistribution",
