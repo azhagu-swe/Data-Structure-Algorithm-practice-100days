@@ -207,3 +207,52 @@ public class ZigzagConversion {
 
 ```
 ```
+
+
+# 🚀 Day 89: Container With Most Water 💧
+
+## 📝 Problem Statement
+Given an array `height`, where each element represents the height of a vertical line, find the **maximum amount of water** a container can store between two lines.
+
+---
+
+## 💡 Examples
+
+### Example 1:
+**Input**: `height = [1,8,6,2,5,4,8,3,7]`  
+**Output**: `49`  
+**Explanation**: The container between indices `1` and `8` stores the most water: \(7 \times 7 = 49\).
+
+---
+
+### Example 2:
+**Input**: `height = [1,1]`  
+**Output**: `1`
+
+---
+
+## 💻 Solution
+
+### Code:
+```java
+public class ContainerWithMostWater {
+    public static int maxArea(int[] height) {
+        int left = 0, right = height.length - 1, maxArea = 0;
+
+        while (left < right) {
+            int currentArea = Math.min(height[left], height[right]) * (right - left);
+            maxArea = Math.max(maxArea, currentArea);
+
+            if (height[left] < height[right]) left++;
+            else right--;
+        }
+
+        return maxArea;
+    }
+
+    public static void main(String[] args) {
+        int[] height = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+        System.out.println("Max Area: " + maxArea(height)); // Expected: 49
+    }
+}
+
