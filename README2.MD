@@ -2583,3 +2583,53 @@ public class IntegerToRoman {
         System.out.println(converter.intToRoman(1994)); // Output: MCMXCIV
     }
 }
+# 🚀 Day 92: Merge Intervals 🔗
+
+## 📝 Problem Statement
+Merge all overlapping intervals from an array of `intervals`, where each interval is represented as `[start, end]`.
+
+---
+
+## 💡 Examples
+
+### Example 1:
+**Input**: `intervals = [[1,3],[2,6],[8,10],[15,18]]`  
+**Output**: `[[1,6],[8,10],[15,18]]`  
+**Explanation**: Intervals `[1,3]` and `[2,6]` overlap and are merged into `[1,6]`.
+
+---
+
+### Example 2:
+**Input**: `intervals = [[1,4],[4,5]]`  
+**Output**: `[[1,5]]`  
+**Explanation**: Intervals `[1,4]` and `[4,5]` overlap and are merged into `[1,5]`.
+
+---
+
+## 💻 Solution
+
+### Code:
+```java
+import java.util.*;
+
+public class MergeIntervals {
+    public static int[][] merge(int[][] intervals) {
+        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0])); // Sort by start time
+        List<int[]> merged = new ArrayList<>();
+
+        for (int[] interval : intervals) {
+            if (merged.isEmpty() || merged.get(merged.size() - 1)[1] < interval[0]) {
+                merged.add(interval); // Add non-overlapping interval
+            } else {
+                merged.get(merged.size() - 1)[1] = Math.max(merged.get(merged.size() - 1)[1], interval[1]); // Merge overlapping
+            }
+        }
+
+        return merged.toArray(new int[merged.size()][]);
+    }
+
+    public static void main(String[] args) {
+        int[][] intervals = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
+        System.out.println("Merged: " + Arrays.deepToString(merge(intervals))); // Output: [[1, 6], [8, 10], [15, 18]]
+    }
+}
