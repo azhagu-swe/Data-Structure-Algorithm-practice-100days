@@ -387,3 +387,42 @@ public class SearchInRotatedSortedArray {
         System.out.println("Index: " + search(nums, 0)); // Output: 4
     }
 }
+# 🚀 Day 94: Majority Element 🗳️
+
+## 📝 Problem
+Find the element that appears **more than n/2 times** in the array `nums`.  
+It's guaranteed that such an element always exists.
+
+---
+
+## 💡 Examples
+
+### Example 1:
+**Input**: `nums = [3,2,3]`  
+**Output**: `3`
+
+### Example 2:
+**Input**: `nums = [2,2,1,1,1,2,2]`  
+**Output**: `2`
+
+---
+
+## 💻 Java Code
+```java
+public class MajorityElement {
+    public static int majorityElement(int[] nums) {
+        int count = 0, candidate = 0;
+
+        for (int num : nums) {
+            if (count == 0) candidate = num;
+            count += (num == candidate) ? 1 : -1;
+        }
+
+        return candidate;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(majorityElement(new int[]{3, 2, 3})); // Output: 3
+        System.out.println(majorityElement(new int[]{2, 2, 1, 1, 1, 2, 2})); // Output: 2
+    }
+}
