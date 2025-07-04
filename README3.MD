@@ -499,3 +499,99 @@ public class MinStack {
 * 🔥 Only 5 days left — almost there!
 
 ```
+
+For **Day 96**, let’s solve:
+
+## 🔢 **Climbing Stairs** – A classic dynamic programming problem.
+
+---
+
+## ✅ Problem: Climbing Stairs
+
+**Difficulty**: Easy
+**Topics**: Dynamic Programming, Recursion
+
+---
+
+## 🚀 Problem Statement
+
+You are climbing a staircase. It takes `n` steps to reach the top.
+Each time, you can either climb **1** or **2** steps.
+Return the **number of distinct ways** to reach the top.
+
+---
+
+## 💡 Examples
+
+### Example 1:
+
+**Input**: `n = 2`
+**Output**: `2`
+**Explanation**: 1+1, 2
+
+---
+
+### Example 2:
+
+**Input**: `n = 3`
+**Output**: `3`
+**Explanation**: 1+1+1, 1+2, 2+1
+
+---
+
+## 🧠 Insight
+
+This is just like the Fibonacci sequence:
+`ways(n) = ways(n - 1) + ways(n - 2)`
+
+---
+
+## 💻 Java Code:
+
+```java
+public class ClimbingStairs {
+    public static int climbStairs(int n) {
+        if (n <= 2) return n;
+
+        int first = 1, second = 2;
+        for (int i = 3; i <= n; i++) {
+            int third = first + second;
+            first = second;
+            second = third;
+        }
+        return second;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Ways to climb 2 stairs: " + climbStairs(2)); // 2
+        System.out.println("Ways to climb 3 stairs: " + climbStairs(3)); // 3
+        System.out.println("Ways to climb 5 stairs: " + climbStairs(5)); // 8
+    }
+}
+```
+
+---
+
+## 🧠 Complexity:
+
+* **Time**: $O(n)$
+* **Space**: $O(1)$
+
+---
+
+## 🔍 How It Works:
+
+* Use two variables to track the last two step counts.
+* Loop from 3 to `n` and update the values like Fibonacci.
+
+---
+
+## 📈 Progress:
+
+* **Day**: 96/100
+* ✅ **Solved**: Climbing Stairs
+* 🔥 Only 4 days left in the **100 Days of DSA Challenge**! You're crushing it! 🚀💪
+
+```
+```
+
