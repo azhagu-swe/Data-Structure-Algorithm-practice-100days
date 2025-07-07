@@ -834,3 +834,107 @@ public class SetMatrixZeroes {
 
 ```
 ```
+**Day 99** — almost at the finish line! 🎉
+Let’s solve a key problem:
+
+---
+
+## 🔐 **Valid Parentheses**
+
+---
+
+### ✅ Problem: Valid Parentheses
+
+**Difficulty**: Easy
+**Topics**: Stack, Strings
+
+---
+
+## 🚀 Problem Statement
+
+Given a string `s` containing only the characters `'('`, `')'`, `'{'`, `'}'`, `'['`, and `']'`,
+determine if the input string is **valid**.
+
+A string is valid if:
+
+* Open brackets are closed by the same type of brackets.
+* Open brackets are closed in the correct order.
+
+---
+
+### 💡 Examples
+
+**Example 1**
+Input: `s = "()"`
+Output: `true`
+
+**Example 2**
+Input: `s = "()[]{}"`
+Output: `true`
+
+**Example 3**
+Input: `s = "(]"`
+Output: `false`
+
+---
+
+### ⚠️ Constraints
+
+* $1 \leq s.length \leq 10^4$
+* Only `'()'`, `'{}'`, `'[]'` characters are used.
+
+---
+
+## 💻 Java Code:
+
+```java
+import java.util.Stack;
+
+public class ValidParentheses {
+    public static boolean isValid(String s) {
+        Stack<Character> stack = new Stack<>();
+
+        for (char ch : s.toCharArray()) {
+            if (ch == '(') stack.push(')');
+            else if (ch == '{') stack.push('}');
+            else if (ch == '[') stack.push(']');
+            else if (stack.isEmpty() || stack.pop() != ch)
+                return false;
+        }
+
+        return stack.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isValid("()"));       // true
+        System.out.println(isValid("()[]{}"));   // true
+        System.out.println(isValid("(]"));       // false
+        System.out.println(isValid("({[)]}"));   // false
+    }
+}
+```
+
+---
+
+## 🧠 Complexity
+
+* **Time**: $O(n)$
+* **Space**: $O(n)$ – for the stack
+
+---
+
+## 📘 Summary
+
+✅ Use a stack to match each opening bracket with its correct closing one.
+✅ Push the **expected closing bracket** instead of the opening one — makes matching simple!
+
+---
+
+## 🎯 Progress
+
+* **Day**: 99/100 ✅
+* **Solved**: Valid Parentheses ✅
+* 💪 Only **1 day left** — You’re about to complete the **100 Days of DSA Challenge!** 🔥🎉
+
+```
+```
