@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Stack;
 
 public class MinStack {
     private Stack<Integer> stack;
@@ -37,7 +37,7 @@ public class MinStack {
         minStack.push(-3);
         System.out.println("Min: " + minStack.getMin()); // -3
         minStack.pop();
-        System.out.println("Top: " + minStack.top());    // 0
+        System.out.println("Top: " + minStack.top()); // 0
         System.out.println("Min: " + minStack.getMin()); // -2
     }
 }

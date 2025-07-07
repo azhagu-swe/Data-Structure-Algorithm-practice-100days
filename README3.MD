@@ -595,3 +595,242 @@ public class ClimbingStairs {
 ```
 ```
 
+For **Day 97**, let’s solve:
+
+## 🔁 **Implement Queue using Stacks**
+
+---
+
+## ✅ Problem: Implement Queue using Stacks
+
+**Difficulty**: Easy
+**Topics**: Stack, Queue, Design
+
+---
+
+## 🚀 Problem Statement
+
+Implement a queue using **two stacks**.
+You must support the following operations:
+
+* `push(x)` → Pushes element to the back
+* `pop()` → Removes the element from the front
+* `peek()` → Returns the front element
+* `empty()` → Returns true if queue is empty
+
+All operations must be **efficient and correct**.
+
+---
+
+## 💡 Examples:
+
+```java
+MyQueue q = new MyQueue();
+q.push(1);
+q.push(2);
+q.peek();   // → 1
+q.pop();    // → 1
+q.empty();  // → false
+```
+
+---
+
+## 💻 Java Code:
+
+```java
+import java.util.*;
+
+public class MyQueue {
+    Stack<Integer> input = new Stack<>();
+    Stack<Integer> output = new Stack<>();
+
+    public void push(int x) {
+        input.push(x);
+    }
+
+    public int pop() {
+        peek(); // Move elements to output if needed
+        return output.pop();
+    }
+
+    public int peek() {
+        if (output.isEmpty()) {
+            while (!input.isEmpty()) {
+                output.push(input.pop());
+            }
+        }
+        return output.peek();
+    }
+
+    public boolean empty() {
+        return input.isEmpty() && output.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        MyQueue q = new MyQueue();
+        q.push(1);
+        q.push(2);
+        System.out.println("Peek: " + q.peek()); // 1
+        System.out.println("Pop: " + q.pop());   // 1
+        System.out.println("Empty: " + q.empty()); // false
+    }
+}
+```
+
+---
+
+## 🧠 Complexity:
+
+* **Push**: $O(1)$
+* **Pop / Peek**: Amortized $O(1)$
+* **Space**: $O(n)$
+
+---
+
+## 🔍 How It Works:
+
+* Use **two stacks**:
+
+  * `input` → for push
+  * `output` → for pop/peek
+* When `output` is empty, move all elements from `input` to `output`.
+
+---
+
+## 🎯 Progress:
+
+* ✅ **Day**: 97/100
+* 🎉 **Solved**: Implement Queue using Stacks
+* 🔥 Only 3 days left – nearly done with the challenge! Keep pushing! 💪📘
+
+```
+```
+For **Day 98**, let’s solve the popular DSA problem:
+
+## 🧩 **Set Matrix Zeroes**
+
+---
+
+## ✅ Problem: Set Matrix Zeroes
+
+**Difficulty**: Medium
+**Topics**: Arrays, Matrix, In-place operations
+
+---
+
+## 🚀 Problem Statement
+
+Given an `m x n` matrix, if an element is `0`, set its **entire row and column** to `0`.
+Do this **in-place** (without using extra space for another matrix).
+
+---
+
+## 💡 Examples
+
+### Example 1:
+
+**Input**:
+
+```
+[[1,1,1],
+ [1,0,1],
+ [1,1,1]]
+```
+
+**Output**:
+
+```
+[[1,0,1],
+ [0,0,0],
+ [1,0,1]]
+```
+
+---
+
+### Example 2:
+
+**Input**:
+
+```
+[[0,1,2,0],
+ [3,4,5,2],
+ [1,3,1,5]]
+```
+
+**Output**:
+
+```
+[[0,0,0,0],
+ [0,4,5,0],
+ [0,3,1,0]]
+```
+
+---
+
+## 💻 Java Code:
+
+```java
+public class SetMatrixZeroes {
+    public static void setZeroes(int[][] matrix) {
+        int m = matrix.length, n = matrix[0].length;
+        boolean firstRow = false, firstCol = false;
+
+        // Check first row and column for zeros
+        for (int i = 0; i < m; i++) if (matrix[i][0] == 0) firstCol = true;
+        for (int j = 0; j < n; j++) if (matrix[0][j] == 0) firstRow = true;
+
+        // Mark zeros in first row and col
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                if (matrix[i][j] == 0) {
+                    matrix[i][0] = 0;
+                    matrix[0][j] = 0;
+                }
+            }
+        }
+
+        // Set matrix cells to 0 based on marks
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                if (matrix[i][0] == 0 || matrix[0][j] == 0)
+                    matrix[i][j] = 0;
+            }
+        }
+
+        // Handle first row and col
+        if (firstRow) for (int j = 0; j < n; j++) matrix[0][j] = 0;
+        if (firstCol) for (int i = 0; i < m; i++) matrix[i][0] = 0;
+    }
+
+    public static void printMatrix(int[][] matrix) {
+        for (int[] row : matrix) {
+            for (int val : row) System.out.print(val + " ");
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        int[][] mat = {{1,1,1},{1,0,1},{1,1,1}};
+        setZeroes(mat);
+        printMatrix(mat); // Output: [[1,0,1],[0,0,0],[1,0,1]]
+    }
+}
+```
+
+---
+
+## 🧠 Complexity
+
+* **Time**: $O(m \times n)$
+* **Space**: $O(1)$ (constant space, no extra matrix)
+
+---
+
+## 🎯 Progress
+
+* ✅ **Day**: 98/100
+* 📊 **Solved**: Set Matrix Zeroes
+* 🔥 Just **2 more days** to go – you’re almost done! Keep crushing it! 💪💻
+
+```
+```
