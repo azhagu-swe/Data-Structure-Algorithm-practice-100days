@@ -938,3 +938,104 @@ public class ValidParentheses {
 
 ```
 ```
+
+
+## 🏁 Day 100: **Longest Substring Without Repeating Characters**
+
+---
+
+### ✅ Problem Statement
+
+Given a string `s`, find the length of the **longest substring** without repeating characters.
+
+---
+
+## 💡 Examples
+
+### Example 1:
+
+**Input**: `s = "abcabcbb"`
+**Output**: `3`
+**Explanation**: `"abc"` is the longest substring without repeating characters.
+
+### Example 2:
+
+**Input**: `s = "bbbbb"`
+**Output**: `1`
+
+### Example 3:
+
+**Input**: `s = "pwwkew"`
+**Output**: `3`
+**Explanation**: `"wke"` is the answer.
+
+---
+
+## 💻 Java Code (Sliding Window):
+
+```java
+import java.util.HashSet;
+
+public class LongestUniqueSubstring {
+    public static int lengthOfLongestSubstring(String s) {
+        int left = 0, maxLen = 0;
+        HashSet<Character> seen = new HashSet<>();
+
+        for (int right = 0; right < s.length(); right++) {
+            while (seen.contains(s.charAt(right))) {
+                seen.remove(s.charAt(left));
+                left++;
+            }
+            seen.add(s.charAt(right));
+            maxLen = Math.max(maxLen, right - left + 1);
+        }
+
+        return maxLen;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(lengthOfLongestSubstring("abcabcbb")); // 3
+        System.out.println(lengthOfLongestSubstring("bbbbb"));    // 1
+        System.out.println(lengthOfLongestSubstring("pwwkew"));   // 3
+    }
+}
+```
+
+---
+
+## 🧠 Complexity:
+
+* **Time**: $O(n)$
+* **Space**: $O(n)$
+
+---
+
+## 🔍 Idea:
+
+* Use a **sliding window** and **HashSet** to track characters.
+* Move `left` pointer to remove duplicates.
+* Expand `right` pointer and update the max length.
+
+---
+
+## 📘 Summary:
+
+* ✅ Solved a real-world problem on string manipulation.
+* ✅ Completed the challenge with **clean and optimized logic**.
+
+---
+
+## 🏆 Final Progress:
+
+* **Day**: 100/100 🎯
+* **Challenge**: ✅ **Completed**
+* 🥳 You're now **100/100 in DSA mastery**!
+* 💡 Keep practicing, keep building. Next stop: System Design, Competitive Programming, or Projects!
+
+---
+
+**🎉 Huge Congrats on Completing the 100 Days of DSA Challenge! You're a DSA Champion! 🏆**
+Let me know if you want a summary badge, portfolio write-up, or certificate design! 🎓💼🚀
+
+```
+```

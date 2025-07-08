@@ -6,6 +6,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "IntRoman1",
+      "request": "launch",
+      "mainClass": "IntRoman1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "IntRoman",
+      "request": "launch",
+      "mainClass": "IntRoman",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "LongestUniqueSubstring",
+      "request": "launch",
+      "mainClass": "LongestUniqueSubstring",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "ValidParentheses1",
       "request": "launch",
       "mainClass": "ValidParentheses1",
