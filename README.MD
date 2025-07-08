@@ -2,6 +2,10 @@
 
 ```
 
+```
+
+```
+
 # 100 Days of DSA Challenges
 
 Welcome! I'm embarking on a 100-day journey to sharpen my Data Structures and Algorithms skills. The goal is simple: solve problems daily, find smarter solutions, and become a more efficient coder.
@@ -1190,7 +1194,6 @@ Today I tackled three array- and string-manipulation tasks, practicing brute-for
 
 ✨ Two more classic patterns in place—onward to Day 33! 🚀
 
-
 # 🌟 Day 33: Solved Problems (May 4, 2025)
 
 ## 🚀 Today’s Challenges
@@ -1263,47 +1266,3352 @@ The subarray with the maximum product is `{6, -3, -10}`, with the product calcul
 
 ## 🚀 Today’s Challenge
 
-### Maximum Circular Subarray Sum  
+### Maximum Circular Subarray Sum
+
 **Task:** Given a circular array of integers, find the maximum possible sum of any subarray, where subarrays may wrap from the end back to the start.
 
 ---
 
 ## 🧠 Approach
 
-1. **Normal Kadane’s**  
-   - Compute the standard maximum subarray sum (non‑circular) using Kadane’s algorithm.  
-2. **Circular Sum via Inversion**  
-   - Compute the total sum of the array.  
-   - Invert all elements (multiply by –1) and run Kadane’s again to find the maximum sum of the inverted array, which corresponds to the minimum subarray sum of the original.  
-   - The maximum wrap‑around sum = total sum + (max sum of inverted)  
-3. **Choose the Best**  
-   - If all numbers are negative, the normal Kadane’s result is the answer.  
+1. **Normal Kadane’s**
+   - Compute the standard maximum subarray sum (non‑circular) using Kadane’s algorithm.
+2. **Circular Sum via Inversion**
+   - Compute the total sum of the array.
+   - Invert all elements (multiply by –1) and run Kadane’s again to find the maximum sum of the inverted array, which corresponds to the minimum subarray sum of the original.
+   - The maximum wrap‑around sum = total sum + (max sum of inverted)
+3. **Choose the Best**
+   - If all numbers are negative, the normal Kadane’s result is the answer.
    - Otherwise, the answer is the maximum of the normal and wrap‑around sums.
 
 ---
 
 ## 🔍 Complexity
 
-- **Time:** O(n) — each pass (Kadane’s + inversion) processes the array once  
-- **Space:** O(1) — only a few variables regardless of input size  
+- **Time:** O(n) — each pass (Kadane’s + inversion) processes the array once
+- **Space:** O(1) — only a few variables regardless of input size
 
 ---
 
 ## 📋 Examples
 
-| Input                                   | Output | Explanation                                                |
-|-----------------------------------------|:------:|------------------------------------------------------------|
-| `[8, -8, 9, -9, 10, -11, 12]`           |   22   | Wrap subarray `[12,8,-8,9,-9,10]` sums to 22               |
-| `[10, -3, -4, 7, 6, 5, -4, -1]`         |   23   | Wrap subarray `[7,6,5,-4,-1,10]` sums to 23                |
-| `[-1, 40, -14, 7, 6, 5, -4, -1]`        |   52   | Wrap subarray `[7,6,5,-4,-1,-1,40]` sums to 52             |
+| Input                              | Output | Explanation                                      |
+| ---------------------------------- | :----: | ------------------------------------------------ |
+| `[8, -8, 9, -9, 10, -11, 12]`    |   22   | Wrap subarray `[12,8,-8,9,-9,10]` sums to 22   |
+| `[10, -3, -4, 7, 6, 5, -4, -1]`  |   23   | Wrap subarray `[7,6,5,-4,-1,10]` sums to 23    |
+| `[-1, 40, -14, 7, 6, 5, -4, -1]` |   52   | Wrap subarray `[7,6,5,-4,-1,-1,40]` sums to 52 |
 
 ---
 
 ## 🎯 Key Takeaways
 
-- **Kadane’s Algorithm** solves the non‑circular max‑subarray in O(n).  
-- **Array inversion trick** converts the “min‑subarray” problem into another Kadane’s run for the circular case.  
+- **Kadane’s Algorithm** solves the non‑circular max‑subarray in O(n).
+- **Array inversion trick** converts the “min‑subarray” problem into another Kadane’s run for the circular case.
 - Edge‑case: all-negative arrays must use the non‑circular result.
 
-🚀 On to Day 36!  
+🚀 On to Day 36!
+
+# 🌟 Day 36: Solved Problems (May 6, 2025)
+
+---
+
+## 🚀 Today’s Challenges
+
+---
+
+### 1️⃣ Print an X Pattern
+
+**Task:** Given an odd-length string, print it in an "X" pattern, with characters aligned diagonally.**Approach:**
+
+- Use a single loop with two pointers:
+  - **`i`** iterates from left to right.
+  - **`j = n - 1 - i`** iterates from right to left.
+- At each step, fill an empty row with spaces, then place the corresponding characters at indices `i` and `j`.
+- Print the row for each iteration.**Complexity:**
+- **Time:** O(n²) — one pass for each row and each fill operation.
+- **Space:** O(n) — row buffer.**Edge Cases:**
+- Input string must have an odd length.
+- Handle invalid inputs with appropriate exceptions.
+
+**Example:**
+Input: `PROGRAM`
+Output:
+// P         M
+//  R      A
+//    O  R
+//      G
+//   O    R
+//  R       A
+// P          M
+
+---
+
+### 2️⃣ Smallest Missing Positive Number
+
+**Task:** Find the smallest missing positive integer in an unsorted array.**Approach:**
+
+1. **Mark Visited:**
+   - Use a boolean array to track numbers in the range `[1, n]` that are present.
+2. **Identify Missing:**
+   - Iterate from `1` to `n` and return the first unvisited index.
+3. **Handle All Found Case:**
+   - If all numbers from `1` to `n` are present, return `n + 1`.
+     **Complexity:**
+
+- **Time:** O(n) — single pass to mark visited and single pass to check.
+- **Space:** O(n) — boolean array for tracking.**Edge Cases:**
+- Negative numbers or zeros.
+- Duplicates in the array.
+
+**Example:**
+Input: `[2, -3, 4, 1, 1, 7]`
+Output: `3`
+
+---
+
+## 🎯 Key Takeaways
+
+### Print X Pattern
+
+- Use a row buffer for efficient row-wise construction.
+- Single loop with dual pointers minimizes complexity.
+
+### Smallest Missing Positive Number
+
+- Boolean arrays are a simple and effective way to track elements within a constrained range.
+- Edge cases like duplicates or negatives must be explicitly handled.
+
+🚀 Ready for Day 37!
+
+# 🌟 Day 37: Solved Problems (May 7, 2025)
+
+## 🚀 Today’s Challenge
+
+### Implement **`myAtoi(String s)`**
+
+Convert a string to a 32‑bit signed integer, replicating C/C++’s `atoi` behavior **without** built‑in parsing functions.
+
+---
+
+## 🧠 Approach
+
+1. **Skip leading whitespace**
+   - Advance index past any spaces. :contentReference[oaicite:0]{index=0}
+2. **Read optional sign**
+   - If next char is `+` or `-`, record sign and advance. :contentReference[oaicite:1]{index=1}
+3. **Parse digits**
+   - For each digit, compute `result = result * 10 + digit`.
+   - Use a 64‑bit accumulator (`long`) to detect overflow before casting to `int`. :contentReference[oaicite:2]{index=2}
+4. **Clamp on overflow**
+   - If `result` exceeds `Integer.MAX_VALUE` or goes below `Integer.MIN_VALUE`, return the respective boundary. :contentReference[oaicite:3]{index=3}
+5. **Stop on first non‑digit**
+   - Break parsing loop when encountering any non‑numeric character. :contentReference[oaicite:4]{index=4}
+
+---
+
+## 🔍 Complexity
+
+- **Time:** O(n) — single pass through the string.
+- **Space:** O(1) — fixed number of variables.
+
+---
+
+## 📋 Examples
+
+| Input                 |     Output     | Notes                               |
+| --------------------- | :-------------: | ----------------------------------- |
+| `"-123"`            |    `-123`    | Simple negative number.             |
+| `"   -0012gfg4"`    |     `-12`     | Leading zeros, stops at non‑digit. |
+| `"4193 with words"` |    `4193`    | Parses initial digits only.         |
+| `"words and 987"`   |      `0`      | No leading digits → 0.             |
+| `"2147483648"`      | `2147483647` | Clamped to `Integer.MAX_VALUE`.   |
+| `"-2147483649"`     | `-2147483648` | Clamped to `Integer.MIN_VALUE`.   |
+
+---
+
+## 🎯 Key Takeaways
+
+- **Manual parsing** replicates library `atoi` without built‑ins.
+- **Overflow detection** via wider accumulator prevents incorrect wrap‑around.
+- **Early exit** on non‑digits handles mixed‑content strings correctly.
+
+---
+
+# Day 38: Add Binary Strings (May 8, 2025)
+
+## 🚀 Problem Statement
+
+Write a Java function `addBinary(String s1, String s2)` that adds two binary strings and returns their sum as a binary string. The output should have no leading zeros unless the result itself is "0".
+
+---
+
+## 🧩 Methodology
+
+### Step-by-Step Approach
+
+1. **Preparation**:
+
+   - Initialize a `StringBuilder` for the result.
+   - Set a `carry` variable to 0.
+   - Use two pointers to traverse `s1` and `s2` from the rightmost digit.
+2. **Iterative Addition**:
+
+   - Add corresponding bits from both strings and the carry.
+   - Compute the current bit (`sum % 2`) and append it to the result.
+   - Update the carry (`sum / 2`).
+3. **Handle Remaining Carry**:
+
+   - If a carry remains after traversing both strings, append it to the result.
+4. **Formatting**:
+
+   - Reverse the `StringBuilder` to form the final binary result.
+   - Ensure no leading zeros in the result unless the answer is "0".
+
+---
+
+## 🔍 Complexity Analysis
+
+- **Time Complexity**: O(n), where `n` is the maximum length of `s1` and `s2`.
+- **Space Complexity**: O(n), for storing the result in a `StringBuilder`.
+
+---
+
+# 🌟 Day 39: Solved Problems (May 9, 2025)
+
+## 🚀 Today’s Challenge
+
+### Anagram Checker
+
+**Task:** Implement `isAnagram(s1, s2)` to determine whether two strings are anagrams (i.e. they contain exactly the same letters in any order), ignoring case.
+
+---
+
+## 🧠 Approach
+
+1. **Length Check**
+
+   - If `s1.length() != s2.length()`, immediately return `false`.
+2. **Frequency Counting**
+
+   - Allocate an integer array of size 26 (for letters ‘a’–‘z’).
+   - Traverse `s1`, convert each character to lowercase, and increment its count.
+   - Traverse `s2`, convert each character to lowercase, and decrement its count—if any count goes negative, return `false` early.
+3. **Validation**
+
+   - After both passes, verify that every entry in the count array is zero.
+   - If so, the two strings are anagrams; otherwise, they are not.
+
+---
+
+## 🔍 Complexity
+
+- **Time:** O(n) — each string is scanned once.
+- **Space:** O(1) — the fixed 26‑element count array.
+
+---
+
+# 🌟 Day 40: Solved Problems (May 10, 2025)
+
+## 🚀 Today’s Challenge
+
+### First Non‑Repeating Character in a String
+
+Implement two variants of “first non‑repeating character”:
+
+1. **Case‑Insensitive** – treat `A` and `a` as the same letter.
+2. **Case‑Sensitive** – distinguish uppercase and lowercase.
+
+---
+
+## 🧠 Approach
+
+1. **Count Frequencies**
+   - Case‑insensitive: map ‘a’–‘z’ → 0–25.
+   - Case‑sensitive: map ‘a’–‘z’ → 0–25, ‘A’–‘Z’ → 26–51.
+2. **Scan for First Unique**
+   - Iterate original string order; return first character whose frequency == 1.
+3. **Fallback**
+   - If none found, return a sentinel (e.g. `$`).
+
+---
+
+## 🔍 Complexity
+
+- **Time:** O(n) — two passes over the string (count + scan).
+- **Space:** O(1) — fixed‑size frequency array (26 or 52 entries).
+
+---
+
+## 💡 Code
+
+```java
+
+
+
+
+
+
+
+
+public class Solution {
+    // Case‑insensitive
+    static char nonRepeatingCharCI(String s) {
+        String t = s.toLowerCase();
+        int[] freq = new int[26];
+        for (char c : t.toCharArray()) freq[c - 'a']++;
+        for (char c : t.toCharArray())
+            if (freq[c - 'a'] == 1) return c;
+        return '$';
+    }
+
+    // Case‑sensitive
+    static char nonRepeatingCharCS(String s) {
+        int[] freq = new int[52];
+        for (char c : s.toCharArray()) {
+            if (Character.isLowerCase(c)) freq[c - 'a']++;
+            else if (Character.isUpperCase(c)) freq[26 + (c - 'A')]++;
+        }
+        for (char c : s.toCharArray()) {
+            int idx = Character.isLowerCase(c) ? c - 'a' : 26 + (c - 'A');
+            if (freq[idx] == 1) return c;
+        }
+        return '$';
+    }
+}
+
+# 🌟 Day 41: Solved Problems (May 11, 2025)
+
+## 🚀 Today’s Challenge
+
+### Find All Pattern Occurrences in Text Using the KMP Algorithm  
+
+Given a `text` and a `pattern`, find all starting indices where the pattern appears in the text using the **Knuth-Morris-Pratt (KMP)** algorithm.  
+
+---
+
+## 🧠 Approach
+
+1. **Preprocess Pattern**  
+   - Compute the **Longest Prefix Suffix (LPS)** array.  
+   - `LPS[i]` indicates the length of the longest prefix of the pattern that is also a suffix for `pat[0...i]`.  
+
+2. **Search in Text**  
+   - Use the `LPS` array to skip unnecessary character comparisons in the text.
+
+3. **Edge Cases**  
+   - Empty `pattern` or `text`.  
+   - Pattern length greater than text length.
+
+---
+
+## 🔍 Complexity
+
+- **Time Complexity:** O(N + M)  
+   - O(M) for computing the LPS array.  
+   - O(N) for searching through the text.  
+- **Space Complexity:** O(M) for storing the LPS array.
+
+---
+
+## 💡 Code
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class FindPatternOccurrences {
+
+    public static List<Integer> findAllOccurrences(String txt, String pat) {
+        List<Integer> resultIndices = new ArrayList<>();
+
+        if (pat == null || txt == null || pat.isEmpty() || txt.length() < pat.length()) {
+            return resultIndices;
+        }
+
+        int textLength = txt.length();
+        int patternLength = pat.length();
+        int[] lps = new int[patternLength];
+        int lengthLPS = 0;
+        int k = 1;
+
+        lps[0] = 0;
+        while (k < patternLength) {
+            if (pat.charAt(k) == pat.charAt(lengthLPS)) {
+                lps[k++] = ++lengthLPS;
+            } else if (lengthLPS != 0) {
+                lengthLPS = lps[lengthLPS - 1];
+            } else {
+                lps[k++] = 0;
+            }
+        }
+
+        int i = 0, j = 0;
+        while (i < textLength) {
+            if (pat.charAt(j) == txt.charAt(i)) {
+                i++;
+                j++;
+            }
+
+            if (j == patternLength) {
+                resultIndices.add(i - j);
+                j = lps[j - 1];
+            } else if (i < textLength && pat.charAt(j) != txt.charAt(i)) {
+                if (j != 0) {
+                    j = lps[j - 1];
+                } else {
+                    i++;
+                }
+            }
+        }
+
+        return resultIndices;
+    }
+
+    public static void main(String[] args) {
+        String txt = "aabaacaadaabaaba";
+        String pat = "aaba";
+        System.out.println("Occurrences: " + findAllOccurrences(txt, pat)); // Expected: [0, 9, 12]
+    }
+}
+  # 🌟 Day 42: Solved Problems (May 12, 2025)
+
+## 🚀 Today’s Challenge
+
+### Minimum Characters to Add to Make a Palindrome
+
+Given a string `s`, find the **minimum number of characters** that need to be added to the front of the string to make it a **palindrome**.  
+
+---
+
+## 🧠 Approach
+
+1. **Palindrome Check:**  
+   - Use a helper function to determine if a string is a palindrome by comparing characters from both ends.  
+
+2. **Iterate to Find Longest Palindromic Prefix:**  
+   - Start with the full string and progressively shorten it to find the **longest prefix** that is a palindrome.
+
+3. **Calculate Minimum Characters:**  
+   - The result is the difference between the string length and the length of the longest palindromic prefix.
+
+4. **Edge Cases:**  
+   - Empty or null strings require `0` additions.  
+   - Strings already palindromic require `0` additions.  
+
+---
+
+## 🔍 Complexity
+
+- **Time Complexity:** O(N²)  
+   - O(N) for palindrome check inside a loop of length N.  
+- **Space Complexity:** O(1)  
+   - No additional space except variables.
+
+---
+
+## 💡 Code
+
+```java
+public class MinCharsToMakePalindrome {
+
+    private static boolean isPalindrome(String str) {
+        int left = 0;
+        int right = str.length() - 1;
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+    public static int minCharsToAdd(String s) {
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+
+        int n = s.length();
+        int longestPalindromicPrefixLength = 0;
+
+        for (int len = n; len >= 1; len--) {
+            String prefix = s.substring(0, len);
+            if (isPalindrome(prefix)) {
+                longestPalindromicPrefixLength = len;
+                break;
+            }
+        }
+
+        return n - longestPalindromicPrefixLength;
+    }
+
+    public static void main(String[] args) {
+        String s1 = "abc";
+        System.out.println("Input: \"" + s1 + "\" -> Output: " + minCharsToAdd(s1));
+
+        String s2 = "aacecaaaa";
+        System.out.println("Input: \"" + s2 + "\" -> Output: " + minCharsToAdd(s2));
+
+        String s3 = "race";
+        System.out.println("Input: \"" + s3 + "\" -> Output: " + minCharsToAdd(s3));
+
+        String s4 = "google";
+        System.out.println("Input: \"" + s4 + "\" -> Output: " + minCharsToAdd(s4));
+
+        String s5 = "abab";
+        System.out.println("Input: \"" + s5 + "\" -> Output: " + minCharsToAdd(s5));
+
+        String s6 = "aba";
+        System.out.println("Input: \"" + s6 + "\" -> Output: " + minCharsToAdd(s6));
+
+        String s7 = "a";
+        System.out.println("Input: \"" + s7 + "\" -> Output: " + minCharsToAdd(s7));
+
+        String s8 = "palindrome";
+        System.out.println("Input: \"" + s8 + "\" -> Output: " + minCharsToAdd(s8));
+    }
+}
+
+
+# 🌟 Day 44: String Rotation Check Using KMP (May 13, 2025)
+
+## 🚀 Problem Statement
+
+Determine if one string is a **rotation** of another.  
+
+**Definition:**  
+String `s2` is a rotation of string `s1` if there exists a way to split `s1` into two substrings `A` and `B` such that `s2 = B + A`.  
+
+Example:  
+`"cdab"` is a rotation of `"abcd"`.  
+
+---
+
+## 🧠 Approach
+
+1. **Concatenate the Original String:**  
+   - Concatenate `s1` with itself to create `s1 + s1`.  
+   - If `s2` is a rotation of `s1`, then `s2` must appear as a substring in the concatenated string.  
+
+2. **Optimized Substring Search with KMP Algorithm:**  
+   - Use the **Knuth-Morris-Pratt (KMP)** algorithm to efficiently search for `s2` in `s1 + s1`.  
+   - Compute the **Longest Prefix Suffix (LPS)** array for the pattern `s2` to reduce unnecessary comparisons.  
+
+3. **Check Length and Validity:**  
+   - Ensure both strings are non-null and of the same length.  
+   - Handle edge cases like empty strings or identical strings.  
+
+---
+
+## 🔍 Complexity Analysis
+
+- **Time Complexity:**  
+  - LPS Array Construction: O(L)  
+  - KMP Search: O(2L)  
+  - Total: **O(L)**  
+
+- **Space Complexity:**  
+  - **O(L)** for the LPS array.  
+
+---
+
+## 💡 Code
+
+```java
+public class StringRotationCheck {
+
+    public static boolean areRotations(String s1, String s2) {
+        if (s1 == null || s2 == null || s1.length() != s2.length()) {
+            return false;
+        }
+        if (s1.isEmpty()) {
+            return true;
+        }
+
+        String concatenatedS1 = s1 + s1;
+        int[] lps = computeLPSArray(s2);
+
+        int i = 0, j = 0;
+        while (i < concatenatedS1.length()) {
+            if (s2.charAt(j) == concatenatedS1.charAt(i)) {
+                i++;
+                j++;
+            }
+
+            if (j == s2.length()) {
+                return true;
+            } else if (i < concatenatedS1.length() && s2.charAt(j) != concatenatedS1.charAt(i)) {
+                if (j != 0) {
+                    j = lps[j - 1];
+                } else {
+                    i++;
+                }
+            }
+        }
+        return false;
+    }
+
+    private static int[] computeLPSArray(String pattern) {
+        int length = 0;
+        int i = 1;
+        int[] lps = new int[pattern.length()];
+        lps[0] = 0;
+
+        while (i < pattern.length()) {
+            if (pattern.charAt(i) == pattern.charAt(length)) {
+                length++;
+                lps[i] = length;
+                i++;
+            } else {
+                if (length != 0) {
+                    length = lps[length - 1];
+                } else {
+                    lps[i] = 0;
+                    i++;
+                }
+            }
+        }
+        return lps;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("abcd and cdab: " + areRotations("abcd", "cdab")); // true
+        System.out.println("aab and aba: " + areRotations("aab", "aba"));     // true
+        System.out.println("abcd and acbd: " + areRotations("abcd", "acbd")); // false
+    }
+}
+
+
+```
+
+
+# 🌟 Day 45: Sort 0s, 1s, and 2s (May14, 2025)
+
+## 🚀 Problem Statement
+
+Given an array `arr[]` containing only the values 0, 1, and 2, sort it **in-place** so that all 0s come first, followed by 1s, then 2s.
+
+**Example:**
+`[0, 1, 2, 0, 1, 2]` → `[0, 0, 1, 1, 2, 2]`
+
+---
+
+## 🧠 Approach
+
+1. **Initialize three pointers:**
+
+   * `low = 0` (next position for 0)
+   * `mid = 0` (current element)
+   * `high = arr.length - 1` (next position for 2)
+
+2. **One-pass partitioning:**
+   Loop while `mid <= high`:
+
+   * If `arr[mid] == 0`: swap `arr[low++]` and `arr[mid++]`.
+   * Else if `arr[mid] == 1`: just `mid++`.
+   * Else (`arr[mid] == 2`): swap `arr[mid]` and `arr[high--]` (do **not** increment `mid`).
+
+3. **Result:**
+   After the loop, 0s, 1s, and 2s are grouped correctly.
+
+---
+
+## 🔍 Complexity Analysis
+
+* **Time Complexity:** O(N) — each element is processed at most once.
+* **Space Complexity:** O(1) — only pointer variables and one temp var.
+
+---
+
+## 💡 Code
+
+```java
+public class Sort012Optimized {
+
+    public void sort012(int[] arr) {
+        if (arr == null || arr.length == 0) return;
+        int low = 0, mid = 0, high = arr.length - 1, temp;
+
+        while (mid <= high) {
+            switch (arr[mid]) {
+                case 0:
+                    temp = arr[low];
+                    arr[low++] = arr[mid];
+                    arr[mid++] = temp;
+                    break;
+                case 1:
+                    mid++;
+                    break;
+                case 2:
+                    temp = arr[mid];
+                    arr[mid] = arr[high];
+                    arr[high--] = temp;
+                    break;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Sort012Optimized sorter = new Sort012Optimized();
+        int[][] tests = {
+            {0,1,2,0,1,2},
+            {0,1,1,0,1,2,1,2,0,0,0,1},
+            {2,1,0},
+            {1,1,1,1},
+            {0,0,0},
+            {2,2,2,0}
+        };
+
+        for (int[] arr : tests) {
+            System.out.println("Before: " + java.util.Arrays.toString(arr));
+            sorter.sort012(arr);
+            System.out.println("After:  " + java.util.Arrays.toString(arr));
+            System.out.println();
+        }
+    }
+}
+```
+
+
+# 🌟 Day 46: Solved Problems (May 15, 2025)
+
+## 🚀 Today’s Challenge
+
+### H‑Index Calculator  
+Given an array of citation counts `citations[]`, compute the researcher’s H‑Index: the largest number `h` such that at least `h` papers have ≥ `h` citations each.
+
+---
+
+## 🧠 Approach
+
+1. **Sort the citations** in ascending order.  
+2. **Iterate** `h` from `n` down to `1` (where `n` is the number of papers):  
+   - Check if `citations[n - h] >= h`.  
+   - If true, return `h`.  
+3. If no valid `h` found, return `0`.
+
+---
+
+## 🔍 Complexity
+
+- **Time:** O(n log n) for sorting + O(n) scan → **O(n log n)**  
+- **Space:** O(log n) recursion stack (Java’s Dual‑Pivot Quicksort)
+
+---
+
+## 💡 Code
+
+```java
+import java.util.Arrays;
+
+public class HIndexCalculator {
+    public static int hIndex(int[] citations) {
+        if (citations == null || citations.length == 0) return 0;
+        int n = citations.length;
+        Arrays.sort(citations);
+        for (int h = n; h >= 1; h--) {
+            if (citations[n - h] >= h) {
+                return h;
+            }
+        }
+        return 0;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(hIndex(new int[]{5, 0, 2, 0, 2})); // 2
+        System.out.println(hIndex(new int[]{6, 0, 3, 5, 3})); // 3
+        System.out.println(hIndex(new int[]{3, 0, 6, 1, 5})); // 3
+        System.out.println(hIndex(new int[]{0, 0, 0}));       // 0
+        System.out.println(hIndex(new int[]{10}));            // 1
+        System.out.println(hIndex(new int[]{1,1,1,1,1}));     // 1
+        System.out.println(hIndex(new int[]{100,200,300}));   // 3
+    }
+}
+```
+# 🌟 Day 47: Solved Problems (May 16, 2025)
+
+## 🚀 Today’s Challenges
+
+### 1️⃣ Diagonal Sum of a Matrix
+
+Compute the sum of the two diagonals (`d1` and `d2`) of a square matrix.
+
+### 2️⃣ Merge Sort Implementation
+
+Implement the **Merge Sort** algorithm to sort an array of integers.
+
+---
+
+## 💡 Problem 1: Diagonal Sum of a Matrix
+
+### Approach
+
+1. Use a 2D array to represent the square matrix.
+2. Iterate through each row `i`:
+
+   * Add the primary diagonal element `arr[i][i]` to `d1`.
+   * Add the secondary diagonal element `arr[i][n-i-1]` to `d2`.
+3. Output the sums.
+
+### Complexity
+
+* **Time:** O(n), single loop through rows of the matrix.
+* **Space:** O(1), no additional memory used.
+
+---
+
+### Code
+
+```java
+public class Diagonal {
+    public static void main(String[] args) {
+        int[][] arr = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+        int d1 = 0, d2 = 0;
+        for (int i = 0; i < arr.length; i++) {
+            d1 += arr[i][i];
+            d2 += arr[i][arr.length - i - 1];
+        }
+        System.out.println("Diagonal 1: " + d1 + "\nDiagonal 2: " + d2);
+    }
+}
+```
+
+#### Example Output
+
+For the input:
+
+```
+1 2 3
+4 5 6
+7 8 9
+```
+
+Output:
+
+```
+Diagonal 1: 15
+Diagonal 2: 15
+```
+
+---
+
+## 💡 Problem 2: Merge Sort
+
+### Approach
+
+1. Recursively split the array into halves.
+2. Sort each half.
+3. Merge the two sorted halves back into the main array.
+4. Use temporary arrays to hold the left and right halves for merging.
+
+### Complexity
+
+* **Time:** O(n log n), splitting and merging involve log n levels and O(n) work per level.
+* **Space:** O(n), due to temporary arrays for merging.
+
+---
+
+### Code
+
+```java
+import java.util.Arrays;
+
+public class MergeSortExample {
+    public static void main(String[] args) {
+        int[] numbers = {12, 11, 13, 5, 6, 7};
+        System.out.println("Unsorted array: " + Arrays.toString(numbers));
+
+        mergeSort(numbers, 0, numbers.length - 1);
+
+        System.out.println("Sorted array:   " + Arrays.toString(numbers));
+    }
+
+    private static void mergeSort(int[] array, int startIndex, int endIndex) {
+        if (startIndex < endIndex) {
+            int midIndex = startIndex + (endIndex - startIndex) / 2;
+            mergeSort(array, startIndex, midIndex);
+            mergeSort(array, midIndex + 1, endIndex);
+            merge(array, startIndex, midIndex, endIndex);
+        }
+    }
+
+    private static void merge(int[] array, int startIndex, int midIndex, int endIndex) {
+        int leftSize = midIndex - startIndex + 1;
+        int rightSize = endIndex - midIndex;
+
+        int[] leftArray = new int[leftSize];
+        int[] rightArray = new int[rightSize];
+
+        for (int i = 0; i < leftSize; i++) {
+            leftArray[i] = array[startIndex + i];
+        }
+        for (int j = 0; j < rightSize; j++) {
+            rightArray[j] = array[midIndex + 1 + j];
+        }
+
+        int leftIndex = 0, rightIndex = 0, mainIndex = startIndex;
+
+        while (leftIndex < leftSize && rightIndex < rightSize) {
+            if (leftArray[leftIndex] <= rightArray[rightIndex]) {
+                array[mainIndex++] = leftArray[leftIndex++];
+            } else {
+                array[mainIndex++] = rightArray[rightIndex++];
+            }
+        }
+
+        while (leftIndex < leftSize) {
+            array[mainIndex++] = leftArray[leftIndex++];
+        }
+        while (rightIndex < rightSize) {
+            array[mainIndex++] = rightArray[rightIndex++];
+        }
+    }
+}
+```
+
+#### Example Output
+
+Input: `[12, 11, 13, 5, 6, 7]`
+Output: `[5, 6, 7, 11, 12, 13]`
+
+---
+
+## 🎯 Takeaways
+
+* Efficient handling of diagonals in square matrices.
+* Solidified understanding of Divide and Conquer using Merge Sort.
+
+---
+
+✨ On to Day 48! 🚀
+
+
+# 🌟 Day 48: Solved Problems (May 17, 2025)
+
+## 🚀 Today’s Challenges
+
+### 1️⃣ Find the Missing Number
+
+Given an array containing n distinct numbers taken from 0, 1, 2, …, n, find the one that is missing from the array.
+
+### 2️⃣ Reverse a String
+
+Write a Java program to reverse a given string without using any built-in functions or libraries.
+
+### 3️⃣ FizzBuzz Problem
+
+Print the numbers from 1 to n (default 100). For multiples of three print “Fizz”, for multiples of five print “Buzz”, and for multiples of both print “FizzBuzz”.
+
+---
+
+## 💡 Problem 1: Find the Missing Number
+
+### Approach
+
+1. Compute the expected sum of numbers from 0 to n: `expectedSum = n*(n+1)/2`.
+2. Sum all elements in the array: `actualSum`.
+3. The difference `expectedSum - actualSum` yields the missing number.
+4. Alternatively, use bitwise XOR:
+
+   * XOR all numbers from 0 to n.
+   * XOR the result with each element of the array.
+   * The final XOR value is the missing number.
+
+### Complexity
+
+* **Time:** O(n), single passes through the array.
+* **Space:** O(1), constant extra space.
+
+---
+
+### Code
+
+```java
+import java.util.Arrays;
+
+public class FindMissingNumber {
+    public static void main(String[] args) {
+        int[] arr = {3, 0, 7, 5, 2, 6, 4};
+
+        // Method 1: Sum
+        long expectedSum = (arr.length * (arr.length + 1L)) / 2;
+        long actualSum = 0;
+        for (int num : arr) {
+            actualSum += num;
+        }
+        System.out.println("Missing Number (Sum): " + (expectedSum - actualSum));
+
+        // Method 2: XOR
+        int missingNumberXor = 0;
+        for (int i = 0; i <= arr.length; i++) {
+            missingNumberXor ^= i;
+        }
+        for (int num : arr) {
+            missingNumberXor ^= num;
+        }
+        System.out.println("Missing Number (XOR): " + missingNumberXor);
+    }
+}
+```
+
+#### Example Output
+
+```
+Missing Number (Sum): 1
+Missing Number (XOR): 1
+```
+
+---
+
+## 💡 Problem 2: Reverse a String
+
+### Approach
+
+1. **Simple concatenation:** Iterate from end to start, build a new string.
+2. **In-place swap:** Convert string to `char[]`, swap characters from ends towards center, then create a new string.
+
+### Complexity
+
+* **Time:** O(n²) for concatenation (due to immutable strings), O(n) for in-place swap.
+* **Space:** O(n) for the reversed string or char array.
+
+---
+
+### Code
+
+```java
+public class ReverseString {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        System.out.println("String: " + str);
+
+        // Method A: Concatenation
+        System.out.println("Reversed (Concat): " + reverseConcat(str));
+
+        // Method B: In-place char swap
+        System.out.println("Reversed (In-place): " + reverseInPlace(str));
+    }
+
+    private static String reverseConcat(String str) {
+        if (str == null) return null;
+        String reverse = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reverse += str.charAt(i);
+        }
+        return reverse;
+    }
+
+    private static String reverseInPlace(String str) {
+        if (str == null) return null;
+        char[] arr = str.toCharArray();
+        int start = 0, end = arr.length - 1;
+        while (start < end) {
+            char temp = arr[start];
+            arr[start++] = arr[end];
+            arr[end--] = temp;
+        }
+        return new String(arr);
+    }
+}
+```
+
+#### Example Output
+
+```
+String: Hello, World!
+Reversed (Concat): !dlroW ,olleH
+Reversed (In-place): !dlroW ,olleH
+```
+
+---
+
+## 💡 Problem 3: FizzBuzz Problem
+
+### Approach
+
+1. Use a loop from 1 to n.
+2. For each `i`:
+
+   * If `i % 15 == 0`, print "FizzBuzz".
+   * Else if `i % 3 == 0`, print "Fizz".
+   * Else if `i % 5 == 0`, print "Buzz".
+   * Otherwise print `i`.
+3. **Bonus:** implement using Java Streams for a more functional style.
+
+### Complexity
+
+* **Time:** O(n), single pass through numbers.
+* **Space:** O(1).
+
+---
+
+### Code
+
+```java
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+public class BuzzFizz {
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        // Stream-based FizzBuzz
+        doStreamFizzBuzz();
+
+        // Classic for-loop FizzBuzz
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        for (int i = 1; i <= number; i++) {
+            if      (i % 15 == 0) System.out.println("FizzBuzz");
+            else if (i % 3  == 0) System.out.println("Fizz");
+            else if (i % 5  == 0) System.out.println("Buzz");
+            else                  System.out.println(i);
+        }
+        scanner.close();
+    }
+
+    private static void doStreamFizzBuzz() {
+        System.out.print("Enter a number for streams: ");
+        int n = scanner.nextInt();
+        IntStream.rangeClosed(1, n)
+                 .mapToObj(i -> (i % 15 == 0) ? "FizzBuzz"
+                                           : (i % 3  == 0) ? "Fizz"
+                                           : (i % 5  == 0) ? "Buzz"
+                                                           : Integer.toString(i))
+                 .forEach(System.out::println);
+    }
+}
+```
+
+#### Example Output
+
+```
+Enter a number for streams: 15
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+Enter a number: 15
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+FizzBuzz
+```
+
+---
+
+## 🎯 Takeaways
+
+* Mathematical and bitwise techniques for missing-number problems.
+* Trade-offs between concatenation versus in-place operations for string reversal.
+* Classic control-flow and functional approaches for FizzBuzz.
+
+---
+
+✨ On to Day 49! 🚀
+## 🌟 Day 49: Solved Problems (May 18, 2025)
+
+Today’s session covers two fundamental Java problems—checking if a string is a palindrome and detecting duplicate elements in an array. We explore both naïve and optimized solutions, leveraging two‑pointer traversal and hash‑based tracking for efficient performance. This reinforces core skills in string manipulation and collection handling, which are essential for interview prep and production code.
+
+---
+
+## 🚀 Today’s Challenges
+
+1️⃣ **String Palindrome**
+Check if a given string reads the same forwards and backwards without using built‑in reversal utilities ([GeeksforGeeks][1]).
+
+2️⃣ **Detect Duplicate Elements in an Array**
+Identify all elements that appear more than once in an integer array ([GeeksforGeeks][2]).
+
+---
+
+## 💡 Problem 1: String Palindrome
+
+### Approach
+
+1. **Two‑Pointer Traversal:**
+   Initialize one pointer at the start and another at the end of the string; compare characters at these indices and move inward ([Stack Overflow][3]).
+2. **Early Exit on Mismatch:**
+   If any character pair doesn’t match, break immediately and conclude the string is not a palindrome ([GeeksforGeeks][1]).
+3. **Completion Check:**
+   If all comparisons succeed until pointers cross or meet, the string is confirmed as a palindrome ([Programiz][4]).
+
+### Complexity
+
+* **Time:** O(n), where n is the string length, because each character is compared at most once ([GeeksforGeeks][1]).
+* **Space:** O(1), only constant extra space for index pointers ([TheServerSide][5]).
+
+### Code
+
+```java
+public class StringPalindrome {
+    public static void main(String[] args) {
+        String str = "aammaa";
+        boolean isPalindrome = true;
+        for (int i = 0; i < str.length() / 2; i++) {
+            if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
+                isPalindrome = false;
+                break;
+            }
+        }
+        System.out.println(isPalindrome 
+            ? "String is Palindrome" 
+            : "String is not Palindrome");
+    }
+}
+```
+
+#### Example Output
+
+```
+String is Palindrome
+```
+
+---
+
+## 💡 Problem 2: Detect Duplicate Elements in an Array
+
+### Approach
+
+1. **Brute‑Force Nested Loops:**
+   For each element, scan subsequent elements to count occurrences; add to a result set if count > 1 ([GeeksforGeeks][2]).
+2. **HashSet Tracking (Optimized):**
+   Maintain a `Set<Integer> seen` to record first encounters and a `List<Integer> duplicates` to collect any element that fails to add (i.e., is already present) ([Baeldung][6]).
+3. **Result Display:**
+   Print the `Set` for unique duplicates and the `List` for all repeated entries, demonstrating both methods ([Java Revisited][7]).
+
+### Complexity
+
+* **Time:**
+
+  * Nested loops: O(n²) in the worst case ([GeeksforGeeks][2]).
+  * HashSet method: O(n) on average due to constant‑time set operations ([Baeldung][6]).
+* **Space:**
+
+  * Nested loops: O(1) extra space.
+  * HashSet/List: O(n) worst‑case to store seen elements and duplicates ([TheServerSide][8]).
+
+### Code
+
+```java
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class FindAllDuplicateElement {
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 4, 5, 2, 6, 7, 8, 3};
+
+        // Method 1: Nested loops + Set for unique duplicates
+        Set<Integer> duplicateSet = new HashSet<>();
+        for (int i = 0; i < nums.length; i++) {
+            int count = 1;
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] == nums[j]) {
+                    count++;
+                }
+            }
+            if (count > 1) {
+                duplicateSet.add(nums[i]);
+            }
+        }
+        System.out.println("Unique duplicates: " + duplicateSet);
+
+        // Method 2: HashSet + List for all duplicates
+        Set<Integer> seen = new HashSet<>();
+        List<Integer> duplicateList = new ArrayList<>();
+        for (int num : nums) {
+            if (!seen.add(num)) {
+                duplicateList.add(num);
+            }
+        }
+        System.out.println("All duplicates: " + duplicateList);
+    }
+}
+```
+
+#### Example Output
+
+```
+Unique duplicates: [2, 3]
+All duplicates: [2, 3]
+```
+
+---
+
+## 🎯 Takeaways
+
+* Two‑pointer traversal provides an in‑place, linear‑time solution for palindrome checking without extra memory allocations ([GeeksforGeeks][1]).
+* Brute‑force nested loops are simple but inefficient at O(n²); hash‑based methods deliver O(n) performance at the cost of O(n) extra space ([Baeldung][6]).
+* Understanding both naïve and optimized patterns equips you for a variety of interview and real‑world scenarios.
+
+---
+
+✨ On to Day 50! 🚀
+## 🌟 Day 50: Solved Problems (May 19, 2025)
+
+Wrapping up today’s session, we tackled two essential data-structure–and–string challenges in Java: finding the longest common prefix among a set of strings using both horizontal and vertical scanning, and implementing a simple array-backed stack with standard push, pop, and peek operations. These exercises reinforce your understanding of string traversal techniques, substring manipulation, and basic stack mechanics—foundational skills for coding interviews and everyday software development.
+
+---
+
+## 🚀 Today’s Challenges
+
+1️⃣ **Longest Common Prefix**
+Given an array of strings, determine the longest prefix shared by all strings using both horizontal shrink‑and‑chop and vertical character‑by‑character scanning.
+
+2️⃣ **Array‑Backed Stack**
+Implement a stack with `push`, `pop`, and `peek` methods on a fixed‑size array, handling overflow and underflow scenarios gracefully.
+
+---
+
+## 💡 Problem 1: Longest Common Prefix
+
+### Approach
+
+1. **Horizontal Scanning**
+
+   * Initialize the prefix to the first string.
+   * For each subsequent string, repeatedly shorten the prefix (by dropping its last character) until the current string starts with that prefix.
+   * Continue until all strings have been processed, or the prefix becomes empty.
+
+2. **Vertical Scanning**
+
+   * Compare characters column‑by‑column across all strings.
+   * At index `i`, ensure every string has the same character as the first string; if any mismatch or one string ends, return the substring up to `i`.
+
+### Complexity
+
+* **Time:**
+
+  * Horizontal: O(S), where S is the sum of all characters across strings (worst‑case you shrink and compare repeatedly).
+  * Vertical: O(S) too, since you examine each character at most once.
+* **Space:** O(1) extra beyond the input and the prefix.
+
+### Code
+
+```java
+public class LongestCommonPrefix {
+    public static void main(String[] args) {
+        String[] strs = {"flower", "flow", "flight"};
+        String horizontal = longestCommonPrefix(strs);
+        String vertical   = longestCommonPrefixVertical(strs);
+        System.out.println("Horizontal LCP: " + horizontal);
+        System.out.println("Vertical   LCP: " + vertical);
+    }
+
+    // Horizontal shrink-and-check
+    public static String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) return "";
+        String prefix = strs[0];
+        for (int i = 1; i < strs.length; i++) {
+            while (!strs[i].startsWith(prefix)) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (prefix.isEmpty()) return "";
+            }
+        }
+        return prefix;
+    }
+
+    // Vertical character-by-character
+    public static String longestCommonPrefixVertical(String[] strs) {
+        if (strs == null || strs.length == 0) return "";
+        for (int i = 0; i < strs[0].length(); i++) {
+            char c = strs[0].charAt(i);
+            for (int j = 1; j < strs.length; j++) {
+                if (i == strs[j].length() || strs[j].charAt(i) != c) {
+                    return strs[0].substring(0, i);
+                }
+            }
+        }
+        return strs[0];
+    }
+}
+```
+
+#### Example Output
+
+```
+Horizontal LCP: fl
+Vertical   LCP: fl
+```
+
+---
+
+## 💡 Problem 2: Array‑Backed Stack
+
+### Approach
+
+1. **Fixed‑Size Array**
+
+   * Maintain an integer array of capacity `maxSize`.
+   * Use an index `top` starting at –1 to track the stack’s current top.
+
+2. **push(element)**
+
+   * Check for overflow (`top == maxSize – 1`).
+   * Increment `top` and assign the element.
+
+3. **pop()**
+
+   * Check for underflow (`top == -1`).
+   * Return the element at `top` and decrement it.
+
+4. **peek()**
+
+   * Return the element at `top` without modifying the stack; handle empty state.
+
+### Complexity
+
+* **Time:** O(1) for each operation (`push`, `pop`, `peek`).
+* **Space:** O(n) to hold up to `maxSize` elements.
+
+### Code
+
+```java
+public class ArrayStack {
+    private int maxSize;
+    private int[] stackArray;
+    private int top;
+
+    public ArrayStack(int maxSize) {
+        this.maxSize    = maxSize;
+        this.stackArray = new int[maxSize];
+        this.top        = -1;
+    }
+
+    public void push(int element) {
+        if (isFull()) {
+            System.out.println("Stack overflow! cannot push element " + element);
+            return;
+        }
+        stackArray[++top] = element;
+        System.out.println("Pushed element " + element);
+    }
+
+    public int pop() {
+        if (isEmpty()) {
+            System.out.println("Stack underflow! cannot pop");
+            return -1;
+        }
+        int popped = stackArray[top--];
+        System.out.println("Popped element " + popped);
+        return popped;
+    }
+
+    public int peek() {
+        if (isEmpty()) {
+            System.out.println("Stack is empty! cannot peek");
+            return -1;
+        }
+        return stackArray[top];
+    }
+
+    private boolean isEmpty() {
+        return top == -1;
+    }
+
+    private boolean isFull() {
+        return top == maxSize - 1;
+    }
+
+    public static void main(String[] args) {
+        ArrayStack stack = new ArrayStack(5);
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        stack.push(5);
+        stack.push(6);  // overflow
+        System.out.println("Top element: " + stack.peek());
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();    // underflow
+    }
+}
+```
+
+#### Example Output
+
+```
+Pushed element 1
+Pushed element 2
+Pushed element 3
+Pushed element 4
+Pushed element 5
+Stack overflow! cannot push element 6
+Top element: 5
+Popped element 5
+Popped element 4
+Popped element 3
+Popped element 2
+Popped element 1
+Stack underflow! cannot pop
+```
+
+---
+
+## 🎯 Takeaways
+
+* Horizontal vs. vertical strategies both run in linear time for longest‑prefix problems but differ in string‑comparison patterns.
+* Array‑based stacks deliver constant‑time operations; always guard against overflow/underflow in fixed‑capacity designs.
+
+---
+
+✨ On to Day 51! 🚀
+## 🌟 Day 51: Solved Problems (May 20, 2025)
+
+Today’s challenges focused on exploring primality, finding the maximum subarray sum, and counting words in a sentence. These problems help refine fundamental algorithmic techniques like prime checking, Kadane’s algorithm for subarray optimization, and text parsing.
+
+---
+
+## 🚀 Today’s Challenges
+
+1️⃣ **Prime or Not**
+2️⃣ **Maximum Subarray Sum**
+3️⃣ **Word Count**
+
+---
+
+## 💡 Problem 1: Prime or Not
+
+### Description
+
+Write a program to check if a given number is prime.
+
+### Approach
+
+* A prime number is divisible only by 1 and itself.
+* Skip even numbers (after 2) and check divisibility up to the square root of the number.
+
+### Complexity
+
+* **Time:** O(√n)
+* **Space:** O(1)
+
+### Code
+
+```java
+public class PrimeOrNot {
+    public static void main(String[] args) {
+        int num = 29;
+        System.out.println(num + (isPrime(num) ? " is Prime." : " is Not Prime."));
+    }
+
+    private static boolean isPrime(int num) {
+        if (num <= 1)
+            return false;
+        if (num == 2)
+            return true;
+        for (int i = 3; i * i <= num; i += 2) {
+            if (num % i == 0)
+                return false;
+        }
+        return true;
+    }
+}
+```
+
+---
+
+## 💡 Problem 2: Maximum Subarray Sum
+
+### Description
+
+Find the maximum sum of any contiguous subarray within an array of integers.
+
+### Approach
+
+* **Kadane’s Algorithm:**
+
+  * Start with the first element as both the current and maximum sum.
+  * Extend the current subarray or start anew with the current element, based on which yields a greater sum.
+  * Update the maximum sum at each step.
+
+### Complexity
+
+* **Time:** O(n)
+* **Space:** O(1)
+
+### Code
+
+```java
+public class MaximumSubarraySum {
+    public static void main(String[] args) {
+        int[] nums = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+
+        int currentSum = nums[0], maxSum = nums[0];
+
+        for (int i = 1; i < nums.length; i++) {
+            int extendSum = currentSum + nums[i];
+
+            currentSum = extendSum < nums[i] ? nums[i] : extendSum;
+            maxSum = maxSum < currentSum ? currentSum : maxSum;
+        }
+        System.out.println("Maximum Sub Array Sum : " + maxSum);
+    }
+}
+```
+
+#### Example Output
+
+```
+Maximum Sub Array Sum : 6
+```
+
+---
+
+## 💡 Problem 3: Word Count
+
+### Description
+
+Count the number of words in a sentence. A word is defined as any contiguous sequence of alphanumeric characters.
+
+### Approach
+
+1. **Using String Split:**
+
+   * Trim the sentence and split it using whitespace.
+
+2. **Manual Alphanumeric Check:**
+
+   * Iterate over the characters, toggling a flag when entering or exiting a word.
+
+### Complexity
+
+* **Time:** O(n)
+* **Space:** O(1) extra beyond the input.
+
+### Code
+
+```java
+public class WordCount {
+    public static void main(String[] args) {
+        String sentence = "This is a sample sentence to count words";
+        int wordCount = countWords(sentence);
+
+        String words[] = sentence.trim().split("\\s+");
+
+        System.out.println("Number of words in the sentence: " + wordCount);
+        System.out.println("Number of words in the sentence: " + words.length);
+    }
+
+    public static int countWords(String s) {
+        if (s == null || s.isBlank()) {
+            return 0;
+        }
+
+        int count = 0;
+        boolean inWord = false;
+
+        for (int i = 0, n = s.length(); i < n; i++) {
+            char c = s.charAt(i);
+            boolean isAlnum = (c >= 'A' && c <= 'Z')
+                    || (c >= 'a' && c <= 'z')
+                    || (c >= '0' && c <= '9');
+
+            if (isAlnum) {
+                if (!inWord) {
+                    count++;
+                    inWord = true;
+                }
+            } else {
+                inWord = false;
+            }
+        }
+
+        return count;
+    }
+}
+```
+
+#### Example Output
+
+```
+Number of words in the sentence: 8
+Number of words in the sentence: 8
+```
+
+---
+
+## 🎯 Takeaways
+
+* Efficient prime-checking skips even numbers and reduces iterations to O(√n).
+* Kadane’s algorithm is a go-to solution for maximum subarray problems in linear time.
+* Text parsing can be approached flexibly with split functions or manual checks.
+
+---
+
+✨ Keep the momentum alive! See you on Day 52. 🚀
+
+## 🌟 Day 52: Solved Problems (May 21, 2025)
+
+Today's challenge focuses on merging two sorted arrays without using extra space. This problem emphasizes in-place modifications and efficient merging techniques, making it highly relevant for memory-constrained applications.
+
+---
+
+## 🚀 Problem: Merge Two Sorted Arrays Without Extra Space
+
+### Description
+
+Given two sorted arrays `a[]` and `b[]` of sizes `n` and `m` respectively, merge them in sorted order **without using extra space**.
+
+* Modify `a[]` to contain the first `n` smallest elements.
+* Modify `b[]` to contain the remaining `m` largest elements.
+
+### Examples
+
+#### Example 1
+
+**Input:**
+`a[] = [2, 4, 7, 10]`
+`b[] = [2, 3]`
+
+**Output:**
+
+```
+Array A: [2, 2, 3, 4]
+Array B: [7, 10]
+```
+
+---
+
+#### Example 2
+
+**Input:**
+`a[] = [1, 5, 9, 10, 15, 20]`
+`b[] = [2, 3, 8, 13]`
+
+**Output:**
+
+```
+Array A: [1, 2, 3, 5, 8, 9]
+Array B: [10, 13, 15, 20]
+```
+
+---
+
+#### Example 3
+
+**Input:**
+`a[] = [0, 1]`
+`b[] = [2, 3]`
+
+**Output:**
+
+```
+Array A: [0, 1]
+Array B: [2, 3]
+```
+
+---
+
+## 💡 Approach
+
+1. **Start from the Last Element of `b[]`:**
+   Compare the last element of `b[]` with the largest element of `a[]`.
+
+2. **Swap and Shift:**
+   If the largest element of `a[]` is greater, shift the elements in `a[]` to make space and insert the element from `b[]`.
+
+3. **In-Place Replacement:**
+   Move the displaced element from `a[]` into `b[]`.
+
+4. **Iterate Backwards:**
+   Repeat this process for all elements of `b[]`.
+
+### Complexity
+
+* **Time:** O((n + m) \* log(n + m)) due to in-place sorting during the iteration.
+* **Space:** O(1) (no extra space used).
+
+---
+
+## 📄 Code
+
+```java
+import java.util.Arrays;
+
+public class MergeSortedArrays {
+    public static void main(String[] args) {
+        // Two sorted arrays
+        int[] arrayA = { 1, 5, 9, 10, 15, 20 }; // Larger array
+        int[] arrayB = { 2, 3, 8, 13 }; // Smaller array
+
+        // Start from the last element of arrayB
+        for (int indexB = arrayB.length - 1; indexB >= 0; indexB--) {
+            // If the last element of arrayA is greater than the current element in arrayB
+            if (arrayA[arrayA.length - 1] > arrayB[indexB]) {
+                int lastElementA = arrayA[arrayA.length - 1]; // Store the last element of arrayA
+                int indexA = arrayA.length - 2; // Pointer to second last element of arrayA
+
+                // Shift elements in arrayA to make room for arrayB[indexB]
+                while (indexA >= 0 && arrayA[indexA] > arrayB[indexB]) {
+                    arrayA[indexA + 1] = arrayA[indexA];
+                    indexA--;
+                }
+
+                // Place the current element of arrayB in the correct position in arrayA
+                arrayA[indexA + 1] = arrayB[indexB];
+
+                // Move the last element of arrayA to arrayB
+                arrayB[indexB] = lastElementA;
+            }
+        }
+
+        // Print the merged arrays
+        System.out.println("Array A: " + Arrays.toString(arrayA));
+        System.out.println("Array B: " + Arrays.toString(arrayB));
+    }
+}
+```
+
+---
+
+## 🎯 Key Takeaways
+
+1. **In-Place Algorithms:**
+   Avoiding extra space is a common constraint in real-world applications, especially for memory-constrained systems.
+
+2. **Sorting in Chunks:**
+   By iterating backwards and making swaps, the arrays can be efficiently merged while preserving the sorted order.
+
+3. **Edge Cases:**
+   Handle edge cases where arrays have overlapping or completely distinct ranges.
+
+---
+
+✨ Keep pushing forward! See you on Day 53. 🚀
+## 🌟 Day 53: Solved Problems (May 22, 2025)
+
+Today's challenges dive deep into **Linked Lists**, covering cycle detection and reversal. These problems are core topics for mastering data structures and algorithms, especially for interview preparation.
+
+---
+
+## 🚀 Problem 1: Linked List Cycle Detection
+
+### Description
+
+Detect if a linked list contains a cycle using **Floyd's Cycle Detection Algorithm** (also known as the Tortoise and Hare algorithm).
+
+### Approach
+
+1. Use two pointers:
+
+   * **Slow pointer:** Moves 1 step at a time.
+   * **Fast pointer:** Moves 2 steps at a time.
+
+2. If the pointers meet, a cycle exists.
+
+3. If the fast pointer reaches `null`, no cycle exists.
+
+---
+
+### Code
+
+```java
+public class LinkedListCycleCheck {
+    public static void main(String[] args) {
+        // Create linked list nodes
+        Node head = new Node(1);
+        head.next = new Node(2);
+        head.next.next = new Node(3);
+        head.next.next.next = new Node(4);
+        head.next.next.next.next = new Node(5);
+        // Uncomment the line below to introduce a cycle in the linked list
+        // head.next.next.next.next.next = head.next.next;
+
+        boolean hasCycle = detectCycle(head);
+        System.out.println("Does the linked list have a cycle? " + hasCycle);
+    }
+
+    /**
+     * Detects if a linked list has a cycle using Floyd's Cycle Detection Algorithm.
+     *
+     * @param head The head node of the linked list.
+     * @return True if a cycle is detected, otherwise false.
+     */
+    private static boolean detectCycle(Node head) {
+        Node slowPointer = head;
+        Node fastPointer = head;
+
+        while (fastPointer != null && fastPointer.next != null) {
+            slowPointer = slowPointer.next;         // Move slow pointer by 1 step
+            fastPointer = fastPointer.next.next;   // Move fast pointer by 2 steps
+
+            if (slowPointer == fastPointer) {      // Cycle detected
+                return true;
+            }
+        }
+
+        return false; // No cycle found
+    }
+}
+
+/**
+ * Represents a node in a singly linked list.
+ */
+class Node {
+    int value;
+    Node next;
+
+    public Node(int value) {
+        this.value = value;
+        this.next = null;
+    }
+}
+```
+
+---
+
+## 🚀 Problem 2: Linked List Reversal
+
+### Description
+
+Reverse a singly linked list using **iterative** and **recursive** approaches.
+
+### Approach
+
+#### 1. **Iterative Reversal**
+
+* Use three pointers: `previous`, `current`, and `nextNode`.
+* Reverse the `next` pointer of each node as you traverse the list.
+
+#### 2. **Recursive Reversal**
+
+* Recursively reverse from the second node to the end.
+* Reverse the `next` pointer for each node after recursion.
+
+---
+
+### Code
+
+```java
+public class LinkedListReversal {
+    public static void main(String[] args) {
+        Node head = new Node(1);
+        head.next = new Node(2);
+        head.next.next = new Node(3);
+        head.next.next.next = new Node(4);
+
+        System.out.println("Original Linked List:");
+        printLinkedList(head);
+
+        // Iterative Reversal
+        System.out.println("Reversed Linked List (Iterative):");
+        head = reverseLinkedListIteratively(head);
+        printLinkedList(head);
+
+        // Recursive Reversal
+        System.out.println("Reversed Linked List (Recursive):");
+        head = reverseLinkedListRecursively(head);
+        printLinkedList(head);
+    }
+
+    /**
+     * Reverse the linked list using recursion.
+     *
+     * @param head The head node of the linked list.
+     * @return The new head node after reversal.
+     */
+    private static Node reverseLinkedListRecursively(Node head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        Node reversedHead = reverseLinkedListRecursively(head.next);
+        head.next.next = head;
+        head.next = null;
+        return reversedHead;
+    }
+
+    /**
+     * Reverse the linked list using an iterative approach.
+     *
+     * @param head The head node of the linked list.
+     * @return The new head node after reversal.
+     */
+    private static Node reverseLinkedListIteratively(Node head) {
+        Node previous = null;
+        Node current = head;
+
+        while (current != null) {
+            Node nextNode = current.next; // Temporarily store the next node
+            current.next = previous; // Reverse the pointer
+            previous = current; // Move 'previous' one step forward
+            current = nextNode; // Move 'current' one step forward
+        }
+
+        return previous; // New head of the reversed list
+    }
+
+    /**
+     * Print the linked list.
+     *
+     * @param head The head node of the linked list.
+     */
+    private static void printLinkedList(Node head) {
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.value + " -> ");
+            current = current.next;
+        }
+        System.out.println("null");
+    }
+}
+
+/**
+ * Represents a node in a singly linked list.
+ */
+class Node {
+    int value;
+    Node next;
+
+    public Node(int value) {
+        this.value = value;
+        this.next = null;
+    }
+}
+```
+
+---
+
+## 🎯 Key Takeaways
+
+1. **Cycle Detection:**
+   Floyd’s Cycle Detection Algorithm is efficient with **O(n)** time and **O(1)** space complexity.
+
+2. **Reversal Techniques:**
+
+   * Iterative reversal is straightforward and avoids stack overhead.
+   * Recursive reversal is elegant but may cause stack overflow for large lists.
+
+3. **Visualization:**
+   Debugging and visualization tools can help in understanding pointer manipulations.
+
+---
+
+✨ Keep grinding! See you on Day 54. 🚀
+## 🌟 Day 54: Solved Problems (May 23, 2025)
+
+Today's challenges cover **Linked Lists** manipulation, finding the middle element, **String Anagrams**, and **Java Streams**. These problems strengthen your grasp of core Java concepts, data structure operations, and algorithmic thinking.
+
+---
+
+### 🚀 Problem 1: Reverse a List Using Streams
+
+#### Description
+
+Reverse the elements of a list using Java Streams and the `Comparator.reverseOrder()`. Explore additional techniques like reversing a `LinkedList`.
+
+#### Key Operations
+
+1. Use Streams to sort and collect in reverse order.
+2. Reverse the list explicitly using `Collections.reverse()`.
+
+---
+
+#### Code
+
+```java
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class ReverseListUsingStream {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+        numbers = numbers.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+        System.out.println("Original List  :" + numbers);
+
+        numbers = numbers.stream().collect(Collectors.toCollection(LinkedList::new));
+        Collections.reverse(numbers);
+        System.out.println(numbers);
+    }
+}
+```
+
+---
+
+### 🚀 Problem 2: Find Middle Element of a Linked List
+
+#### Description
+
+Find the middle element of a `LinkedList` using a two-pointer technique, where one pointer moves twice as fast as the other.
+
+#### Key Operations
+
+1. Use `slow` and `fast` pointers.
+2. Iterate until the `fast` pointer reaches the end.
+
+---
+
+#### Code
+
+```java
+import java.util.LinkedList;
+
+public class LinkedListMidElement {
+    public static void main(String[] args) {
+        LinkedList<Integer> linkedList = new LinkedList<>();
+
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.addFirst(0);
+        linkedList.addLast(4);
+        linkedList.add(3);
+        int mid = midLinkedList(linkedList);
+        System.out.println("Mid of the Element : " + mid);
+    }
+
+    private static int midLinkedList(LinkedList<Integer> linkedList) {
+        int slow = 0, fast = 0;
+
+        while (fast < linkedList.size() - 1) {
+            slow++;
+            fast += 2;
+        }
+        return linkedList.get(slow);
+    }
+}
+```
+
+---
+
+### 🚀 Problem 3: Check Anagrams of Two Strings
+
+#### Description
+
+Determine whether two strings are **anagrams** (contain the same characters in the same frequency).
+
+#### Key Operations
+
+1. Use character frequency counting for manual comparison.
+2. Utilize Java Streams for a concise, modern solution.
+
+---
+
+#### Code 1: Traditional Approach
+
+```java
+import java.util.Scanner;
+
+public class Anagram {
+    public static void main(String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Enter the first string: ");
+            String firstString = scanner.nextLine();
+            System.out.println("Enter the second string: ");
+            String secondString = scanner.nextLine();
+
+            boolean isAnagram = checkAnagram(firstString, secondString);
+            System.out.println("These words are " + (isAnagram ? "Anagrams." : "not Anagrams."));
+        }
+    }
+
+    private static boolean checkAnagram(String s1, String s2) {
+        if (s1 == null || s2 == null || s1.length() != s2.length())
+            return false;
+
+        int[] charCount = new int[26];
+        s1 = s1.toLowerCase();
+        s2 = s2.toLowerCase();
+
+        for (int i = 0; i < s1.length(); i++) {
+            charCount[s1.charAt(i) - 'a']++;
+            charCount[s2.charAt(i) - 'a']--;
+        }
+
+        for (int count : charCount) {
+            if (count != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+```
+
+---
+
+#### Code 2: Stream-Based Approach
+
+```java
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class AnagramStream {
+    public static void main(String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Enter the first string: ");
+            String firstString = scanner.nextLine();
+            System.out.println("Enter the second string: ");
+            String secondString = scanner.nextLine();
+
+            boolean isAnagram = checkAnagramWithStream(firstString, secondString);
+            System.out.println("These words are " + (isAnagram ? "Anagrams." : "not Anagrams."));
+        }
+    }
+
+    private static boolean checkAnagramWithStream(String s1, String s2) {
+        if (s1 == null || s2 == null || s1.length() != s2.length())
+            return false;
+
+        return Arrays.equals(
+            s1.toLowerCase().chars().sorted().toArray(),
+            s2.toLowerCase().chars().sorted().toArray()
+        );
+    }
+}
+```
+
+---
+
+## 🎯 Key Takeaways
+
+1. **Streams and Functional Programming:**
+   Java Streams provide modern, concise solutions for collection manipulations.
+
+2. **Two-Pointer Techniques:**
+   Efficiently traverse data structures for tasks like finding the middle element or detecting cycles.
+
+3. **String Manipulations:**
+   Sorting and character frequency analysis are common techniques for solving string problems.
+
+4. **Coding Style Matters:**
+   Always aim for readable, maintainable code with well-defined functions.
+
+---
+
+✨ Keep up the good work! See you on Day 55. 🚀
+## 🌟 Day 55: Solved Problems (May 24, 2025)
+
+Today's focus was on **Binary Search**, implemented both recursively and iteratively, with optimizations for efficiency and correctness.
+
+---
+
+### 🚀 Problem: Binary Search
+
+#### Description
+
+Implement a binary search algorithm to find the index of a target value in a sorted array.
+
+1. **Recursive Approach**
+2. **Iterative Approach**
+
+---
+
+### 📝 Key Concepts
+
+* **Binary Search Algorithm:**
+  Binary search operates on a sorted array by repeatedly dividing the search interval in half. If the target value is less than the middle element, it searches the left half; otherwise, it searches the right half.
+
+* **Time Complexity:**
+
+  * **Best Case:** $O(1)$
+  * **Average and Worst Case:** $O(\log n)$
+
+---
+
+### 📄 Code
+
+#### Recursive Binary Search
+
+```java
+public static int recursionBinarySearch(int[] arr, int low, int high, int target) {
+    if (low > high) return -1; // Base case: target not found
+
+    int mid = low + (high - low) / 2; // Prevent overflow
+
+    if (arr[mid] == target) {
+        return mid;
+    }
+
+    if (arr[mid] > target) {
+        return recursionBinarySearch(arr, low, mid - 1, target); // Search left
+    } else {
+        return recursionBinarySearch(arr, mid + 1, high, target); // Search right
+    }
+}
+```
+
+---
+
+#### Iterative Binary Search
+
+```java
+public static int getIndexBinarySearch(int[] arr, int target) {
+    int low = 0, high = arr.length - 1;
+
+    while (low <= high) {
+        int mid = low + (high - low) / 2; // Prevent overflow
+
+        if (arr[mid] == target) {
+            return mid; // Target found
+        }
+
+        if (arr[mid] < target) {
+            low = mid + 1; // Move to the right half
+        } else {
+            high = mid - 1; // Move to the left half
+        }
+    }
+
+    return -1; // Target not found
+}
+```
+
+---
+
+### 🧪 Test Example
+
+#### Input
+
+```java
+int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+int target = 7;
+```
+
+#### Output
+
+```plaintext
+Recursion Binary Search Index: 6  
+Iterative Binary Search Index: 6  
+```
+
+---
+
+### 🛠️ Issues in Code and Fixes
+
+1. **Base Case for Recursive Search**
+   In the recursive implementation, ensure you check the base case `if (low > high)` to handle cases where the target is not found.
+
+2. **Iterative Binary Search Bug**
+
+   * The while condition `while (mid <= high)` was incorrect and caused infinite loops or errors. It should be `while (low <= high)`.
+   * Increments and decrements `mid++` and `mid--` are incorrect; update the `low` and `high` bounds instead.
+
+---
+
+### 🎯 Key Takeaways
+
+1. **Binary Search Efficiency:**
+   Binary search is highly efficient for sorted data and significantly faster than linear search for large datasets.
+
+2. **Implementation Details:**
+
+   * Always use `low + (high - low) / 2` to avoid overflow when calculating the middle index.
+   * Recursive implementations are more elegant but may lead to stack overflow for very large arrays.
+
+3. **Debugging Iterative Logic:**
+   Iterative binary search requires careful updates to `low` and `high` pointers to avoid infinite loops.
+
+---
+
+✨ Keep learning and improving! See you on Day 56! 🚀
+
+# 🌟 Day 56: Sorting Algorithms Exploration (May 25, 2025)
+
+Today's focus was on implementing two fundamental sorting algorithms: **Bubble Sort** and **Selection Sort**, with various optimizations and techniques to improve their performance.
+
+---
+
+## 📚 Table of Contents
+
+1. [Bubble Sort](#bubble-sort)
+2. [Selection Sort](#selection-sort)
+3. [Key Takeaways](#key-takeaways)
+
+---
+
+## 🔍 Bubble Sort
+
+### **Description**
+
+Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The process repeats until the list is sorted.
+
+* **Time Complexity:**
+
+  * Best Case: $O(n)$ (optimized)
+  * Worst Case: $O(n^2)$
+* **Space Complexity:** $O(1)$
+
+---
+
+### **Code Implementation**
+
+#### Using a For Loop
+
+```java
+private static void bubbleSortUsingForLoop(int[] data) {
+    if (data.length <= 0)
+        return;
+    for (int j = 0; j < data.length; j++) {
+        for (int i = 0; i < data.length - 1; i++) {
+            if (data[i] > data[i + 1]) {
+                int temp = data[i];
+                data[i] = data[i + 1];
+                data[i + 1] = temp;
+            }
+        }
+    }
+}
+```
+
+#### Using a While Loop with Optimization
+
+```java
+private static void bubbleSort(int[] data) {
+    if (data.length <= 0)
+        return;
+    boolean isSorted = true;
+    while (isSorted) {
+        isSorted = false;
+        for (int i = 0; i < data.length - 1; i++) {
+            if (data[i] > data[i + 1]) {
+                isSorted = true;
+                // Swapping without a temporary variable
+                data[i] = data[i] + data[i + 1];
+                data[i + 1] = data[i] - data[i + 1];
+                data[i] = data[i] - data[i + 1];
+            }
+        }
+    }
+}
+```
+
+---
+
+### **Output Example**
+
+#### Input:
+
+```plaintext
+int[] data = { -2, 45, 0, 11, -9 };
+```
+
+#### Output:
+
+```plaintext
+[-9, -2, 0, 11, 45]
+```
+
+---
+
+## 🔍 Selection Sort
+
+### **Description**
+
+Selection Sort divides the input list into two parts: a sorted sublist of items that is built up from left to right and a sublist of the remaining unsorted items. The algorithm repeatedly selects the smallest (or largest) element from the unsorted sublist and moves it to the sorted sublist.
+
+* **Time Complexity:**
+
+  * Best and Worst Case: $O(n^2)$
+* **Space Complexity:** $O(1)$
+
+---
+
+### **Code Implementation**
+
+```java
+private static void selectionSort(int[] data) {
+    if (data.length <= 0)
+        return;
+    for (int step = 0; step < data.length; step++) {
+        int minIndex = step;
+        for (int i = step + 1; i < data.length; i++) {
+            if (data[i] < data[minIndex]) {
+                minIndex = i;
+            }
+        }
+        int temp = data[minIndex];
+        data[minIndex] = data[step];
+        data[step] = temp;
+    }
+}
+```
+
+---
+
+### **Output Example**
+
+#### Input:
+
+```plaintext
+int[] data = { -2, 45, 0, 11, -9 };
+```
+
+#### Output:
+
+```plaintext
+[-9, -2, 0, 11, 45]
+```
+
+---
+
+## 🛠️ Key Takeaways
+
+1. **Bubble Sort Characteristics**:
+
+   * Suitable for small datasets.
+   * Inefficient for large datasets due to its quadratic time complexity.
+   * Can be optimized by tracking whether the array is already sorted.
+
+2. **Selection Sort Characteristics**:
+
+   * Simple but inefficient for large datasets.
+   * Performs the minimum number of swaps compared to other simple sorting algorithms.
+
+3. **Comparison**:
+
+   * **Bubble Sort** is adaptive and can terminate early if the array is sorted before completing all iterations.
+   * **Selection Sort** is non-adaptive and always performs $n^2$ comparisons, regardless of the array's state.
+
+---
+
+🎉 Keep up the momentum! See you on **Day 57**! 🚀
+# 🌟 Day 57: Exploring Insertion Sort and Merge Sort (May 26, 2025)
+
+Today's focus was on understanding and implementing **Insertion Sort** and **Merge Sort**, two widely used sorting algorithms with different approaches and complexities.
+
+---
+
+## 📚 Table of Contents
+
+1. [Insertion Sort](#insertion-sort)
+2. [Merge Sort](#merge-sort)
+3. [Key Takeaways](#key-takeaways)
+
+---
+
+## 🔍 Insertion Sort
+
+### **Description**
+
+Insertion Sort is a simple sorting algorithm that builds the final sorted array one item at a time. It is much like sorting playing cards in your hand.
+
+* **Time Complexity:**
+
+  * Best Case: $O(n)$ (when the array is already sorted)
+  * Worst Case: $O(n^2)$
+* **Space Complexity:** $O(1)$
+
+---
+
+### **Code Implementation**
+
+```java
+private static void sortArrayUsingInsertion(int[] array) {
+    // Traverse from the second element to the end
+    for (int currentIndex = 1; currentIndex < array.length; currentIndex++) {
+        int currentValue = array[currentIndex]; // The value to be inserted
+        int sortedIndex = currentIndex - 1; // Start checking from the previous index in the sorted part
+
+        // Shift elements of the sorted part to the right to make room for currentValue
+        while (sortedIndex >= 0 && array[sortedIndex] > currentValue) {
+            array[sortedIndex + 1] = array[sortedIndex];
+            sortedIndex--; // Move one step left in the sorted part
+        }
+
+        // Place currentValue at its correct position
+        array[sortedIndex + 1] = currentValue;
+    }
+}
+```
+
+---
+
+### **Output Example**
+
+#### Input:
+
+```plaintext
+int[] numbers = { 6, 5, 12, 10, 9, 1 };
+```
+
+#### Output:
+
+```plaintext
+Sorted Array: [1, 5, 6, 9, 10, 12]
+```
+
+---
+
+## 🔍 Merge Sort
+
+### **Description**
+
+Merge Sort is a divide-and-conquer algorithm that splits the array into halves, sorts each half, and then merges the sorted halves.
+
+* **Time Complexity:**
+
+  * Best, Average, and Worst Case: $O(n \log n)$
+* **Space Complexity:** $O(n)$
+
+---
+
+### **Code Implementation**
+
+#### Merge Sort Algorithm
+
+```java
+public static void mergeSort(int[] data, int leftIndex, int rightIndex) {
+    if (leftIndex < rightIndex) {
+        int middleIndex = (leftIndex + rightIndex) / 2;
+        mergeSort(data, leftIndex, middleIndex); // Sort left half
+        mergeSort(data, middleIndex + 1, rightIndex); // Sort right half
+        merge(data, leftIndex, middleIndex, rightIndex); // Merge sorted halves
+    }
+}
+```
+
+#### Merge Method
+
+```java
+private static void merge(int[] data, int leftIndex, int middleIndex, int rightIndex) {
+    int leftSubArraySize = middleIndex - leftIndex + 1;
+    int rightSubArraySize = rightIndex - middleIndex;
+
+    int[] leftSubArrayBuffer = new int[leftSubArraySize];
+    int[] rightSubArrayBuffer = new int[rightSubArraySize];
+
+    for (int idx = 0; idx < leftSubArraySize; idx++) {
+        leftSubArrayBuffer[idx] = data[leftIndex + idx];
+    }
+    for (int idx = 0; idx < rightSubArraySize; idx++) {
+        rightSubArrayBuffer[idx] = data[middleIndex + 1 + idx];
+    }
+
+    int leftPointer = 0, rightPointer = 0, mergedPointer = leftIndex;
+
+    while (leftPointer < leftSubArraySize && rightPointer < rightSubArraySize) {
+        if (leftSubArrayBuffer[leftPointer] <= rightSubArrayBuffer[rightPointer]) {
+            data[mergedPointer++] = leftSubArrayBuffer[leftPointer++];
+        } else {
+            data[mergedPointer++] = rightSubArrayBuffer[rightPointer++];
+        }
+    }
+
+    while (leftPointer < leftSubArraySize) {
+        data[mergedPointer++] = leftSubArrayBuffer[leftPointer++];
+    }
+    while (rightPointer < rightSubArraySize) {
+        data[mergedPointer++] = rightSubArrayBuffer[rightPointer++];
+    }
+}
+```
+
+---
+
+### **Output Example**
+
+#### Input:
+
+```plaintext
+int arr[] = { 6, 5, 12, 10, 9, 1 };
+```
+
+#### Output:
+
+```plaintext
+[1, 5, 6, 9, 10, 12]
+```
+
+---
+
+## 🛠️ Key Takeaways
+
+1. **Insertion Sort Characteristics**:
+
+   * Best suited for small datasets or nearly sorted datasets.
+   * Simple to implement but inefficient for large datasets.
+
+2. **Merge Sort Characteristics**:
+
+   * Much more efficient than Insertion Sort for large datasets.
+   * Divide-and-conquer approach ensures consistency in performance.
+
+3. **Comparison**:
+
+   * **Insertion Sort** is intuitive and works well in small scenarios.
+   * **Merge Sort** is a robust choice for sorting large datasets efficiently.
+
+---
+
+🎉 Keep pushing forward! On to **Day 58**! 🚀
+# 🌟 Day 58: Mastering Heap Sort (May 27, 2025)
+
+Today's focus was on understanding and implementing **Heap Sort**, an efficient and reliable sorting algorithm based on the heap data structure.
+
+---
+
+## 📚 Table of Contents
+
+1. [Heap Sort Overview](#heap-sort-overview)
+2. [Algorithm Steps](#algorithm-steps)
+3. [Code Implementation](#code-implementation)
+4. [Output Example](#output-example)
+5. [Key Takeaways](#key-takeaways)
+
+---
+
+## 🔍 Heap Sort Overview
+
+**Heap Sort** is a comparison-based sorting algorithm that uses a binary heap to organize elements into a max-heap (or min-heap). The largest element is extracted repeatedly to create the sorted array.
+
+* **Time Complexity:**
+
+  * Build Max Heap: $O(n)$
+  * Extract and Heapify: $O(n \log n)$
+  * Total: $O(n \log n)$
+* **Space Complexity:** $O(1)$ (in-place sorting)
+
+---
+
+## 🔄 Algorithm Steps
+
+1. **Build a Max Heap**: Convert the array into a max heap.
+2. **Extract Max Elements**: Swap the root (largest element) with the last element and rebuild the heap for the remaining elements.
+3. **Repeat**: Continue extracting the maximum element until the array is sorted.
+
+---
+
+## 🛠️ Code Implementation
+
+### **Heap Sort Implementation**
+
+```java
+public static void sortArrayUsingHeap(int[] inputArray) {
+    int totalElements = inputArray.length;
+
+    // Step 1: Build a Max Heap
+    for (int currentNodeIndex = totalElements / 2 - 1; currentNodeIndex >= 0; currentNodeIndex--) {
+        buildMaxHeap(inputArray, totalElements, currentNodeIndex);
+    }
+
+    // Step 2: Extract elements one by one from the heap
+    for (int lastElementIndex = totalElements - 1; lastElementIndex >= 0; lastElementIndex--) {
+        // Move the current root (largest element) to the end
+        swapElements(inputArray, 0, lastElementIndex);
+
+        // Rebuild the heap for the remaining elements
+        buildMaxHeap(inputArray, lastElementIndex, 0);
+    }
+}
+```
+
+### **Building a Max Heap**
+
+```java
+private static void buildMaxHeap(int[] heapArray, int heapSize, int rootNodeIndex) {
+    int largestElementIndex = rootNodeIndex;
+    int leftChildIndex = 2 * rootNodeIndex + 1;
+    int rightChildIndex = 2 * rootNodeIndex + 2;
+
+    // Check if the left child is larger than the root
+    if (leftChildIndex < heapSize && heapArray[leftChildIndex] > heapArray[largestElementIndex]) {
+        largestElementIndex = leftChildIndex;
+    }
+
+    // Check if the right child is larger than the largest so far
+    if (rightChildIndex < heapSize && heapArray[rightChildIndex] > heapArray[largestElementIndex]) {
+        largestElementIndex = rightChildIndex;
+    }
+
+    // If the largest is not the root, swap and heapify the affected subtree
+    if (largestElementIndex != rootNodeIndex) {
+        swapElements(heapArray, rootNodeIndex, largestElementIndex);
+        buildMaxHeap(heapArray, heapSize, largestElementIndex);
+    }
+}
+```
+
+### **Swapping Elements**
+
+```java
+private static void swapElements(int[] array, int firstIndex, int secondIndex) {
+    int temporaryValue = array[firstIndex];
+    array[firstIndex] = array[secondIndex];
+    array[secondIndex] = temporaryValue;
+}
+```
+
+---
+
+## 🖥️ Output Example
+
+### **Input:**
+
+```plaintext
+int[] unsortedArray = {4, 10, 3, 5, 1, 2};
+```
+
+### **Output:**
+
+```plaintext
+Sorted Array: [1, 2, 3, 4, 5, 10]
+```
+
+---
+
+## ✨ Key Takeaways
+
+1. **Efficient for Large Data**: Heap Sort is optimal for scenarios where constant space usage is a priority.
+2. **In-Place Sorting**: Unlike Merge Sort, Heap Sort does not require additional storage space.
+3. **Stable vs. Unstable**: Heap Sort is not a stable sorting algorithm, meaning equal elements may not maintain their original order.
+4. **Binary Heap Mastery**: Understanding the heap data structure is crucial for mastering the algorithm.
+
+---
+
+🎉 On to **Day 59** with renewed energy! 🚀
+
+# 🌟 Day 59: Removing Overlaps from Intervals (May 28, 2025)
+
+Today's focus was on solving a classic **Greedy Algorithm** problem: determining the **minimum number of intervals to remove** to make a set of intervals non-overlapping.
+
+---
+
+## 📚 Table of Contents
+
+1. [Problem Statement](#problem-statement)
+2. [Algorithm Approach](#algorithm-approach)
+3. [Code Implementation](#code-implementation)
+4. [Example Scenarios](#example-scenarios)
+5. [Key Takeaways](#key-takeaways)
+
+---
+
+## 💡 Problem Statement
+
+Given an array of intervals where each interval is represented as `[start, end]`, find the **minimum number of intervals** that need to be removed so that the remaining intervals are **non-overlapping**.
+
+---
+
+## 🧠 Algorithm Approach
+
+### Greedy Algorithm
+
+1. **Sort the intervals by their end times**:
+   Sorting ensures that we process the intervals in a way that minimizes overlaps.
+
+2. **Iterate through the intervals**:
+   Compare the current interval's start time with the previous interval's end time to check for overlaps.
+
+3. **Handle Overlaps**:
+
+   * If there is an overlap, increment the removal count.
+   * Otherwise, update the `previousEnd` to the current interval's end time.
+
+4. **Return the Count**:
+   The count of removals gives the minimum number of intervals to remove.
+
+---
+
+## 🛠️ Code Implementation
+
+```java
+import java.util.Arrays;
+
+public class NonOverlappingIntervals {
+    public static void main(String[] args) {
+        int[][] intervals1 = {{1, 2}, {2, 3}, {3, 4}, {1, 3}};
+        int[][] intervals2 = {{1, 3}, {1, 3}, {1, 3}};
+        int[][] intervals3 = {{1, 2}, {5, 10}, {18, 35}, {40, 45}};
+        
+        System.out.println(minIntervalsToRemove(intervals1)); // Output: 1
+        System.out.println(minIntervalsToRemove(intervals2)); // Output: 2
+        System.out.println(minIntervalsToRemove(intervals3)); // Output: 0
+    }
+
+    /**
+     * Returns the minimum number of intervals to remove to make the intervals non-overlapping.
+     * 
+     * @param intervals A 2D array representing the intervals.
+     * @return Minimum number of intervals to remove.
+     */
+    public static int minIntervalsToRemove(int[][] intervals) {
+        // Step 1: Sort intervals by their end times
+        Arrays.sort(intervals, (a, b) -> a[1] - b[1]);
+
+        int removals = 0;
+        int previousEnd = Integer.MIN_VALUE;
+
+        // Step 2: Iterate through the intervals
+        for (int[] interval : intervals) {
+            int start = interval[0];
+            int end = interval[1];
+
+            // Step 3: Check for overlap
+            if (start < previousEnd) {
+                // Overlap found, increment removals
+                removals++;
+            } else {
+                // No overlap, update the previous end
+                previousEnd = end;
+            }
+        }
+
+        return removals;
+    }
+}
+```
+
+---
+
+## 🖥️ Example Scenarios
+
+### Example 1:
+
+**Input:**
+
+```plaintext
+intervals = {{1, 2}, {2, 3}, {3, 4}, {1, 3}}
+```
+
+**Output:**
+
+```plaintext
+1
+```
+
+**Explanation:** Removing interval `[1, 3]` results in non-overlapping intervals.
+
+---
+
+### Example 2:
+
+**Input:**
+
+```plaintext
+intervals = {{1, 3}, {1, 3}, {1, 3}}
+```
+
+**Output:**
+
+```plaintext
+2
+```
+
+**Explanation:** Removing two intervals, leaving only one, ensures no overlaps.
+
+---
+
+### Example 3:
+
+**Input:**
+
+```plaintext
+intervals = {{1, 2}, {5, 10}, {18, 35}, {40, 45}}
+```
+
+**Output:**
+
+```plaintext
+0
+```
+
+**Explanation:** All intervals are already non-overlapping.
+
+---
+
+## ✨ Key Takeaways
+
+1. **Sorting Matters**: Sorting intervals by their end times is crucial for efficient processing.
+2. **Greedy Strategy**: Choosing the interval that ends the earliest minimizes the chance of overlap.
+3. **Time Complexity**: $O(n \log n)$ for sorting and $O(n)$ for iteration, resulting in $O(n \log n)$ overall.
+4. **Space Complexity**: $O(1)$, as no additional data structures are used.
+
+---
+
+🎉 Another successful day of problem-solving! Ready for **Day 60**! 🚀
+
+# 📘 Day 60: String Rotation Check using KMP Algorithm (May 29, 2025)
+
+Today's task revolved around checking if one string is a **rotation** of another using the **Knuth-Morris-Pratt (KMP)** algorithm for substring search. This approach optimizes the rotation check with efficient pattern matching.
+
+---
+
+## 📚 Table of Contents
+
+1. [Problem Statement](#problem-statement)
+2. [Algorithm Approach](#algorithm-approach)
+3. [Code Implementation](#code-implementation)
+4. [Example Scenarios](#example-scenarios)
+5. [Key Takeaways](#key-takeaways)
+
+---
+
+## 💡 Problem Statement
+
+Given two strings $s1$ and $s2$, determine if $s2$ is a **rotation** of $s1$. For example:
+
+* $s1 = "abcd"$, $s2 = "cdab"$ → **true**
+* $s1 = "abcd"$, $s2 = "acbd"$ → **false**
+
+### Constraints:
+
+* Strings must be of equal length to be rotations.
+* Use the **KMP algorithm** for efficient substring search.
+
+---
+
+## 🧠 Algorithm Approach
+
+### Steps:
+
+1. **Concatenate $s1$ with itself**:
+   If $s2$ is a rotation of $s1$, it will appear as a **substring** in $s1 + s1$.
+
+2. **Use KMP for Substring Search**:
+
+   * Compute the **LPS (Longest Prefix Suffix)** array for the pattern $s2$.
+   * Match $s2$ against $s1 + s1$ using the LPS array for efficient pattern matching.
+
+3. **Return the Result**:
+   If $s2$ is found as a substring in $s1 + s1$, return **true**; otherwise, **false**.
+
+---
+
+## 🛠️ Code Implementation
+
+```java
+public class StringRotationKMP {
+
+    /**
+     * Compute the LPS (longest proper prefix which is also suffix) array for KMP.
+     */
+    private static int[] computeLPS(String pat) {
+        int n = pat.length();
+        int[] lps = new int[n];
+        int len = 0;  // length of previous longest prefix suffix
+        lps[0] = 0;   // lps[0] is always 0
+        
+        int i = 1;
+        while (i < n) {
+            if (pat.charAt(i) == pat.charAt(len)) {
+                len++;
+                lps[i] = len;
+                i++;
+            } else {
+                if (len != 0) {
+                    // fall back in the pattern
+                    len = lps[len - 1];
+                } else {
+                    lps[i] = 0;
+                    i++;
+                }
+            }
+        }
+        return lps;
+    }
+
+    /**
+     * KMP search: returns true if pat is a substring of txt.
+     */
+    private static boolean kmpSearch(String txt, String pat) {
+        int N = txt.length();
+        int M = pat.length();
+        int[] lps = computeLPS(pat);
+
+        int i = 0;  // index for txt
+        int j = 0;  // index for pat
+        while (i < N) {
+            if (txt.charAt(i) == pat.charAt(j)) {
+                i++;
+                j++;
+                if (j == M) {
+                    return true;  // found a match
+                }
+            } else {
+                if (j != 0) {
+                    j = lps[j - 1];
+                } else {
+                    i++;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Returns true if s2 is a rotation of s1 using KMP-based substring search.
+     */
+    public static boolean isRotation(String s1, String s2) {
+        if (s1 == null || s2 == null || s1.length() != s2.length()) {
+            return false;
+        }
+        String doubled = s1 + s1;
+        return kmpSearch(doubled, s2);
+    }
+
+    public static void main(String[] args) {
+        String[][] tests = {
+            {"abcd", "cdab"},
+            {"aab",  "aba"},
+            {"abcd", "acbd"}
+        };
+
+        for (var pair : tests) {
+            String s1 = pair[0], s2 = pair[1];
+            System.out.printf("s1=\"%s\", s2=\"%s\" → %b%n",
+                s1, s2, isRotation(s1, s2));
+        }
+    }
+}
+```
+
+---
+
+## 🖥️ Example Scenarios
+
+### Example 1:
+
+**Input:**
+
+```plaintext
+s1 = "abcd"
+s2 = "cdab"
+```
+
+**Output:**
+
+```plaintext
+true
+```
+
+**Explanation:** $s2$ is a rotation of $s1$.
+
+---
+
+### Example 2:
+
+**Input:**
+
+```plaintext
+s1 = "abcd"
+s2 = "acbd"
+```
+
+**Output:**
+
+```plaintext
+false
+```
+
+**Explanation:** $s2$ is not a rotation of $s1$.
+
+---
+
+### Example 3:
+
+**Input:**
+
+```plaintext
+s1 = "aab"
+s2 = "aba"
+```
+
+**Output:**
+
+```plaintext
+true
+```
+
+**Explanation:** $s2$ is a rotation of $s1$.
+
+---
+
+## ✨ Key Takeaways
+
+1. **String Concatenation Trick**: $s2$ being a rotation of $s1$ implies $s2$ is a substring of $s1 + s1$.
+2. **Efficiency of KMP**: KMP ensures linear time complexity ($O(N + M)$) for substring search.
+3. **Edge Cases**: Always check for null strings and unequal lengths.
+4. **Time Complexity**: $O(N + M)$, where $N$ is the length of $s1 + s1$ and $M$ is the length of $s2$.
+5. **Space Complexity**: $O(M)$ for the LPS array.
+
+---
+
+🎉 Successfully completed **Day 60**! Onto the next challenge! 🚀
+# 📘 Day 61: Insert Interval (May 30, 2025)
+
+Today's task involved implementing an algorithm to **insert a new interval** into a list of non-overlapping intervals, merging overlapping intervals as needed.
+
+---
+
+## 💡 Problem Statement
+
+You are given a list of non-overlapping intervals, sorted by their start time. Insert a new interval into the list and merge overlapping intervals.
+
+### Example:
+
+#### Input:
+
+* Intervals: $\text{[[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]]}$
+* New Interval: $[4, 9]$
+
+#### Output:
+
+$\text{[[1, 2], [3, 10], [12, 16]]}$
+
+---
+
+## 🧠 Algorithm Approach
+
+1. **Initialize Result List**: Create an empty list to store the final intervals.
+2. **Add Non-Overlapping Intervals Before the New Interval**:
+   Add all intervals that end **before** the new interval starts.
+3. **Merge Overlapping Intervals**:
+   Merge intervals that overlap with the new interval by updating the start and end of the new interval.
+4. **Add the Merged Interval**:
+   After merging, add the new interval to the result list.
+5. **Add Non-Overlapping Intervals After the New Interval**:
+   Add all intervals that start **after** the new interval ends.
+
+---
+
+## 🛠️ Code Implementation
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public class InsertInterval {
+    public static void main(String[] args) {
+        int[][] intervals1 = { { 1, 3 }, { 4, 5 }, { 6, 7 }, { 8, 10 } };
+        int[] newInterval1 = { 5, 6 };
+        System.out.println(formatOutput(insertInterval(intervals1, newInterval1)));
+
+        int[][] intervals2 = { { 1, 2 }, { 3, 5 }, { 6, 7 }, { 8, 10 }, { 12, 16 } };
+        int[] newInterval2 = { 4, 9 };
+        System.out.println(formatOutput(insertInterval(intervals2, newInterval2)));
+    }
+
+    public static List<int[]> insertInterval(int[][] intervals, int[] newInterval) {
+        List<int[]> result = new ArrayList<>();
+        int i = 0;
+        int n = intervals.length;
+
+        // Step 1: Add all intervals that end before the new interval starts
+        while (i < n && intervals[i][1] < newInterval[0]) {
+            result.add(intervals[i]);
+            i++;
+        }
+
+        // Step 2: Merge overlapping intervals with newInterval
+        while (i < n && intervals[i][0] <= newInterval[1]) {
+            newInterval[0] = Math.min(newInterval[0], intervals[i][0]);
+            newInterval[1] = Math.max(newInterval[1], intervals[i][1]);
+            i++;
+        }
+        result.add(newInterval); // Add the merged interval
+
+        // Step 3: Add all intervals that start after the new interval ends
+        while (i < n) {
+            result.add(intervals[i]);
+            i++;
+        }
+
+        return result;
+    }
+
+    // Utility function to format output for better readability
+    public static String formatOutput(List<int[]> intervals) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        for (int[] interval : intervals) {
+            sb.append("[").append(interval[0]).append(", ").append(interval[1]).append("], ");
+        }
+        if (!intervals.isEmpty()) sb.setLength(sb.length() - 2); // Remove trailing comma
+        sb.append("]");
+        return sb.toString();
+    }
+}
+```
+
+---
+
+## 🖥️ Example Scenarios
+
+### Scenario 1:
+
+**Input:**
+
+```plaintext
+Intervals: [[1, 3], [4, 5], [6, 7], [8, 10]]
+New Interval: [5, 6]
+```
+
+**Output:**
+
+```plaintext
+[[1, 3], [4, 7], [8, 10]]
+```
+
+### Scenario 2:
+
+**Input:**
+
+```plaintext
+Intervals: [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]]
+New Interval: [4, 9]
+```
+
+**Output:**
+
+```plaintext
+[[1, 2], [3, 10], [12, 16]]
+```
+
+---
+
+## ✨ Key Takeaways
+
+1. **Three Key Steps**: Separate the logic into:
+
+   * Adding non-overlapping intervals before the new interval.
+   * Merging overlapping intervals.
+   * Adding non-overlapping intervals after the new interval.
+
+2. **Sorting is Predefined**: The input intervals are already sorted, making the algorithm efficient.
+
+3. **Time Complexity**: $O(N)$, where $N$ is the number of intervals.
+
+4. **Space Complexity**: $O(N)$, for storing the result list.
+
+---
+
+🎉 Successfully completed **Day 61**! Onwards to Day 62! 🚀
 

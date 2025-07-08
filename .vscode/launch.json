@@ -6,6 +6,874 @@
   "configurations": [
     {
       "type": "java",
+      "name": "IntRoman1",
+      "request": "launch",
+      "mainClass": "IntRoman1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "IntRoman",
+      "request": "launch",
+      "mainClass": "IntRoman",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "LongestUniqueSubstring",
+      "request": "launch",
+      "mainClass": "LongestUniqueSubstring",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ValidParentheses1",
+      "request": "launch",
+      "mainClass": "ValidParentheses1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ValidParentheses",
+      "request": "launch",
+      "mainClass": "ValidParentheses",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ThreeSum",
+      "request": "launch",
+      "mainClass": "ThreeSum",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ContainerWithMostWater",
+      "request": "launch",
+      "mainClass": "ContainerWithMostWater",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ZigzagConversion",
+      "request": "launch",
+      "mainClass": "ZigzagConversion",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "REverseStringWord",
+      "request": "launch",
+      "mainClass": "REverseStringWord",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "CandyDistribution",
+      "request": "launch",
+      "mainClass": "CandyDistribution",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "JumpTest",
+      "request": "launch",
+      "mainClass": "JumpTest",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "Jump",
+      "request": "launch",
+      "mainClass": "Jump",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ProductArray",
+      "request": "launch",
+      "mainClass": "ProductArray",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "jumpGameTest",
+      "request": "launch",
+      "mainClass": "jumpGameTest",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "StockBAndSellii",
+      "request": "launch",
+      "mainClass": "StockBAndSellii",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "StockBuyAndSale1",
+      "request": "launch",
+      "mainClass": "StockBuyAndSale1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "StockBuyAndSale",
+      "request": "launch",
+      "mainClass": "StockBuyAndSale",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MElement",
+      "request": "launch",
+      "mainClass": "MElement",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ArrayRotate1",
+      "request": "launch",
+      "mainClass": "ArrayRotate1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MajorityElement12",
+      "request": "launch",
+      "mainClass": "MajorityElement12",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MajorityElement",
+      "request": "launch",
+      "mainClass": "MajorityElement",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ArraySortingDuplicate",
+      "request": "launch",
+      "mainClass": "ArraySortingDuplicate",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "SwapString",
+      "request": "launch",
+      "mainClass": "SwapString",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FindMaximumSubArraysTest",
+      "request": "launch",
+      "mainClass": "FindMaximumSubArraysTest",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "CountWordTest",
+      "request": "launch",
+      "mainClass": "CountWordTest",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FindLongestCommonPrefix",
+      "request": "launch",
+      "mainClass": "FindLongestCommonPrefix",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "DetectDuplicate",
+      "request": "launch",
+      "mainClass": "DetectDuplicate",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "PalindromeUntilCheck",
+      "request": "launch",
+      "mainClass": "PalindromeUntilCheck",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "IsPaliCheck",
+      "request": "launch",
+      "mainClass": "IsPaliCheck",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FindingMissingNumber",
+      "request": "launch",
+      "mainClass": "FindingMissingNumber",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "SRev",
+      "request": "launch",
+      "mainClass": "SRev",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FizzBuzzProblemStream",
+      "request": "launch",
+      "mainClass": "FizzBuzzProblemStream",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "Rev1",
+      "request": "launch",
+      "mainClass": "Rev1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MultipleListInSingleListInStream",
+      "request": "launch",
+      "mainClass": "MultipleListInSingleListInStream",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "AddTwoBinaryString",
+      "request": "launch",
+      "mainClass": "AddTwoBinaryString",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "AToIString",
+      "request": "launch",
+      "mainClass": "AToIString",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FirstNonRepeatingCharacter",
+      "request": "launch",
+      "mainClass": "FirstNonRepeatingCharacter",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MergeSorter",
+      "request": "launch",
+      "mainClass": "MergeSorter",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MergeSortedArrays",
+      "request": "launch",
+      "mainClass": "MergeSortedArrays",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "KthLargestElement",
+      "request": "launch",
+      "mainClass": "KthLargestElement",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "PairWithSum1",
+      "request": "launch",
+      "mainClass": "PairWithSum1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "PairWithSum",
+      "request": "launch",
+      "mainClass": "PairWithSum",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ArrayIntersection",
+      "request": "launch",
+      "mainClass": "ArrayIntersection",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ReverseLinkedList",
+      "request": "launch",
+      "mainClass": "ReverseLinkedList",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ReLinkedList",
+      "request": "launch",
+      "mainClass": "ReLinkedList",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MissNumber1",
+      "request": "launch",
+      "mainClass": "MissNumber1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MIssNumber",
+      "request": "launch",
+      "mainClass": "MIssNumber",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "Rev",
+      "request": "launch",
+      "mainClass": "Rev",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "BSearch",
+      "request": "launch",
+      "mainClass": "BSearch",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "SecondLarge",
+      "request": "launch",
+      "mainClass": "SecondLarge",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FirstNonRepeatingCharInStream",
+      "request": "launch",
+      "mainClass": "FirstNonRepeatingCharInStream",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "Fibonacci1",
+      "request": "launch",
+      "mainClass": "Fibonacci1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FindSecondLargestNumber1",
+      "request": "launch",
+      "mainClass": "FindSecondLargestNumber1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FindSecondLargestNumber",
+      "request": "launch",
+      "mainClass": "FindSecondLargestNumber",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "PrimeNumberChecker",
+      "request": "launch",
+      "mainClass": "PrimeNumberChecker",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MaximumSubArraySum",
+      "request": "launch",
+      "mainClass": "MaximumSubArraySum",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "CountWordsInSentenceTest",
+      "request": "launch",
+      "mainClass": "CountWordsInSentenceTest",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "LongestCommonPrefix22",
+      "request": "launch",
+      "mainClass": "LongestCommonPrefix22",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "StackUsingArray",
+      "request": "launch",
+      "mainClass": "StackUsingArray",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "DuplicateElements",
+      "request": "launch",
+      "mainClass": "DuplicateElements",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ArrayDuplicateElementsDetector",
+      "request": "launch",
+      "mainClass": "ArrayDuplicateElementsDetector",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "CheckStringPalindrome",
+      "request": "launch",
+      "mainClass": "CheckStringPalindrome",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FindMissingNumbers",
+      "request": "launch",
+      "mainClass": "FindMissingNumbers",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ReverseStringTest",
+      "request": "launch",
+      "mainClass": "ReverseStringTest",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FizzBuzz",
+      "request": "launch",
+      "mainClass": "FizzBuzz",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "VowelConsonantCount",
+      "request": "launch",
+      "mainClass": "VowelConsonantCount",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "StringCount",
+      "request": "launch",
+      "mainClass": "StringCount",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ArrayElementCount",
+      "request": "launch",
+      "mainClass": "ArrayElementCount",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "SortingExample",
+      "request": "launch",
+      "mainClass": "SortingExample",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FindMaxStream",
+      "request": "launch",
+      "mainClass": "FindMaxStream",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ParallelProcessingExample",
+      "request": "launch",
+      "mainClass": "ParallelProcessingExample",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "RemoveDuplicates",
+      "request": "launch",
+      "mainClass": "RemoveDuplicates",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "StringFilterBasedOnLength",
+      "request": "launch",
+      "mainClass": "StringFilterBasedOnLength",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FilterEven",
+      "request": "launch",
+      "mainClass": "FilterEven",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ArrayStream",
+      "request": "launch",
+      "mainClass": "ArrayStream",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "InsertInterval",
+      "request": "launch",
+      "mainClass": "InsertInterval",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "NonOverlappingTest",
+      "request": "launch",
+      "mainClass": "NonOverlappingTest",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "NonOverlappingIntervals",
+      "request": "launch",
+      "mainClass": "NonOverlappingIntervals",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "HeapSortRefactored",
+      "request": "launch",
+      "mainClass": "HeapSortRefactored",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "HeapSortExample",
+      "request": "launch",
+      "mainClass": "HeapSortExample",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "HeapSort",
+      "request": "launch",
+      "mainClass": "HeapSort",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "InsertionSortTest",
+      "request": "launch",
+      "mainClass": "InsertionSortTest",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "InsertionSort",
+      "request": "launch",
+      "mainClass": "InsertionSort",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "SelectionSort1",
+      "request": "launch",
+      "mainClass": "SelectionSort1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "TestMergeSort",
+      "request": "launch",
+      "mainClass": "TestMergeSort",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MergeSort2",
+      "request": "launch",
+      "mainClass": "MergeSort2",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MergerSorting1",
+      "request": "launch",
+      "mainClass": "MergerSorting1",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MergeSortTrain",
+      "request": "launch",
+      "mainClass": "MergeSortTrain",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "SelectionSortTest",
+      "request": "launch",
+      "mainClass": "SelectionSortTest",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "SelectionSort",
+      "request": "launch",
+      "mainClass": "SelectionSort",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "BubbleSort",
+      "request": "launch",
+      "mainClass": "BubbleSort",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "BinarySearch",
+      "request": "launch",
+      "mainClass": "BinarySearch",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "BinarySort",
+      "request": "launch",
+      "mainClass": "BinarySort",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ReverseListUsingStream",
+      "request": "launch",
+      "mainClass": "ReverseListUsingStream",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "LinkedListMidElement",
+      "request": "launch",
+      "mainClass": "LinkedListMidElement",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "Anagram",
+      "request": "launch",
+      "mainClass": "Anagram",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "LinkedListCycleDetection",
+      "request": "launch",
+      "mainClass": "LinkedListCycleDetection",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "LInkedListHasCycle",
+      "request": "launch",
+      "mainClass": "LInkedListHasCycle",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "LinkedListReverse",
+      "request": "launch",
+      "mainClass": "LinkedListReverse",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MergeSortedArrays2",
+      "request": "launch",
+      "mainClass": "MergeSortedArrays2",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MergeArray",
+      "request": "launch",
+      "mainClass": "MergeArray",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "PrimeOrNot",
+      "request": "launch",
+      "mainClass": "PrimeOrNot",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MaximumSubarraySum",
+      "request": "launch",
+      "mainClass": "MaximumSubarraySum",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "WordCount",
+      "request": "launch",
+      "mainClass": "WordCount",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "LongestCommonPrefix",
+      "request": "launch",
+      "mainClass": "LongestCommonPrefix",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ArrayStack",
+      "request": "launch",
+      "mainClass": "ArrayStack",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FindDuplicatesBrute",
+      "request": "launch",
+      "mainClass": "FindDuplicatesBrute",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FindAllDuplicateElement",
+      "request": "launch",
+      "mainClass": "FindAllDuplicateElement",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "Reverse",
+      "request": "launch",
+      "mainClass": "Reverse",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FindMissingNumber",
+      "request": "launch",
+      "mainClass": "FindMissingNumber",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "BuzzFizz",
+      "request": "launch",
+      "mainClass": "BuzzFizz",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "Learning",
+      "request": "launch",
+      "mainClass": "Learning",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MergeSort",
+      "request": "launch",
+      "mainClass": "MergeSort",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "Diagonal",
+      "request": "launch",
+      "mainClass": "Diagonal",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "Test",
+      "request": "launch",
+      "mainClass": "Test",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "Pattern",
+      "request": "launch",
+      "mainClass": "Pattern",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "HIndexCalculator",
+      "request": "launch",
+      "mainClass": "HIndexCalculator",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "MinCharsToMakePalindrome",
+      "request": "launch",
+      "mainClass": "MinCharsToMakePalindrome",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "FindPatternOccurrences",
+      "request": "launch",
+      "mainClass": "FindPatternOccurrences",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "NonRepeatingChar",
+      "request": "launch",
+      "mainClass": "NonRepeatingChar",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "AnagramChecker",
+      "request": "launch",
+      "mainClass": "AnagramChecker",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "AddBinaryStrings",
+      "request": "launch",
+      "mainClass": "AddBinaryStrings",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "CustomAtoi",
+      "request": "launch",
+      "mainClass": "CustomAtoi",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
+      "name": "ConfigBuilder",
+      "request": "launch",
+      "mainClass": "ConfigBuilder",
+      "projectName": "Data-Structure-Algorithm-practice-100days_af92d535"
+    },
+    {
+      "type": "java",
       "name": "MaximumProductSubArray",
       "request": "launch",
       "mainClass": "MaximumProductSubArray",

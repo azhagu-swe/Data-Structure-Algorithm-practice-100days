@@ -1,0 +1,64 @@
+import java.util.Arrays;
+
+public class MergerSorting1 {
+    public static void main(String[] args) {
+        int arr[] = { 6, 5, 12, 10, 9, 1 };
+        mergeSort(arr, 0, arr.length - 1);
+        System.out.println(Arrays.toString(arr));
+
+    }
+
+    private static void mergeSort(int[] arr, int leftIndex, int rightIndex) {
+        if (leftIndex < rightIndex) {
+            int middleIndex = (rightIndex + leftIndex) / 2;
+            mergeSort(arr, leftIndex, middleIndex);
+            mergeSort(arr, middleIndex + 1, rightIndex);
+
+            merge(arr, leftIndex, middleIndex, rightIndex);
+
+        }
+
+    }
+
+    private static void merge(int[] arr, int leftIndex, int middleIndex, int rightIndex) {
+        int leftSubArraySize = middleIndex - leftIndex + 1;
+        int rightSubArraySize = rightIndex - middleIndex;
+
+        int[] leftSubArrayBuffer = new int[leftSubArraySize];
+        int[] rightSubArrayBuffer = new int[rightSubArraySize];
+
+        // copy the Array
+        for (int i = 0; i < leftSubArraySize; i++) {
+            leftSubArrayBuffer[i] = arr[leftIndex + i];
+
+        }
+        for (int j = 0; j < rightSubArraySize; j++) {
+            rightSubArrayBuffer[j] = arr[middleIndex + j + 1];
+
+        }
+
+        // merge into main array
+        int leftPointer = 0, rightPointer = 0, mergedPointer = leftIndex;
+
+        // compare and copy the smaller element
+
+        while (leftPointer < leftSubArraySize && rightPointer < rightSubArraySize) {
+            if (rightSubArrayBuffer[rightPointer] <= leftSubArrayBuffer[leftPointer]) {
+                arr[mergedPointer++] = rightSubArrayBuffer[rightPointer++];
+            } else {
+                arr[mergedPointer++] = leftSubArrayBuffer[leftPointer++];
+            }
+
+        }
+        while (leftPointer < leftSubArraySize) {
+            arr[mergedPointer++] = leftSubArrayBuffer[leftPointer++];
+
+        }
+        while (rightPointer < rightSubArraySize) {
+            arr[mergedPointer++] = rightSubArrayBuffer[rightPointer++];
+
+        }
+
+    }
+
+}
